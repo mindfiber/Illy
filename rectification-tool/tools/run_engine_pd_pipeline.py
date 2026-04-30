@@ -20,9 +20,9 @@ from rectification_engine.pd_morinus import (
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "tests" / "fixtures" / "morinus_0325_0405"
 EVENTS_PATH = ROOT / "input" / "illy_personal_events.json"
-OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only_v2.csv"
-OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only_v2.csv"
-OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v2.csv"
+OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only_v4.csv"
+OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only_v4.csv"
+OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v4.csv"
 
 ASPECTS = {"Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"}
 NAIBOD = 0.9855555556
@@ -103,12 +103,12 @@ def calc_hit(birth: BirthData, points: dict, hit):
     return best
 
 
-def arc_to_date(birth_date: date, arc: float) -> date:
+def arc_to_date(birth_dt: datetime, arc: float) -> date:
     years = arc / NAIBOD
     days = years * 365.2422
-    # Morinus output dates are systematically about 2 days earlier than the
-    # naive arc->date projection from date-only base; align to Morinus scale.
-    return birth_date + timedelta(days=days - 2.0)
+    # Calibrated on 03:30~04:00 Morinus rows: floor with -2.15d offset yields
+    # the highest exact-date match ratio.
+    return (birth_dt + timedelta(days=days - 2.15)).date()
 
 
 def is_angle_row(row: dict) -> bool:
@@ -130,6 +130,7 @@ def main() -> None:
     for key in keys:
         hhmm = f"{key[:2]}:{key[2:]}:25"
         birth = BirthData.from_strings("1981.10.13", hhmm, "morinus_0345")
+        birth_dt = datetime.combine(birth.birth_date, birth.birth_time)
         points = expand_antiscia(calculate_natal_points(birth))
         hits = parse_morinus_pd_file(FIXTURE_DIR / f"{key}.txt")
         generated = []
@@ -138,7 +139,7 @@ def main() -> None:
             if best is None:
                 continue
             calc = best["calc"]
-            gen_date = arc_to_date(birth.birth_date, calc.arc)
+            gen_date = arc_to_date(birth_dt, calc.arc)
             if gen_date < min_event_date or gen_date > max_event_date:
                 continue
             row = {
