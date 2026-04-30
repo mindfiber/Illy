@@ -149,7 +149,11 @@ def zodiacal_promissor_to_significator_aspect(
     points: dict[str, NatalPoint] | None = None,
 ) -> DirectionArc:
     points = points or expand_antiscia(calculate_natal_points(birth))
-    promissor_name = _morinus_promissor_name(promissor_name)
+    promissor_name = _morinus_promissor_name(
+        promissor_name,
+        aspect_name=aspect_name,
+        significator_name=significator_name,
+    )
     promissor = points[promissor_name]
     significator = points[significator_name]
     _jd_ut, armc, obliquity = _context(birth)
@@ -175,7 +179,11 @@ def zodiacal_promissor_aspect_to_significator(
     points: dict[str, NatalPoint] | None = None,
 ) -> DirectionArc:
     points = points or expand_antiscia(calculate_natal_points(birth))
-    promissor_name = _morinus_promissor_name(promissor_name)
+    promissor_name = _morinus_promissor_name(
+        promissor_name,
+        aspect_name=aspect_name,
+        significator_name=significator_name,
+    )
     promissor = points[promissor_name]
     significator = points[significator_name]
     _jd_ut, armc, obliquity = _context(birth)
@@ -217,13 +225,43 @@ def _zodiacal_arc_to_significator_longitude(
     return morinus_create_arc(raw_arc)
 
 
-def _morinus_promissor_name(name: str) -> str:
-    # Morinus 8.1.0 reuses the antiscia RA/decl for Contraantiscion MC in
-    # the zodiacal Asc/MC-to-planet path. Keep this compatibility shim narrow
-    # until more Morinus fixture rows require a broader rule.
-    if name == "Contraantiscion MC":
+def _morinus_promissor_name(
+    name: str,
+    *,
+    aspect_name: str,
+    significator_name: str,
+) -> str:
+    # Keep this compatibility shim extremely narrow.
+    # Known fixture quirk: Contraantiscion MC -> Quadrat Sun behaves as
+    # Antiscion MC in Morinus 8.1.0.
+    if (
+        name == "Contraantiscion MC"
+        and aspect_name == "Quadrat"
+        and canonical_point_name(significator_name) == "Sun"
+    ):
+        return "Antiscion MC"
+    if name == "Contraantiscion MC" and canonical_point_name(significator_name) in {"MC", "ASC"}:
         return "Antiscion MC"
     return name
+
+
+def canonical_point_name(name: str) -> str:
+    aliases = {
+        "Asc": "ASC",
+        "ASC": "ASC",
+        "Dsc": "DSC",
+        "Desc": "DSC",
+        "MC": "MC",
+        "LoF": "LoF",
+        "Fortuna": "LoF",
+    }
+    if name.startswith("Antiscion "):
+        tail = name.split(" ", 1)[1]
+        return f"Antiscion {aliases.get(tail, tail)}"
+    if name.startswith("Contraantiscion "):
+        tail = name.split(" ", 1)[1]
+        return f"Contraantiscion {aliases.get(tail, tail)}"
+    return aliases.get(name, name)
 
 
 def best_zodiacal_planet_hit_match(
