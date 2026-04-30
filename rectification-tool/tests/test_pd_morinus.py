@@ -9,6 +9,7 @@ from rectification_engine.natal import calculate_natal_points, expand_antiscia
 from rectification_engine.pd_morinus import (
     morinus_create_arc,
     zodiacal_promissor_aspect_to_mc,
+    zodiacal_promissor_to_significator_aspect,
 )
 
 try:
@@ -103,6 +104,61 @@ class MorinusPDTests(unittest.TestCase):
             calc_contra = zodiacal_promissor_aspect_to_mc(
                 birth,
                 promissor_name="Contraantiscion Sun",
+                aspect_name="Quadrat",
+                aspect_sign=-1,
+                points=points,
+            )
+
+            self.assertEqual(calc_ant.direction, expected_ant.direction)
+            self.assertEqual(calc_contra.direction, expected_contra.direction)
+            max_diff = max(
+                max_diff,
+                abs(calc_ant.arc - float(expected_ant.arc)),
+                abs(calc_contra.arc - float(expected_contra.arc)),
+            )
+
+        self.assertLess(max_diff, 0.00001)
+
+    @unittest.skipUnless(HAS_SWISSEPH, "swisseph is not installed for this Python interpreter")
+    def test_0325_0405_zodiacal_mc_antiscia_to_square_sun_tracks_morinus(self):
+        max_diff = 0.0
+        paths = sorted(RANGE_FIXTURE.glob("*.txt"))
+        self.assertEqual(len(paths), 41)
+        for path in paths:
+            hhmm = f"{path.stem[:2]}:{path.stem[2:]}:25"
+            birth = BirthData.from_strings("1981.10.13", hhmm, "morinus_0345")
+            points = expand_antiscia(calculate_natal_points(birth))
+            hits = parse_morinus_pd_file(path)
+
+            expected_ant = next(
+                hit
+                for hit in hits
+                if hit.mode == "Z"
+                and hit.promissor == "Antiscion MC"
+                and hit.aspect == "Quadrat"
+                and hit.significator == "Sun"
+            )
+            expected_contra = next(
+                hit
+                for hit in hits
+                if hit.mode == "Z"
+                and hit.promissor == "Contraantiscion MC"
+                and hit.aspect == "Quadrat"
+                and hit.significator == "Sun"
+            )
+
+            calc_ant = zodiacal_promissor_to_significator_aspect(
+                birth,
+                promissor_name="Antiscion MC",
+                significator_name="Sun",
+                aspect_name="Quadrat",
+                aspect_sign=-1,
+                points=points,
+            )
+            calc_contra = zodiacal_promissor_to_significator_aspect(
+                birth,
+                promissor_name="Contraantiscion MC",
+                significator_name="Sun",
                 aspect_name="Quadrat",
                 aspect_sign=-1,
                 points=points,
