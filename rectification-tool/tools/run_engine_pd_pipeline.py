@@ -21,9 +21,9 @@ from rectification_engine.pd_morinus import (
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "tests" / "fixtures" / "morinus_0325_0405"
 EVENTS_PATH = ROOT / "input" / "illy_personal_events.json"
-OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only_v5.csv"
-OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only_v5.csv"
-OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v5.csv"
+OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only_v6.csv"
+OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only_v6.csv"
+OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v6.csv"
 
 ASPECTS = {"Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"}
 NAIBOD = 0.9855555556
@@ -130,8 +130,8 @@ def main() -> None:
     max_event_date = max(e.date_ref for e in events)
     start_hhmm, end_hhmm = payload["subject"]["candidate_range"].split("~")
     span_minutes = range_minutes(start_hhmm, end_hhmm)
-    # User rule: 1 hour range => +10 years PD extension.
-    pad_years = max(1, math.ceil((span_minutes / 60.0) * 10.0))
+    # User rule: 1 hour range => +15 years PD extension.
+    pad_years = max(1, math.ceil((span_minutes / 60.0) * 15.0))
     min_bound = min_event_date - timedelta(days=round(365.2422 * pad_years))
     max_bound = max_event_date + timedelta(days=round(365.2422 * pad_years))
     keys = minute_keys(start_hhmm, end_hhmm)
