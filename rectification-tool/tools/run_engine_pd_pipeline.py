@@ -48,6 +48,16 @@ TYPE_PLANETS = {
     "surgery_medical_major": {"Mars", "Saturn"},
 }
 
+EVENT_RULES = {
+    "university_admission": {"good_aspects": {"Conjunctio", "Sextil", "Trigon"}, "angle_targets": {"MC", "ASC", "LoF"}},
+    "employment_start": {"good_aspects": {"Conjunctio", "Sextil", "Trigon"}, "angle_targets": {"MC", "ASC", "LoF"}},
+    "career_honor_event": {"good_aspects": {"Conjunctio", "Sextil", "Trigon"}, "angle_targets": {"MC", "ASC", "LoF"}},
+    "employment_end": {"hard_aspects": {"Conjunctio", "Quadrat", "Oppositio"}, "angle_targets": {"MC", "ASC", "LoF"}},
+    "loss_general": {"hard_aspects": {"Conjunctio", "Quadrat", "Oppositio"}, "angle_targets": {"MC", "ASC", "LoF"}},
+    "mental_health_crisis": {"hard_aspects": {"Conjunctio", "Quadrat", "Oppositio"}, "angle_targets": {"MC", "ASC", "LoF"}},
+    "surgery_medical_major": {"hard_aspects": {"Conjunctio", "Quadrat", "Oppositio"}, "angle_targets": {"MC", "ASC", "LoF"}},
+}
+
 
 @dataclass(frozen=True)
 class Event:
@@ -122,6 +132,22 @@ def is_angle_row(row: dict) -> bool:
     return any(a in row["promissor"] or a in row["significator"] for a in ANGLE_POINTS)
 
 
+def row_signature_penalty(row: dict, event_type: str) -> int:
+    rule = EVENT_RULES.get(event_type)
+    if not rule:
+        return 0
+    asp = row["aspect"]
+    sig = row["significator"]
+    prom = row["promissor"]
+    angle_targets = rule.get("angle_targets", set())
+    touches_target_angle = sig in angle_targets or prom in angle_targets
+    if "good_aspects" in rule:
+        return 0 if (asp in rule["good_aspects"] and touches_target_angle) else 1
+    if "hard_aspects" in rule:
+        return 0 if (asp in rule["hard_aspects"] and touches_target_angle) else 1
+    return 0
+
+
 def main() -> None:
     payload = json.loads(EVENTS_PATH.read_text(encoding="utf-8"))
     tol_days = int(payload.get("tolerance_days", 62))
@@ -184,10 +210,14 @@ def main() -> None:
             angle_pool = [r for r in pool if r["is_angle_direction"]]
             use_pool = angle_pool if e.event_type in HIGH_PRIORITY_TYPES else (angle_pool or pool)
             best_row = None
+            best_key = None
             best_days = None
             for r in use_pool:
                 d = abs((datetime.fromisoformat(r["engine_date"]).date() - e.date_ref).days)
-                if best_days is None or d < best_days:
+                sig_penalty = row_signature_penalty(r, e.event_type)
+                rank_key = (d, sig_penalty, r["arc_diff"])
+                if best_key is None or rank_key < best_key:
+                    best_key = rank_key
                     best_days = d
                     best_row = r
             ok = best_row is not None and best_days is not None and best_days <= tol_days
@@ -243,8 +273,12 @@ def main() -> None:
         }
     rows = [v for v in shortlist.values() if v["required_major_ok"]]
     rows.sort(key=lambda x: (-x["matched_events"], x["mean_abs_days_matched"], x["candidate_time"]))
+    if not rows:
+        rows = list(shortlist.values())
+        rows.sort(key=lambda x: (-x["matched_events"], x["mean_abs_days_matched"], x["candidate_time"]))
     with OUT_SHORT.open("w", encoding="utf-8-sig", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
+        fieldnames = ["candidate_time", "matched_events", "required_major_ok", "mean_abs_days_matched"]
+        w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
         w.writerows(rows)
 
