@@ -1,0 +1,27 @@
+version: 1
+
+scoring:
+  base_hit_score: 1.0
+  exact_direction_bonus: 0.2
+  same_day_bonus: 0.4
+
+  time_decay:
+    type: "linear_by_days"
+    max_days: 60
+    floor_multiplier: 0.2
+
+  duplicate_control:
+    same_event_same_signature: "keep_best_only"
+    same_event_max_hits: 5
+
+ranking:
+  top_k_candidates: 3
+  tie_breakers:
+    - "higher_total_score"
+    - "higher_hit_count"
+    - "smaller_mean_abs_day_diff"
+
+output:
+  include_matched_hits: true
+  include_unmatched_events: true
+  include_score_breakdown: true

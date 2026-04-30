@@ -1,0 +1,39 @@
+version: 1
+
+global:
+  pd_mode: "placidus_semiarc"
+  domain: ["zodiacal", "mundane"]
+  time_tolerance_months: 2
+
+event_overrides:
+  university_admission:
+    date_window:
+      month_start: 12
+      month_end: 3
+      cross_year: true
+  marriage:
+    merged_event_types:
+      - marriage
+      - legal_marriage
+      - ceremony
+
+rules:
+  - id: "rule_edu_01"
+    event_type: "university_admission"
+    enabled: true
+    weight: 1.0
+    signatures:
+      - mode: "Z"
+        promissor: ["Jupiter", "Sun", "MC"]
+        aspect: ["Conjunctio", "Trigon", "Sextil"]
+        significator: ["MC", "Sun", "Jupiter"]
+
+  - id: "rule_mar_01"
+    event_type: "marriage"
+    enabled: true
+    weight: 1.2
+    signatures:
+      - mode: "Z"
+        promissor: ["Venus", "Jupiter", "Moon"]
+        aspect: ["Conjunctio", "Trigon", "Sextil", "Oppositio"]
+        significator: ["ASC", "MC", "Moon", "Venus", "Jupiter"]
