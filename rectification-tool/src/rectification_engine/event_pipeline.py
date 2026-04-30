@@ -69,15 +69,10 @@ def to_matching_payload(events: list[StandardizedEvent], tolerance_months: int =
                 "raw_fragment": e.raw_fragment,
                 "tolerance_months": tolerance_months,
             }
-
-            # 대학 입학은 12~3월 윈도우를 함께 보관
             if e.event_type == "university_admission":
                 event_item["season_window"] = {"month_start": 12, "month_end": 3, "cross_year": True}
-
-            # 결혼/혼인 및 결혼 관련 표현은 통합 버킷으로 추가
             if e.event_type == "marriage":
                 marriage_bucket.append(event_item)
-
             payload_events.append(event_item)
 
         if marriage_bucket:
@@ -100,7 +95,6 @@ def to_matching_payload(events: list[StandardizedEvent], tolerance_months: int =
                 "events": payload_events,
             }
         )
-
     return {"version": 1, "records": records}
 
 
@@ -116,3 +110,80 @@ def write_payload_json(events_csv_path: str | Path, output_json_path: str | Path
     events = load_standardized_events(events_csv_path)
     payload = to_matching_payload(events, tolerance_months=tolerance_months)
     Path(output_json_path).write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def infer_child_indicator(raw_fragment: str) -> str:
+    text = raw_fragment or ""
+    if "아들" in text:
+        return "son"
+    if "딸" in text:
+        return "daughter"
+    if "수성" in text:
+        return "mercury"
+    return ""
+
+
+def infer_is_major_k_event(raw_fragment: str, source_column: str) -> bool:
+    if source_column != "K":
+        return False
+    text = raw_fragment or ""
+    major_keywords = ["사망", "대수술", "전신마취", "중환자실", "골절", "전복", "교통사고", "화상", "수술", "절개"]
+    return any(k in text for k in major_keywords)
+
+
+def build_candidate_match_template(
+    payload: dict,
+    record_id: str,
+    candidate_ids: list[str],
+    tolerance_months: int = 2,
+    max_g_misses: int = 2,
+) -> dict:
+    record = next((r for r in payload.get("records", []) if r.get("record_id") == record_id), None)
+    if record is None:
+        raise ValueError(f"Record not found: {record_id}")
+
+    event_rows = []
+    for idx, e in enumerate(record.get("events", []), start=1):
+        if e.get("event_type") == "marriage_merged":
+            continue
+        event_type = str(e.get("event_type", ""))
+        source_column = str(e.get("source_column", ""))
+        raw_fragment = str(e.get("raw_fragment", ""))
+        event_rows.append(
+            {
+                "event_id": f"{record_id}_evt_{idx:04d}",
+                "source_column": source_column,
+                "event_type": event_type,
+                "is_major": infer_is_major_k_event(raw_fragment, source_column),
+                "is_family_death": event_type == "family_death",
+                "is_marriage": event_type in {"marriage", "marriage_merged"},
+                "is_childbirth": event_type == "childbirth",
+                "child_indicator": infer_child_indicator(raw_fragment) if event_type == "childbirth" else "",
+            }
+        )
+
+    candidates = []
+    for cid in candidate_ids:
+        candidates.append(
+            {
+                "candidate_id": cid,
+                "event_matches": [
+                    {
+                        **e,
+                        "matched": False,
+                        "abs_month_diff": 999.0,
+                        "weight": 1.0,
+                    }
+                    for e in event_rows
+                ],
+            }
+        )
+
+    return {
+        "tolerance_months": tolerance_months,
+        "top_k": 3,
+        "max_g_misses": max_g_misses,
+        "record_id": record_id,
+        "client_name": record.get("client_name", ""),
+        "candidates": candidates,
+    }
