@@ -1,0 +1,26 @@
+# Private chart data and local notes
+chart-readings/private/
+*.local.md
+*.private.md
+
+# Environment and secrets
+.env
+.env.*
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# Temporary/build output
+tmp/
+temp/
+*.tmp
+*.log
+node_modules/
+dist/
+build/
+__pycache__/
+*.pyc
