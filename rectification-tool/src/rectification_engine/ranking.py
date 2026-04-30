@@ -9,6 +9,11 @@ class EventMatch:
     matched: bool
     abs_month_diff: float
     weight: float = 1.0
+    source_column: str = ""
+    event_type: str = ""
+    is_major: bool = False
+    is_family_death: bool = False
+    is_marriage: bool = False
 
 
 @dataclass(frozen=True)
@@ -17,6 +22,35 @@ class CandidateScore:
     total_score: float
     matched_count: int
     mean_abs_month_diff: float
+    eligible: bool = True
+    disqualify_reasons: tuple[str, ...] = ()
+
+
+def hard_requirements_ok(
+    matches: list[EventMatch],
+    max_g_misses: int = 2,
+) -> tuple[bool, list[str]]:
+    reasons: list[str] = []
+
+    g_rows = [m for m in matches if m.source_column == "G"]
+    if g_rows:
+        g_miss = sum(1 for m in g_rows if not m.matched)
+        if g_miss > max_g_misses:
+            reasons.append(f"G_miss_exceeded:{g_miss}>{max_g_misses}")
+
+    h_marriage_rows = [m for m in matches if m.source_column == "H" and (m.is_marriage or m.event_type in {"marriage", "marriage_merged"})]
+    if h_marriage_rows and not any(m.matched for m in h_marriage_rows):
+        reasons.append("H_marriage_required_unmatched")
+
+    l_family_death_rows = [m for m in matches if m.source_column == "L" and (m.is_family_death or m.event_type == "family_death")]
+    if l_family_death_rows and not all(m.matched for m in l_family_death_rows):
+        reasons.append("L_family_death_unmatched")
+
+    k_major_rows = [m for m in matches if m.source_column == "K" and m.is_major]
+    if k_major_rows and not all(m.matched for m in k_major_rows):
+        reasons.append("K_major_event_unmatched")
+
+    return len(reasons) == 0, reasons
 
 
 def score_event(match: EventMatch, tolerance_months: float = 2.0) -> float:
@@ -32,7 +66,9 @@ def score_candidate(
     candidate_id: str,
     matches: list[EventMatch],
     tolerance_months: float = 2.0,
+    max_g_misses: int = 2,
 ) -> CandidateScore:
+    eligible, reasons = hard_requirements_ok(matches, max_g_misses=max_g_misses)
     total = 0.0
     matched_count = 0
     sum_abs_diff = 0.0
@@ -49,6 +85,8 @@ def score_candidate(
         total_score=round(total, 6),
         matched_count=matched_count,
         mean_abs_month_diff=round(mean_diff, 6),
+        eligible=eligible,
+        disqualify_reasons=tuple(reasons),
     )
 
 
@@ -56,10 +94,12 @@ def rank_candidates(
     candidate_matches: dict[str, list[EventMatch]],
     tolerance_months: float = 2.0,
     top_k: int = 3,
+    max_g_misses: int = 2,
 ) -> list[CandidateScore]:
     scored = [
-        score_candidate(candidate_id, matches, tolerance_months=tolerance_months)
+        score_candidate(candidate_id, matches, tolerance_months=tolerance_months, max_g_misses=max_g_misses)
         for candidate_id, matches in candidate_matches.items()
     ]
+    scored = [s for s in scored if s.eligible]
     scored.sort(key=lambda x: (-x.total_score, -x.matched_count, x.mean_abs_month_diff, x.candidate_id))
     return scored[:top_k]
