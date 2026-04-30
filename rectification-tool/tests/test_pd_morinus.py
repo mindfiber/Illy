@@ -174,6 +174,42 @@ class MorinusPDTests(unittest.TestCase):
 
         self.assertLess(max_diff, 0.00001)
 
+    @unittest.skipUnless(HAS_SWISSEPH, "swisseph is not installed for this Python interpreter")
+    def test_0325_0405_zodiacal_sun_jupiter_conjunctions_track_morinus(self):
+        max_diff = 0.0
+        paths = sorted(RANGE_FIXTURE.glob("*.txt"))
+        self.assertEqual(len(paths), 41)
+        pairs = [("Sun", "Jupiter"), ("Jupiter", "Sun")]
+
+        for path in paths:
+            hhmm = f"{path.stem[:2]}:{path.stem[2:]}:25"
+            birth = BirthData.from_strings("1981.10.13", hhmm, "morinus_0345")
+            points = expand_antiscia(calculate_natal_points(birth))
+            hits = parse_morinus_pd_file(path)
+
+            for promissor, significator in pairs:
+                expected = next(
+                    hit
+                    for hit in hits
+                    if hit.mode == "Z"
+                    and hit.promissor == promissor
+                    and hit.aspect == "Conjunctio"
+                    and hit.significator == significator
+                )
+                calculated = zodiacal_promissor_to_significator_aspect(
+                    birth,
+                    promissor_name=promissor,
+                    significator_name=significator,
+                    aspect_name="Conjunctio",
+                    aspect_sign=1,
+                    points=points,
+                )
+
+                self.assertEqual(calculated.direction, expected.direction)
+                max_diff = max(max_diff, abs(calculated.arc - float(expected.arc)))
+
+        self.assertLess(max_diff, 0.00002)
+
 
 if __name__ == "__main__":
     unittest.main()
