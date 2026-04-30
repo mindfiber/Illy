@@ -27,7 +27,7 @@ OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v6.csv"
 
 ASPECTS = {"Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"}
 NAIBOD = 0.9855555556
-ANGLE_POINTS = {"Asc", "MC", "LoF", "Fortuna"}
+ANGLE_POINTS = {"Asc", "ASC", "MC", "LoF", "Fortuna"}
 HIGH_PRIORITY_TYPES = {
     "university_admission",
     "employment_start",
