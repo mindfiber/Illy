@@ -1,0 +1,28 @@
+{
+  "subject": {
+    "name": "일리",
+    "gender": "여",
+    "birth_date": "1981.10.13",
+    "birth_place": "인천",
+    "candidate_range": "03:30~04:00"
+  },
+  "tolerance_days": 62,
+  "events": [
+    { "id": "E01", "date": "2000-03", "type": "university_admission", "text": "2000.03 대학입학" },
+    { "id": "E02", "date": "2003-03", "type": "university_admission", "text": "2003.03 대학입학" },
+    { "id": "E03", "date": "2005-03", "type": "employment_end", "text": "2005.03 대학중퇴" },
+    { "id": "E04", "date": "2006-05", "type": "employment_start", "text": "2006.05 취업" },
+    { "id": "E05", "date": "2007-10", "type": "employment_start", "text": "2007.10 취업" },
+    { "id": "E06", "date": "2015-03", "type": "loss_general", "text": "2015.03 고양이 사망" },
+    { "id": "E07", "date": "2015-05", "type": "employment_start", "text": "2015.05 취업" },
+    { "id": "E08", "date": "2017-11", "type": "career_honor_event", "text": "2017.11~12 금전적 이득+명성" },
+    { "id": "E09", "date": "2019-01-28", "type": "surgery_medical_major", "text": "2019.01.28 발목골절로 수술" },
+    { "id": "E10", "date": "2019-08", "type": "employment_end", "text": "2019.08 퇴사" },
+    { "id": "E11", "date": "2019-08", "type": "loss_general", "text": "2019.08 고양이 사망" },
+    { "id": "E12", "date": "2020-01", "type": "mental_health_crisis", "text": "2020.01~ 굉장히 힘들었던 시기" },
+    { "id": "E13", "date": "2020-07", "type": "employment_start", "text": "2020.07 새로운 일 시작" },
+    { "id": "E14", "date": "2024-06", "type": "employment_start", "text": "2024.06 프리랜서 직업 재개" },
+    { "id": "E15", "date": "2025-02", "type": "employment_start", "text": "2025.02 취업" },
+    { "id": "E16", "date": "2025-04-04", "type": "surgery_medical_major", "text": "2025.04.04 손가락 골절로 수술" }
+  ]
+}
