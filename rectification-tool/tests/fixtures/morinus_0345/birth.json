@@ -1,0 +1,10 @@
+{
+  "name": "morinus_0345",
+  "birth_date": "1981-10-13",
+  "birth_time": "03:45",
+  "place": "Incheon",
+  "place_input": "인천",
+  "latitude": 37.4563,
+  "longitude": 126.7052,
+  "timezone": "Asia/Seoul"
+}
