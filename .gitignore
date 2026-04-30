@@ -19,6 +19,10 @@ tmp/
 temp/
 *.tmp
 *.log
+*.zip
+*.exe
+*.pkg
+*.pyz
 node_modules/
 dist/
 build/

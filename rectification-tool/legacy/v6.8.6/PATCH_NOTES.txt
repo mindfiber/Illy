@@ -1,0 +1,4 @@
+PATCH NOTES (2025-12-22)
+1) Add Dsc/IC angles (and their Ant/CAn via existing expansion) to both promissor and significator sets.
+2) Fix event date parsing: ensure YYYY.MM.DD month 11/12 not truncated to 1.
+3) Event windows default ±2 months for MONTH, and expand RANGE/SEASON by ±2 months; keep university exceptions.
