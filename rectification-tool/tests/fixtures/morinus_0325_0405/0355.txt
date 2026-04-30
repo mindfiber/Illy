@@ -1,0 +1,2502 @@
+Placidian(semiarc)
+Static Key:
+Naibod 0deg 59min 08sec
+Z Antiscion Desc D --> Sextil Venus 0.380188 1982.03.01
+Z Contraantiscion Desc D --> Trigon Venus 0.380188 1982.03.01
+Z Sextil Antiscion Venus D --> LoF 0.391733 1982.03.06
+Z Trigon Contraantiscion Venus D --> LoF 0.391733 1982.03.06
+M Contraantiscion Venus C --> Quadrat Sun 0.426479 1982.03.18
+Z MC C --> Trigon Saturn 0.483396 1982.04.09
+Z Trigon Saturn D --> MC 0.483629 1982.04.09
+Z Trigon MC C --> Saturn 0.502130 1982.04.15
+M Antiscion Mercury D --> Trigon Jupiter 0.718063 1982.07.04
+M Contraantiscion Saturn D --> Asc 0.807476 1982.08.07
+M Jupiter D --> Sun 1.168856 1982.12.18
+M Sun C --> Jupiter 1.174555 1982.12.20
+Z Sun C --> Jupiter 1.196105 1982.12.28
+Z Jupiter D --> Sun 1.200131 1982.12.30
+Z Antiscion Asc D --> Oppositio Saturn 1.389697 1983.03.10
+Z Contraantiscion Asc D --> Saturn 1.389697 1983.03.10
+M Antiscion Venus C --> Quadrat Sun 1.406948 1983.03.17
+Z Oppositio Antiscion Saturn D --> Asc 1.528467 1983.05.01
+Z Contraantiscion Saturn D --> Asc 1.528467 1983.05.01
+M Contraantiscion Jupiter D --> Quadrat Venus 1.660457 1983.06.18
+M Contraantiscion Venus C --> Quadrat Jupiter 1.711859 1983.07.07
+M Sun D --> Sextil Mars 1.947250 1983.10.03
+M Antiscion Mercury D --> Trigon Sun 1.961998 1983.10.08
+Z Quadrat Asc D --> MC 2.058970 1983.11.13
+M Mars C --> Sextil Sun 2.059669 1983.11.13
+M Contraantiscion Mercury D --> Sextil Jupiter 2.106024 1983.11.30
+M Antiscion Saturn D --> Dsc 2.242416 1984.01.20
+M Antiscion Jupiter D --> Quadrat Venus 2.270271 1984.01.30
+M Contraantiscion Jupiter D --> Sextil Mercury 2.274478 1984.02.01
+Z Quadrat MC C --> Asc 2.351692 1984.03.01
+Z Trigon Antiscion Mercury C --> Mercury 2.585451 1984.05.26
+Z Sextil Contraantiscion Mercury C --> Mercury 2.585451 1984.05.26
+Z Quadrat Antiscion Sun C --> MC 2.729729 1984.07.19
+Z Quadrat Contraantiscion Sun C --> MC 2.729729 1984.07.19
+M Antiscion Venus C --> Quadrat Jupiter 2.747431 1984.07.25
+Z Antiscion MC C --> Quadrat Sun 2.845631 1984.08.31
+Z Contraantiscion MC C --> Quadrat Sun 2.845631 1984.08.31
+Z Antiscion Mercury C --> Trigon Mercury 2.854865 1984.09.03
+Z Contraantiscion Mercury C --> Sextil Mercury 2.854865 1984.09.03
+M Antiscion Jupiter D --> Trigon Mercury 2.874288 1984.09.11
+M Jupiter D --> Sextil Mars 3.106660 1984.12.06
+M Antiscion Sun D --> Quadrat Venus 3.278227 1985.02.07
+M Contraantiscion Sun D --> Quadrat Venus 3.278316 1985.02.08
+M Contraantiscion Mercury D --> Sextil Sun 3.296011 1985.02.14
+M Mars C --> Sextil Jupiter 3.302034 1985.02.16
+Z Quadrat Antiscion Saturn D --> MC 3.401758 1985.03.25
+Z Quadrat Contraantiscion Saturn D --> MC 3.401758 1985.03.25
+Z Antiscion MC D --> Quadrat Saturn 3.504665 1985.05.02
+Z Contraantiscion MC D --> Quadrat Saturn 3.504665 1985.05.02
+M Contraantiscion Mercury C --> Oppositio LoF 3.832894 1985.09.01
+M Antiscion Sun D --> Trigon Mercury 3.885189 1985.09.20
+M Contraantiscion Sun D --> Sextil Mercury 3.885276 1985.09.20
+Z Quadrat Antiscion Jupiter C --> MC 3.892355 1985.09.23
+Z Quadrat Contraantiscion Jupiter C --> MC 3.892355 1985.09.23
+Z Antiscion Mars D --> Oppositio Mercury 3.999531 1985.11.02
+Z Contraantiscion Mars D --> Mercury 3.999531 1985.11.02
+Z Oppositio Antiscion Mars D --> Mercury 3.999531 1985.11.02
+M Antiscion Mercury D --> Oppositio Mars 4.024272 1985.11.11
+M Antiscion Mars D --> Oppositio Mercury 4.065213 1985.11.26
+Z Antiscion MC C --> Quadrat Jupiter 4.067519 1985.11.27
+Z Contraantiscion MC C --> Quadrat Jupiter 4.067519 1985.11.27
+M Contraantiscion Mars D --> Mercury 4.094925 1985.12.07
+Z Antiscion Mercury D --> Oppositio Mars 4.332195 1986.03.05
+Z Contraantiscion Mercury D --> Mars 4.332195 1986.03.05
+Z Oppositio Antiscion Mercury D --> Mars 4.332195 1986.03.05
+M Saturn C --> Sextil Mars 4.412243 1986.04.03
+Z Sextil Moon C --> MC 4.422204 1986.04.07
+Z MC D --> Sextil Moon 4.444306 1986.04.15
+Z Sextil MC D --> Moon 4.673283 1986.07.09
+M Mars D --> Sextil Saturn 4.832446 1986.09.06
+Z Antiscion Asc C --> Oppositio Sun 4.903421 1986.10.02
+Z Contraantiscion Asc C --> Sun 4.903421 1986.10.02
+Z Antiscion Desc C --> Oppositio Moon 5.033709 1986.11.20
+Z Contraantiscion Desc C --> Moon 5.033709 1986.11.20
+Z Jupiter C --> Sextil Mars 5.058843 1986.11.29
+Z Moon C --> Oppositio Saturn 5.106636 1986.12.17
+Z Oppositio Moon C --> Saturn 5.106636 1986.12.17
+Z Venus C --> Trigon Moon 5.109783 1986.12.18
+Z Sextil Mars D --> Jupiter 5.130690 1986.12.25
+Z Trigon Moon D --> Venus 5.145652 1987.01.00
+Z Saturn D --> Oppositio Moon 5.182873 1987.01.14
+Z Oppositio Saturn D --> Moon 5.182873 1987.01.14
+M Moon C --> Oppositio Saturn 5.219188 1987.01.27
+M Contraantiscion Mercury D --> Mars 5.268847 1987.02.15
+Z Oppositio Antiscion Moon C --> LoF 5.268880 1987.02.15
+Z Contraantiscion Moon C --> LoF 5.268880 1987.02.15
+M Saturn D --> Oppositio Moon 5.402958 1987.04.05
+Z Trigon Venus C --> Moon 5.407913 1987.04.07
+Z Mars D --> Sextil Jupiter 5.418629 1987.04.11
+M Contraantiscion Sun C --> Asc 5.486053 1987.05.06
+Z Oppositio Antiscion Sun C --> Asc 5.486108 1987.05.06
+Z Contraantiscion Sun C --> Asc 5.486108 1987.05.06
+M Antiscion Sun C --> Dsc 5.486164 1987.05.06
+Z Sextil Jupiter C --> Mars 5.486594 1987.05.06
+M Antiscion Mercury C --> LoF 5.490095 1987.05.08
+Z Moon D --> Trigon Venus 5.494183 1987.05.09
+M Contraantiscion Moon D --> Dsc 5.651731 1987.07.06
+Z Quadrat Antiscion Jupiter D --> Venus 5.681743 1987.07.18
+Z Quadrat Contraantiscion Jupiter D --> Venus 5.681743 1987.07.18
+Z Quadrat Antiscion Mercury C --> Venus 5.795030 1987.08.28
+Z Quadrat Contraantiscion Mercury C --> Venus 5.795030 1987.08.28
+Z Quadrat Antiscion Venus D --> Jupiter 5.832441 1987.09.11
+Z Quadrat Contraantiscion Venus D --> Jupiter 5.832441 1987.09.11
+M Jupiter C --> Trigon LoF 5.833459 1987.09.12
+Z Quadrat Antiscion Venus C --> Mercury 5.867165 1987.09.24
+Z Quadrat Contraantiscion Venus C --> Mercury 5.867165 1987.09.24
+M Mercury D --> Trigon LoF 5.886962 1987.10.02
+Z Antiscion Venus D --> Quadrat Jupiter 5.916085 1987.10.12
+Z Contraantiscion Venus D --> Quadrat Jupiter 5.916085 1987.10.12
+M Antiscion Venus D --> Quadrat Saturn 6.029486 1987.11.23
+Z Antiscion Asc C --> Oppositio Jupiter 6.082903 1987.12.13
+Z Contraantiscion Asc C --> Jupiter 6.082903 1987.12.13
+M Moon D --> Trigon Venus 6.190233 1988.01.22
+Z Antiscion Venus C --> Quadrat Mercury 6.195080 1988.01.24
+Z Contraantiscion Venus C --> Quadrat Mercury 6.195080 1988.01.24
+Z Sun C --> Sextil Mars 6.237976 1988.02.09
+Z Saturn C --> Sun 6.268204 1988.02.20
+M Saturn C --> Sun 6.292815 1988.02.29
+Z Antiscion Jupiter D --> Quadrat Venus 6.318015 1988.03.09
+Z Contraantiscion Jupiter D --> Quadrat Venus 6.318015 1988.03.09
+Z Sextil Mars D --> Sun 6.347865 1988.03.20
+Z Sun D --> Saturn 6.381805 1988.04.02
+M Antiscion Jupiter C --> Dsc 6.451599 1988.04.28
+M Sun D --> Saturn 6.515937 1988.05.22
+Z Antiscion Mercury C --> Quadrat Venus 6.542820 1988.06.01
+Z Contraantiscion Mercury C --> Quadrat Venus 6.542820 1988.06.01
+Z Sextil Mars C --> Mercury 6.546852 1988.06.02
+Z Antiscion Asc D --> Moon 6.593170 1988.06.20
+Z Contraantiscion Asc D --> Oppositio Moon 6.593170 1988.06.20
+Z MC C --> Trigon Sun 6.608429 1988.06.25
+Z Trigon Sun D --> MC 6.644907 1988.07.09
+Z Mercury D --> Sextil Mars 6.663966 1988.07.16
+Z Mars D --> Sextil Sun 6.670446 1988.07.18
+M Contraantiscion Venus D --> Quadrat Saturn 6.704273 1988.07.31
+Z Trigon MC C --> Sun 6.761312 1988.08.21
+Z Sextil Sun C --> Mars 6.773203 1988.08.25
+Z Oppositio Antiscion Jupiter C --> Asc 6.827378 1988.09.14
+Z Contraantiscion Jupiter C --> Asc 6.827378 1988.09.14
+Z Quadrat Antiscion Sun D --> Venus 6.857580 1988.09.26
+Z Quadrat Contraantiscion Sun D --> Venus 6.857580 1988.09.26
+M Sun C --> Trigon LoF 7.036453 1988.12.01
+M Venus D --> Quadrat LoF 7.036581 1988.12.01
+Z Quadrat Antiscion Venus D --> Sun 7.051917 1988.12.07
+Z Quadrat Contraantiscion Venus D --> Sun 7.051917 1988.12.07
+Z Antiscion Venus D --> Quadrat Sun 7.123422 1989.01.02
+Z Contraantiscion Venus D --> Quadrat Sun 7.123422 1989.01.02
+Z Sextil Mercury D --> Mars 7.137787 1989.01.08
+Z Antiscion Moon D --> Asc 7.148680 1989.01.12
+Z Oppositio Contraantiscion Moon D --> Asc 7.148680 1989.01.12
+M Contraantiscion Jupiter C --> Asc 7.205870 1989.02.02
+Z Mars C --> Sextil Mercury 7.261515 1989.02.23
+M Saturn C --> Jupiter 7.427150 1989.04.25
+Z Saturn C --> Jupiter 7.443018 1989.05.01
+M Venus C --> Trigon Moon 7.572781 1989.06.18
+Z Jupiter D --> Saturn 7.603418 1989.06.29
+Z Contraantiscion Sun D --> Quadrat Venus 7.615184 1989.07.04
+Z Antiscion Sun D --> Quadrat Venus 7.615184 1989.07.04
+M Jupiter D --> Saturn 7.653181 1989.07.18
+Z MC C --> Trigon Jupiter 7.777427 1989.09.02
+Z Trigon Jupiter D --> MC 7.826029 1989.09.20
+M Contraantiscion Jupiter D --> Oppositio LoF 7.897746 1989.10.16
+Z Trigon MC C --> Jupiter 7.934434 1989.10.30
+Z Quadrat Antiscion Moon D --> MC 8.365665 1990.04.07
+Z Quadrat Contraantiscion Moon D --> MC 8.365665 1990.04.07
+M Antiscion Jupiter D --> LoF 8.405937 1990.04.22
+Z Antiscion MC D --> Quadrat Moon 8.548557 1990.06.14
+Z Contraantiscion MC D --> Quadrat Moon 8.548557 1990.06.14
+M Antiscion Moon D --> Asc 8.624869 1990.07.12
+M Antiscion Mercury D --> Trigon Saturn 8.862829 1990.10.09
+Z Sextil Antiscion Venus C --> Venus 9.010989 1990.12.02
+Z Trigon Contraantiscion Venus C --> Venus 9.010989 1990.12.02
+Z Trigon Antiscion Jupiter D --> Mercury 9.079186 1990.12.28
+Z Sextil Contraantiscion Jupiter D --> Mercury 9.079186 1990.12.28
+Z Trigon Antiscion Mercury D --> Jupiter 9.219496 1991.02.18
+Z Sextil Contraantiscion Mercury D --> Jupiter 9.219496 1991.02.18
+M Antiscion Sun D --> LoF 9.443805 1991.05.12
+M Contraantiscion Sun D --> Oppositio LoF 9.443879 1991.05.12
+M Contraantiscion Mercury C --> Sextil Mercury 9.464545 1991.05.19
+M Moon C --> Trigon Mars 9.481358 1991.05.26
+Z Oppositio Venus C --> MC 9.501162 1991.06.02
+M Mars C --> Oppositio LoF 9.502352 1991.06.02
+M Contraantiscion Saturn D --> Quadrat Venus 9.561111 1991.06.24
+Z MC D --> Oppositio Venus 9.615675 1991.07.14
+Z Oppositio MC D --> Venus 9.615675 1991.07.14
+Z Quadrat Mars C --> Venus 9.675889 1991.08.06
+Z Antiscion Mercury D --> Trigon Jupiter 9.695263 1991.08.13
+Z Contraantiscion Mercury D --> Sextil Jupiter 9.695263 1991.08.13
+Z Contraantiscion Venus C --> Trigon Venus 9.713548 1991.08.20
+Z Antiscion Venus C --> Sextil Venus 9.713548 1991.08.20
+Z Venus D --> Quadrat Mars 9.838038 1991.10.05
+M Contraantiscion Mars D --> Trigon LoF 9.850954 1991.10.09
+Z Antiscion Jupiter D --> Trigon Mercury 9.890421 1991.10.24
+Z Contraantiscion Jupiter D --> Sextil Mercury 9.890421 1991.10.24
+M Contraantiscion Mercury D --> Sextil Saturn 9.897561 1991.10.27
+M Antiscion Mars D --> Sextil LoF 9.944740 1991.11.13
+Z Venus C --> Sextil Saturn 9.978801 1991.11.26
+M Venus C --> IC 10.002524 1991.12.05
+Z Antiscion Desc C --> Saturn 10.065722 1991.12.28
+Z Contraantiscion Desc C --> Oppositio Saturn 10.065722 1991.12.28
+M Contraantiscion Mercury C --> Quadrat Venus 10.079482 1992.01.02
+Z Sextil Saturn D --> Venus 10.103937 1992.01.11
+Z LoF C --> Trigon Venus 10.124946 1992.01.19
+M Contraantiscion Saturn D --> Sextil Mercury 10.167328 1992.02.04
+Z Trigon Antiscion Sun D --> Mercury 10.272945 1992.03.14
+Z Sextil Contraantiscion Sun D --> Mercury 10.272945 1992.03.14
+Z Trigon Venus D --> LoF 10.432774 1992.05.12
+Z Sextil Venus C --> Saturn 10.434364 1992.05.13
+Z Trigon Antiscion Mercury D --> Sun 10.449952 1992.05.19
+Z Sextil Contraantiscion Mercury D --> Sun 10.449952 1992.05.19
+Z Antiscion Saturn C --> LoF 10.692013 1992.08.17
+Z Oppositio Contraantiscion Saturn C --> LoF 10.692013 1992.08.17
+Z Quadrat Venus D --> Mars 10.704081 1992.08.21
+M Antiscion Saturn D --> Quadrat Venus 10.706692 1992.08.22
+Z Antiscion Mars D --> Trigon Mars 10.732535 1992.09.01
+Z Contraantiscion Mars D --> Sextil Mars 10.732535 1992.09.01
+M Mars D --> Trigon Moon 10.749959 1992.09.07
+Z Saturn D --> Sextil Venus 10.759079 1992.09.10
+Z Antiscion Mercury D --> Trigon Sun 10.934245 1992.11.14
+Z Contraantiscion Mercury D --> Sextil Sun 10.934245 1992.11.14
+Z Mars C --> Quadrat Venus 10.987677 1992.12.04
+Z Antiscion Asc C --> Trigon Mars 11.054708 1992.12.29
+Z Contraantiscion Asc C --> Sextil Mars 11.054708 1992.12.29
+Z Antiscion Sun D --> Trigon Mercury 11.175605 1993.02.12
+Z Contraantiscion Sun D --> Sextil Mercury 11.175605 1993.02.12
+Z Moon C --> Oppositio Sun 11.282639 1993.03.24
+Z Oppositio Moon C --> Sun 11.282639 1993.03.24
+M Antiscion Saturn D --> Trigon Mercury 11.292870 1993.03.27
+M Moon C --> Oppositio Sun 11.297967 1993.03.29
+M Jupiter C --> Mercury 11.365108 1993.04.23
+M Antiscion Mercury C --> Trigon Mercury 11.377057 1993.04.28
+Z Trigon Antiscion Mars D --> Mars 11.443374 1993.05.22
+Z Sextil Contraantiscion Mars D --> Mars 11.443374 1993.05.22
+Z Jupiter C --> Mercury 11.514017 1993.06.17
+Z Sun D --> Oppositio Moon 11.658609 1993.08.10
+Z Oppositio Sun D --> Moon 11.658609 1993.08.10
+Z Quadrat Asc D --> Venus 11.693540 1993.08.23
+M Saturn D --> Sextil Venus 11.811151 1993.10.05
+Z Mercury D --> Jupiter 11.886437 1993.11.02
+M Antiscion Mercury C --> Quadrat Venus 12.019872 1993.12.22
+M Mercury D --> Jupiter 12.095120 1994.01.19
+M Sun D --> Oppositio Moon 12.110465 1994.01.24
+Z Oppositio Asc C --> LoF 12.167228 1994.02.14
+Z Antiscion Asc D --> Trigon Venus 12.191539 1994.02.23
+Z Contraantiscion Asc D --> Sextil Venus 12.191539 1994.02.23
+M Moon C --> Oppositio Jupiter 12.393720 1994.05.09
+Z Saturn C --> Sextil Mars 12.395140 1994.05.10
+M Antiscion Venus D --> Quadrat Moon 12.414346 1994.05.17
+Z Moon C --> Oppositio Jupiter 12.440171 1994.05.26
+Z Oppositio Moon C --> Jupiter 12.440171 1994.05.26
+Z Trigon Antiscion Mars C --> Asc 12.572606 1994.07.14
+Z Sextil Contraantiscion Mars C --> Asc 12.572606 1994.07.14
+M Sun C --> Mercury 12.595070 1994.07.23
+Z LoF D --> Dsc 12.610468 1994.07.28
+Z Sun C --> Mercury 12.671494 1994.08.20
+Z MC C --> Sextil Mars 12.780922 1994.09.29
+M Contraantiscion Venus D --> Quadrat Moon 12.826676 1994.10.16
+Z Sextil Mars D --> Saturn 12.842093 1994.10.22
+Z Sextil Mars D --> MC 12.889491 1994.11.09
+Z Jupiter D --> Oppositio Moon 12.897984 1994.11.12
+Z Oppositio Jupiter D --> Moon 12.897984 1994.11.12
+Z Asc D --> Quadrat Venus 12.919225 1994.11.20
+Z Trigon Antiscion Venus D --> Asc 13.016580 1994.12.26
+Z Sextil Contraantiscion Venus D --> Asc 13.016580 1994.12.26
+Z Quadrat Antiscion Saturn D --> Venus 13.047474 1995.01.06
+Z Quadrat Contraantiscion Saturn D --> Venus 13.047474 1995.01.06
+M Saturn C --> Trigon LoF 13.088323 1995.01.21
+Z Mercury D --> Sun 13.125386 1995.02.04
+Z Mars D --> Sextil Saturn 13.140144 1995.02.09
+M Jupiter D --> Oppositio Moon 13.220567 1995.03.11
+M Antiscion Moon C --> Sextil Venus 13.286984 1995.04.05
+M Mercury D --> Sun 13.339056 1995.04.24
+Z Quadrat Venus C --> Asc 13.357277 1995.05.01
+Z Antiscion Venus D --> Quadrat Saturn 13.398092 1995.05.16
+Z Contraantiscion Venus D --> Quadrat Saturn 13.398092 1995.05.16
+Z Sextil Saturn C --> Mars 13.532794 1995.07.05
+Z Quadrat Antiscion Venus D --> Saturn 13.558415 1995.07.14
+Z Quadrat Contraantiscion Venus D --> Saturn 13.558415 1995.07.14
+M Contraantiscion Jupiter D --> Sextil Jupiter 13.827823 1995.10.22
+M Contraantiscion Mars C --> Quadrat Mars 13.928807 1995.11.29
+M Venus C --> Sextil Saturn 13.957641 1995.12.09
+Z Sextil Antiscion Moon C --> Venus 14.005751 1995.12.27
+Z Trigon Contraantiscion Moon C --> Venus 14.005751 1995.12.27
+Z Sextil MC C --> Mars 14.067028 1996.01.19
+M Contraantiscion Venus C --> Quadrat Mercury 14.209964 1996.03.12
+M Antiscion Jupiter D --> Trigon Jupiter 14.239396 1996.03.23
+M Antiscion Mars C --> Quadrat Mars 14.345231 1996.05.01
+Z Antiscion Saturn D --> Quadrat Venus 14.396547 1996.05.20
+Z Contraantiscion Saturn D --> Quadrat Venus 14.396547 1996.05.20
+Z Quadrat MC C --> LoF 14.437338 1996.06.04
+M Contraantiscion Moon D --> Quadrat Venus 14.442369 1996.06.06
+M Contraantiscion Moon C --> Trigon Venus 14.635298 1996.08.17
+M Antiscion Mercury D --> Sextil Moon 14.787824 1996.10.12
+M Contraantiscion Venus C --> Trigon Venus 14.874196 1996.11.14
+Z Sextil Antiscion Venus C --> Moon 14.999089 1996.12.30
+Z Trigon Contraantiscion Venus C --> Moon 14.999089 1996.12.30
+M Contraantiscion Jupiter D --> Sextil Sun 15.016039 1997.01.05
+M Contraantiscion Moon D --> Trigon Mercury 15.051149 1997.01.18
+Z Sextil Asc D --> Mercury 15.185810 1997.03.09
+Z Quadrat Antiscion Mercury C --> MC 15.207048 1997.03.17
+Z Quadrat Contraantiscion Mercury C --> MC 15.207048 1997.03.17
+Z Antiscion Moon C --> Sextil Venus 15.238941 1997.03.29
+Z Contraantiscion Moon C --> Trigon Venus 15.238941 1997.03.29
+Z Antiscion Venus C --> Sextil Moon 15.305646 1997.04.22
+Z Contraantiscion Venus C --> Trigon Moon 15.305646 1997.04.22
+M Antiscion Sun D --> Trigon Jupiter 15.305704 1997.04.22
+M Contraantiscion Sun D --> Sextil Jupiter 15.305763 1997.04.22
+Z LoF C --> Moon 15.373293 1997.05.17
+M Mars C --> Sextil Mercury 15.381880 1997.05.21
+M Mercury D --> Sextil Mars 15.401329 1997.05.28
+M Antiscion Jupiter D --> Trigon Sun 15.408253 1997.05.30
+M Contraantiscion Mercury D --> Trigon Moon 15.565595 1997.07.28
+M Contraantiscion Saturn D --> Oppositio LoF 15.719123 1997.09.23
+M Antiscion Venus C --> Quadrat Mercury 15.781307 1997.10.16
+M Contraantiscion Mars D --> Jupiter 15.921034 1997.12.06
+Z Antiscion Mars D --> Oppositio Jupiter 16.009109 1998.01.08
+Z Contraantiscion Mars D --> Jupiter 16.009109 1998.01.08
+Z Oppositio Antiscion Mars D --> Jupiter 16.009109 1998.01.08
+M Mars C --> Quadrat Venus 16.023883 1998.01.13
+Z Venus C --> Sextil Sun 16.030890 1998.01.16
+Z Moon D --> LoF 16.093388 1998.02.08
+M Antiscion Mars D --> Oppositio Jupiter 16.145058 1998.02.27
+Z Antiscion Desc C --> Sun 16.151475 1998.03.02
+Z Contraantiscion Desc C --> Oppositio Sun 16.151475 1998.03.02
+Z Sextil Sun D --> Venus 16.313661 1998.05.01
+Z Antiscion MC C --> Quadrat Mercury 16.324654 1998.05.05
+Z Contraantiscion MC C --> Quadrat Mercury 16.324654 1998.05.05
+Z Asc D --> Sextil Mercury 16.430167 1998.06.13
+M Antiscion Venus C --> Sextil Venus 16.474013 1998.06.29
+M Antiscion Sun D --> Trigon Sun 16.480258 1998.07.01
+M Contraantiscion Sun D --> Sextil Sun 16.480315 1998.07.01
+Z Sextil Venus C --> Sun 16.513390 1998.07.14
+Z Trigon Antiscion Saturn D --> Mercury 16.562853 1998.08.01
+Z Sextil Contraantiscion Saturn D --> Mercury 16.562853 1998.08.01
+M Antiscion Saturn D --> LoF 16.661146 1998.09.06
+M Antiscion Moon D --> Quadrat Venus 16.801251 1998.10.28
+Z Antiscion Jupiter D --> Oppositio Mars 16.852299 1998.11.16
+Z Contraantiscion Jupiter D --> Mars 16.852299 1998.11.16
+Z Oppositio Antiscion Jupiter D --> Mars 16.852299 1998.11.16
+Z Trigon Antiscion Mercury D --> MC 16.913755 1998.12.09
+Z Sextil Contraantiscion Mercury D --> MC 16.913755 1998.12.09
+M Contraantiscion Jupiter D --> Mars 16.985937 1999.01.05
+Z Trigon Antiscion Mercury D --> Saturn 17.015034 1999.01.15
+Z Sextil Contraantiscion Mercury D --> Saturn 17.015034 1999.01.15
+Z Antiscion MC D --> Trigon Mercury 17.092764 1999.02.13
+Z Contraantiscion MC D --> Sextil Mercury 17.092764 1999.02.13
+M Contraantiscion Mars D --> Sun 17.137303 1999.03.02
+Z Sextil Mercury C --> Asc 17.140217 1999.03.03
+Z Venus C --> Sextil Jupiter 17.185967 1999.03.20
+Z Antiscion Mars D --> Oppositio Sun 17.260894 1999.04.16
+Z Contraantiscion Mars D --> Sun 17.260894 1999.04.16
+Z Oppositio Antiscion Mars D --> Sun 17.260894 1999.04.16
+M Venus D --> Quadrat Mars 17.289401 1999.04.27
+Z Antiscion Desc C --> Jupiter 17.292093 1999.04.28
+Z Contraantiscion Desc C --> Oppositio Jupiter 17.292093 1999.04.28
+Z Moon C --> Trigon Mars 17.319451 1999.05.08
+Z Sun D --> Sextil Venus 17.335874 1999.05.14
+Z Antiscion Mercury D --> Trigon Saturn 17.337606 1999.05.15
+Z Contraantiscion Mercury D --> Sextil Saturn 17.337606 1999.05.15
+M Antiscion Jupiter D --> Oppositio Mars 17.346056 1999.05.18
+M Antiscion Moon D --> Sextil Mercury 17.367492 1999.05.26
+M Antiscion Mars D --> Oppositio Sun 17.387423 1999.06.02
+Z Antiscion Asc C --> Oppositio Mercury 17.398821 1999.06.07
+Z Contraantiscion Asc C --> Mercury 17.398821 1999.06.07
+Z Antiscion Sun C --> LoF 17.463768 1999.07.01
+Z Oppositio Contraantiscion Sun C --> LoF 17.463768 1999.07.01
+Z Sextil Jupiter D --> Venus 17.501794 1999.07.15
+Z Sextil Venus C --> Jupiter 17.652746 1999.09.09
+M Mars D --> Trigon Venus 17.768441 1999.10.21
+M Moon C --> Sextil LoF 17.862341 1999.11.25
+Z Antiscion Saturn D --> Trigon Mercury 17.893591 1999.12.07
+Z Contraantiscion Saturn D --> Sextil Mercury 17.893591 1999.12.07
+Z Quadrat Antiscion Moon D --> Venus 18.044385 2000.02.01
+Z Quadrat Contraantiscion Moon D --> Venus 18.044385 2000.02.01
+Z Antiscion Sun D --> Oppositio Mars 18.114127 2000.02.27
+Z Contraantiscion Sun D --> Mars 18.114127 2000.02.27
+Z Oppositio Antiscion Sun D --> Mars 18.114127 2000.02.27
+Z Trigon Mars D --> Moon 18.211854 2000.04.03
+Z Mars D --> Trigon Moon 18.234477 2000.04.11
+Z Trigon Antiscion Venus C --> MC 18.367532 2000.05.31
+Z Sextil Contraantiscion Venus C --> MC 18.367532 2000.05.31
+Z Antiscion Venus D --> Quadrat Moon 18.381917 2000.06.05
+Z Contraantiscion Venus D --> Quadrat Moon 18.381917 2000.06.05
+M Mars D --> Quadrat Mercury 18.410444 2000.06.16
+M Antiscion Sun D --> Oppositio Mars 18.427509 2000.06.22
+M Contraantiscion Sun D --> Mars 18.427561 2000.06.22
+M Mercury C --> Quadrat Mars 18.433723 2000.06.24
+M Saturn C --> Mercury 18.456598 2000.07.03
+Z Jupiter D --> Sextil Venus 18.594360 2000.08.23
+Z Saturn C --> Mercury 18.714138 2000.10.06
+Z Trigon Antiscion Saturn C --> Venus 18.724059 2000.10.10
+Z Sextil Contraantiscion Saturn C --> Venus 18.724059 2000.10.10
+M Sun D --> Sextil Venus 18.745870 2000.10.18
+Z Antiscion Jupiter C --> LoF 18.759120 2000.10.23
+Z Oppositio Contraantiscion Jupiter C --> LoF 18.759120 2000.10.23
+M Antiscion Saturn C --> Trigon Venus 18.907902 2000.12.17
+Z Quadrat Antiscion Venus D --> Moon 18.938322 2000.12.29
+Z Quadrat Contraantiscion Venus D --> Moon 18.938322 2000.12.29
+M Contraantiscion Mercury C --> Asc 18.959028 2001.01.05
+Z Trigon Moon C --> Mars 18.978074 2001.01.12
+Z Quadrat Mars C --> MC 19.020454 2001.01.28
+M Contraantiscion Mars D --> Sextil Mars 19.153709 2001.03.18
+M Venus C --> Trigon Mars 19.171739 2001.03.25
+Z Trigon MC C --> Mercury 19.189330 2001.04.01
+Z MC C --> Trigon Mercury 19.350455 2001.05.30
+M Antiscion Mars D --> Trigon Mars 19.447092 2001.07.05
+Z Trigon Mercury D --> MC 19.529463 2001.08.05
+M Antiscion Moon C --> Oppositio Moon 19.558426 2001.08.15
+Z MC D --> Quadrat Mars 19.572286 2001.08.20
+M Contraantiscion Saturn C --> Sextil Venus 19.577433 2001.08.22
+Z Mercury D --> Saturn 19.735787 2001.10.20
+M Jupiter D --> Sextil Venus 19.823781 2001.11.22
+Z Antiscion Moon D --> Quadrat Venus 19.827478 2001.11.23
+Z Contraantiscion Moon D --> Quadrat Venus 19.827478 2001.11.23
+Z Trigon Antiscion Venus C --> Saturn 19.882793 2001.12.13
+Z Sextil Contraantiscion Venus C --> Saturn 19.882793 2001.12.13
+Z Antiscion MC C --> Trigon Venus 19.885529 2001.12.14
+Z Contraantiscion MC C --> Sextil Venus 19.885529 2001.12.14
+Z Sextil Asc C --> Venus 19.995627 2002.01.24
+Z Oppositio Antiscion Mercury C --> Asc 20.113399 2002.03.09
+Z Contraantiscion Mercury C --> Asc 20.113399 2002.03.09
+M Mercury D --> Saturn 20.239886 2002.04.25
+Z LoF C --> Oppositio Saturn 20.251434 2002.04.29
+Z Antiscion Moon C --> Oppositio Moon 20.407002 2002.06.26
+Z Contraantiscion Moon C --> Moon 20.407002 2002.06.26
+Z Oppositio Antiscion Moon C --> Moon 20.407002 2002.06.26
+M Contraantiscion Moon C --> Moon 20.441695 2002.07.08
+Z Antiscion Saturn C --> Trigon Venus 20.503837 2002.07.31
+Z Contraantiscion Saturn C --> Sextil Venus 20.503837 2002.07.31
+M Contraantiscion Moon D --> LoF 20.626412 2002.09.15
+M Antiscion Venus D --> Sextil Mercury 20.679834 2002.10.05
+Z Antiscion Venus C --> Trigon Saturn 20.744340 2002.10.28
+Z Contraantiscion Venus C --> Sextil Saturn 20.744340 2002.10.28
+M Contraantiscion Venus D --> Trigon Mercury 20.752402 2002.10.31
+Z Sextil MC D --> LoF 20.983419 2003.01.25
+Z Antiscion Mars C --> Quadrat Mars 21.048419 2003.02.18
+Z Contraantiscion Mars C --> Quadrat Mars 21.048419 2003.02.18
+Z Quadrat MC D --> Mars 21.061718 2003.02.23
+Z Trigon Antiscion Jupiter D --> Jupiter 21.239400 2003.04.30
+Z Sextil Contraantiscion Jupiter D --> Jupiter 21.239400 2003.04.30
+M Antiscion Mercury C --> Dsc 21.301971 2003.05.23
+M Venus C --> Sextil Sun 21.394075 2003.06.26
+Z Oppositio Saturn D --> LoF 21.516520 2003.08.10
+M Contraantiscion Saturn D --> Sextil Jupiter 21.573828 2003.09.01
+M Contraantiscion Jupiter D --> Sextil Saturn 21.607761 2003.09.13
+Z Sextil Antiscion Moon D --> Mercury 21.654561 2003.10.01
+Z Trigon Contraantiscion Moon D --> Mercury 21.654561 2003.10.01
+M Antiscion Mercury D --> Sextil Venus 21.815180 2003.11.29
+M Antiscion Jupiter D --> Trigon Saturn 21.892577 2003.12.28
+Z Asc C --> Sextil Venus 21.936297 2004.01.13
+Z Antiscion Jupiter D --> Trigon Jupiter 22.047334 2004.02.23
+Z Contraantiscion Jupiter D --> Sextil Jupiter 22.047334 2004.02.23
+Z Antiscion Desc C --> Sextil Mars 22.100072 2004.03.14
+Z Contraantiscion Desc C --> Trigon Mars 22.100072 2004.03.14
+Z Venus C --> Trigon Mars 22.129876 2004.03.25
+M Contraantiscion Venus C --> Trigon Moon 22.135690 2004.03.27
+M Contraantiscion Mercury D --> Trigon Venus 22.288184 2004.05.23
+M Antiscion Saturn D --> Trigon Jupiter 22.322319 2004.06.04
+Z Antiscion Mercury D --> Sextil Moon 22.379703 2004.06.26
+Z Contraantiscion Mercury D --> Trigon Moon 22.379703 2004.06.26
+Z Sextil Antiscion Mercury D --> Moon 22.443381 2004.07.19
+Z Trigon Contraantiscion Mercury D --> Moon 22.443381 2004.07.19
+M Antiscion Mercury D --> Quadrat Mercury 22.457995 2004.07.25
+Z Sextil Contraantiscion Sun D --> Jupiter 22.467529 2004.07.28
+Z Trigon Antiscion Sun D --> Jupiter 22.467529 2004.07.28
+Z Trigon Antiscion Jupiter D --> Sun 22.506885 2004.08.12
+Z Sextil Contraantiscion Jupiter D --> Sun 22.506885 2004.08.12
+M Antiscion Moon D --> Oppositio LoF 22.553178 2004.08.29
+Z Trigon Mars D --> Venus 22.586848 2004.09.10
+M Venus C --> Sextil Jupiter 22.734558 2004.11.04
+M Contraantiscion Saturn D --> Sextil Sun 22.746941 2004.11.09
+M Contraantiscion Mercury D --> Quadrat Mercury 22.903120 2005.01.06
+Z Antiscion Asc D --> LoF 22.991736 2005.02.08
+M Antiscion Sun D --> Trigon Saturn 22.996195 2005.02.09
+M Contraantiscion Sun D --> Sextil Saturn 22.996236 2005.02.09
+M Moon C --> Oppositio Mercury 23.048026 2005.03.01
+M Contraantiscion Mars C --> Quadrat LoF 23.231563 2005.05.07
+Z Antiscion Jupiter D --> Trigon Sun 23.247496 2005.05.13
+Z Contraantiscion Jupiter D --> Sextil Sun 23.247496 2005.05.13
+Z Trigon Antiscion Moon C --> MC 23.268250 2005.05.21
+Z Sextil Contraantiscion Moon C --> MC 23.268250 2005.05.21
+Z Asc D --> Mars 23.272265 2005.05.23
+Z Antiscion Moon D --> Sextil Mercury 23.273082 2005.05.23
+Z Contraantiscion Moon D --> Trigon Mercury 23.273082 2005.05.23
+Z Antiscion Sun D --> Trigon Jupiter 23.291734 2005.05.30
+Z Contraantiscion Sun D --> Sextil Jupiter 23.291734 2005.05.30
+Z Sextil Venus D --> Asc 23.426638 2005.07.19
+M Antiscion Saturn D --> Trigon Sun 23.456654 2005.07.30
+Z Mars D --> Trigon Venus 23.472500 2005.08.05
+Z Moon C --> Oppositio Mercury 23.545499 2005.09.01
+Z Oppositio Moon C --> Mercury 23.545499 2005.09.01
+Z Sextil Antiscion Mars D --> MC 23.553727 2005.09.04
+Z Trigon Contraantiscion Mars D --> MC 23.553727 2005.09.04
+Z Antiscion MC D --> Sextil Mars 23.662296 2005.10.14
+Z Contraantiscion MC D --> Trigon Mars 23.662296 2005.10.14
+Z Trigon Antiscion Sun D --> Sun 23.738596 2005.11.11
+Z Sextil Contraantiscion Sun D --> Sun 23.738596 2005.11.11
+Z Antiscion Desc D --> Asc 23.832751 2005.12.16
+Z Contraantiscion Desc D --> Asc 23.832751 2005.12.16
+M Antiscion Mars C --> Quadrat LoF 23.847584 2005.12.22
+M Contraantiscion Mars D --> Saturn 23.884650 2006.01.04
+Z Quadrat Antiscion Mars C --> Mars 23.923061 2006.01.19
+Z Quadrat Contraantiscion Mars C --> Mars 23.923061 2006.01.19
+Z Antiscion Mars D --> Oppositio Saturn 23.939777 2006.01.25
+Z Contraantiscion Mars D --> Saturn 23.939777 2006.01.25
+Z Oppositio Antiscion Mars D --> Saturn 23.939777 2006.01.25
+M Antiscion Venus C --> Sextil Moon 24.046794 2006.03.05
+M Antiscion Mars D --> Oppositio Saturn 24.279539 2006.05.31
+Z Sextil Antiscion Mars C --> LoF 24.309963 2006.06.11
+Z Trigon Contraantiscion Mars C --> LoF 24.309963 2006.06.11
+Z Antiscion Sun D --> Trigon Sun 24.487870 2006.08.16
+Z Contraantiscion Sun D --> Sextil Sun 24.487870 2006.08.16
+Z Trigon Antiscion Sun C --> Venus 24.517944 2006.08.27
+Z Sextil Contraantiscion Sun C --> Venus 24.517944 2006.08.27
+Z Trigon Venus C --> Mars 24.677741 2006.10.25
+M Contraantiscion Saturn D --> Mars 24.691802 2006.10.30
+Z Mars C --> Asc 24.698845 2006.11.02
+Z Antiscion Saturn D --> Oppositio Mars 24.708602 2006.11.05
+Z Contraantiscion Saturn D --> Mars 24.708602 2006.11.05
+Z Oppositio Antiscion Saturn D --> Mars 24.708602 2006.11.05
+Z Mercury C --> Quadrat Mars 24.791120 2006.12.06
+M Antiscion Moon C --> Saturn 24.846084 2006.12.26
+M Antiscion Saturn C --> Moon 24.961384 2007.02.07
+Z Quadrat Venus C --> LoF 25.068406 2007.03.19
+Z LoF D --> Quadrat Venus 25.103991 2007.04.01
+Z Mercury D --> Oppositio Moon 25.201606 2007.05.07
+Z Oppositio Mercury D --> Moon 25.201606 2007.05.07
+Z Antiscion Moon C --> Saturn 25.210520 2007.05.10
+Z Contraantiscion Moon C --> Oppositio Saturn 25.210520 2007.05.10
+Z Oppositio Contraantiscion Moon C --> Saturn 25.210520 2007.05.10
+M Mars C --> Asc 25.294260 2007.06.10
+M Antiscion Saturn D --> Oppositio Mars 25.337226 2007.06.26
+M Contraantiscion Moon C --> Oppositio Saturn 25.337258 2007.06.26
+M Contraantiscion Saturn C --> Oppositio Moon 25.411845 2007.07.24
+Z Contraantiscion MC C --> Sextil Moon 25.545026 2007.09.11
+Z Antiscion MC C --> Trigon Moon 25.545026 2007.09.11
+Z Antiscion Saturn C --> Moon 25.589875 2007.09.28
+Z Contraantiscion Saturn C --> Oppositio Moon 25.589875 2007.09.28
+Z Oppositio Contraantiscion Saturn C --> Moon 25.589875 2007.09.28
+Z Trigon Antiscion Jupiter C --> Venus 25.613647 2007.10.07
+Z Sextil Contraantiscion Jupiter C --> Venus 25.613647 2007.10.07
+Z Trigon Antiscion Venus C --> Sun 25.789179 2007.12.11
+Z Sextil Contraantiscion Venus C --> Sun 25.789179 2007.12.11
+M Contraantiscion Sun C --> Sextil Venus 25.842568 2007.12.30
+M Antiscion Sun C --> Trigon Venus 25.842622 2007.12.30
+Z LoF C --> Oppositio Sun 26.151093 2008.04.23
+M Mercury D --> Oppositio Moon 26.164881 2008.04.28
+Z Quadrat Mars D --> Mercury 26.300374 2008.06.17
+M Contraantiscion Moon D --> Trigon Jupiter 26.505866 2008.09.02
+Z Sextil Antiscion Mercury D --> Venus 26.618383 2008.10.13
+Z Trigon Contraantiscion Mercury D --> Venus 26.618383 2008.10.13
+Z Mars D --> Quadrat Mercury 26.768190 2008.12.08
+Z Contraantiscion Venus D --> Trigon Mercury 26.824370 2008.12.29
+Z Antiscion Venus D --> Sextil Mercury 26.824370 2008.12.29
+M Contraantiscion Venus D --> Trigon LoF 26.835505 2009.01.02
+Z Trigon Antiscion Venus C --> Jupiter 26.896178 2009.01.25
+Z Sextil Contraantiscion Venus C --> Jupiter 26.896178 2009.01.25
+M Antiscion Jupiter C --> Trigon Venus 26.920532 2009.02.03
+Z Asc C --> Oppositio Moon 27.000172 2009.03.04
+Z Oppositio Asc C --> Moon 27.000172 2009.03.04
+Z Sextil Antiscion Venus D --> Mercury 27.011389 2009.03.08
+Z Trigon Contraantiscion Venus D --> Mercury 27.011389 2009.03.08
+M Antiscion Venus D --> Sextil LoF 27.023708 2009.03.13
+Z Antiscion Sun C --> Trigon Venus 27.080632 2009.04.03
+Z Contraantiscion Sun C --> Sextil Venus 27.080632 2009.04.03
+Z LoF C --> Oppositio Jupiter 27.256832 2009.06.07
+M Contraantiscion Jupiter D --> Trigon Moon 27.267358 2009.06.11
+M Contraantiscion Jupiter C --> Sextil Venus 27.292686 2009.06.20
+M Antiscion Jupiter D --> Sextil Moon 27.459963 2009.08.21
+Z Sextil Asc D --> Jupiter 27.517284 2009.09.12
+Z Antiscion Mercury D --> Sextil Venus 27.564018 2009.09.29
+Z Contraantiscion Mercury D --> Trigon Venus 27.564018 2009.09.29
+Z Antiscion Venus C --> Trigon Sun 27.651371 2009.10.31
+Z Contraantiscion Venus C --> Sextil Sun 27.651371 2009.10.31
+M Contraantiscion Moon D --> Trigon Sun 27.683938 2009.11.12
+M Moon D --> Dsc 27.818350 2010.01.01
+Z Sextil Antiscion Saturn C --> MC 27.889570 2010.01.27
+Z Trigon Contraantiscion Saturn C --> MC 27.889570 2010.01.27
+Z MC C --> Quadrat Moon 27.894661 2010.01.29
+M Mercury C --> Quadrat LoF 27.948090 2010.02.18
+M Antiscion Moon D --> Sextil Jupiter 28.021798 2010.03.17
+Z Quadrat Moon D --> MC 28.077554 2010.04.07
+Z Antiscion Desc C --> Mercury 28.235139 2010.06.04
+Z Contraantiscion Desc C --> Oppositio Mercury 28.235139 2010.06.04
+M Contraantiscion Venus C --> Sextil Saturn 28.258093 2010.06.13
+Z Oppositio Sun D --> LoF 28.288276 2010.06.24
+Z Quadrat Mercury C --> Mars 28.309512 2010.07.02
+Z Antiscion Jupiter C --> Trigon Venus 28.339117 2010.07.13
+Z Contraantiscion Jupiter C --> Sextil Venus 28.339117 2010.07.13
+Z Asc D --> Sextil Jupiter 28.377920 2010.07.27
+Z LoF D --> Trigon Mercury 28.499245 2010.09.10
+Z Sextil Venus C --> Mercury 28.583696 2010.10.11
+M Antiscion Sun D --> Sextil Moon 28.590723 2010.10.14
+M Contraantiscion Sun D --> Trigon Moon 28.590750 2010.10.14
+Z Trigon Antiscion Jupiter D --> MC 28.617189 2010.10.24
+Z Sextil Contraantiscion Jupiter D --> MC 28.617189 2010.10.24
+Z Venus C --> Sextil Mercury 28.621172 2010.10.25
+Z Antiscion MC D --> Trigon Jupiter 28.665791 2010.11.11
+Z Contraantiscion MC D --> Sextil Jupiter 28.665791 2010.11.11
+M Jupiter C --> Quadrat Mars 28.686246 2010.11.18
+Z Trigon Mercury C --> LoF 28.726123 2010.12.03
+Z Sextil Asc D --> Sun 28.802621 2011.01.01
+Z Trigon Antiscion Saturn D --> Jupiter 28.931298 2011.02.17
+Z Sextil Contraantiscion Saturn D --> Jupiter 28.931298 2011.02.17
+Z Contraantiscion Venus C --> Sextil Jupiter 28.987807 2011.03.10
+Z Antiscion Venus C --> Trigon Jupiter 28.987807 2011.03.10
+M Antiscion Moon D --> Sextil Sun 29.117551 2011.04.27
+Z Trigon Asc C --> MC 29.133742 2011.05.03
+M Antiscion Moon C --> Sextil Mars 29.164169 2011.05.14
+Z Quadrat MC C --> Moon 29.170826 2011.05.17
+Z Sextil Mercury D --> Venus 29.234091 2011.06.09
+M Contraantiscion Saturn D --> Sextil Saturn 29.254881 2011.06.17
+Z Trigon Antiscion Jupiter D --> Saturn 29.269541 2011.06.22
+Z Sextil Contraantiscion Jupiter D --> Saturn 29.269541 2011.06.22
+Z Oppositio Moon D --> Asc 29.294538 2011.07.02
+M Contraantiscion Moon C --> Trigon Mars 29.335145 2011.07.17
+M Venus C --> Sextil LoF 29.424559 2011.08.19
+Z Antiscion Jupiter D --> Trigon Saturn 29.450230 2011.08.28
+Z Contraantiscion Jupiter D --> Sextil Saturn 29.450230 2011.08.28
+Z Antiscion Mars D --> Moon 29.462220 2011.09.02
+Z Contraantiscion Mars D --> Oppositio Moon 29.462220 2011.09.02
+Z Oppositio Contraantiscion Mars D --> Moon 29.462220 2011.09.02
+Z Asc D --> Sextil Sun 29.557433 2011.10.07
+Z Oppositio Jupiter D --> LoF 29.583628 2011.10.17
+M Contraantiscion Mars C --> Venus 29.616109 2011.10.29
+M Contraantiscion Moon D --> Oppositio Mars 29.637020 2011.11.06
+M Contraantiscion Mars D --> Oppositio Moon 29.677865 2011.11.21
+M Antiscion Saturn D --> Trigon Saturn 29.749469 2011.12.17
+Z Antiscion Saturn D --> Trigon Jupiter 29.794044 2012.01.03
+Z Contraantiscion Saturn D --> Sextil Jupiter 29.794044 2012.01.03
+Z Trigon Antiscion Sun D --> MC 29.798311 2012.01.04
+Z Sextil Contraantiscion Sun D --> MC 29.798311 2012.01.04
+Z Antiscion MC D --> Trigon Sun 29.834790 2012.01.18
+Z Contraantiscion MC D --> Sextil Sun 29.834790 2012.01.18
+Z Antiscion Moon D --> Mars 29.987848 2012.03.15
+Z Contraantiscion Moon D --> Oppositio Mars 29.987848 2012.03.15
+Z Oppositio Contraantiscion Moon D --> Mars 29.987848 2012.03.15
+M Sun C --> Quadrat Mars 30.000652 2012.03.19
+M Antiscion Saturn C --> Oppositio Saturn 30.065272 2012.04.12
+M Antiscion Mars D --> Moon 30.197051 2012.05.31
+Z Trigon Antiscion Saturn D --> Sun 30.220487 2012.06.09
+Z Sextil Contraantiscion Saturn D --> Sun 30.220487 2012.06.09
+Z Antiscion Mars C --> Oppositio Venus 30.263542 2012.06.25
+Z Contraantiscion Mars C --> Venus 30.263542 2012.06.25
+Z Oppositio Antiscion Mars C --> Venus 30.263542 2012.06.25
+Z Antiscion Saturn C --> Oppositio Saturn 30.317156 2012.07.15
+Z Contraantiscion Saturn C --> Saturn 30.317156 2012.07.15
+Z Oppositio Antiscion Saturn C --> Saturn 30.317156 2012.07.15
+M Contraantiscion Saturn C --> Saturn 30.331028 2012.07.20
+M Antiscion Mars C --> Oppositio Venus 30.369114 2012.08.03
+M Antiscion Venus C --> Trigon Saturn 30.431654 2012.08.26
+Z Quadrat Antiscion Mercury D --> Mercury 30.440924 2012.08.30
+Z Quadrat Contraantiscion Mercury D --> Mercury 30.440924 2012.08.30
+M Mars D --> Quadrat Jupiter 30.490290 2012.09.17
+Z Sextil Jupiter C --> Asc 30.495235 2012.09.19
+Z Sextil Contraantiscion Sun D --> Saturn 30.520366 2012.09.28
+Z Trigon Antiscion Sun D --> Saturn 30.520366 2012.09.28
+Z Antiscion Sun D --> Trigon Saturn 30.669795 2012.11.23
+Z Contraantiscion Sun D --> Sextil Saturn 30.669795 2012.11.23
+Z Antiscion Mercury D --> Quadrat Mercury 30.825915 2013.01.20
+Z Contraantiscion Mercury D --> Quadrat Mercury 30.825915 2013.01.20
+M Antiscion Moon D --> Mars 30.934160 2013.03.01
+Z Antiscion Saturn D --> Trigon Sun 30.968888 2013.03.14
+Z Contraantiscion Saturn D --> Sextil Sun 30.968888 2013.03.14
+M Antiscion Moon C --> Sun 31.004609 2013.03.27
+Z Antiscion Moon C --> Sun 31.019929 2013.04.02
+Z Contraantiscion Moon C --> Oppositio Sun 31.019929 2013.04.02
+Z Oppositio Contraantiscion Moon C --> Sun 31.019929 2013.04.02
+M Contraantiscion Moon C --> Oppositio Sun 31.039112 2013.04.09
+Z Antiscion MC C --> Sextil Saturn 31.049270 2013.04.13
+Z Contraantiscion MC C --> Trigon Saturn 31.049270 2013.04.13
+Z Mercury D --> Sextil Venus 31.082230 2013.04.25
+Z Antiscion Mercury C --> LoF 31.602438 2013.11.03
+Z Oppositio Contraantiscion Mercury C --> LoF 31.602438 2013.11.03
+M Contraantiscion Sun C --> Oppositio Moon 31.668853 2013.11.28
+M Antiscion Sun C --> Moon 31.668891 2013.11.28
+Z Asc C --> Saturn 31.706853 2013.12.12
+M Mars D --> Quadrat Sun 31.732654 2013.12.22
+Z Sextil Sun C --> Asc 31.852528 2014.02.04
+Z LoF C --> Trigon Mars 31.917789 2014.02.28
+Z Antiscion Sun C --> Moon 32.065611 2014.04.24
+Z Contraantiscion Sun C --> Oppositio Moon 32.065611 2014.04.24
+Z Oppositio Contraantiscion Sun C --> Moon 32.065611 2014.04.24
+M Contraantiscion Moon C --> Oppositio Jupiter 32.066921 2014.04.24
+Z Antiscion Moon C --> Jupiter 32.108753 2014.05.10
+Z Oppositio Contraantiscion Moon C --> Jupiter 32.108753 2014.05.10
+Z Contraantiscion Moon C --> Oppositio Jupiter 32.108753 2014.05.10
+M Antiscion Moon C --> Jupiter 32.114737 2014.05.12
+M Antiscion Jupiter C --> Moon 32.778993 2015.01.13
+Z MC C --> Quadrat Saturn 32.938554 2015.03.13
+Z Quadrat Saturn D --> MC 33.041461 2015.04.20
+M Contraantiscion Jupiter C --> Oppositio Moon 33.041779 2015.04.20
+M Mercury D --> Sextil Venus 33.192237 2015.06.15
+M Contraantiscion Venus D --> Trigon Jupiter 33.250506 2015.07.07
+Z Trigon Antiscion Mars D --> Venus 33.251083 2015.07.07
+Z Sextil Contraantiscion Mars D --> Venus 33.251083 2015.07.07
+M Contraantiscion Venus C --> Mars 33.257860 2015.07.09
+Z Antiscion Jupiter C --> Moon 33.304986 2015.07.27
+Z Contraantiscion Jupiter C --> Oppositio Moon 33.304986 2015.07.27
+Z Oppositio Contraantiscion Jupiter C --> Moon 33.304986 2015.07.27
+Z Antiscion Venus D --> Trigon Mars 33.315666 2015.07.31
+Z Contraantiscion Venus D --> Sextil Mars 33.315666 2015.07.31
+Z Sextil Antiscion Sun C --> MC 33.554618 2015.10.27
+Z Trigon Contraantiscion Sun C --> MC 33.554618 2015.10.27
+M Antiscion Venus D --> Sextil Jupiter 33.713710 2015.12.25
+Z Quadrat MC C --> Saturn 33.845949 2016.02.12
+Z Mercury C --> Venus 33.911755 2016.03.08
+M Contraantiscion Jupiter D --> Trigon Venus 33.979939 2016.04.02
+M Antiscion Jupiter D --> Sextil Venus 34.063177 2016.05.03
+Z Sextil Antiscion Moon D --> Jupiter 34.153886 2016.06.06
+Z Trigon Contraantiscion Moon D --> Jupiter 34.153886 2016.06.06
+M Saturn D --> Asc 34.200802 2016.06.23
+M Contraantiscion Moon D --> Trigon Saturn 34.219388 2016.06.30
+M Antiscion Saturn C --> Trigon Mars 34.233284 2016.07.05
+Z Antiscion Jupiter D --> Sextil Moon 34.334352 2016.08.12
+Z Contraantiscion Jupiter D --> Trigon Moon 34.334352 2016.08.12
+M Contraantiscion Saturn C --> Sextil Mars 34.348204 2016.08.17
+Z Trigon MC D --> Asc 34.362364 2016.08.22
+M Contraantiscion Mercury D --> Quadrat Jupiter 34.473689 2016.10.02
+M Mercury C --> Venus 34.477867 2016.10.04
+M Contraantiscion Venus D --> Trigon Sun 34.535887 2016.10.25
+M Antiscion Mercury D --> Quadrat Jupiter 34.553115 2016.11.01
+M Contraantiscion Jupiter D --> Quadrat Mercury 34.593960 2016.11.16
+Z Sextil Asc D --> MC 34.619985 2016.11.26
+Z Sextil Antiscion Jupiter C --> MC 34.624851 2016.11.28
+Z Trigon Contraantiscion Jupiter C --> MC 34.624851 2016.11.28
+M Antiscion Jupiter D --> Quadrat Mercury 34.667194 2016.12.13
+Z Antiscion Venus C --> Oppositio Mars 34.772719 2017.01.21
+Z Contraantiscion Venus C --> Mars 34.772719 2017.01.21
+Z Oppositio Antiscion Venus C --> Mars 34.772719 2017.01.21
+M Contraantiscion Saturn D --> Trigon Moon 34.842543 2017.02.16
+Z Sextil Antiscion Jupiter D --> Moon 34.861252 2017.02.23
+Z Trigon Contraantiscion Jupiter D --> Moon 34.861252 2017.02.23
+Z Saturn D --> Asc 34.914751 2017.03.15
+Z Antiscion Moon D --> Sextil Jupiter 34.998486 2017.04.15
+Z Contraantiscion Moon D --> Trigon Jupiter 34.998486 2017.04.15
+Z Antiscion Mars C --> Sextil Moon 35.049790 2017.05.04
+Z Contraantiscion Mars C --> Trigon Moon 35.049790 2017.05.04
+M Antiscion Venus D --> Sextil Sun 35.054192 2017.05.06
+Z LoF D --> Oppositio Mars 35.115889 2017.05.28
+Z Trigon Mars D --> LoF 35.134471 2017.06.04
+M Antiscion Saturn D --> Sextil Moon 35.152427 2017.06.11
+M Antiscion Moon D --> Sextil Saturn 35.196330 2017.06.27
+M Antiscion Sun D --> Sextil Venus 35.226129 2017.07.08
+M Contraantiscion Sun D --> Trigon Venus 35.226140 2017.07.08
+M Saturn C --> Quadrat Mars 35.266171 2017.07.23
+M Contraantiscion Venus C --> Sextil Sun 35.388844 2017.09.07
+Z Antiscion Mars D --> Trigon Venus 35.403767 2017.09.12
+Z Contraantiscion Mars D --> Sextil Venus 35.403767 2017.09.12
+Z Sextil Antiscion Moon D --> Sun 35.456718 2017.10.02
+Z Trigon Contraantiscion Moon D --> Sun 35.456718 2017.10.02
+Z Trigon Antiscion Venus D --> Mars 35.497124 2017.10.17
+Z Sextil Contraantiscion Venus D --> Mars 35.497124 2017.10.17
+Z Jupiter C --> Quadrat Mars 35.528394 2017.10.28
+Z Contraantiscion Sun D --> Trigon Moon 35.537531 2017.11.01
+Z Antiscion Sun D --> Sextil Moon 35.537531 2017.11.01
+M Antiscion Venus C --> Oppositio Mars 35.645752 2017.12.11
+Z Asc D --> Sextil Saturn 35.653449 2017.12.14
+Z Sextil Asc D --> Saturn 35.660520 2017.12.16
+M Contraantiscion Mercury D --> Quadrat Sun 35.663677 2017.12.17
+M Venus C --> Sextil Mercury 35.768434 2018.01.25
+M Antiscion Mercury D --> Quadrat Sun 35.797051 2018.02.05
+M Antiscion Sun D --> Quadrat Mercury 35.833091 2018.02.18
+M Contraantiscion Sun D --> Quadrat Mercury 35.833101 2018.02.18
+Z Quadrat Antiscion Venus D --> LoF 35.892913 2018.03.12
+Z Quadrat Contraantiscion Venus D --> LoF 35.892913 2018.03.12
+Z Antiscion Desc D --> Quadrat Venus 35.944238 2018.03.31
+Z Contraantiscion Desc D --> Quadrat Venus 35.944238 2018.03.31
+Z Trigon Antiscion Saturn D --> MC 35.959590 2018.04.06
+Z Sextil Contraantiscion Saturn D --> MC 35.959590 2018.04.06
+Z Antiscion MC D --> Trigon Saturn 35.959823 2018.04.06
+Z Contraantiscion MC D --> Sextil Saturn 35.959823 2018.04.06
+M Antiscion Saturn C --> Oppositio Sun 36.009761 2018.04.24
+Z Contraantiscion Saturn C --> Sun 36.034364 2018.05.04
+Z Oppositio Antiscion Saturn C --> Sun 36.034364 2018.05.04
+Z Antiscion Saturn C --> Oppositio Sun 36.034364 2018.05.04
+Z Oppositio Mars C --> LoF 36.041503 2018.05.06
+M Contraantiscion Saturn C --> Sun 36.060392 2018.05.13
+M Moon D --> Quadrat Venus 36.101997 2018.05.29
+Z Sextil Antiscion Sun D --> Moon 36.127882 2018.06.07
+Z Trigon Contraantiscion Sun D --> Moon 36.127882 2018.06.07
+Z Antiscion Moon D --> Sextil Sun 36.156049 2018.06.18
+Z Contraantiscion Moon D --> Trigon Sun 36.156049 2018.06.18
+Z Trigon Antiscion Mercury C --> Venus 36.264721 2018.07.28
+Z Sextil Contraantiscion Mercury C --> Venus 36.264721 2018.07.28
+Z Antiscion Asc D --> Dsc 36.443218 2018.10.02
+Z Antiscion MC D --> MC 36.443218 2018.10.02
+Z Contraantiscion Asc D --> MC 36.443218 2018.10.02
+Z Contraantiscion MC D --> MC 36.443218 2018.10.02
+M Contraantiscion Mars C --> Trigon Moon 36.487168 2018.10.18
+M Contraantiscion Mars D --> Sextil Venus 36.548924 2018.11.10
+Z Venus D --> Mercury 36.579154 2018.11.21
+M Contraantiscion Sun C --> Saturn 36.581184 2018.11.22
+M Antiscion Sun C --> Oppositio Saturn 36.581208 2018.11.22
+Z Sun C --> Quadrat Mars 36.605307 2018.12.01
+M Contraantiscion Venus D --> Sextil Mars 36.666871 2018.12.24
+M Contraantiscion Venus C --> Sextil Jupiter 36.674225 2018.12.27
+M Moon D --> Trigon Mercury 36.675666 2018.12.27
+Z Antiscion Moon C --> Sextil Mars 36.698410 2019.01.04
+Z Contraantiscion Moon C --> Trigon Mars 36.698410 2019.01.04
+Z Antiscion Sun C --> Oppositio Saturn 36.698961 2019.01.05
+Z Contraantiscion Sun C --> Saturn 36.698961 2019.01.05
+Z Oppositio Antiscion Sun C --> Saturn 36.698961 2019.01.05
+Z Antiscion Saturn D --> Trigon Saturn 37.040771 2019.05.11
+Z Contraantiscion Saturn D --> Sextil Saturn 37.040771 2019.05.11
+Z Venus C --> Quadrat Moon 37.063625 2019.05.20
+M Antiscion Saturn C --> Oppositio Jupiter 37.081307 2019.05.26
+M Contraantiscion Saturn C --> Jupiter 37.093160 2019.05.31
+Z Trigon Antiscion Saturn D --> Saturn 37.098947 2019.06.02
+Z Sextil Contraantiscion Saturn D --> Saturn 37.098947 2019.06.02
+Z Antiscion Saturn C --> Oppositio Jupiter 37.105907 2019.06.04
+Z Contraantiscion Saturn C --> Jupiter 37.105907 2019.06.04
+Z Oppositio Antiscion Saturn C --> Jupiter 37.105907 2019.06.04
+M Venus D --> Mercury 37.153847 2019.06.22
+M Contraantiscion Moon C --> Sextil LoF 37.196450 2019.07.08
+M Antiscion Mars D --> Trigon Venus 37.215533 2019.07.15
+M Antiscion Venus D --> Trigon Mars 37.276528 2019.08.07
+M Antiscion Mars C --> Sextil Moon 37.387596 2019.09.17
+Z Asc C --> Sun 37.399147 2019.09.21
+Z Trigon Antiscion Venus C --> Mercury 37.516697 2019.11.03
+Z Sextil Contraantiscion Venus C --> Mercury 37.516697 2019.11.03
+M Jupiter C --> Quadrat LoF 37.626365 2019.12.14
+M Antiscion Moon C --> Trigon LoF 37.655100 2019.12.25
+M Antiscion Jupiter C --> Oppositio Saturn 37.718453 2020.01.17
+Z Quadrat Moon D --> Venus 37.756274 2020.01.31
+Z LoF C --> Oppositio Mercury 37.865254 2020.03.12
+M Antiscion Venus C --> Trigon Sun 37.868088 2020.03.13
+M Contraantiscion Jupiter C --> Saturn 37.889028 2020.03.21
+Z Antiscion Jupiter C --> Oppositio Saturn 37.920574 2020.04.01
+Z Contraantiscion Jupiter C --> Saturn 37.920574 2020.04.01
+Z Oppositio Antiscion Jupiter C --> Saturn 37.920574 2020.04.01
+Z Contraantiscion MC C --> Trigon Sun 38.039548 2020.05.15
+Z Antiscion MC C --> Sextil Sun 38.039548 2020.05.15
+Z Mars D --> Quadrat Jupiter 38.112513 2020.06.12
+Z Antiscion Venus D --> Sextil Jupiter 38.259574 2020.08.05
+Z Contraantiscion Venus D --> Trigon Jupiter 38.259574 2020.08.05
+Z Sextil Antiscion Jupiter D --> Venus 38.292954 2020.08.18
+Z Trigon Contraantiscion Jupiter D --> Venus 38.292954 2020.08.18
+Z Asc C --> Jupiter 38.466021 2020.10.21
+Z Sextil Antiscion Mars C --> Moon 38.618856 2020.12.17
+Z Trigon Contraantiscion Mars C --> Moon 38.618856 2020.12.17
+M Mars D --> Quadrat Saturn 38.624770 2020.12.19
+Z Mercury C --> Trigon Moon 38.648927 2020.12.28
+M Contraantiscion Mars C --> IC 38.691763 2021.01.13
+Z Quadrat Mars D --> Jupiter 38.910444 2021.04.04
+Z Sextil Saturn C --> Asc 38.969681 2021.04.26
+M Sun C --> Quadrat LoF 38.984355 2021.05.01
+M Contraantiscion Mercury C --> Sextil Venus 39.010878 2021.05.11
+Z Antiscion Mars C --> MC 39.163119 2021.07.06
+Z Oppositio Contraantiscion Mars C --> MC 39.163119 2021.07.06
+Z Quadrat Sun D --> MC 39.172947 2021.07.10
+M Antiscion Venus C --> Trigon Jupiter 39.208571 2021.07.23
+Z Antiscion Desc D --> Sextil Mercury 39.235669 2021.08.02
+Z Contraantiscion Desc D --> Trigon Mercury 39.235669 2021.08.02
+Z Mars D --> Quadrat Sun 39.243405 2021.08.05
+Z Quadrat Antiscion Venus C --> Venus 39.245895 2021.08.06
+Z Quadrat Contraantiscion Venus C --> Venus 39.245895 2021.08.06
+M Moon C --> Quadrat Mars 39.285858 2021.08.21
+Z MC C --> Quadrat Sun 39.288849 2021.08.22
+Z Quadrat Venus C --> Moon 39.345324 2021.09.12
+Z Antiscion Jupiter D --> Sextil Venus 39.356234 2021.09.16
+Z Contraantiscion Jupiter D --> Trigon Venus 39.356234 2021.09.16
+Z Antiscion MC C --> Sextil Jupiter 39.392092 2021.09.29
+Z Contraantiscion MC C --> Trigon Jupiter 39.392092 2021.09.29
+Z Antiscion Venus D --> Sextil Sun 39.414651 2021.10.07
+Z Contraantiscion Venus D --> Trigon Sun 39.414651 2021.10.07
+Z Sextil Antiscion Sun D --> Venus 39.467065 2021.10.27
+Z Trigon Contraantiscion Sun D --> Venus 39.467065 2021.10.27
+Z Quadrat MC C --> Sun 39.500076 2021.11.08
+Z Sextil MC C --> Asc 39.531112 2021.11.19
+Z Sextil Antiscion Mercury D --> LoF 39.550630 2021.11.27
+Z Trigon Contraantiscion Mercury D --> LoF 39.550630 2021.11.27
+Z Antiscion Mars C --> Trigon Saturn 39.610516 2021.12.19
+Z Contraantiscion Mars C --> Sextil Saturn 39.610516 2021.12.19
+Z Sextil Antiscion Venus D --> Jupiter 39.637621 2021.12.29
+Z Trigon Contraantiscion Venus D --> Jupiter 39.637621 2021.12.29
+M Antiscion Mars C --> MC 39.639492 2021.12.30
+M Contraantiscion Moon D --> Sextil Moon 39.830671 2022.03.10
+Z Sextil Mars C --> Venus 39.862634 2022.03.22
+Z LoF D --> Trigon Jupiter 40.053307 2022.06.01
+Z Quadrat Mars D --> Sun 40.224818 2022.08.03
+M Antiscion Mercury C --> Trigon Venus 40.288989 2022.08.27
+Z Quadrat Jupiter D --> MC 40.335574 2022.09.13
+M Antiscion Moon D --> Trigon Moon 40.415518 2022.10.13
+Z Sextil Antiscion Moon C --> Mars 40.418278 2022.10.14
+Z Trigon Contraantiscion Moon C --> Mars 40.418278 2022.10.14
+Z Asc D --> Trigon Moon 40.453538 2022.10.27
+Z MC C --> Quadrat Jupiter 40.510738 2022.11.17
+Z Antiscion Sun D --> Sextil Venus 40.542566 2022.11.29
+Z Contraantiscion Sun D --> Trigon Venus 40.542566 2022.11.29
+Z Quadrat MC C --> Jupiter 40.559796 2022.12.05
+M Contraantiscion Sun C --> Sextil Mars 40.592765 2022.12.18
+M Antiscion Sun C --> Trigon Mars 40.592778 2022.12.18
+Z Antiscion Mercury C --> Trigon Venus 40.826988 2023.03.14
+Z Contraantiscion Mercury C --> Sextil Venus 40.826988 2023.03.14
+Z Sextil Antiscion Moon D --> MC 40.865423 2023.03.29
+Z Trigon Contraantiscion Moon D --> MC 40.865423 2023.03.29
+Z Antiscion MC D --> Sextil Moon 40.887524 2023.04.06
+Z Contraantiscion MC D --> Trigon Moon 40.887524 2023.04.06
+Z Sextil Antiscion Venus D --> Sun 40.953681 2023.04.30
+Z Trigon Contraantiscion Venus D --> Sun 40.953681 2023.04.30
+Z Antiscion Asc C --> Quadrat Mars 41.000028 2023.05.17
+Z Contraantiscion Asc C --> Quadrat Mars 41.000028 2023.05.17
+Z Quadrat Jupiter C --> Mars 41.001153 2023.05.18
+Z LoF D --> Trigon Sun 41.193954 2023.07.28
+Z Moon D --> Quadrat Venus 41.220752 2023.08.07
+Z Trigon Asc D --> Moon 41.330983 2023.09.17
+M Contraantiscion Saturn D --> Trigon Venus 41.469806 2023.11.07
+M Mercury C --> Trigon Moon 41.505224 2023.11.21
+M Antiscion Saturn D --> Sextil Venus 41.560620 2023.12.11
+Z Antiscion Saturn C --> Trigon Mars 41.622720 2024.01.03
+Z Contraantiscion Saturn C --> Sextil Mars 41.622720 2024.01.03
+Z Trigon Jupiter C --> LoF 41.658830 2024.01.16
+M Contraantiscion Venus D --> Trigon Saturn 41.666638 2024.01.19
+M Antiscion Jupiter C --> Trigon Mars 41.752187 2024.02.20
+Z Antiscion Saturn D --> Sextil Moon 41.821858 2024.03.17
+Z Contraantiscion Saturn D --> Trigon Moon 41.821858 2024.03.17
+M Contraantiscion Jupiter C --> Sextil Mars 41.847460 2024.03.26
+Z Sun D --> Asc 41.929327 2024.04.26
+M Sun D --> Asc 41.929382 2024.04.26
+M Moon D --> LoF 41.929382 2024.04.26
+Z Trigon Moon D --> Mercury 41.981577 2024.05.15
+Z Venus C --> Quadrat Saturn 42.047450 2024.06.09
+Z Antiscion Mercury D --> Quadrat Jupiter 42.053918 2024.06.11
+Z Contraantiscion Mercury D --> Quadrat Jupiter 42.053918 2024.06.11
+M Contraantiscion Moon C --> Oppositio Mercury 42.060589 2024.06.14
+M Contraantiscion Saturn D --> Quadrat Mercury 42.076023 2024.06.19
+Z Antiscion Moon D --> Sextil Saturn 42.138617 2024.07.13
+Z Contraantiscion Moon D --> Trigon Saturn 42.138617 2024.07.13
+M Antiscion Saturn D --> Quadrat Mercury 42.146798 2024.07.16
+M Saturn D --> Quadrat Venus 42.196556 2024.08.03
+Z Saturn C --> Quadrat Mars 42.221912 2024.08.13
+M Contraantiscion Saturn C --> Trigon LoF 42.247439 2024.08.22
+M Contraantiscion Mercury D --> Quadrat Saturn 42.265226 2024.08.29
+Z Quadrat Sun C --> Mars 42.276013 2024.09.02
+M Contraantiscion Mars C --> Sextil Saturn 42.280383 2024.09.03
+M Contraantiscion Sun C --> Sun 42.302568 2024.09.11
+Z Antiscion Sun C --> Oppositio Sun 42.302568 2024.09.11
+Z Contraantiscion Sun C --> Sun 42.302568 2024.09.11
+Z Oppositio Antiscion Sun C --> Sun 42.302568 2024.09.11
+M Antiscion Sun C --> Oppositio Sun 42.302576 2024.09.11
+Z Sextil Antiscion Moon D --> Saturn 42.407964 2024.10.21
+Z Trigon Contraantiscion Moon D --> Saturn 42.407964 2024.10.21
+Z Oppositio Mercury D --> LoF 42.426945 2024.10.28
+M Antiscion Saturn C --> Sextil LoF 42.429118 2024.10.28
+M Antiscion Venus D --> Sextil Saturn 42.490627 2024.11.20
+Z Antiscion Jupiter D --> Quadrat Mercury 42.515931 2024.11.30
+Z Contraantiscion Jupiter D --> Quadrat Mercury 42.515931 2024.11.30
+Z Antiscion Venus C --> Trigon Mercury 42.525091 2024.12.03
+Z Contraantiscion Venus C --> Sextil Mercury 42.525091 2024.12.03
+Z Quadrat Antiscion Jupiter D --> Mercury 42.541698 2024.12.09
+Z Quadrat Contraantiscion Jupiter D --> Mercury 42.541698 2024.12.09
+Z Antiscion Moon C --> Mercury 42.554894 2024.12.14
+Z Contraantiscion Moon C --> Oppositio Mercury 42.554894 2024.12.14
+Z Oppositio Contraantiscion Moon C --> Mercury 42.554894 2024.12.14
+Z Quadrat Saturn D --> Venus 42.687177 2025.02.01
+M Antiscion Mercury D --> Quadrat Saturn 42.697881 2025.02.05
+Z Oppositio Mercury C --> MC 42.720080 2025.02.13
+M Saturn D --> Sextil Mercury 42.750287 2025.02.25
+Z Sextil Antiscion Saturn D --> Moon 42.786410 2025.03.10
+Z Trigon Contraantiscion Saturn D --> Moon 42.786410 2025.03.10
+Z Trigon Mercury C --> Moon 42.850383 2025.04.03
+M Jupiter D --> Asc 42.894817 2025.04.19
+M Antiscion Moon C --> Mercury 42.908816 2025.04.24
+Z Asc C --> Sextil Mars 42.963152 2025.05.14
+Z Trigon Sun C --> LoF 42.975267 2025.05.19
+M Contraantiscion Venus C --> Oppositio LoF 43.089226 2025.06.30
+Z Quadrat Antiscion Mercury D --> Jupiter 43.142018 2025.07.20
+Z Quadrat Contraantiscion Mercury D --> Jupiter 43.142018 2025.07.20
+Z Trigon Antiscion Mars C --> Saturn 43.159249 2025.07.26
+Z Sextil Contraantiscion Mars C --> Saturn 43.159249 2025.07.26
+Z Mercury C --> Sextil Saturn 43.162889 2025.07.27
+Z Antiscion Mercury D --> Quadrat Sun 43.173215 2025.07.31
+Z Contraantiscion Mercury D --> Quadrat Sun 43.173215 2025.07.31
+Z Jupiter D --> Asc 43.270596 2025.09.05
+M Antiscion Mars C --> Trigon Saturn 43.305109 2025.09.18
+M Contraantiscion Sun C --> Jupiter 43.333897 2025.09.29
+M Antiscion Sun C --> Oppositio Jupiter 43.333903 2025.09.29
+Z Antiscion Sun C --> Oppositio Jupiter 43.352820 2025.10.06
+Z Contraantiscion Sun C --> Jupiter 43.352820 2025.10.06
+Z Oppositio Antiscion Sun C --> Jupiter 43.352820 2025.10.06
+M Antiscion Jupiter C --> Oppositio Sun 43.471432 2025.11.19
+M Venus D --> Trigon LoF 43.497722 2025.11.28
+Z Contraantiscion Jupiter C --> Sun 43.502699 2025.11.30
+Z Oppositio Antiscion Jupiter C --> Sun 43.502699 2025.11.30
+Z Antiscion Jupiter C --> Oppositio Sun 43.502699 2025.11.30
+M Contraantiscion Jupiter C --> Sun 43.534610 2025.12.12
+Z Antiscion Sun D --> Quadrat Mercury 43.691663 2026.02.08
+Z Contraantiscion Sun D --> Quadrat Mercury 43.691663 2026.02.08
+M Mercury C --> IC 43.759967 2026.03.05
+M Jupiter C --> Venus 43.762031 2026.03.06
+Z Venus D --> Sextil Mars 43.767289 2026.03.08
+Z Quadrat Antiscion Sun D --> Mercury 43.768397 2026.03.09
+Z Quadrat Contraantiscion Sun D --> Mercury 43.768397 2026.03.09
+Z Quadrat Venus C --> Saturn 43.875571 2026.04.17
+M Saturn C --> Quadrat LoF 43.942250 2026.05.12
+M Venus C --> Quadrat Moon 44.033921 2026.06.15
+Z Trigon Asc D --> Venus 44.252502 2026.09.04
+M Mars C --> Sextil Venus 44.312285 2026.09.26
+Z Jupiter C --> Venus 44.363265 2026.10.15
+Z Moon D --> Trigon Mercury 44.461833 2026.11.20
+Z Quadrat Antiscion Mercury D --> Sun 44.465880 2026.11.22
+Z Quadrat Contraantiscion Mercury D --> Sun 44.465880 2026.11.22
+M Antiscion Jupiter C --> Oppositio Jupiter 44.508458 2026.12.08
+M Mars D --> Quadrat Moon 44.542282 2026.12.20
+Z Contraantiscion Jupiter C --> Jupiter 44.548925 2026.12.23
+Z Oppositio Antiscion Jupiter C --> Jupiter 44.548925 2026.12.23
+Z Antiscion Jupiter C --> Oppositio Jupiter 44.548925 2026.12.23
+M Contraantiscion Jupiter C --> Jupiter 44.552276 2026.12.24
+Z Trigon Moon C --> Asc 44.684130 2027.02.11
+M Contraantiscion Mercury C --> Oppositio Moon 44.749964 2027.03.07
+Z Sextil Antiscion Mercury C --> MC 45.012659 2027.06.12
+Z Trigon Contraantiscion Mercury C --> MC 45.012659 2027.06.12
+Z Mars D --> Quadrat Saturn 45.120782 2027.07.22
+Z Mars C --> Sextil Venus 45.148524 2027.08.02
+M Sun C --> Venus 45.149933 2027.08.02
+Z Antiscion MC C --> Mars 45.246726 2027.09.07
+Z Contraantiscion MC C --> Oppositio Mars 45.246726 2027.09.07
+Z Sextil Venus D --> Mars 45.268750 2027.09.15
+Z Antiscion Mars C --> Trigon Sun 45.279406 2027.09.19
+Z Contraantiscion Mars C --> Sextil Sun 45.279406 2027.09.19
+Z Asc D --> Trigon Venus 45.389019 2027.10.30
+Z Sun C --> Venus 45.410540 2027.11.07
+M Contraantiscion Venus D --> MC 45.459175 2027.11.25
+Z Antiscion Venus D --> Sextil Saturn 45.466741 2027.11.28
+Z Contraantiscion Venus D --> Trigon Saturn 45.466741 2027.11.28
+Z Sextil Antiscion Saturn D --> Venus 45.579898 2028.01.08
+Z Trigon Contraantiscion Saturn D --> Venus 45.579898 2028.01.08
+Z Contraantiscion Mercury C --> Oppositio Moon 45.608608 2028.01.19
+Z Antiscion Mercury C --> Moon 45.608608 2028.01.19
+Z Oppositio Contraantiscion Mercury C --> Moon 45.608608 2028.01.19
+Z Antiscion Desc D --> Mars 45.649985 2028.02.03
+Z Contraantiscion Desc D --> Oppositio Mars 45.649985 2028.02.03
+M Antiscion Mercury C --> Moon 45.723307 2028.03.02
+Z Trigon Antiscion Saturn C --> Mars 45.769715 2028.03.19
+Z Sextil Contraantiscion Saturn C --> Mars 45.769715 2028.03.19
+M Antiscion Venus C --> LoF 45.898572 2028.05.06
+Z Oppositio Antiscion Venus D --> MC 45.944380 2028.05.23
+Z Contraantiscion Venus D --> MC 45.944380 2028.05.23
+M Antiscion Jupiter D --> Quadrat Jupiter 46.032302 2028.06.24
+Z Antiscion MC D --> Oppositio Venus 46.058893 2028.07.04
+Z Contraantiscion MC D --> Venus 46.058893 2028.07.04
+M Contraantiscion Jupiter D --> Quadrat Jupiter 46.147305 2028.08.06
+Z Antiscion Mars C --> Trigon Jupiter 46.361347 2028.10.25
+Z Contraantiscion Mars C --> Sextil Jupiter 46.361347 2028.10.25
+M Antiscion Venus D --> IC 46.445743 2028.11.25
+M Contraantiscion Moon D --> Sextil Venus 46.485948 2028.12.10
+Z Antiscion Venus C --> Quadrat Venus 46.503130 2028.12.16
+Z Contraantiscion Venus C --> Quadrat Venus 46.503130 2028.12.16
+M Antiscion Moon D --> Trigon Venus 46.605751 2029.01.23
+Z Oppositio MC D --> Mercury 46.635701 2029.02.03
+Z MC D --> Oppositio Mercury 46.635701 2029.02.03
+Z Saturn D --> Quadrat Venus 46.651683 2029.02.09
+Z Moon C --> Quadrat Mars 46.707487 2029.03.02
+Z Antiscion Saturn D --> Sextil Venus 46.737799 2029.03.13
+Z Contraantiscion Saturn D --> Trigon Venus 46.737799 2029.03.13
+Z Antiscion Moon D --> Trigon Moon 46.849377 2029.04.24
+Z Contraantiscion Moon D --> Sextil Moon 46.849377 2029.04.24
+Z Antiscion Mars D --> LoF 46.866011 2029.04.30
+Z Oppositio Contraantiscion Mars D --> LoF 46.866011 2029.04.30
+M Contraantiscion Mars C --> Trigon Mars 47.011324 2029.06.22
+Z LoF D --> Trigon Saturn 47.089100 2029.07.21
+M Contraantiscion Moon D --> Quadrat Mercury 47.094728 2029.07.23
+M Contraantiscion Saturn C --> Mercury 47.135046 2029.08.07
+Z Sextil Saturn D --> Mercury 47.141800 2029.08.10
+M Antiscion Moon D --> Quadrat Mercury 47.171991 2029.08.21
+M Antiscion Jupiter D --> Quadrat Sun 47.201159 2029.09.01
+Z Sextil Asc C --> Mars 47.213041 2029.09.05
+Z Quadrat Mars D --> Saturn 47.237653 2029.09.14
+M Contraantiscion Sun D --> Quadrat Jupiter 47.253587 2029.09.20
+M Antiscion Sun D --> Quadrat Jupiter 47.253606 2029.09.20
+Z Sextil Mercury C --> Saturn 47.332190 2029.10.19
+M Contraantiscion Jupiter D --> Quadrat Sun 47.335521 2029.10.21
+Z Contraantiscion Saturn C --> Mercury 47.386256 2029.11.08
+Z Oppositio Antiscion Saturn C --> Mercury 47.386256 2029.11.08
+Z Antiscion Saturn C --> Oppositio Mercury 47.386256 2029.11.08
+M Mercury C --> Sextil Saturn 47.430218 2029.11.25
+M Moon D --> Trigon Jupiter 47.469744 2029.12.09
+M Antiscion Saturn C --> Oppositio Mercury 47.500244 2029.12.21
+M Moon C --> Quadrat LoF 47.666840 2030.02.20
+Z Antiscion Sun C --> Trigon Mars 47.779885 2030.04.03
+Z Contraantiscion Sun C --> Sextil Mars 47.779885 2030.04.03
+M Contraantiscion Venus D --> Sextil Moon 47.789042 2030.04.06
+M Saturn D --> Oppositio LoF 47.821413 2030.04.18
+Z Quadrat Antiscion Venus C --> MC 47.915770 2030.05.23
+Z Quadrat Contraantiscion Venus C --> MC 47.915770 2030.05.23
+M Contraantiscion Mercury D --> Quadrat Moon 47.933261 2030.05.30
+Z Sextil Antiscion Venus D --> Saturn 47.975504 2030.06.15
+Z Trigon Contraantiscion Venus D --> Saturn 47.975504 2030.06.15
+Z Contraantiscion Asc D --> Quadrat Venus 48.129005 2030.08.10
+Z Antiscion Asc D --> Quadrat Venus 48.129005 2030.08.10
+M Antiscion Mars C --> Sextil Mars 48.137555 2030.08.14
+Z Trigon Antiscion Moon D --> Moon 48.155611 2030.08.20
+Z Sextil Contraantiscion Moon D --> Moon 48.155611 2030.08.20
+Z Venus C --> Quadrat Sun 48.322120 2030.10.21
+M Contraantiscion Sun D --> Quadrat Sun 48.428139 2030.11.29
+M Antiscion Sun D --> Quadrat Sun 48.428160 2030.11.29
+M Antiscion Sun C --> Sextil LoF 48.480987 2030.12.19
+M Contraantiscion Sun C --> Trigon LoF 48.480996 2030.12.19
+Z Asc D --> Quadrat Mercury 48.494353 2030.12.24
+Z Trigon Mars C --> MC 48.516159 2031.01.01
+M Moon D --> Trigon Sun 48.579873 2031.01.24
+M Antiscion Mercury D --> Quadrat Moon 48.622876 2031.02.09
+Z Trigon Antiscion Mars C --> Sun 48.650433 2031.02.19
+Z Sextil Contraantiscion Mars C --> Sun 48.650433 2031.02.19
+Z Asc C --> Mercury 48.701573 2031.03.10
+Z Quadrat Sun D --> Venus 48.760256 2031.04.01
+Z Mercury C --> Sextil Sun 48.773653 2031.04.06
+Z Quadrat Asc D --> Mercury 48.786311 2031.04.11
+M Antiscion Venus D --> Trigon Moon 48.875486 2031.05.14
+Z Quadrat Saturn C --> Mars 48.903701 2031.05.24
+Z Jupiter C --> Trigon Moon 48.952014 2031.06.11
+Z Contraantiscion Jupiter C --> Sextil Mars 48.959018 2031.06.14
+Z Antiscion Jupiter C --> Trigon Mars 48.959018 2031.06.14
+Z Antiscion Mercury D --> Quadrat Saturn 48.990328 2031.06.25
+Z Contraantiscion Mercury D --> Quadrat Saturn 48.990328 2031.06.25
+Z Sextil Mars D --> Asc 49.015825 2031.07.05
+M Contraantiscion Mars C --> Sextil Sun 49.027730 2031.07.09
+M Contraantiscion Venus C --> Sextil Mercury 49.172329 2031.09.01
+Z Quadrat Venus C --> Sun 49.354485 2031.11.07
+Z Venus D --> Jupiter 49.400544 2031.11.24
+Z Venus C --> Quadrat Jupiter 49.529457 2032.01.11
+M Contraantiscion Mercury C --> Saturn 49.588775 2032.02.02
+M Sun D --> Quadrat Venus 49.625022 2032.02.16
+M Contraantiscion Jupiter C --> Trigon LoF 49.631182 2032.02.18
+Z Trigon Antiscion Mars C --> Jupiter 49.679614 2032.03.07
+Z Sextil Contraantiscion Mars C --> Jupiter 49.679614 2032.03.07
+Z Antiscion Asc C --> Oppositio Venus 49.682895 2032.03.08
+Z Contraantiscion Asc C --> Venus 49.682895 2032.03.08
+M Antiscion Jupiter C --> Sextil LoF 49.683981 2032.03.08
+M Mars C --> Oppositio Moon 49.755477 2032.04.04
+Z Mars D --> Quadrat Moon 49.789046 2032.04.16
+Z Quadrat Antiscion Venus D --> Asc 49.800495 2032.04.21
+Z Quadrat Contraantiscion Venus D --> Asc 49.800495 2032.04.21
+Z Antiscion Saturn D --> Quadrat Mercury 49.830840 2032.05.02
+Z Contraantiscion Saturn D --> Quadrat Mercury 49.830840 2032.05.02
+M Contraantiscion Venus C --> Quadrat Venus 49.836561 2032.05.04
+Z Saturn D --> Sextil Mercury 49.841324 2032.05.06
+Z Mercury C --> Sextil Jupiter 49.844500 2032.05.07
+Z Quadrat Antiscion Mars C --> Asc 49.856874 2032.05.12
+Z Quadrat Contraantiscion Mars C --> Asc 49.856874 2032.05.12
+Z Mars C --> Oppositio Moon 49.869222 2032.05.16
+Z Oppositio Mars C --> Moon 49.869222 2032.05.16
+Z Trigon Saturn C --> LoF 49.885747 2032.05.22
+M Saturn C --> Venus 49.896704 2032.05.26
+Z Quadrat Jupiter D --> Venus 49.909671 2032.05.31
+Z Sun C --> Trigon Moon 49.983894 2032.06.28
+Z Antiscion Mercury C --> Oppositio Saturn 50.052943 2032.07.23
+Z Contraantiscion Mercury C --> Saturn 50.052943 2032.07.23
+Z Oppositio Antiscion Mercury C --> Saturn 50.052943 2032.07.23
+M Sun D --> Sextil Mercury 50.157969 2032.08.31
+Z Quadrat Antiscion Saturn D --> Mercury 50.183159 2032.09.10
+Z Quadrat Contraantiscion Saturn D --> Mercury 50.183159 2032.09.10
+M Venus D --> Jupiter 50.187723 2032.09.11
+M Antiscion Mars C --> Trigon Sun 50.197224 2032.09.15
+M Contraantiscion Mars C --> Sextil Jupiter 50.243999 2032.10.02
+M Antiscion Mercury C --> Oppositio Saturn 50.305158 2032.10.25
+Z Antiscion Venus D --> Trigon Moon 50.335759 2032.11.05
+Z Contraantiscion Venus D --> Sextil Moon 50.335759 2032.11.05
+M Jupiter C --> Trigon Moon 50.365245 2032.11.16
+Z Quadrat Venus C --> Jupiter 50.381366 2032.11.22
+M Venus C --> Quadrat Saturn 50.418781 2032.12.06
+M Moon D --> Oppositio Mars 50.420313 2032.12.07
+Z Trigon MC C --> LoF 50.431458 2032.12.11
+Z Trigon Antiscion Moon D --> Venus 50.433279 2032.12.12
+Z Sextil Contraantiscion Moon D --> Venus 50.433279 2032.12.12
+Z Antiscion Desc D --> Sextil Jupiter 50.436423 2032.12.13
+Z Contraantiscion Desc D --> Trigon Jupiter 50.436423 2032.12.13
+M Jupiter D --> Quadrat Venus 50.632977 2033.02.24
+Z Trigon Venus C --> Asc 50.644795 2033.02.28
+Z Quadrat MC C --> Mercury 50.726717 2033.03.30
+Z Venus D --> Sun 50.736945 2033.04.03
+Z Moon D --> Oppositio Mars 50.778026 2033.04.18
+Z Oppositio Moon D --> Mars 50.778026 2033.04.18
+Z Saturn C --> Venus 50.870406 2033.05.23
+Z Antiscion Mars C --> Sextil Mars 50.992222 2033.07.07
+Z Contraantiscion Mars C --> Trigon Mars 50.992222 2033.07.07
+Z Antiscion Desc C --> Quadrat Mars 51.058663 2033.07.31
+Z Contraantiscion Desc C --> Quadrat Mars 51.058663 2033.07.31
+M Jupiter D --> Sextil Mercury 51.168869 2033.09.10
+Z Trigon MC C --> Venus 51.299312 2033.10.28
+Z Contraantiscion Asc D --> Sextil Mercury 51.304747 2033.10.30
+Z Antiscion Asc D --> Trigon Mercury 51.304747 2033.10.30
+M Antiscion Mars C --> Trigon Jupiter 51.439589 2033.12.19
+M Venus D --> Sun 51.528205 2034.01.21
+Z Quadrat Antiscion Mercury D --> Saturn 51.529336 2034.01.22
+Z Quadrat Contraantiscion Mercury D --> Saturn 51.529336 2034.01.22
+Z Antiscion Desc D --> Sextil Sun 51.542191 2034.01.26
+Z Contraantiscion Desc D --> Trigon Sun 51.542191 2034.01.26
+Z Quadrat Mercury D --> MC 51.650266 2034.03.07
+Z Antiscion Moon D --> Trigon Venus 51.693008 2034.03.23
+Z Contraantiscion Moon D --> Sextil Venus 51.693008 2034.03.23
+Z LoF D --> Sextil Moon 51.731021 2034.04.06
+M Sun C --> Trigon Moon 51.785339 2034.04.26
+M Mars D --> Trigon Mercury 52.202767 2034.09.28
+M Antiscion Venus C --> Trigon Mercury 52.242447 2034.10.13
+M Mercury C --> Trigon Mars 52.268775 2034.10.22
+Z Trigon Antiscion Sun C --> Mars 52.342565 2034.11.19
+Z Sextil Contraantiscion Sun C --> Mars 52.342565 2034.11.19
+Z Sextil Antiscion Jupiter D --> LoF 52.483337 2035.01.10
+Z Trigon Contraantiscion Jupiter D --> LoF 52.483337 2035.01.10
+M Jupiter C --> IC 52.483901 2035.01.10
+Z Sextil Mercury C --> Sun 52.752520 2035.04.20
+Z MC C --> Quadrat Mercury 52.767873 2035.04.25
+Z Oppositio Jupiter C --> MC 52.895612 2035.06.12
+M Antiscion Venus C --> Quadrat Venus 52.935153 2035.06.26
+Z Quadrat Mars D --> Moon 53.036224 2035.08.03
+Z Antiscion MC C --> Sextil Mercury 53.092534 2035.08.23
+Z Contraantiscion MC C --> Trigon Mercury 53.092534 2035.08.23
+M Saturn D --> Sextil Jupiter 53.169224 2035.09.21
+M Antiscion Saturn D --> Quadrat Jupiter 53.176246 2035.09.23
+Z Jupiter C --> Sextil Saturn 53.324547 2035.11.17
+M Antiscion Sun C --> Oppositio Mercury 53.361773 2035.12.01
+M Contraantiscion Sun C --> Mercury 53.361795 2035.12.01
+Z Antiscion Jupiter D --> Quadrat Jupiter 53.392144 2035.12.12
+Z Contraantiscion Jupiter D --> Quadrat Jupiter 53.392144 2035.12.12
+M Moon C --> Oppositio Venus 53.418766 2035.12.22
+Z Antiscion Sun C --> Oppositio Mercury 53.428899 2035.12.26
+Z Contraantiscion Sun C --> Mercury 53.428899 2035.12.26
+Z Oppositio Antiscion Sun C --> Mercury 53.428899 2035.12.26
+Z Sun D --> Quadrat Venus 53.433046 2035.12.28
+M Contraantiscion Saturn D --> Quadrat Jupiter 53.482523 2036.01.15
+Z Sextil Sun D --> Mercury 53.538039 2036.02.05
+M Contraantiscion Mercury C --> Sextil Mars 53.540317 2036.02.05
+Z Trigon Antiscion Jupiter C --> Mars 53.583246 2036.02.21
+Z Sextil Contraantiscion Jupiter C --> Mars 53.583246 2036.02.21
+Z Trigon Antiscion Mercury D --> Asc 53.583435 2036.02.21
+Z Sextil Contraantiscion Mercury D --> Asc 53.583435 2036.02.21
+Z Antiscion Mercury D --> Quadrat Moon 53.610725 2036.03.03
+Z Contraantiscion Mercury D --> Quadrat Moon 53.610725 2036.03.03
+M Antiscion Jupiter D --> Quadrat Saturn 53.685483 2036.03.30
+M Venus D --> Sextil Mars 53.750541 2036.04.23
+Z Sextil Mercury C --> Jupiter 53.768421 2036.04.30
+Z Trigon Antiscion Venus D --> Moon 53.781508 2036.05.05
+Z Sextil Contraantiscion Venus D --> Moon 53.781508 2036.05.05
+Z Trigon Contraantiscion Sun D --> LoF 53.799774 2036.05.12
+Z Sextil Antiscion Sun D --> LoF 53.799774 2036.05.12
+Z MC D --> Trigon Mars 53.910471 2036.06.22
+Z Oppositio Sun C --> MC 53.914262 2036.06.23
+M Sun C --> IC 53.914324 2036.06.23
+M Contraantiscion Jupiter D --> Quadrat Saturn 53.927243 2036.06.28
+M Antiscion Mercury C --> Trigon Mars 54.046857 2036.08.11
+Z Quadrat Moon C --> Mars 54.147994 2036.09.18
+Z Antiscion Asc C --> Sextil Moon 54.192694 2036.10.05
+Z Contraantiscion Asc C --> Trigon Moon 54.192694 2036.10.05
+M Saturn D --> Sextil Sun 54.240770 2036.10.22
+Z Mars C --> Saturn 54.256933 2036.10.28
+M Antiscion Saturn D --> Quadrat Sun 54.310581 2036.11.17
+M Mercury C --> Sextil Sun 54.331049 2036.11.25
+Z Sun C --> Sextil Saturn 54.341758 2036.11.29
+M Mars C --> Saturn 54.344810 2036.11.30
+Z Mercury C --> Trigon Mars 54.427892 2037.01.00
+Z Quadrat Mercury C --> Asc 54.430525 2037.01.01
+M Contraantiscion Jupiter C --> Mercury 54.447316 2037.01.07
+Z Antiscion Jupiter D --> Quadrat Sun 54.476371 2037.01.18
+Z Contraantiscion Jupiter D --> Quadrat Sun 54.476371 2037.01.18
+Z Antiscion Sun D --> Quadrat Jupiter 54.531388 2037.02.07
+Z Contraantiscion Sun D --> Quadrat Jupiter 54.531388 2037.02.07
+Z Antiscion Jupiter C --> Oppositio Mercury 54.586377 2037.02.28
+Z Contraantiscion Jupiter C --> Mercury 54.586377 2037.02.28
+Z Oppositio Antiscion Jupiter C --> Mercury 54.586377 2037.02.28
+M Antiscion Jupiter C --> Oppositio Mercury 54.591734 2037.03.02
+M Contraantiscion Saturn D --> Quadrat Sun 54.655636 2037.03.25
+Z Jupiter D --> Quadrat Venus 54.730215 2037.04.22
+M Moon D --> Trigon Saturn 54.738398 2037.04.25
+Z Antiscion Moon D --> Quadrat Mercury 54.740552 2037.04.26
+Z Contraantiscion Moon D --> Quadrat Mercury 54.740552 2037.04.26
+Z Sextil Jupiter D --> Mercury 54.753162 2037.04.30
+Z Trigon Venus D --> MC 54.810750 2037.05.22
+Z Trigon Moon D --> Jupiter 54.892968 2037.06.21
+M Contraantiscion Sun D --> Quadrat Saturn 54.944060 2037.07.10
+M Antiscion Sun D --> Quadrat Saturn 54.944097 2037.07.10
+M Sun D --> Oppositio LoF 55.038754 2037.08.14
+M Contraantiscion Venus D --> Oppositio Venus 55.050535 2037.08.19
+M Contraantiscion Mercury C --> Sun 55.224530 2037.10.22
+Z Moon C --> Oppositio Venus 55.228766 2037.10.24
+Z Oppositio Moon C --> Venus 55.228766 2037.10.24
+Z Trigon Jupiter C --> Moon 55.268254 2037.11.07
+M Contraantiscion Mercury D --> Trigon Mercury 55.270786 2037.11.08
+Z Quadrat Antiscion Moon D --> Mercury 55.307135 2037.11.22
+Z Quadrat Contraantiscion Moon D --> Mercury 55.307135 2037.11.22
+Z Saturn C --> Trigon Moon 55.362351 2037.12.12
+Z Antiscion Mercury C --> Oppositio Sun 55.427954 2038.01.05
+Z Contraantiscion Mercury C --> Sun 55.427954 2038.01.05
+Z Oppositio Antiscion Mercury C --> Sun 55.427954 2038.01.05
+Z Sextil Moon C --> LoF 55.444615 2038.01.11
+Z Antiscion Venus D --> Venus 55.445542 2038.01.12
+Z Contraantiscion Venus D --> Oppositio Venus 55.445542 2038.01.12
+Z Oppositio Contraantiscion Venus D --> Venus 55.445542 2038.01.12
+Z Quadrat Antiscion Jupiter D --> Jupiter 55.461511 2038.01.18
+Z Quadrat Contraantiscion Jupiter D --> Jupiter 55.461511 2038.01.18
+Z Quadrat Antiscion Mars D --> MC 55.463673 2038.01.19
+Z Quadrat Contraantiscion Mars D --> MC 55.463673 2038.01.19
+Z Moon D --> Trigon Jupiter 55.491244 2038.01.29
+Z Trigon MC D --> Mars 55.538251 2038.02.15
+M Mercury C --> Sextil Jupiter 55.574984 2038.03.01
+Z Contraantiscion Sun D --> Quadrat Sun 55.611978 2038.03.14
+Z Antiscion Sun D --> Quadrat Sun 55.611978 2038.03.14
+M Antiscion Mercury C --> Oppositio Sun 55.641631 2038.03.25
+M Jupiter C --> Sextil Saturn 55.932631 2038.07.11
+Z Antiscion MC D --> Quadrat Mars 56.015504 2038.08.11
+Z Contraantiscion MC D --> Quadrat Mars 56.015504 2038.08.11
+M Saturn D --> Mars 56.017247 2038.08.12
+Z Saturn D --> Mars 56.057272 2038.08.26
+M Jupiter D --> Oppositio LoF 56.076623 2038.09.03
+Z Trigon Moon D --> Sun 56.238750 2038.11.02
+M Contraantiscion Mercury C --> Jupiter 56.240424 2038.11.02
+M Antiscion Mercury D --> Sextil Mercury 56.293047 2038.11.22
+M Saturn C --> Trigon Moon 56.304897 2038.11.26
+M Contraantiscion Mars C --> Sextil LoF 56.314080 2038.11.29
+Z MC C --> Trigon Venus 56.328748 2038.12.05
+Z Antiscion Mercury C --> Oppositio Jupiter 56.435362 2039.01.13
+Z Contraantiscion Mercury C --> Jupiter 56.435362 2039.01.13
+Z Oppositio Antiscion Mercury C --> Jupiter 56.435362 2039.01.13
+M Antiscion Venus D --> Venus 56.448267 2039.01.18
+Z LoF D --> Sextil Venus 56.503873 2039.02.08
+Z Trigon Sun C --> Moon 56.534884 2039.02.19
+Z Mercury D --> Asc 56.556618 2039.02.27
+Z Sun D --> Sextil Mercury 56.559309 2039.02.28
+Z Moon D --> Trigon Sun 56.580096 2039.03.08
+M Antiscion Mercury C --> Oppositio Jupiter 56.603578 2039.03.17
+Z Quadrat Antiscion Sun D --> Jupiter 56.706038 2039.04.24
+Z Quadrat Contraantiscion Sun D --> Jupiter 56.706038 2039.04.24
+Z Quadrat Antiscion Jupiter D --> Sun 56.808171 2039.05.31
+Z Quadrat Contraantiscion Jupiter D --> Sun 56.808171 2039.05.31
+Z Contraantiscion Mars C --> Sextil Mercury 57.072509 2039.09.06
+Z Antiscion Mars C --> Trigon Mercury 57.072509 2039.09.06
+Z Antiscion MC C --> Quadrat Venus 57.118519 2039.09.23
+Z Contraantiscion MC C --> Quadrat Venus 57.118519 2039.09.23
+Z Antiscion Desc D --> Sextil Saturn 57.257071 2039.11.14
+Z Contraantiscion Desc D --> Trigon Saturn 57.257071 2039.11.14
+M Contraantiscion Moon C --> Quadrat Mars 57.291566 2039.11.26
+Z Quadrat Antiscion Mercury D --> Moon 57.369764 2039.12.25
+Z Quadrat Contraantiscion Mercury D --> Moon 57.369764 2039.12.25
+M Sun C --> Sextil Saturn 57.379867 2039.12.29
+Z Contraantiscion Asc D --> Mars 57.493609 2040.02.09
+Z Antiscion Asc D --> Oppositio Mars 57.493609 2040.02.09
+M Antiscion Mars C --> Trigon LoF 57.639907 2040.04.04
+Z Mars D --> Trigon Mercury 57.696949 2040.04.25
+M Mercury D --> Asc 57.745190 2040.05.13
+M Antiscion Moon D --> Quadrat Jupiter 57.826298 2040.06.12
+Z Jupiter D --> Sextil Mercury 57.844493 2040.06.19
+M Venus C --> Quadrat Sun 57.855215 2040.06.23
+Z Venus D --> Saturn 57.867300 2040.06.27
+Z Quadrat Contraantiscion Sun D --> Sun 58.054556 2040.09.05
+Z Quadrat Antiscion Sun D --> Sun 58.054556 2040.09.05
+Z Antiscion Asc C --> MC 58.068442 2040.09.10
+M Mars D --> Trigon LoF 58.082295 2040.09.15
+M Mars C --> Sextil Mars 58.092620 2040.09.19
+M Saturn C --> IC 58.360980 2040.12.27
+Z Antiscion Asc C --> Trigon Saturn 58.489997 2041.02.13
+Z Contraantiscion Asc C --> Sextil Saturn 58.489997 2041.02.13
+M Contraantiscion Moon D --> Quadrat Jupiter 58.549444 2041.03.07
+Z Jupiter C --> Sextil Sun 58.759517 2041.05.24
+Z Sextil Antiscion Mars C --> Mars 58.830143 2041.06.19
+Z Trigon Contraantiscion Mars C --> Mars 58.830143 2041.06.19
+M Antiscion Moon D --> Quadrat Sun 58.922051 2041.07.23
+M Venus D --> Saturn 58.964640 2041.08.08
+Z Asc D --> Quadrat Jupiter 59.183439 2041.10.28
+M Venus C --> Quadrat Jupiter 59.195698 2041.11.02
+Z Trigon Asc D --> LoF 59.201252 2041.11.04
+Z Oppositio Saturn C --> MC 59.222756 2041.11.12
+M Antiscion Jupiter D --> Quadrat Moon 59.252869 2041.11.23
+M Antiscion Moon C --> Quadrat Mars 59.359669 2042.01.01
+M Contraantiscion Venus C --> Asc 59.427921 2042.01.27
+Z Antiscion Desc C --> Venus 59.455421 2042.02.06
+Z Contraantiscion Desc C --> Oppositio Venus 59.455421 2042.02.06
+Z LoF D --> Quadrat Mercury 59.506883 2042.02.25
+Z Trigon Antiscion Mars C --> Mercury 59.553541 2042.03.14
+Z Sextil Contraantiscion Mars C --> Mercury 59.553541 2042.03.14
+Z Mars C --> Sun 59.563462 2042.03.18
+Z Sextil Jupiter C --> Saturn 59.586697 2042.03.26
+M Contraantiscion Jupiter D --> Quadrat Moon 59.586840 2042.03.26
+M Moon C --> Sextil Moon 59.608999 2042.04.04
+Z MC D --> Oppositio Jupiter 59.611621 2042.04.05
+Z Oppositio MC D --> Jupiter 59.611621 2042.04.05
+Z Sextil MC C --> MC 59.639639 2042.04.15
+Z Saturn C --> Sextil Saturn 59.642642 2042.04.16
+Z Moon C --> Sextil Moon 59.654637 2042.04.21
+M Mars C --> Sun 59.689999 2042.05.04
+Z Trigon Moon D --> MC 59.711468 2042.05.12
+M Contraantiscion Moon D --> Quadrat Sun 59.727517 2042.05.17
+Z Sun C --> Sextil Sun 59.758495 2042.05.29
+Z Sextil Venus C --> Venus 59.769468 2042.06.02
+Z Jupiter C --> Sextil Jupiter 59.796813 2042.06.12
+Z Trigon Mars D --> Mercury 59.921345 2042.07.28
+Z LoF C --> Quadrat Mars 59.990865 2042.08.23
+M Moon D --> Sextil Moon 60.026056 2042.09.05
+Z Antiscion Jupiter D --> Quadrat Saturn 60.111225 2042.10.07
+Z Contraantiscion Jupiter D --> Quadrat Saturn 60.111225 2042.10.07
+Z Sextil Saturn D --> Jupiter 60.123972 2042.10.11
+M Saturn D --> Sextil Saturn 60.185259 2042.11.03
+M Sun D --> Sextil Jupiter 60.185839 2042.11.03
+Z Quadrat Venus C --> Mercury 60.233229 2042.11.21
+Z Asc D --> Quadrat Sun 60.249012 2042.11.27
+Z Mercury C --> Sextil Mercury 60.445835 2043.02.07
+Z Antiscion Saturn D --> Quadrat Jupiter 60.477611 2043.02.19
+Z Contraantiscion Saturn D --> Quadrat Jupiter 60.477611 2043.02.19
+M Jupiter C --> Trigon Mars 60.479152 2043.02.20
+Z Quadrat Antiscion Mars C --> LoF 60.485714 2043.02.22
+Z Quadrat Contraantiscion Mars C --> LoF 60.485714 2043.02.22
+M Contraantiscion Sun D --> Quadrat Moon 60.538575 2043.03.14
+M Antiscion Sun D --> Quadrat Moon 60.538625 2043.03.14
+M Contraantiscion Mars D --> Asc 60.555787 2043.03.20
+Z Mars C --> Jupiter 60.558034 2043.03.21
+M Antiscion Saturn D --> Quadrat Saturn 60.603396 2043.04.07
+M Mars C --> Jupiter 60.653516 2043.04.25
+Z Antiscion Mercury C --> Trigon Mars 60.681827 2043.05.06
+Z Contraantiscion Mercury C --> Sextil Mars 60.681827 2043.05.06
+Z Saturn D --> Sextil Jupiter 60.695686 2043.05.11
+Z Sextil Antiscion Saturn D --> LoF 60.710255 2043.05.16
+Z Trigon Contraantiscion Saturn D --> LoF 60.710255 2043.05.16
+Z Sun C --> Sextil Jupiter 60.792311 2043.06.16
+Z Sextil Sun C --> Saturn 60.837522 2043.07.03
+M Contraantiscion Mercury D --> Trigon LoF 60.902437 2043.07.27
+Z MC D --> Oppositio Sun 60.964129 2043.08.18
+Z Oppositio MC D --> Sun 60.964129 2043.08.18
+Z Quadrat Mercury D --> Venus 61.062284 2043.09.24
+Z Oppositio Antiscion Venus C --> Asc 61.141131 2043.10.23
+Z Contraantiscion Venus C --> Asc 61.141131 2043.10.23
+Z Oppositio Antiscion Mars D --> Asc 61.142063 2043.10.23
+Z Contraantiscion Mars D --> Asc 61.142063 2043.10.23
+M Contraantiscion Saturn D --> Quadrat Saturn 61.163576 2043.10.31
+M Sun D --> Sextil Sun 61.217166 2043.11.20
+Z Antiscion Sun D --> Quadrat Saturn 61.227928 2043.11.24
+Z Contraantiscion Sun D --> Quadrat Saturn 61.227928 2043.11.24
+M Jupiter D --> Sextil Jupiter 61.252146 2043.12.03
+Z Sextil Venus C --> LoF 61.254422 2043.12.04
+M Contraantiscion Mercury C --> Trigon LoF 61.310489 2043.12.25
+M Antiscion Mercury C --> Sextil LoF 61.404402 2044.01.29
+Z Antiscion Mercury D --> Sextil Mercury 61.437544 2044.02.10
+Z Contraantiscion Mercury D --> Trigon Mercury 61.437544 2044.02.10
+Z Sextil Saturn D --> Sun 61.477132 2044.02.25
+Z Antiscion Saturn D --> Quadrat Sun 61.538965 2044.03.19
+Z Contraantiscion Saturn D --> Quadrat Sun 61.538965 2044.03.19
+M Moon C --> MC 61.595149 2044.04.08
+Z Venus C --> Quadrat Mercury 61.640622 2044.04.25
+M Saturn C --> Sextil Saturn 61.707855 2044.05.20
+M Antiscion Mars D --> Dsc 61.737479 2044.05.31
+Z Antiscion Desc D --> Trigon Moon 61.757049 2044.06.07
+Z Contraantiscion Desc D --> Sextil Moon 61.757049 2044.06.07
+Z Saturn D --> Sextil Sun 61.767257 2044.06.11
+M Mercury C --> Sextil LoF 61.783143 2044.06.17
+Z Quadrat Asc D --> Jupiter 61.787729 2044.06.19
+M Contraantiscion Venus D --> Quadrat LoF 61.797870 2044.06.23
+M Sun C --> Trigon Mars 61.948554 2044.08.18
+Z MC C --> Trigon Moon 61.988244 2044.09.01
+M Contraantiscion Mars C --> Sextil Mercury 62.070108 2044.10.02
+Z Contraantiscion Asc D --> Sextil Jupiter 62.111810 2044.10.17
+Z Antiscion Asc D --> Trigon Jupiter 62.111810 2044.10.17
+M Antiscion Mercury D --> Sextil LoF 62.180009 2044.11.12
+Z Moon D --> Trigon Saturn 62.207553 2044.11.22
+M Jupiter D --> Sextil Sun 62.289171 2044.12.22
+M Jupiter C --> Sextil Sun 62.416956 2045.02.07
+M Contraantiscion Saturn C --> Quadrat Mars 62.439509 2045.02.16
+Z Sun D --> Mars 62.651747 2045.05.05
+Z Trigon Mercury C --> Mars 62.916184 2045.08.11
+M Sun D --> Mars 62.926964 2045.08.15
+M Antiscion Venus C --> Dsc 62.937678 2045.08.19
+Z Quadrat Asc D --> Sun 63.142895 2045.11.03
+Z Antiscion Asc D --> Trigon Sun 63.178712 2045.11.17
+Z Contraantiscion Asc D --> Sextil Sun 63.178712 2045.11.17
+Z Trigon Saturn C --> Moon 63.193412 2045.11.22
+Z Quadrat Antiscion Saturn D --> Jupiter 63.199618 2045.11.24
+Z Quadrat Contraantiscion Saturn D --> Jupiter 63.199618 2045.11.24
+M Antiscion Saturn C --> Quadrat Mars 63.379357 2046.01.30
+Z Trigon Moon D --> Saturn 63.419157 2046.02.14
+Z Moon C --> MC 63.458258 2046.02.28
+M Antiscion Venus D --> Quadrat LoF 63.484849 2046.03.10
+Z Sextil Mercury C --> Mercury 63.514942 2046.03.21
+M Antiscion Mars C --> Trigon Mercury 63.519434 2046.03.23
+M Jupiter C --> Sextil Jupiter 63.585812 2046.04.16
+Z Trigon MC C --> Moon 63.719959 2046.06.05
+Z Venus D --> Oppositio Moon 63.763044 2046.06.21
+Z Oppositio Venus D --> Moon 63.763044 2046.06.21
+Z Mars D --> Sextil Mars 63.777235 2046.06.26
+Z Antiscion Desc C --> Trigon Moon 63.816618 2046.07.11
+Z Contraantiscion Desc C --> Sextil Moon 63.816618 2046.07.11
+Z Antiscion Asc C --> Trigon Sun 63.831458 2046.07.16
+Z Contraantiscion Asc C --> Sextil Sun 63.831458 2046.07.16
+Z Moon C --> Trigon Saturn 63.871968 2046.07.31
+Z Sextil MC D --> MC 63.881808 2046.08.04
+M Sun C --> Sextil Sun 63.895804 2046.08.09
+Z Jupiter D --> Mars 63.913575 2046.08.16
+Z Sextil Antiscion Mercury D --> Mercury 63.980877 2046.09.10
+Z Trigon Contraantiscion Mercury D --> Mercury 63.980877 2046.09.10
+Z Quadrat Antiscion Jupiter D --> Saturn 63.993263 2046.09.14
+Z Quadrat Contraantiscion Jupiter D --> Saturn 63.993263 2046.09.14
+M Jupiter D --> Mars 64.008417 2046.09.20
+Z Sextil Venus D --> Venus 64.167293 2046.11.18
+Z Jupiter C --> Trigon Mars 64.236601 2046.12.13
+M Mars D --> Trigon Jupiter 64.282613 2046.12.30
+Z Sextil Saturn D --> MC 64.332788 2047.01.18
+Z Antiscion Moon C --> Quadrat Mars 64.342041 2047.01.21
+Z Contraantiscion Moon C --> Quadrat Mars 64.342041 2047.01.21
+Z Quadrat Antiscion Saturn D --> Sun 64.556352 2047.04.11
+Z Quadrat Contraantiscion Saturn D --> Sun 64.556352 2047.04.11
+Z Antiscion Jupiter D --> Quadrat Moon 64.586858 2047.04.22
+Z Contraantiscion Jupiter D --> Quadrat Moon 64.586858 2047.04.22
+Z Mars C --> Sextil Mars 64.750396 2047.06.22
+Z Quadrat Antiscion Mars D --> Venus 64.808238 2047.07.13
+Z Quadrat Contraantiscion Mars D --> Venus 64.808238 2047.07.13
+Z Sextil Jupiter C --> Sun 64.809453 2047.07.13
+M Moon C --> Trigon Saturn 64.828187 2047.07.20
+Z Antiscion Asc C --> Trigon Jupiter 64.850907 2047.07.29
+Z Contraantiscion Asc C --> Sextil Jupiter 64.850907 2047.07.29
+M Mercury D --> Quadrat Venus 64.923120 2047.08.25
+Z Quadrat Mercury C --> LoF 64.951163 2047.09.04
+Z Saturn C --> Sextil Sun 64.962957 2047.09.08
+Z Antiscion Mars C --> Quadrat Moon 64.980412 2047.09.15
+Z Contraantiscion Mars C --> Quadrat Moon 64.980412 2047.09.15
+M Antiscion Moon D --> Quadrat Saturn 65.000830 2047.09.22
+M Sun C --> Sextil Jupiter 65.070359 2047.10.18
+M Contraantiscion Moon C --> Quadrat LoF 65.152871 2047.11.18
+Z Venus C --> Sextil Venus 65.159090 2047.11.20
+Z Sun C --> Trigon Mars 65.217204 2047.12.11
+Z Contraantiscion Moon D --> Quadrat Jupiter 65.230714 2047.12.16
+Z Antiscion Moon D --> Quadrat Jupiter 65.230714 2047.12.16
+Z Quadrat Antiscion Sun D --> Saturn 65.249563 2047.12.23
+Z Quadrat Contraantiscion Sun D --> Saturn 65.249563 2047.12.23
+Z Antiscion Venus D --> Quadrat Mars 65.283580 2048.01.05
+Z Contraantiscion Venus D --> Quadrat Mars 65.283580 2048.01.05
+M Saturn D --> Trigon Moon 65.289148 2048.01.07
+M Venus D --> Oppositio Moon 65.349499 2048.01.29
+M Mercury D --> Sextil Mercury 65.420215 2048.02.25
+M Mars C --> Trigon LoF 65.462180 2048.03.11
+M Mars D --> Trigon Sun 65.524978 2048.04.04
+Z Trigon Antiscion Mercury C --> Mars 65.531892 2048.04.06
+Z Sextil Contraantiscion Mercury C --> Mars 65.531892 2048.04.06
+Z Antiscion Sun D --> Quadrat Moon 65.688547 2048.06.03
+Z Contraantiscion Sun D --> Quadrat Moon 65.688547 2048.06.03
+Z Asc D --> Quadrat Saturn 65.786918 2048.07.10
+Z Sextil Jupiter C --> Jupiter 65.788324 2048.07.10
+M Antiscion Mercury C --> Oppositio Mercury 65.956842 2048.09.11
+Z Saturn C --> Sextil Jupiter 65.978370 2048.09.19
+M Antiscion Saturn D --> Quadrat Moon 66.006354 2048.09.29
+Z Sextil Sun C --> Sun 66.041165 2048.10.12
+Z Antiscion Mercury C --> Oppositio Mercury 66.100393 2048.11.03
+Z Contraantiscion Mercury C --> Mercury 66.100393 2048.11.03
+Z Oppositio Antiscion Mercury C --> Mercury 66.100393 2048.11.03
+M Contraantiscion Mercury C --> Mercury 66.118240 2048.11.10
+M Saturn C --> Trigon Mars 66.120098 2048.11.11
+M Contraantiscion Moon D --> Quadrat Saturn 66.262967 2049.01.03
+Z Trigon Antiscion Moon D --> LoF 66.269123 2049.01.05
+Z Sextil Contraantiscion Moon D --> LoF 66.269123 2049.01.05
+Z Antiscion Moon D --> Quadrat Sun 66.276457 2049.01.08
+Z Contraantiscion Moon D --> Quadrat Sun 66.276457 2049.01.08
+M Moon D --> Sextil Venus 66.297498 2049.01.15
+Z Antiscion Desc D --> Trigon Venus 66.383953 2049.02.16
+Z Contraantiscion Desc D --> Sextil Venus 66.383953 2049.02.16
+M Antiscion Jupiter D --> Sextil Mercury 66.460100 2049.03.17
+Z Sextil Sun D --> Jupiter 66.585586 2049.05.02
+Z Sextil Mercury D --> Mercury 66.596585 2049.05.06
+Z Moon D --> Sextil Moon 66.638693 2049.05.22
+M Contraantiscion Saturn D --> Quadrat Moon 66.751239 2049.07.02
+M Contraantiscion Mercury D --> Trigon Jupiter 66.841355 2049.08.05
+M Moon D --> Quadrat Mercury 66.871166 2049.08.16
+M Contraantiscion Jupiter D --> Trigon Mercury 66.913442 2049.09.01
+Z Trigon Antiscion Jupiter D --> Asc 66.938454 2049.09.10
+Z Sextil Contraantiscion Jupiter D --> Asc 66.938454 2049.09.10
+M Sun D --> Sextil Saturn 66.938533 2049.09.10
+Z Sextil Antiscion Moon C --> Asc 66.971786 2049.09.22
+Z Trigon Contraantiscion Moon C --> Asc 66.971786 2049.09.22
+Z Sextil Sun C --> Jupiter 67.016453 2049.10.09
+Z Antiscion Saturn D --> Quadrat Saturn 67.054947 2049.10.23
+Z Contraantiscion Saturn D --> Quadrat Saturn 67.054947 2049.10.23
+Z Sun D --> Sextil Jupiter 67.197996 2049.12.15
+Z Saturn D --> Sextil Saturn 67.305400 2050.01.24
+Z Sextil Saturn C --> Saturn 67.416103 2050.03.06
+Z Antiscion Mercury D --> Trigon Mars 67.455487 2050.03.20
+Z Contraantiscion Mercury D --> Sextil Mars 67.455487 2050.03.20
+Z MC C --> Sextil Saturn 67.492489 2050.04.03
+Z Antiscion Desc C --> IC 67.564656 2050.04.30
+Z Contraantiscion Desc C --> IC 67.564656 2050.04.30
+Z Quadrat Jupiter C --> Asc 67.571983 2050.05.02
+M Mars D --> Sextil Mars 67.584647 2050.05.07
+Z Mercury D --> Quadrat Venus 67.591050 2050.05.09
+M Mercury C --> Sextil Mercury 67.670104 2050.06.08
+M Contraantiscion Sun D --> Trigon Mercury 67.780925 2050.07.19
+M Antiscion Sun D --> Sextil Mercury 67.780993 2050.07.19
+Z Sextil Jupiter D --> Jupiter 67.810170 2050.07.30
+Z Trigon Antiscion Venus C --> Venus 67.816814 2050.08.01
+Z Sextil Contraantiscion Venus C --> Venus 67.816814 2050.08.01
+M Antiscion Moon C --> Quadrat LoF 67.850600 2050.08.14
+Z Trigon Venus C --> MC 67.869738 2050.08.21
+Z Sextil MC C --> Saturn 67.936569 2050.09.14
+M Contraantiscion Mars D --> Quadrat Venus 67.940164 2050.09.16
+Z Sextil Sun D --> Sun 67.945560 2050.09.18
+Z Antiscion Desc C --> Sextil Saturn 67.972320 2050.09.28
+Z Contraantiscion Desc C --> Trigon Saturn 67.972320 2050.09.28
+M Saturn C --> Sextil Sun 68.000670 2050.10.08
+M Contraantiscion Mercury D --> Trigon Sun 68.031342 2050.10.20
+M Jupiter D --> Sextil Saturn 68.042151 2050.10.24
+Z LoF C --> Oppositio Venus 68.130861 2050.11.25
+Z MC D --> Oppositio Saturn 68.180423 2050.12.14
+Z Oppositio MC D --> Saturn 68.180423 2050.12.14
+Z Sun D --> Sextil Sun 68.248275 2051.01.08
+Z Mercury C --> Quadrat Moon 68.272654 2051.01.17
+Z Trigon Antiscion Sun D --> Asc 68.295747 2051.01.25
+Z Sextil Contraantiscion Sun D --> Asc 68.295747 2051.01.25
+Z Quadrat Antiscion Moon D --> Jupiter 68.368131 2051.02.21
+Z Quadrat Contraantiscion Moon D --> Jupiter 68.368131 2051.02.21
+M Antiscion Mercury D --> Sextil Jupiter 68.388168 2051.03.01
+Z Mars D --> Trigon Jupiter 68.408111 2051.03.08
+Z Jupiter D --> Sextil Jupiter 68.442396 2051.03.21
+M Contraantiscion Mars D --> Sextil Mercury 68.451555 2051.03.24
+Z Sextil Moon C --> Moon 68.562613 2051.05.04
+M Antiscion Sun C --> Quadrat Mars 68.644876 2051.06.04
+M Contraantiscion Sun C --> Quadrat Mars 68.644941 2051.06.04
+Z Antiscion Asc D --> Trigon Saturn 68.692722 2051.06.21
+Z Contraantiscion Asc D --> Sextil Saturn 68.692722 2051.06.21
+Z Sextil Saturn D --> Saturn 68.696903 2051.06.23
+Z Antiscion Saturn C --> Quadrat Mars 68.827615 2051.08.10
+Z Contraantiscion Saturn C --> Quadrat Mars 68.827615 2051.08.10
+Z Quadrat Sun C --> Asc 68.883507 2051.08.31
+M Antiscion Mars D --> Quadrat Venus 68.927131 2051.09.16
+Z Sextil Moon D --> Venus 68.973967 2051.10.04
+M Moon C --> Sextil Mars 69.090358 2051.11.16
+Z Moon C --> Trigon Sun 69.114024 2051.11.24
+M Saturn C --> Sextil Jupiter 69.135005 2051.12.02
+Z Sextil Jupiter D --> Sun 69.171130 2051.12.16
+Z Antiscion Asc C --> Sextil Mars 69.214308 2052.01.01
+Z Contraantiscion Asc C --> Trigon Mars 69.214308 2052.01.01
+Z Antiscion Desc D --> Quadrat Mercury 69.295135 2052.01.31
+Z Contraantiscion Desc D --> Quadrat Mercury 69.295135 2052.01.31
+Z Sextil Mars D --> Mars 69.322500 2052.02.10
+Z Sextil Moon D --> Moon 69.356287 2052.02.22
+M Jupiter C --> Sextil LoF 69.419271 2052.03.17
+M Antiscion Mars D --> Trigon Mercury 69.425038 2052.03.19
+Z Jupiter D --> Sextil Sun 69.488649 2052.04.11
+Z Mars D --> Trigon Sun 69.490052 2052.04.12
+Z Sextil Mars C --> Mars 69.494379 2052.04.14
+M Contraantiscion Jupiter C --> Quadrat Mars 69.527978 2052.04.26
+M Contraantiscion Mars C --> Quadrat Moon 69.569685 2052.05.12
+M Antiscion Mercury D --> Sextil Sun 69.632103 2052.06.04
+Z Antiscion Mars C --> Quadrat Saturn 69.648676 2052.06.10
+Z Contraantiscion Mars C --> Quadrat Saturn 69.648676 2052.06.10
+Z Quadrat Antiscion Moon D --> Sun 69.729507 2052.07.10
+Z Quadrat Contraantiscion Moon D --> Sun 69.729507 2052.07.10
+Z LoF D --> Quadrat Jupiter 69.843753 2052.08.21
+Z Quadrat Antiscion Jupiter D --> Moon 69.934266 2052.09.24
+Z Quadrat Contraantiscion Jupiter D --> Moon 69.934266 2052.09.24
+M Antiscion Jupiter C --> Quadrat Mars 69.959281 2052.10.03
+M Mercury D --> Oppositio LoF 69.972655 2052.10.08
+Z Sextil Sun D --> MC 69.997836 2052.10.18
+M Contraantiscion Mercury D --> Sextil Mars 70.004178 2052.10.20
+M Mars C --> Mercury 70.022055 2052.10.27
+Z Asc C --> Quadrat Mars 70.049500 2052.11.06
+Z Quadrat Antiscion Venus D --> Mars 70.061793 2052.11.10
+Z Quadrat Contraantiscion Venus D --> Mars 70.061793 2052.11.10
+Z Jupiter C --> Sextil Mercury 70.065992 2052.11.12
+Z Mars C --> Mercury 70.099925 2052.11.24
+Z Venus D --> Sextil Venus 70.106221 2052.11.27
+Z Moon C --> Trigon Jupiter 70.114501 2052.11.30
+Z Asc D --> Quadrat Moon 70.185548 2052.12.26
+M Antiscion Moon D --> Quadrat Moon 70.220018 2053.01.08
+Z Saturn C --> Trigon Mars 70.324497 2053.02.16
+M Contraantiscion Saturn C --> Quadrat LoF 70.338743 2053.02.21
+Z Quadrat Asc D --> Saturn 70.373369 2053.03.06
+M Contraantiscion Moon C --> Oppositio Venus 70.548140 2053.05.10
+Z Trigon Antiscion Mars D --> Mercury 70.585581 2053.05.23
+Z Sextil Contraantiscion Mars D --> Mercury 70.585581 2053.05.23
+Z Mercury D --> Sextil Mercury 70.589779 2053.05.25
+Z Venus C --> Sextil Moon 70.751188 2053.07.24
+Z LoF D --> Quadrat Sun 70.874215 2053.09.07
+M Moon C --> Trigon Sun 70.906966 2053.09.19
+M Sun C --> Sextil LoF 70.932257 2053.09.29
+Z Sun C --> Sextil Mercury 71.027039 2053.11.03
+Z Sextil Jupiter D --> MC 71.068070 2053.11.18
+M Antiscion Mars C --> Quadrat Moon 71.179920 2053.12.29
+Z Moon D --> Sextil Venus 71.194817 2054.01.04
+Z Quadrat Antiscion Sun D --> Moon 71.198763 2054.01.05
+Z Quadrat Contraantiscion Sun D --> Moon 71.198763 2054.01.05
+Z Quadrat Mars D --> LoF 71.310222 2054.02.16
+M Saturn D --> Trigon Venus 71.342629 2054.02.28
+Z Antiscion Saturn D --> Quadrat Moon 71.436164 2054.04.03
+Z Contraantiscion Saturn D --> Quadrat Moon 71.436164 2054.04.03
+Z Antiscion Venus C --> LoF 71.518771 2054.05.04
+Z Oppositio Contraantiscion Venus C --> LoF 71.518771 2054.05.04
+M Antiscion Saturn C --> Quadrat LoF 71.575190 2054.05.25
+M Contraantiscion Venus D --> Quadrat Mars 71.629237 2054.06.14
+Z Saturn D --> Trigon Moon 71.666213 2054.06.28
+M Antiscion Mercury D --> Trigon Mars 71.694377 2054.07.08
+Z Contraantiscion Moon D --> Quadrat Saturn 71.711302 2054.07.14
+Z Antiscion Moon D --> Quadrat Saturn 71.711302 2054.07.14
+Z Quadrat Antiscion Saturn D --> Saturn 71.795191 2054.08.14
+Z Quadrat Contraantiscion Saturn D --> Saturn 71.795191 2054.08.14
+M Sun D --> Trigon Moon 71.850851 2054.09.04
+M Contraantiscion Moon D --> Quadrat Moon 71.874250 2054.09.13
+M Saturn D --> Quadrat Mercury 71.896360 2054.09.21
+Z Antiscion MC C --> Asc 71.932945 2054.10.04
+Z Contraantiscion Asc C --> Asc 71.932945 2054.10.04
+Z Contraantiscion MC C --> Asc 71.932945 2054.10.04
+M Antiscion Jupiter D --> Sextil LoF 71.991749 2054.10.26
+M Moon C --> Trigon Jupiter 72.002719 2054.10.30
+Z Antiscion Mars D --> Quadrat Venus 72.035907 2054.11.11
+Z Contraantiscion Mars D --> Quadrat Venus 72.035907 2054.11.11
+Z Antiscion Mercury D --> Sextil Jupiter 72.038879 2054.11.13
+Z Contraantiscion Mercury D --> Trigon Jupiter 72.038879 2054.11.13
+Z Trigon Antiscion Venus D --> LoF 72.078930 2054.11.27
+Z Sextil Contraantiscion Venus D --> LoF 72.078930 2054.11.27
+Z Antiscion Jupiter D --> Sextil Mercury 72.168451 2055.01.00
+Z Contraantiscion Jupiter D --> Trigon Mercury 72.168451 2055.01.00
+M Venus C --> Quadrat Mercury 72.229574 2055.01.22
+Z Antiscion Moon C --> Venus 72.357516 2055.03.11
+Z Contraantiscion Moon C --> Oppositio Venus 72.357516 2055.03.11
+Z Oppositio Contraantiscion Moon C --> Venus 72.357516 2055.03.11
+Z LoF C --> Sextil Moon 72.358697 2055.03.11
+M Mars D --> Trigon Saturn 72.417093 2055.04.02
+Z Trigon Antiscion Saturn C --> Asc 72.468792 2055.04.21
+Z Sextil Contraantiscion Saturn C --> Asc 72.468792 2055.04.21
+Z Sextil Saturn C --> Sun 72.523056 2055.05.11
+M Contraantiscion Jupiter D --> Trigon LoF 72.536710 2055.05.16
+Z Trigon Moon C --> Saturn 72.725120 2055.07.25
+Z Mercury C --> Quadrat Saturn 72.893051 2055.09.25
+M Venus C --> Sextil Venus 72.922280 2055.10.06
+M Venus D --> Sextil Venus 72.922280 2055.10.06
+M Jupiter D --> Trigon Moon 72.981611 2055.10.28
+M Antiscion Saturn D --> Sextil Mercury 73.000725 2055.11.04
+Z Trigon Mars D --> Jupiter 73.007490 2055.11.06
+Z Contraantiscion Asc D --> Trigon Moon 73.034532 2055.11.16
+Z Antiscion Asc D --> Sextil Moon 73.034532 2055.11.16
+Z Sextil MC C --> Sun 73.036167 2055.11.17
+Z Trigon MC D --> Venus 73.057119 2055.11.25
+Z Antiscion Mercury D --> Sextil Sun 73.109726 2055.12.14
+Z Contraantiscion Mercury D --> Trigon Sun 73.109726 2055.12.14
+M Contraantiscion Mars D --> Oppositio LoF 73.134929 2055.12.23
+Z Antiscion Desc C --> Sextil Sun 73.137775 2055.12.25
+Z Contraantiscion Desc C --> Trigon Sun 73.137775 2055.12.25
+Z Antiscion Sun D --> Sextil Mercury 73.244705 2056.02.02
+Z Contraantiscion Sun D --> Trigon Mercury 73.244705 2056.02.02
+M Contraantiscion Sun D --> Trigon LoF 73.339527 2056.03.08
+M Antiscion Sun D --> Sextil LoF 73.339609 2056.03.08
+Z Quadrat Antiscion Mars C --> Moon 73.443226 2056.04.16
+Z Quadrat Contraantiscion Mars C --> Moon 73.443226 2056.04.16
+Z Sextil Saturn C --> Jupiter 73.480222 2056.04.30
+Z Trigon Saturn D --> Venus 73.498300 2056.05.06
+Z Trigon Antiscion Mercury D --> Mars 73.628087 2056.06.24
+Z Sextil Contraantiscion Mercury D --> Mars 73.628087 2056.06.24
+Z Sun D --> Sextil Saturn 73.676375 2056.07.11
+M Antiscion Moon C --> Venus 73.677985 2056.07.12
+M Antiscion Venus D --> Quadrat Mars 73.737668 2056.08.03
+Z Quadrat Antiscion Moon C --> Mars 73.859883 2056.09.18
+Z Quadrat Contraantiscion Moon C --> Mars 73.859883 2056.09.18
+Z Sextil Asc D --> Asc 73.859950 2056.09.18
+Z Sextil Asc C --> Asc 73.946000 2056.10.20
+M Contraantiscion Saturn D --> Trigon Mercury 73.984718 2056.11.03
+M Antiscion Mars D --> LoF 73.984912 2056.11.03
+Z Sextil MC C --> Jupiter 73.991955 2056.11.06
+Z Moon D --> Quadrat Mercury 74.061466 2056.12.01
+Z Antiscion Desc C --> Sextil Jupiter 74.123632 2056.12.25
+Z Contraantiscion Desc C --> Trigon Jupiter 74.123632 2056.12.25
+Z MC D --> Moon 74.147226 2057.01.02
+Z Sextil Venus C --> Moon 74.188510 2057.01.18
+Z Trigon Mars D --> Sun 74.371488 2057.03.26
+Z Trigon Jupiter C --> Mars 74.374406 2057.03.27
+Z Moon C --> Sextil Mars 74.396698 2057.04.05
+Z Antiscion Sun C --> Quadrat Mars 74.444220 2057.04.22
+Z Contraantiscion Sun C --> Quadrat Mars 74.444220 2057.04.22
+Z MC C --> Sextil Sun 74.482767 2057.05.07
+M Contraantiscion Mercury D --> Trigon Saturn 74.632892 2057.07.01
+Z Trigon Saturn D --> Moon 74.666581 2057.07.14
+M Mercury D --> Sextil Jupiter 74.773479 2057.08.22
+M Saturn C --> Sextil LoF 74.796178 2057.08.31
+Z Jupiter D --> Sextil Saturn 74.895940 2057.10.07
+Z Antiscion Asc C --> Trigon Mercury 74.943404 2057.10.24
+Z Contraantiscion Asc C --> Sextil Mercury 74.943404 2057.10.24
+M Jupiter C --> Sextil Mercury 74.950920 2057.10.27
+Z Antiscion Mars D --> Trigon Mercury 74.996430 2057.11.13
+Z Contraantiscion Mars D --> Sextil Mercury 74.996430 2057.11.13
+Z Quadrat Moon D --> Mercury 75.019023 2057.11.21
+Z Mars D --> Trigon Saturn 75.158941 2058.01.12
+Z Sextil Jupiter C --> Mercury 75.179580 2058.01.20
+Z Sextil Sun D --> Saturn 75.201688 2058.01.28
+M Mercury C --> Quadrat Moon 75.340276 2058.03.20
+M Contraantiscion Mars C --> Quadrat Saturn 75.362900 2058.03.29
+Z Trigon Antiscion Saturn D --> Asc 75.412900 2058.04.16
+Z Sextil Contraantiscion Saturn D --> Asc 75.412900 2058.04.16
+Z Trigon Sun C --> Mars 75.495968 2058.05.17
+Z Antiscion Jupiter C --> Quadrat Mars 75.521134 2058.05.26
+Z Contraantiscion Jupiter C --> Quadrat Mars 75.521134 2058.05.26
+Z Antiscion Mars C --> Quadrat Sun 75.526053 2058.05.28
+Z Contraantiscion Mars C --> Quadrat Sun 75.526053 2058.05.28
+Z Sextil Antiscion Jupiter D --> Mercury 75.544322 2058.06.04
+Z Trigon Contraantiscion Jupiter D --> Mercury 75.544322 2058.06.04
+Z Mars D --> MC 75.606338 2058.06.27
+Z Quadrat Saturn C --> Asc 75.673293 2058.07.21
+Z Sextil Antiscion Venus C --> MC 75.687043 2058.07.27
+Z Trigon Contraantiscion Venus C --> MC 75.687043 2058.07.27
+M Mercury D --> Sextil Sun 75.735426 2058.08.13
+M Contraantiscion Saturn C --> Venus 75.760043 2058.08.23
+Z Quadrat Antiscion Mercury D --> LoF 75.775670 2058.08.28
+Z Quadrat Contraantiscion Mercury D --> LoF 75.775670 2058.08.28
+Z MC C --> Sextil Jupiter 75.835310 2058.09.19
+Z LoF C --> MC 75.992126 2058.11.17
+Z Antiscion Moon D --> Quadrat Moon 76.028073 2058.11.30
+Z Contraantiscion Moon D --> Quadrat Moon 76.028073 2058.11.30
+Z Saturn C --> Sextil Mercury 76.030913 2058.12.01
+M Mars D --> MC 76.082710 2058.12.20
+Z Saturn D --> Trigon Venus 76.150026 2059.01.14
+Z Venus C --> Trigon Saturn 76.189882 2059.01.29
+Z LoF D --> Quadrat Saturn 76.229641 2059.02.12
+Z Quadrat Asc D --> Moon 76.351897 2059.03.30
+M Contraantiscion Moon C --> Sextil Moon 76.354537 2059.03.31
+Z Sextil Sun C --> Mercury 76.373339 2059.04.07
+Z LoF C --> Trigon Saturn 76.387324 2059.04.12
+Z Sextil Jupiter D --> Saturn 76.432520 2059.04.29
+Z Mercury D --> Mars 76.433679 2059.04.29
+M Sun C --> Sextil Mercury 76.490874 2059.05.20
+Z Antiscion Moon C --> Trigon Moon 76.520678 2059.05.31
+Z Contraantiscion Moon C --> Sextil Moon 76.520678 2059.05.31
+M Antiscion Mercury D --> Sextil Saturn 76.532933 2059.06.05
+M Antiscion Sun C --> Quadrat LoF 76.533085 2059.06.05
+M Contraantiscion Sun C --> Quadrat LoF 76.533172 2059.06.05
+Z Antiscion Mars C --> Quadrat Jupiter 76.656945 2059.07.21
+Z Contraantiscion Mars C --> Quadrat Jupiter 76.656945 2059.07.21
+Z Sextil Antiscion Sun D --> Mercury 76.691443 2059.08.02
+Z Trigon Contraantiscion Sun D --> Mercury 76.691443 2059.08.02
+Z Antiscion Saturn C --> Oppositio Venus 76.715876 2059.08.12
+Z Contraantiscion Saturn C --> Venus 76.715876 2059.08.12
+Z Oppositio Antiscion Saturn C --> Venus 76.715876 2059.08.12
+M Antiscion Moon D --> Trigon Mercury 76.976491 2059.11.16
+Z Quadrat Antiscion Moon D --> Saturn 76.993115 2059.11.22
+Z Quadrat Contraantiscion Moon D --> Saturn 76.993115 2059.11.22
+Z Sextil Antiscion Mercury D --> Jupiter 77.076835 2059.12.23
+Z Trigon Contraantiscion Mercury D --> Jupiter 77.076835 2059.12.23
+M Antiscion Mars C --> Quadrat Saturn 77.097432 2060.01.00
+M Antiscion Saturn C --> Oppositio Venus 77.200048 2060.02.07
+Z Trigon Antiscion Moon C --> LoF 77.242440 2060.02.23
+Z Sextil Contraantiscion Moon C --> LoF 77.242440 2060.02.23
+M Contraantiscion Jupiter C --> Quadrat LoF 77.311700 2060.03.19
+M Mercury D --> Mars 77.330200 2060.03.26
+M Moon C --> Trigon LoF 77.471340 2060.05.18
+Z Antiscion Asc D --> Sextil Venus 77.498807 2060.05.28
+Z Contraantiscion Asc D --> Trigon Venus 77.498807 2060.05.28
+Z Quadrat Antiscion Mars C --> Saturn 77.554809 2060.06.18
+Z Quadrat Contraantiscion Mars C --> Saturn 77.554809 2060.06.18
+M Contraantiscion Venus C --> Sextil Venus 77.596885 2060.07.03
+Z Asc D --> Trigon Mercury 77.636699 2060.07.18
+Z Jupiter C --> Quadrat Moon 77.647584 2060.07.22
+M Moon D --> Quadrat Jupiter 77.665245 2060.07.29
+M Sun D --> Trigon Venus 77.677120 2060.08.02
+Z Trigon Moon C --> Sun 77.759286 2060.09.02
+Z Quadrat Mercury C --> Moon 77.776765 2060.09.08
+Z Quadrat Antiscion Saturn D --> Moon 77.780636 2060.09.10
+Z Quadrat Contraantiscion Saturn D --> Moon 77.780636 2060.09.10
+M Antiscion Jupiter D --> Sextil Jupiter 77.825208 2060.09.26
+Z Quadrat Jupiter C --> LoF 77.832624 2060.09.29
+M Antiscion Jupiter C --> Quadrat LoF 77.891075 2060.10.21
+Z Asc C --> Venus 77.903387 2060.10.25
+Z Sun D --> Trigon Moon 77.950539 2060.11.12
+Z Antiscion Jupiter D --> Trigon Mars 77.997842 2060.11.29
+Z Contraantiscion Jupiter D --> Sextil Mars 77.997842 2060.11.29
+M Contraantiscion Mars D --> Sextil Jupiter 78.073831 2060.12.27
+M Contraantiscion Mercury D --> MC 78.143969 2061.01.22
+M Sun D --> Quadrat Mercury 78.210067 2061.02.16
+M Contraantiscion Moon C --> MC 78.217532 2061.02.19
+Z Trigon Venus C --> Saturn 78.292660 2061.03.18
+M Mars D --> Sextil Moon 78.334606 2061.04.03
+Z Antiscion Desc C --> Trigon Mars 78.343254 2061.04.06
+Z Contraantiscion Desc C --> Sextil Mars 78.343254 2061.04.06
+M Antiscion Saturn D --> Sextil LoF 78.369001 2061.04.16
+Z Sextil Antiscion Mercury D --> Sun 78.441855 2061.05.13
+Z Trigon Contraantiscion Mercury D --> Sun 78.441855 2061.05.13
+M Contraantiscion Jupiter D --> Trigon Jupiter 78.466787 2061.05.22
+Z Quadrat Antiscion Saturn C --> Mars 78.543404 2061.06.19
+Z Quadrat Contraantiscion Saturn C --> Mars 78.543404 2061.06.19
+Z Sun C --> Quadrat Moon 78.583197 2061.07.04
+Z Trigon Moon C --> Jupiter 78.702811 2061.08.17
+Z Mercury C --> Quadrat Sun 78.710164 2061.08.20
+Z Antiscion Mercury D --> Sextil Saturn 78.720490 2061.08.24
+Z Contraantiscion Mercury D --> Trigon Saturn 78.720490 2061.08.24
+M Moon D --> Quadrat Sun 78.775373 2061.09.13
+M Antiscion Mars D --> Trigon Jupiter 78.793576 2061.09.20
+M Jupiter D --> Trigon Venus 78.840071 2061.10.07
+Z Antiscion Saturn D --> Sextil Mercury 78.857817 2061.10.14
+Z Contraantiscion Saturn D --> Trigon Mercury 78.857817 2061.10.14
+Z Saturn D --> Quadrat Mercury 78.971178 2061.11.25
+M Antiscion Jupiter D --> Sextil Sun 78.994065 2061.12.03
+Z Trigon Sun D --> Venus 79.034509 2061.12.18
+Z Antiscion Sun D --> Trigon Mars 79.054539 2061.12.26
+Z Contraantiscion Sun D --> Sextil Mars 79.054539 2061.12.26
+M Contraantiscion Mars D --> Sextil Sun 79.063444 2061.12.29
+Z Quadrat Sun C --> LoF 79.122957 2062.01.20
+M Contraantiscion Moon D --> Sextil Mercury 79.138307 2062.01.26
+Z Jupiter D --> Trigon Moon 79.153719 2062.01.31
+Z Oppositio Antiscion Mercury D --> MC 79.163299 2062.02.04
+Z Contraantiscion Mercury D --> MC 79.163299 2062.02.04
+Z Trigon Antiscion Sun C --> Asc 79.176092 2062.02.09
+Z Sextil Contraantiscion Sun C --> Asc 79.176092 2062.02.09
+M Contraantiscion Sun D --> Trigon Jupiter 79.201412 2062.02.18
+M Antiscion Sun D --> Sextil Jupiter 79.201508 2062.02.18
+Z Antiscion Desc D --> Quadrat Jupiter 79.315917 2062.04.01
+Z Contraantiscion Desc D --> Quadrat Jupiter 79.315917 2062.04.01
+M Jupiter D --> Quadrat Mercury 79.375963 2062.04.24
+M Contraantiscion Saturn D --> Trigon LoF 79.536513 2062.06.22
+M Contraantiscion Jupiter D --> Trigon Sun 79.655003 2062.08.05
+Z Sextil Mercury D --> Jupiter 79.692543 2062.08.19
+Z Mars D --> Sextil Moon 79.719668 2062.08.29
+Z Quadrat MC C --> Venus 79.732731 2062.09.03
+M Antiscion Mars D --> Trigon Sun 79.757093 2062.09.12
+Z Quadrat Asc C --> Mars 79.791497 2062.09.24
+Z Quadrat Saturn D --> Mercury 79.822862 2062.10.06
+Z Mercury C --> Quadrat Jupiter 79.829461 2062.10.09
+Z Contraantiscion Venus C --> Sextil Venus 79.850979 2062.10.17
+Z Antiscion Venus C --> Trigon Venus 79.850979 2062.10.17
+M Antiscion Moon C --> Trigon Moon 79.949427 2062.11.22
+M Antiscion Venus C --> Trigon Venus 80.019032 2062.12.18
+Z Moon C --> Trigon Mercury 80.019176 2062.12.18
+Z Trigon Jupiter D --> Venus 80.079274 2063.01.09
+Z Oppositio Antiscion Moon C --> MC 80.098524 2063.01.16
+Z Contraantiscion Moon C --> MC 80.098524 2063.01.16
+M Saturn C --> Sextil Mercury 80.164453 2063.02.10
+M Antiscion Mercury D --> IC 80.203185 2063.02.24
+M Antiscion Mercury C --> Quadrat Mars 80.211805 2063.02.27
+M Contraantiscion Mercury D --> Sextil Moon 80.300926 2063.04.01
+Z Antiscion Asc D --> Quadrat Mercury 80.307665 2063.04.04
+Z Contraantiscion Asc D --> Quadrat Mercury 80.307665 2063.04.04
+Z Antiscion Desc D --> Quadrat Sun 80.314868 2063.04.06
+Z Contraantiscion Desc D --> Quadrat Sun 80.314868 2063.04.06
+M Contraantiscion Sun D --> Trigon Sun 80.375964 2063.04.29
+M Antiscion Sun D --> Sextil Sun 80.376062 2063.04.29
+Z Trigon Antiscion Jupiter C --> Asc 80.436230 2063.05.21
+Z Sextil Contraantiscion Jupiter C --> Asc 80.436230 2063.05.21
+Z LoF D --> Quadrat Moon 80.483332 2063.06.08
+Z Antiscion Moon C --> Sextil Saturn 80.487677 2063.06.09
+Z Contraantiscion Moon C --> Trigon Saturn 80.487677 2063.06.09
+M Venus C --> Sextil Moon 80.495061 2063.06.12
+Z MC D --> Trigon Venus 80.566854 2063.07.09
+M Contraantiscion Mars D --> Mars 80.704086 2063.08.28
+Z Antiscion Mars D --> Oppositio Mars 80.765874 2063.09.20
+Z Contraantiscion Mars D --> Mars 80.765874 2063.09.20
+Z Oppositio Antiscion Mars D --> Mars 80.765874 2063.09.20
+Z Mercury D --> Sextil Jupiter 80.794467 2063.10.01
+Z Antiscion Saturn C --> Sextil Moon 80.812964 2063.10.08
+Z Contraantiscion Saturn C --> Trigon Moon 80.812964 2063.10.08
+M Antiscion Jupiter D --> Trigon Mars 80.931868 2063.11.21
+Z Quadrat Moon C --> Asc 81.009182 2063.12.19
+Z Sextil Mercury D --> Sun 81.057563 2064.01.06
+M Mercury D --> Sextil Saturn 81.071899 2064.01.12
+Z Sextil Antiscion Moon D --> Asc 81.127348 2064.02.01
+Z Trigon Contraantiscion Moon D --> Asc 81.127348 2064.02.01
+M Contraantiscion Mercury C --> Quadrat Mars 81.172651 2064.02.18
+Z Trigon Sun D --> Moon 81.201428 2064.02.29
+Z Trigon Saturn C --> Mars 81.245676 2064.03.16
+M Contraantiscion Moon C --> Trigon Saturn 81.250100 2064.03.18
+M Mercury C --> Quadrat Saturn 81.265271 2064.03.23
+Z Trigon Asc D --> Mercury 81.337369 2064.04.19
+M Antiscion Mars D --> Oppositio Mars 81.354473 2064.04.26
+Z LoF C --> Trigon Sun 81.394826 2064.05.11
+Z Sextil Mercury D --> MC 81.455877 2064.06.02
+M Contraantiscion Saturn C --> Trigon Moon 81.594454 2064.07.24
+M Contraantiscion Jupiter D --> Sextil Mars 81.624901 2064.08.04
+Z Trigon Mars D --> Saturn 81.649082 2064.08.13
+Z MC C --> Mars 81.689945 2064.08.28
+Z Mercury D --> Sextil Sun 81.801901 2064.10.09
+Z Quadrat Mercury C --> Saturn 81.846492 2064.10.25
+M Antiscion Sun C --> Oppositio Venus 81.946818 2064.12.02
+M Contraantiscion Sun C --> Venus 81.946920 2064.12.02
+M Antiscion Moon C --> IC 81.961633 2064.12.07
+Z Asc C --> Trigon Moon 81.982621 2064.12.15
+M Contraantiscion Mars C --> Quadrat Sun 82.110247 2065.01.31
+Z Jupiter C --> Quadrat Saturn 82.123218 2065.02.05
+M Jupiter C --> Quadrat Moon 82.158151 2065.02.18
+M Antiscion Moon D --> Trigon LoF 82.162177 2065.02.19
+Z Antiscion Sun C --> Oppositio Venus 82.175742 2065.02.24
+Z Contraantiscion Sun C --> Venus 82.175742 2065.02.24
+Z Oppositio Antiscion Sun C --> Venus 82.175742 2065.02.24
+M Saturn D --> Quadrat Jupiter 82.315296 2065.04.17
+M Contraantiscion Sun D --> Sextil Mars 82.323209 2065.04.20
+M Antiscion Sun D --> Trigon Mars 82.323313 2065.04.20
+Z Oppositio Venus D --> LoF 82.343279 2065.04.27
+Z Sun D --> Trigon Venus 82.345259 2065.04.28
+Z LoF C --> Trigon Jupiter 82.350537 2065.04.30
+Z Antiscion Asc C --> Quadrat Moon 82.394555 2065.05.16
+Z Contraantiscion Asc C --> Quadrat Moon 82.394555 2065.05.16
+Z Trigon Jupiter D --> Moon 82.436610 2065.06.01
+Z Antiscion Jupiter D --> Sextil Jupiter 82.437630 2065.06.01
+Z Contraantiscion Jupiter D --> Trigon Jupiter 82.437630 2065.06.01
+M Antiscion Mercury D --> Trigon Moon 82.457928 2065.06.09
+Z Quadrat Antiscion Mars C --> Sun 82.527387 2065.07.05
+Z Quadrat Contraantiscion Mars C --> Sun 82.527387 2065.07.05
+Z Sextil Antiscion Saturn D --> Mercury 82.617761 2065.08.07
+Z Trigon Contraantiscion Saturn D --> Mercury 82.617761 2065.08.07
+M Contraantiscion Jupiter C --> Venus 82.653722 2065.08.20
+Z Sextil Antiscion Saturn C --> LoF 82.655306 2065.08.21
+Z Trigon Contraantiscion Saturn C --> LoF 82.655306 2065.08.21
+M Moon C --> Trigon Mercury 82.657025 2065.08.22
+Z Sextil Saturn C --> Mercury 82.663247 2065.08.24
+M Contraantiscion Venus C --> Oppositio Moon 82.797066 2065.10.12
+Z Quadrat Antiscion Moon D --> Moon 82.999040 2065.12.26
+Z Quadrat Contraantiscion Moon D --> Moon 82.999040 2065.12.26
+Z Sun C --> Quadrat Saturn 83.043815 2066.01.12
+Z Antiscion MC D --> Oppositio Mercury 83.078920 2066.01.25
+Z Contraantiscion MC D --> Mercury 83.078920 2066.01.25
+Z Venus C --> Trigon Sun 83.096913 2066.02.01
+Z Sextil MC C --> Mercury 83.161756 2066.02.25
+Z Antiscion Jupiter C --> Oppositio Venus 83.223017 2066.03.19
+Z Contraantiscion Jupiter C --> Venus 83.223017 2066.03.19
+Z Oppositio Antiscion Jupiter C --> Venus 83.223017 2066.03.19
+Z Antiscion Mercury D --> Trigon Moon 83.234452 2066.03.23
+Z Contraantiscion Mercury D --> Sextil Moon 83.234452 2066.03.23
+M Antiscion Saturn C --> Sextil Moon 83.253529 2066.03.31
+Z Trigon Venus C --> Sun 83.256249 2066.04.01
+M Contraantiscion Mars C --> Quadrat Jupiter 83.326515 2066.04.27
+M Antiscion Jupiter C --> Oppositio Venus 83.334720 2066.04.30
+Z Antiscion Moon D --> Trigon Mercury 83.340558 2066.05.02
+Z Contraantiscion Moon D --> Sextil Mercury 83.340558 2066.05.02
+Z Asc D --> Sextil Mars 83.365795 2066.05.11
+M Saturn D --> Quadrat Sun 83.386843 2066.05.19
+Z Saturn C --> Quadrat Moon 83.452566 2066.06.12
+Z Quadrat Antiscion Mars C --> Jupiter 83.459368 2066.06.15
+Z Quadrat Contraantiscion Mars C --> Jupiter 83.459368 2066.06.15
+M Contraantiscion Saturn C --> IC 83.466438 2066.06.17
+Z Antiscion Jupiter D --> Sextil Sun 83.474926 2066.06.21
+Z Contraantiscion Jupiter D --> Trigon Sun 83.474926 2066.06.21
+Z Antiscion Sun D --> Sextil Jupiter 83.479432 2066.06.22
+Z Contraantiscion Sun D --> Trigon Jupiter 83.479432 2066.06.22
+Z Jupiter D --> Trigon Venus 83.531591 2066.07.12
+Z Trigon Antiscion Mars D --> Jupiter 83.671726 2066.09.01
+Z Sextil Contraantiscion Mars D --> Jupiter 83.671726 2066.09.01
+M Sun C --> Quadrat Moon 83.733241 2066.09.24
+Z Antiscion Desc C --> Sextil Mercury 83.883571 2066.11.19
+Z Contraantiscion Desc C --> Trigon Mercury 83.883571 2066.11.19
+Z Moon D --> Quadrat Jupiter 83.928957 2066.12.06
+M Antiscion Mars C --> Quadrat Sun 83.989548 2066.12.28
+M Antiscion Saturn D --> Sextil Jupiter 84.030174 2067.01.12
+Z Trigon Asc C --> LoF 84.112930 2067.02.12
+Z Antiscion Venus C --> Moon 84.170046 2067.03.05
+Z Contraantiscion Venus C --> Oppositio Moon 84.170046 2067.03.05
+Z Oppositio Contraantiscion Venus C --> Moon 84.170046 2067.03.05
+Z Quadrat Antiscion Sun C --> Mars 84.178689 2067.03.08
+Z Quadrat Contraantiscion Sun C --> Mars 84.178689 2067.03.08
+Z Trigon Venus C --> Jupiter 84.186546 2067.03.11
+M Mars C --> Quadrat Mars 84.300296 2067.04.22
+Z Antiscion Saturn C --> MC 84.334026 2067.05.05
+Z Oppositio Contraantiscion Saturn C --> MC 84.334026 2067.05.05
+Z Quadrat Venus D --> MC 84.358988 2067.05.14
+Z Venus C --> Trigon Jupiter 84.433349 2067.06.10
+Z Mars D --> Oppositio Venus 84.505915 2067.07.07
+Z Oppositio Mars D --> Venus 84.505915 2067.07.07
+Z Antiscion Sun D --> Sextil Sun 84.513248 2067.07.10
+Z Contraantiscion Sun D --> Trigon Sun 84.513248 2067.07.10
+M Contraantiscion Mars D --> Sextil Saturn 84.553401 2067.07.25
+Z Antiscion Saturn D --> Trigon Mars 84.564233 2067.07.29
+Z Contraantiscion Saturn D --> Sextil Mars 84.564233 2067.07.29
+M Contraantiscion Moon D --> Sextil LoF 84.713570 2067.09.22
+Z Antiscion Saturn C --> Trigon Saturn 84.717003 2067.09.23
+Z Contraantiscion Saturn C --> Sextil Saturn 84.717003 2067.09.23
+M Antiscion Venus C --> Moon 84.907925 2067.12.03
+Z Moon D --> Quadrat Sun 84.912627 2067.12.05
+M Moon D --> Quadrat Saturn 84.933899 2067.12.13
+Z Trigon Antiscion Mars D --> MC 84.959377 2067.12.22
+Z Sextil Contraantiscion Mars D --> MC 84.959377 2067.12.22
+Z Trigon Antiscion Mars D --> Sun 85.035723 2068.01.20
+Z Sextil Contraantiscion Mars D --> Sun 85.035723 2068.01.20
+Z Antiscion Mars D --> Trigon Jupiter 85.071101 2068.02.02
+Z Contraantiscion Mars D --> Sextil Jupiter 85.071101 2068.02.02
+M Antiscion Mars D --> Trigon Saturn 85.102282 2068.02.13
+Z Sun D --> Quadrat Mercury 85.110355 2068.02.16
+M Antiscion Saturn D --> Sextil Sun 85.164509 2068.03.07
+M Antiscion Saturn C --> MC 85.195801 2068.03.19
+Z Quadrat Antiscion Jupiter C --> Mars 85.229081 2068.03.31
+Z Quadrat Contraantiscion Jupiter C --> Mars 85.229081 2068.03.31
+M Antiscion Mars C --> Quadrat Jupiter 85.231912 2068.04.01
+M Antiscion Moon C --> Sextil Saturn 85.237085 2068.04.03
+M Contraantiscion Moon C --> Sextil Mars 85.247987 2068.04.07
+M Mars D --> Oppositio Venus 85.353088 2068.05.16
+M Contraantiscion Saturn D --> Trigon Jupiter 85.391218 2068.05.31
+Z Antiscion Moon C --> Sextil Sun 85.418577 2068.06.10
+Z Contraantiscion Moon C --> Trigon Sun 85.418577 2068.06.10
+M Antiscion Jupiter D --> Sextil Saturn 85.478389 2068.07.02
+Z Oppositio Asc C --> MC 85.488339 2068.07.06
+Z Antiscion Desc D --> Quadrat Saturn 85.506533 2068.07.12
+Z Contraantiscion Desc D --> Quadrat Saturn 85.506533 2068.07.12
+M Mercury D --> Trigon Moon 85.653751 2068.09.05
+Z Quadrat Sun D --> Mercury 85.671073 2068.09.11
+Z Sextil Moon C --> Mars 85.705905 2068.09.24
+Z Sextil Antiscion Mercury D --> Saturn 85.724906 2068.10.01
+Z Trigon Contraantiscion Mercury D --> Saturn 85.724906 2068.10.01
+Z Sextil Antiscion Mars C --> Asc 85.743051 2068.10.08
+Z Trigon Contraantiscion Mars C --> Asc 85.743051 2068.10.08
+Z Quadrat Saturn C --> LoF 85.819050 2068.11.05
+Z Asc C --> Sextil Saturn 85.869647 2068.11.24
+Z Antiscion Mars D --> Trigon Sun 86.065699 2069.02.05
+Z Contraantiscion Mars D --> Sextil Sun 86.065699 2069.02.05
+Z Antiscion Sun C --> Sextil Moon 86.191421 2069.03.23
+Z Contraantiscion Sun C --> Trigon Moon 86.191421 2069.03.23
+M Contraantiscion Jupiter D --> Trigon Saturn 86.246725 2069.04.13
+Z Trigon Antiscion Jupiter D --> Mars 86.252468 2069.04.15
+Z Sextil Contraantiscion Jupiter D --> Mars 86.252468 2069.04.15
+Z Antiscion Mercury C --> Quadrat Mars 86.258408 2069.04.17
+Z Contraantiscion Mercury C --> Quadrat Mars 86.258408 2069.04.17
+Z Jupiter D --> Quadrat Mercury 86.286087 2069.04.28
+Z Quadrat Mars D --> Asc 86.300092 2069.05.03
+Z Antiscion Moon C --> Sextil Jupiter 86.359668 2069.05.25
+Z Contraantiscion Moon C --> Trigon Jupiter 86.359668 2069.05.25
+Z LoF C --> Sextil Mars 86.441129 2069.06.24
+M Contraantiscion Saturn C --> Sextil Saturn 86.513638 2069.07.21
+M Contraantiscion Saturn D --> Trigon Sun 86.564331 2069.08.09
+Z Quadrat Mercury C --> Sun 86.768448 2069.10.23
+Z Quadrat Jupiter D --> Mercury 86.769627 2069.10.24
+Z Antiscion Asc C --> Quadrat Saturn 86.793185 2069.11.01
+Z Contraantiscion Asc C --> Quadrat Saturn 86.793185 2069.11.01
+M Venus C --> Trigon Saturn 86.879921 2069.12.03
+M Contraantiscion Sun D --> Trigon Saturn 86.891884 2069.12.08
+M Antiscion Sun D --> Sextil Saturn 86.891999 2069.12.08
+M Contraantiscion Moon C --> Trigon Sun 86.951954 2069.12.30
+Z Mercury D --> Sextil Saturn 87.008565 2070.01.20
+M Contraantiscion Mercury D --> Oppositio Venus 87.023515 2070.01.26
+M Antiscion Saturn D --> Trigon Mars 87.045081 2070.02.03
+Z Sextil Antiscion Venus D --> Asc 87.088014 2070.02.18
+Z Trigon Contraantiscion Venus D --> Asc 87.088014 2070.02.18
+M Saturn C --> Quadrat Moon 87.158825 2070.03.17
+M Contraantiscion Venus C --> Saturn 87.181509 2070.03.25
+Z Antiscion Jupiter C --> Sextil Moon 87.223301 2070.04.10
+Z Contraantiscion Jupiter C --> Trigon Moon 87.223301 2070.04.10
+Z Quadrat MC C --> MC 87.266826 2070.04.26
+Z Trigon Antiscion Moon D --> Mercury 87.269204 2070.04.27
+Z Sextil Contraantiscion Moon D --> Mercury 87.269204 2070.04.27
+Z Moon C --> Quadrat Moon 87.331660 2070.05.20
+Z Trigon Antiscion Sun D --> Mars 87.539077 2070.08.05
+Z Sextil Contraantiscion Sun D --> Mars 87.539077 2070.08.05
+M Antiscion Mercury C --> Quadrat LoF 87.569350 2070.08.16
+M Antiscion Moon D --> Trigon Jupiter 87.630797 2070.09.07
+Z Sextil Mars D --> Moon 87.666570 2070.09.21
+Z LoF D --> Sextil Mercury 87.688960 2070.09.29
+Z Quadrat Mercury C --> Jupiter 87.690942 2070.09.30
+Z Trigon Antiscion Mars C --> Venus 87.723648 2070.10.12
+Z Sextil Contraantiscion Mars C --> Venus 87.723648 2070.10.12
+M Jupiter C --> Quadrat Saturn 87.725537 2070.10.13
+Z Asc D --> Trigon Jupiter 87.729195 2070.10.14
+Z Trigon Moon C --> Mercury 87.754955 2070.10.23
+Z Jupiter C --> Quadrat Sun 87.758072 2070.10.25
+M Antiscion Sun C --> Sextil Moon 87.773087 2070.10.30
+M Contraantiscion Sun C --> Trigon Moon 87.773205 2070.10.30
+Z Saturn C --> Quadrat Saturn 87.833783 2070.11.22
+Z Antiscion Mercury D --> Venus 87.971623 2071.01.12
+Z Contraantiscion Mercury D --> Oppositio Venus 87.971623 2071.01.12
+Z Oppositio Contraantiscion Mercury D --> Venus 87.971623 2071.01.12
+M Contraantiscion Moon C --> Trigon Jupiter 87.979763 2071.01.15
+Z Contraantiscion Mars C --> Quadrat Mercury 88.001267 2071.01.23
+Z Antiscion Mars C --> Quadrat Mercury 88.001267 2071.01.23
+Z Sextil Moon D --> LoF 88.066947 2071.02.16
+Z Quadrat Moon D --> Jupiter 88.080020 2071.02.21
+M Mercury C --> Quadrat Sun 88.166101 2071.03.25
+Z Antiscion Venus C --> Oppositio Saturn 88.184456 2071.04.01
+Z Contraantiscion Venus C --> Saturn 88.184456 2071.04.01
+Z Oppositio Antiscion Venus C --> Saturn 88.184456 2071.04.01
+M Sun D --> Quadrat Jupiter 88.237937 2071.04.20
+Z Quadrat Venus C --> Venus 88.340387 2071.05.28
+Z Sextil Mercury D --> Saturn 88.340614 2071.05.28
+M Antiscion Saturn C --> Trigon Saturn 88.357417 2071.06.04
+M Contraantiscion Jupiter C --> Trigon Moon 88.402815 2071.06.20
+M Contraantiscion Saturn D --> Sextil Mars 88.509192 2071.07.30
+Z Sextil Antiscion Jupiter D --> Jupiter 88.601330 2071.09.02
+Z Trigon Contraantiscion Jupiter D --> Jupiter 88.601330 2071.09.02
+Z Quadrat Antiscion Jupiter D --> LoF 88.657132 2071.09.23
+Z Quadrat Contraantiscion Jupiter D --> LoF 88.657132 2071.09.23
+Z Sun C --> Quadrat Sun 88.659765 2071.09.24
+Z Saturn D --> Quadrat Jupiter 88.682060 2071.10.02
+M Antiscion Moon D --> Trigon Sun 88.726550 2071.10.18
+Z Asc D --> Trigon Sun 88.748645 2071.10.26
+Z Jupiter C --> Quadrat Jupiter 88.842299 2071.11.30
+Z Antiscion Jupiter D --> Sextil Saturn 88.909895 2071.12.25
+Z Contraantiscion Jupiter D --> Trigon Saturn 88.909895 2071.12.25
+Z Antiscion Saturn D --> Sextil Jupiter 88.910360 2071.12.25
+Z Contraantiscion Saturn D --> Trigon Jupiter 88.910360 2071.12.25
+M Antiscion Jupiter D --> IC 88.927119 2072.01.01
+M Contraantiscion Mercury C --> Quadrat LoF 88.942823 2072.01.06
+Z Antiscion Moon D --> Sextil Mars 88.963035 2072.01.14
+Z Contraantiscion Moon D --> Trigon Mars 88.963035 2072.01.14
+M Antiscion Venus C --> Oppositio Saturn 89.029911 2072.02.08
+M Antiscion Jupiter C --> Sextil Moon 89.193181 2072.04.08
+M Contraantiscion Mars D --> Trigon Moon 89.267032 2072.05.06
+M Sun D --> Quadrat Sun 89.269264 2072.05.07
+Z Sextil Antiscion Sun C --> LoF 89.284893 2072.05.12
+Z Trigon Contraantiscion Sun C --> LoF 89.284893 2072.05.12
+M Sun C --> Quadrat Saturn 89.327769 2072.05.28
+M Saturn D --> Quadrat Saturn 89.331332 2072.05.30
+Z Oppositio Antiscion Jupiter D --> MC 89.338831 2072.06.01
+Z Contraantiscion Jupiter D --> MC 89.338831 2072.06.01
+M Mercury C --> Quadrat Jupiter 89.410036 2072.06.28
+M Moon C --> Quadrat Moon 89.413499 2072.06.29
+Z Quadrat Moon D --> Sun 89.441396 2072.07.10
+M Jupiter D --> Quadrat Jupiter 89.459240 2072.07.16
+M Antiscion Mercury D --> Venus 89.485285 2072.07.26
+Z MC C --> Sextil Mercury 89.535753 2072.08.14
+M Antiscion Moon C --> Trigon Mars 89.555170 2072.08.21
+Z Antiscion Saturn C --> Trigon Sun 89.569643 2072.08.26
+Z Contraantiscion Saturn C --> Sextil Sun 89.569643 2072.08.26
+Z Antiscion Desc D --> Quadrat Moon 89.630151 2072.09.18
+Z Contraantiscion Desc D --> Quadrat Moon 89.630151 2072.09.18
+M Antiscion Sun C --> MC 89.642458 2072.09.22
+Z Antiscion Sun C --> MC 89.642519 2072.09.22
+Z Oppositio Contraantiscion Sun C --> MC 89.642519 2072.09.22
+M Contraantiscion Sun C --> IC 89.642581 2072.09.22
+Z Saturn D --> Quadrat Sun 89.650118 2072.09.25
+M Antiscion Mars D --> Sextil Moon 89.691616 2072.10.10
+Z Sextil Antiscion Sun D --> Jupiter 89.738990 2072.10.28
+Z Trigon Contraantiscion Sun D --> Jupiter 89.738990 2072.10.28
+Z Sun C --> Quadrat Jupiter 89.740355 2072.10.29
+M Contraantiscion Jupiter D --> MC 89.752575 2072.11.02
+Z Trigon Antiscion Moon C --> Moon 89.763289 2072.11.06
+Z Sextil Contraantiscion Moon C --> Moon 89.763289 2072.11.06
+Z Trigon Mercury C --> Asc 89.849273 2072.12.08
+Z Antiscion Saturn D --> Sextil Sun 89.925773 2073.01.05
+Z Contraantiscion Saturn D --> Trigon Sun 89.925773 2073.01.05
+Z Antiscion Sun D --> Sextil Saturn 89.929985 2073.01.07
+Z Contraantiscion Sun D --> Trigon Saturn 89.929985 2073.01.07
+Z Quadrat Antiscion Sun D --> LoF 89.947464 2073.01.13
+Z Quadrat Contraantiscion Sun D --> LoF 89.947464 2073.01.13
+Z Sextil Antiscion Jupiter D --> Sun 89.962290 2073.01.19
+Z Trigon Contraantiscion Jupiter D --> Sun 89.962290 2073.01.19
+Z Antiscion Asc D --> Quadrat Jupiter 89.976231 2073.01.24
+Z Contraantiscion Asc D --> Quadrat Jupiter 89.976231 2073.01.24
+Z Mars C --> Quadrat Mars 90.001108 2073.02.02
+Z Antiscion Sun C --> Trigon Saturn 90.017886 2073.02.08
+Z Contraantiscion Sun C --> Sextil Saturn 90.017886 2073.02.08
+Z Moon D --> Quadrat Saturn 90.024872 2073.02.11
+Z Trigon Mercury D --> Venus 90.203815 2073.04.18
+Z Venus C --> Oppositio Mars 90.218260 2073.04.24
+Z Oppositio Venus C --> Mars 90.218260 2073.04.24
+M Moon D --> Quadrat Moon 90.221556 2073.04.25
+M Contraantiscion Jupiter C --> IC 90.247425 2073.05.04
+Z Antiscion MC C --> Sextil Venus 90.311612 2073.05.28
+Z Contraantiscion MC C --> Trigon Venus 90.311612 2073.05.28
+Z Quadrat Jupiter C --> Moon 90.341268 2073.06.08
+Z Antiscion MC D --> Trigon Mars 90.353689 2073.06.13
+Z Contraantiscion MC D --> Sextil Mars 90.353689 2073.06.13
+M Contraantiscion Sun D --> MC 90.357419 2073.06.14
+Z Oppositio Antiscion Sun D --> MC 90.357481 2073.06.14
+Z Contraantiscion Sun D --> MC 90.357481 2073.06.14
+M Antiscion Sun D --> IC 90.357542 2073.06.14
+Z Antiscion Moon C --> Trigon Mars 90.387684 2073.06.25
+Z Contraantiscion Moon C --> Sextil Mars 90.387684 2073.06.25
+Z Contraantiscion Saturn C --> Sextil Jupiter 90.495798 2073.08.04
+Z Antiscion Saturn C --> Trigon Jupiter 90.495798 2073.08.04
+M Jupiter D --> Quadrat Sun 90.496265 2073.08.05
+M Contraantiscion Saturn C --> Trigon Mars 90.530814 2073.08.17
+Z Sextil Antiscion Jupiter C --> LoF 90.533785 2073.08.19
+Z Trigon Contraantiscion Jupiter C --> LoF 90.533785 2073.08.19
+M Antiscion Moon D --> Sextil Mars 90.543159 2073.08.22
+M Contraantiscion Moon D --> Sextil Jupiter 90.593023 2073.09.09
+Z Antiscion Jupiter C --> MC 90.661169 2073.10.05
+Z Oppositio Contraantiscion Jupiter C --> MC 90.661169 2073.10.05
+M Contraantiscion Venus D --> Oppositio Mercury 90.677133 2073.10.11
+Z Asc C --> Sextil Sun 90.701142 2073.10.19
+M Contraantiscion Venus C --> Sextil Mars 90.761997 2073.11.11
+Z Quadrat Antiscion Mercury D --> Asc 90.873743 2073.12.22
+Z Quadrat Contraantiscion Mercury D --> Asc 90.873743 2073.12.22
+Z Antiscion Asc D --> Quadrat Sun 90.940071 2074.01.16
+Z Contraantiscion Asc D --> Quadrat Sun 90.940071 2074.01.16
+Z Antiscion Jupiter C --> Trigon Saturn 91.035098 2074.02.20
+Z Contraantiscion Jupiter C --> Sextil Saturn 91.035098 2074.02.20
+M Antiscion Jupiter D --> Trigon Moon 91.045775 2074.02.24
+Z Mercury C --> Quadrat Mercury 91.057464 2074.02.28
+M Antiscion Jupiter C --> MC 91.072881 2074.03.06
+M Mercury D --> Trigon Venus 91.088068 2074.03.12
+Z Antiscion Desc C --> Quadrat Moon 91.089199 2074.03.12
+Z Contraantiscion Desc C --> Quadrat Moon 91.089199 2074.03.12
+Z Sextil Antiscion Sun D --> Sun 91.098964 2074.03.16
+Z Trigon Contraantiscion Sun D --> Sun 91.098964 2074.03.16
+Z Quadrat Moon C --> LoF 91.101995 2074.03.17
+Z Mercury D --> Trigon Moon 91.108367 2074.03.19
+Z Antiscion Mars D --> Trigon Saturn 91.206026 2074.04.24
+Z Contraantiscion Mars D --> Sextil Saturn 91.206026 2074.04.24
+Z Antiscion Mars C --> Trigon Venus 91.296957 2074.05.28
+Z Contraantiscion Mars C --> Sextil Venus 91.296957 2074.05.28
+Z Sextil Mercury C --> Venus 91.321561 2074.06.06
+M Antiscion Moon C --> Sextil Sun 91.395610 2074.07.04
+M Antiscion Saturn D --> Sextil Saturn 91.457324 2074.07.27
+M Mercury D --> Quadrat Mercury 91.585163 2074.09.12
+Z Quadrat Sun C --> Moon 91.605765 2074.09.19
+Z Asc C --> Sextil Jupiter 91.623262 2074.09.26
+Z Moon C --> Quadrat Saturn 91.648432 2074.10.05
+M Mars C --> Quadrat LoF 91.669857 2074.10.13
+Z Trigon Antiscion Mercury D --> Moon 91.746907 2074.11.11
+Z Sextil Contraantiscion Mercury D --> Moon 91.746907 2074.11.11
+M Contraantiscion Moon D --> Sextil Sun 91.771096 2074.11.20
+Z LoF C --> Trigon Mercury 91.812029 2074.12.05
+M Mars D --> Quadrat LoF 91.874618 2074.12.28
+M Contraantiscion Jupiter D --> Sextil Moon 91.906322 2075.01.09
+Z Antiscion Venus D --> Mercury 92.024696 2075.02.22
+Z Contraantiscion Venus D --> Oppositio Mercury 92.024696 2075.02.22
+Z Oppositio Contraantiscion Venus D --> Mercury 92.024696 2075.02.22
+M Venus C --> Oppositio Mars 92.094019 2075.03.19
+M Contraantiscion Saturn C --> Sextil Sun 92.243002 2075.05.13
+M Contraantiscion Venus C --> Sun 92.288061 2075.05.30
+Z Trigon Antiscion Mars D --> Saturn 92.313317 2075.06.09
+Z Sextil Contraantiscion Mars D --> Saturn 92.313317 2075.06.09
+Z Antiscion Asc C --> Quadrat Sun 92.331090 2075.06.15
+Z Contraantiscion Asc C --> Quadrat Sun 92.331090 2075.06.15
+M Antiscion Venus C --> Trigon Mars 92.396069 2075.07.09
+Z Quadrat Antiscion Mars C --> Mercury 92.400768 2075.07.11
+Z Quadrat Contraantiscion Mars C --> Mercury 92.400768 2075.07.11
+Z Trigon Antiscion Mercury C --> Asc 92.464981 2075.08.04
+Z Sextil Contraantiscion Mercury C --> Asc 92.464981 2075.08.04
+M Contraantiscion Sun D --> Sextil Moon 92.486399 2075.08.12
+M Antiscion Sun D --> Trigon Moon 92.486527 2075.08.12
+M Antiscion Moon C --> Sextil Jupiter 92.505738 2075.08.19
+M Antiscion Saturn C --> Sextil Mars 92.525430 2075.08.26
+M Saturn C --> Quadrat Saturn 92.561782 2075.09.09
+M Antiscion Mercury C --> Oppositio Venus 92.618884 2075.09.30
+M Antiscion Sun C --> Trigon Saturn 92.685404 2075.10.24
+M Contraantiscion Sun C --> Sextil Saturn 92.685536 2075.10.24
+Z Quadrat MC D --> MC 92.733174 2075.11.11
+Z Sextil Asc D --> Mars 92.821750 2075.12.14
+Z Quadrat Saturn D --> Jupiter 92.839321 2075.12.20
+Z MC D --> LoF 92.951399 2076.01.31
+Z Quadrat Venus D --> Venus 93.028864 2076.02.29
+Z Antiscion Venus C --> Oppositio Sun 93.039513 2076.03.04
+Z Contraantiscion Venus C --> Sun 93.039513 2076.03.04
+Z Oppositio Antiscion Venus C --> Sun 93.039513 2076.03.04
+M Contraantiscion Saturn D --> Trigon Saturn 93.072271 2076.03.16
+M Contraantiscion Moon C --> Trigon LoF 93.109292 2076.03.30
+Z Trigon Venus C --> Mercury 93.111782 2076.03.30
+M Contraantiscion Venus C --> Jupiter 93.208562 2076.05.05
+Z LoF D --> Trigon Mars 93.229276 2076.05.13
+Z Contraantiscion Moon D --> Sextil Jupiter 93.245233 2076.05.19
+Z Antiscion Moon D --> Trigon Jupiter 93.245233 2076.05.19
+M Contraantiscion Jupiter C --> Sextil Saturn 93.250064 2076.05.21
+M Contraantiscion Mercury D --> Quadrat LoF 93.270103 2076.05.28
+M Contraantiscion Saturn C --> Sextil Jupiter 93.275770 2076.05.30
+Z Antiscion Jupiter D --> Trigon Moon 93.282429 2076.06.02
+Z Contraantiscion Jupiter D --> Sextil Moon 93.282429 2076.06.02
+Z Saturn C --> Quadrat Sun 93.349765 2076.06.27
+Z Antiscion Asc C --> Quadrat Jupiter 93.396663 2076.07.14
+Z Contraantiscion Asc C --> Quadrat Jupiter 93.396663 2076.07.14
+Z Trigon Saturn D --> LoF 93.479814 2076.08.14
+Z MC C --> Quadrat Venus 93.561737 2076.09.14
+M Antiscion Venus D --> Mercury 93.602114 2076.09.29
+Z Sextil Antiscion Mars D --> Venus 93.612902 2076.10.03
+Z Trigon Contraantiscion Mars D --> Venus 93.612902 2076.10.03
+Z Antiscion Mercury C --> Oppositio Venus 93.674527 2076.10.25
+Z Contraantiscion Mercury C --> Venus 93.674527 2076.10.25
+Z Oppositio Antiscion Mercury C --> Venus 93.674527 2076.10.25
+Z Mars D --> Quadrat Mars 93.721038 2076.11.12
+M Contraantiscion Moon D --> Trigon Mars 93.724178 2076.11.13
+Z Sextil Antiscion Moon C --> Saturn 93.736314 2076.11.17
+Z Trigon Contraantiscion Moon C --> Saturn 93.736314 2076.11.17
+M Antiscion Venus C --> Oppositio Sun 93.830781 2076.12.22
+Z Antiscion Venus C --> Oppositio Jupiter 93.949468 2077.02.04
+Z Contraantiscion Venus C --> Jupiter 93.949468 2077.02.04
+Z Oppositio Antiscion Venus C --> Jupiter 93.949468 2077.02.04
+Z Moon D --> Quadrat Moon 94.085410 2077.03.27
+Z Asc D --> Trigon Saturn 94.090105 2077.03.28
+M Antiscion Jupiter C --> Trigon Saturn 94.132641 2077.04.13
+Z Quadrat Saturn D --> Sun 94.196055 2077.05.07
+M Jupiter C --> Quadrat Sun 94.209862 2077.05.12
+Z Antiscion Moon D --> Trigon Sun 94.245710 2077.05.25
+Z Contraantiscion Moon D --> Sextil Sun 94.245710 2077.05.25
+M Contraantiscion Mercury C --> Venus 94.275547 2077.06.05
+Z Antiscion Sun D --> Trigon Moon 94.287849 2077.06.10
+Z Contraantiscion Sun D --> Sextil Moon 94.287849 2077.06.10
+Z Trigon Antiscion Saturn D --> Mars 94.298668 2077.06.14
+Z Sextil Contraantiscion Saturn D --> Mars 94.298668 2077.06.14
+M Antiscion Saturn C --> Trigon Sun 94.301906 2077.06.15
+Z Quadrat Jupiter C --> Saturn 94.310419 2077.06.18
+M Venus C --> Trigon Sun 94.316355 2077.06.20
+Z Mercury C --> Sextil Venus 94.319361 2077.06.21
+Z Trigon Asc D --> Jupiter 94.336016 2077.06.28
+Z Trigon Mercury D --> Moon 94.362615 2077.07.07
+Z Saturn C --> Quadrat Jupiter 94.411119 2077.07.25
+M Saturn D --> Quadrat Moon 94.435220 2077.08.03
+Z Antiscion Saturn C --> Sextil Mars 94.459886 2077.08.12
+Z Contraantiscion Saturn C --> Trigon Mars 94.459886 2077.08.12
+Z Asc D --> MC 94.511661 2077.09.01
+Z Antiscion MC C --> Oppositio Moon 94.554228 2077.09.16
+Z Contraantiscion MC C --> Moon 94.554228 2077.09.16
+Z Sun D --> Quadrat Jupiter 94.628283 2077.10.14
+M Moon C --> Quadrat Saturn 94.632687 2077.10.15
+Z Saturn D --> Quadrat Saturn 94.681226 2077.11.02
+M Antiscion Venus C --> Oppositio Jupiter 94.696180 2077.11.08
+Z Antiscion Sun C --> Trigon Sun 94.774105 2077.12.07
+Z Contraantiscion Sun C --> Sextil Sun 94.774105 2077.12.07
+M Antiscion Saturn D --> IC 94.804199 2077.12.18
+M Antiscion Moon D --> Trigon Saturn 94.805329 2077.12.18
+M Contraantiscion Mars D --> Trigon Venus 94.857647 2078.01.07
+M Sun D --> Quadrat Saturn 94.990631 2078.02.25
+Z Sextil Antiscion Mars C --> MC 95.040623 2078.03.15
+Z Trigon Contraantiscion Mars C --> MC 95.040623 2078.03.15
+Z Sextil Antiscion Saturn C --> Moon 95.073582 2078.03.28
+Z Trigon Contraantiscion Saturn C --> Moon 95.073582 2078.03.28
+M Antiscion Mars D --> Sextil Venus 95.134808 2078.04.19
+M Contraantiscion Mars C --> Quadrat Mercury 95.152624 2078.04.26
+Z Quadrat Antiscion Mercury C --> Mars 95.166826 2078.05.01
+Z Quadrat Contraantiscion Mercury C --> Mars 95.166826 2078.05.01
+Z Quadrat Asc D --> LoF 95.193021 2078.05.11
+Z Antiscion Saturn D --> Sextil Saturn 95.246088 2078.05.31
+Z Contraantiscion Saturn D --> Trigon Saturn 95.246088 2078.05.31
+Z Antiscion Mars D --> Sextil Moon 95.253593 2078.06.02
+Z Contraantiscion Mars D --> Trigon Moon 95.253593 2078.06.02
+Z Mercury D --> Trigon Venus 95.323807 2078.06.28
+Z Antiscion Desc C --> Quadrat Saturn 95.342889 2078.07.05
+Z Contraantiscion Desc C --> Quadrat Saturn 95.342889 2078.07.05
+M Contraantiscion Mars D --> Quadrat Mercury 95.369039 2078.07.15
+M Antiscion Saturn C --> Trigon Jupiter 95.373453 2078.07.17
+M Jupiter C --> Quadrat Jupiter 95.378718 2078.07.19
+Z Quadrat Sun C --> Saturn 95.566719 2078.09.26
+Z Asc C --> Trigon Mars 95.570075 2078.09.28
+Z Sun D --> Quadrat Sun 95.577105 2078.09.30
+Z Sextil Antiscion Saturn D --> Jupiter 95.599933 2078.10.09
+Z Trigon Contraantiscion Saturn D --> Jupiter 95.599933 2078.10.09
+M Antiscion Mars D --> Quadrat Mercury 95.632714 2078.10.21
+Z Quadrat Venus C --> MC 95.641012 2078.10.24
+M Venus C --> Trigon Jupiter 95.656838 2078.10.30
+Z Oppositio Antiscion Saturn D --> MC 95.665974 2078.11.02
+Z Contraantiscion Saturn D --> MC 95.665974 2078.11.02
+Z Antiscion Moon C --> Sextil Mercury 95.676424 2078.11.06
+Z Contraantiscion Moon C --> Trigon Mercury 95.676424 2078.11.06
+Z Antiscion Sun C --> Trigon Jupiter 95.681858 2078.11.08
+Z Contraantiscion Sun C --> Sextil Jupiter 95.681858 2078.11.08
+Z Trigon Asc D --> Sun 95.690893 2078.11.11
+Z Jupiter D --> Quadrat Jupiter 95.767527 2078.12.10
+Z Antiscion Jupiter C --> Trigon Sun 95.773083 2078.12.12
+Z Contraantiscion Jupiter C --> Sextil Sun 95.773083 2078.12.12
+M Contraantiscion Mars C --> Sextil Venus 95.781142 2078.12.15
+Z Trigon Antiscion Mars C --> LoF 95.805970 2078.12.24
+Z Sextil Contraantiscion Mars C --> LoF 95.805970 2078.12.24
+M Sun C --> Quadrat Sun 95.843706 2079.01.07
+Z Antiscion Asc D --> Quadrat Saturn 95.949255 2079.02.15
+Z Contraantiscion Asc D --> Quadrat Saturn 95.949255 2079.02.15
+M Antiscion Mercury D --> Quadrat LoF 96.015061 2079.03.11
+Z Antiscion MC D --> Oppositio Jupiter 96.054839 2079.03.26
+Z Contraantiscion MC D --> Jupiter 96.054839 2079.03.26
+M Jupiter D --> Quadrat Saturn 96.249245 2079.06.06
+Z Sextil Mars C --> Asc 96.407287 2079.08.04
+Z Trigon Asc C --> Moon 96.507331 2079.09.10
+M Contraantiscion Saturn D --> MC 96.533562 2079.09.19
+Z Antiscion Mars C --> Trigon Moon 96.534980 2079.09.20
+Z Contraantiscion Mars C --> Sextil Moon 96.534980 2079.09.20
+Z Quadrat Mercury C --> Mercury 96.541317 2079.09.22
+Z Antiscion Desc D --> Trigon Mercury 96.615440 2079.10.20
+Z Contraantiscion Desc D --> Sextil Mercury 96.615440 2079.10.20
+Z Quadrat Antiscion Saturn D --> LoF 96.643557 2079.10.30
+Z Quadrat Contraantiscion Saturn D --> LoF 96.643557 2079.10.30
+Z Antiscion Jupiter C --> Trigon Jupiter 96.677356 2079.11.12
+Z Contraantiscion Jupiter C --> Sextil Jupiter 96.677356 2079.11.12
+M Antiscion Sun C --> Sextil Mars 96.696974 2079.11.19
+M Contraantiscion Sun C --> Trigon Mars 96.697117 2079.11.19
+Z Quadrat Moon D --> Saturn 96.705004 2079.11.22
+Z Jupiter D --> Quadrat Sun 96.712712 2079.11.25
+M Mars C --> Venus 96.727637 2079.11.30
+M Contraantiscion Venus D --> Sextil LoF 96.760236 2079.12.12
+M Antiscion Saturn D --> Trigon Moon 96.860281 2080.01.18
+Z Sextil Antiscion Saturn D --> Sun 96.953092 2080.02.22
+Z Trigon Contraantiscion Saturn D --> Sun 96.953092 2080.02.22
+M Sun C --> Quadrat Jupiter 97.018261 2080.03.17
+M Moon D --> Sextil Mercury 97.066667 2080.04.04
+Z Moon C --> Quadrat Sun 97.083277 2080.04.10
+Z Antiscion Mercury D --> Quadrat Mars 97.092259 2080.04.14
+Z Contraantiscion Mercury D --> Quadrat Mars 97.092259 2080.04.14
+M Contraantiscion Jupiter C --> Trigon Mars 97.208496 2080.05.27
+Z Sextil Antiscion Jupiter D --> Saturn 97.223680 2080.06.01
+Z Trigon Contraantiscion Jupiter D --> Saturn 97.223680 2080.06.01
+Z Quadrat Mercury D --> Mercury 97.298238 2080.06.29
+M Antiscion Mars C --> Quadrat Mercury 97.311758 2080.07.04
+Z Mars C --> Venus 97.322740 2080.07.08
+Z Antiscion MC D --> Oppositio Sun 97.407347 2080.08.09
+Z Contraantiscion MC D --> Sun 97.407347 2080.08.09
+Z LoF D --> Sextil Jupiter 97.448898 2080.08.24
+Z Antiscion Mercury C --> Sextil Moon 97.526388 2080.09.22
+Z Contraantiscion Mercury C --> Trigon Moon 97.526388 2080.09.22
+Z Venus D --> Asc 97.584349 2080.10.13
+M Antiscion Jupiter D --> Venus 97.648989 2080.11.06
+Z Antiscion Venus C --> Trigon Mars 97.785150 2080.12.27
+Z Contraantiscion Venus C --> Sextil Mars 97.785150 2080.12.27
+M Contraantiscion Venus C --> Trigon LoF 97.802544 2081.01.02
+Z Trigon Antiscion Venus C --> Mars 97.856023 2081.01.22
+Z Sextil Contraantiscion Venus C --> Mars 97.856023 2081.01.22
+Z Antiscion Jupiter D --> Venus 97.871177 2081.01.28
+Z Contraantiscion Jupiter D --> Oppositio Venus 97.871177 2081.01.28
+Z Oppositio Contraantiscion Jupiter D --> Venus 97.871177 2081.01.28
+M Antiscion Mars C --> Trigon Venus 97.953761 2081.02.27
+Z Venus C --> Trigon Mercury 97.970633 2081.03.05
+M Contraantiscion Moon C --> Trigon Mercury 97.973431 2081.03.07
+Z Mercury D --> Quadrat Mercury 97.976102 2081.03.08
+M Antiscion Moon D --> MC 98.038367 2081.03.31
+M Antiscion Moon C --> Sextil LoF 98.046101 2081.04.02
+M Antiscion Mercury C --> Sextil Moon 98.053202 2081.04.05
+Z Moon C --> Quadrat Jupiter 98.129020 2081.05.03
+M Antiscion Jupiter C --> Sextil Mars 98.166375 2081.05.17
+Z Quadrat Saturn C --> Moon 98.187638 2081.05.25
+M Contraantiscion Moon D --> Sextil Saturn 98.306546 2081.07.08
+Z Sextil Antiscion Mars D --> Moon 98.330806 2081.07.17
+Z Trigon Contraantiscion Mars D --> Moon 98.330806 2081.07.17
+Z Sextil Antiscion Sun D --> Saturn 98.355092 2081.07.26
+Z Trigon Contraantiscion Sun D --> Saturn 98.355092 2081.07.26
+Z Asc D --> Sextil Moon 98.387409 2081.08.07
+M Antiscion Sun C --> Trigon Sun 98.406772 2081.08.14
+M Contraantiscion Sun C --> Sextil Sun 98.406920 2081.08.14
+Z Quadrat Mars C --> Mars 98.407188 2081.08.14
+M Contraantiscion Saturn C --> Sextil LoF 98.430048 2081.08.23
+Z LoF D --> Sextil Sun 98.434756 2081.08.24
+Z Antiscion MC C --> Saturn 98.497579 2081.09.17
+Z Contraantiscion MC C --> Oppositio Saturn 98.497579 2081.09.17
+Z Sextil Antiscion Moon C --> Sun 98.541318 2081.10.03
+Z Trigon Contraantiscion Moon C --> Sun 98.541318 2081.10.03
+Z Trigon Mercury C --> MC 98.544123 2081.10.04
