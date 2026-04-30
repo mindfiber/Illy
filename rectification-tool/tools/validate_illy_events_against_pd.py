@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import csv
 import json
 from dataclasses import dataclass
 from datetime import date, datetime
@@ -11,6 +12,8 @@ from rectification_engine.morinus_parser import parse_morinus_pd_file
 FIXTURE_DIR = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "morinus_0325_0405"
 EVENTS_PATH = Path(__file__).resolve().parents[1] / "input" / "illy_personal_events.json"
 OUT_PATH = Path(__file__).resolve().parents[1] / "output" / "illy_pd_validation_result.json"
+OUT_FULL_CSV = Path(__file__).resolve().parents[1] / "output" / "illy_pd_full_comparison.csv"
+OUT_SHORTLIST_CSV = Path(__file__).resolve().parents[1] / "output" / "illy_pd_shortlist.csv"
 
 
 TYPE_PLANETS = {
@@ -148,6 +151,11 @@ def main() -> None:
                 "matched_events": matched,
                 "total_events": len(events),
                 "required_major_ok": required_major_ok,
+                "mean_abs_days_matched": round(
+                    sum(d["abs_days"] for d in details if d["matched"] and d["abs_days"] is not None)
+                    / max(1, sum(1 for d in details if d["matched"] and d["abs_days"] is not None)),
+                    3,
+                ),
                 "details": details,
             }
         )
@@ -164,17 +172,71 @@ def main() -> None:
         "subject": payload["subject"],
         "tolerance_days": tol_days,
         "top_candidates": candidate_results[:5],
+        "shortlist_candidates": [
+            {
+                "candidate_time": c["candidate_time"],
+                "matched_events": c["matched_events"],
+                "total_events": c["total_events"],
+                "required_major_ok": c["required_major_ok"],
+                "mean_abs_days_matched": c["mean_abs_days_matched"],
+            }
+            for c in candidate_results
+            if c["required_major_ok"]
+        ][:10],
         "all_candidates_summary": [
             {
                 "candidate_time": c["candidate_time"],
                 "matched_events": c["matched_events"],
                 "total_events": c["total_events"],
                 "required_major_ok": c["required_major_ok"],
+                "mean_abs_days_matched": c["mean_abs_days_matched"],
             }
             for c in candidate_results
         ],
     }
     OUT_PATH.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    full_rows = []
+    for c in candidate_results:
+        for d in c["details"]:
+            full_rows.append(
+                {
+                    "candidate_time": c["candidate_time"],
+                    "matched_events": c["matched_events"],
+                    "required_major_ok": c["required_major_ok"],
+                    "mean_abs_days_matched": c["mean_abs_days_matched"],
+                    "event_id": d["event_id"],
+                    "event_type": d["event_type"],
+                    "event_text": d["event_text"],
+                    "event_date": d["event_date"],
+                    "matched": d["matched"],
+                    "abs_days": d["abs_days"],
+                    "used_angle_direction": d.get("used_angle_direction"),
+                    "best_hit": d["best_hit"],
+                }
+            )
+    with OUT_FULL_CSV.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(full_rows[0].keys()))
+        w.writeheader()
+        w.writerows(full_rows)
+
+    shortlist_rows = []
+    for c in candidate_results:
+        if not c["required_major_ok"]:
+            continue
+        shortlist_rows.append(
+            {
+                "candidate_time": c["candidate_time"],
+                "matched_events": c["matched_events"],
+                "total_events": c["total_events"],
+                "mean_abs_days_matched": c["mean_abs_days_matched"],
+            }
+        )
+    with OUT_SHORTLIST_CSV.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=list(shortlist_rows[0].keys()))
+        w.writeheader()
+        w.writerows(shortlist_rows)
+
     print(OUT_PATH)
 
 
