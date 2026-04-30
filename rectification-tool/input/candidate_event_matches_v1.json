@@ -1,0 +1,30 @@
+{
+  "tolerance_months": 2,
+  "top_k": 3,
+  "candidates": [
+    {
+      "candidate_id": "BT_03:44",
+      "event_matches": [
+        { "event_id": "evt_001", "matched": true, "abs_month_diff": 0.3, "weight": 1.0 },
+        { "event_id": "evt_002", "matched": true, "abs_month_diff": 1.1, "weight": 1.2 },
+        { "event_id": "evt_003", "matched": false, "abs_month_diff": 9.0, "weight": 1.0 }
+      ]
+    },
+    {
+      "candidate_id": "BT_03:45",
+      "event_matches": [
+        { "event_id": "evt_001", "matched": true, "abs_month_diff": 0.1, "weight": 1.0 },
+        { "event_id": "evt_002", "matched": true, "abs_month_diff": 0.4, "weight": 1.2 },
+        { "event_id": "evt_003", "matched": true, "abs_month_diff": 1.7, "weight": 1.0 }
+      ]
+    },
+    {
+      "candidate_id": "BT_03:46",
+      "event_matches": [
+        { "event_id": "evt_001", "matched": true, "abs_month_diff": 0.8, "weight": 1.0 },
+        { "event_id": "evt_002", "matched": false, "abs_month_diff": 2.5, "weight": 1.2 },
+        { "event_id": "evt_003", "matched": true, "abs_month_diff": 0.5, "weight": 1.0 }
+      ]
+    }
+  ]
+}

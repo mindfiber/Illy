@@ -1,0 +1,53 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from rectification_engine.ranking import EventMatch, rank_candidates
+
+
+def main() -> None:
+    root = Path(__file__).resolve().parents[1]
+    in_path = root / "input" / "candidate_event_matches_v1.json"
+    out_path = root / "output" / "top_candidates_v1.json"
+
+    payload = json.loads(in_path.read_text(encoding="utf-8"))
+    tolerance_months = float(payload.get("tolerance_months", 2.0))
+    top_k = int(payload.get("top_k", 3))
+
+    candidate_matches: dict[str, list[EventMatch]] = {}
+    for c in payload.get("candidates", []):
+        cid = c["candidate_id"]
+        matches = []
+        for m in c.get("event_matches", []):
+            matches.append(
+                EventMatch(
+                    event_id=str(m.get("event_id", "")),
+                    matched=bool(m.get("matched", False)),
+                    abs_month_diff=float(m.get("abs_month_diff", 999.0)),
+                    weight=float(m.get("weight", 1.0)),
+                )
+            )
+        candidate_matches[cid] = matches
+
+    top = rank_candidates(candidate_matches, tolerance_months=tolerance_months, top_k=top_k)
+    out = {
+        "tolerance_months": tolerance_months,
+        "top_k": top_k,
+        "top_candidates": [
+            {
+                "rank": i + 1,
+                "candidate_id": c.candidate_id,
+                "total_score": c.total_score,
+                "matched_count": c.matched_count,
+                "mean_abs_month_diff": c.mean_abs_month_diff,
+            }
+            for i, c in enumerate(top)
+        ],
+    }
+    out_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(out_path)
+
+
+if __name__ == "__main__":
+    main()
