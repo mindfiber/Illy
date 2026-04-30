@@ -39,6 +39,15 @@ class Candidate:
 
 
 @dataclass(frozen=True)
+class NatalPoint:
+    name: str
+    longitude: float
+    latitude: float = 0.0
+    speed_longitude: float = 0.0
+    point_type: str = "planet"
+
+
+@dataclass(frozen=True)
 class MorinusPDHit:
     mode: str
     promissor: str
