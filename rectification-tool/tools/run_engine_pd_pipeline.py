@@ -20,9 +20,9 @@ from rectification_engine.pd_morinus import (
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "tests" / "fixtures" / "morinus_0325_0405"
 EVENTS_PATH = ROOT / "input" / "illy_personal_events.json"
-OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400.csv"
-OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full.csv"
-OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist.csv"
+OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only.csv"
+OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only.csv"
+OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only.csv"
 
 ASPECTS = {"Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"}
 NAIBOD = 0.9855555556
@@ -117,6 +117,8 @@ def main() -> None:
     payload = json.loads(EVENTS_PATH.read_text(encoding="utf-8"))
     tol_days = int(payload.get("tolerance_days", 62))
     events = [Event(e["id"], parse_event_date(e["date"]), e["type"], e["text"]) for e in payload["events"]]
+    min_event_date = min(e.date_ref for e in events)
+    max_event_date = max(e.date_ref for e in events)
     start_hhmm, end_hhmm = payload["subject"]["candidate_range"].split("~")
     keys = minute_keys(start_hhmm, end_hhmm)
 
@@ -135,6 +137,8 @@ def main() -> None:
                 continue
             calc = best["calc"]
             gen_date = arc_to_date(birth.birth_date, calc.arc)
+            if gen_date < min_event_date or gen_date > max_event_date:
+                continue
             row = {
                 "candidate_time": f"{key[:2]}:{key[2:]}",
                 "mode": h.mode,
@@ -232,6 +236,7 @@ def main() -> None:
     print(OUT_COMPARE)
     print(OUT_FULL)
     print(OUT_SHORT)
+    print(f"event_period={min_event_date.isoformat()}..{max_event_date.isoformat()}")
 
 
 if __name__ == "__main__":
