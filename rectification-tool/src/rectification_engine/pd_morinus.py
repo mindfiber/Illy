@@ -4,7 +4,7 @@ import math
 from dataclasses import dataclass
 
 from .ephemeris import configure_swisseph
-from .models import BirthData, NatalPoint
+from .models import BirthData, MorinusPDHit, NatalPoint
 from .natal import calculate_natal_points, expand_antiscia, julian_day_ut, norm360
 
 
@@ -224,3 +224,44 @@ def _morinus_promissor_name(name: str) -> str:
     if name == "Contraantiscion MC":
         return "Antiscion MC"
     return name
+
+
+def best_zodiacal_planet_hit_match(
+    birth: BirthData,
+    hit: MorinusPDHit,
+    points: dict[str, NatalPoint] | None = None,
+) -> tuple[DirectionArc, float, str, int]:
+    points = points or expand_antiscia(calculate_natal_points(birth))
+    signs = [1, -1] if hit.aspect not in ("Conjunctio", "Oppositio") else [1]
+    best: tuple[DirectionArc, float, str, int] | None = None
+
+    for side in ("promissor", "significator"):
+        for sign in signs:
+            if side == "promissor":
+                calc = zodiacal_promissor_aspect_to_significator(
+                    birth=birth,
+                    promissor_name=hit.promissor,
+                    aspect_name=hit.aspect,
+                    aspect_sign=sign,
+                    significator_name=hit.significator,
+                    points=points,
+                )
+            else:
+                calc = zodiacal_promissor_to_significator_aspect(
+                    birth=birth,
+                    promissor_name=hit.promissor,
+                    significator_name=hit.significator,
+                    aspect_name=hit.aspect,
+                    aspect_sign=sign,
+                    points=points,
+                )
+            diff = abs(calc.arc - float(hit.arc))
+            if calc.direction != hit.direction:
+                diff += 1000.0
+            candidate = (calc, diff, side, sign)
+            if best is None or candidate[1] < best[1]:
+                best = candidate
+
+    if best is None:
+        raise ValueError("Unable to match hit.")
+    return best

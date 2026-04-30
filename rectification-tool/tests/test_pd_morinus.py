@@ -7,6 +7,7 @@ from rectification_engine.models import BirthData
 from rectification_engine.morinus_parser import parse_morinus_pd_file
 from rectification_engine.natal import calculate_natal_points, expand_antiscia
 from rectification_engine.pd_morinus import (
+    best_zodiacal_planet_hit_match,
     morinus_create_arc,
     zodiacal_promissor_aspect_to_mc,
     zodiacal_promissor_aspect_to_significator,
@@ -272,6 +273,45 @@ class MorinusPDTests(unittest.TestCase):
                     max_diff = max(max_diff, best[1])
 
         self.assertLess(max_diff, 0.00003)
+
+    @unittest.skipUnless(HAS_SWISSEPH, "swisseph is not installed for this Python interpreter")
+    def test_0325_0405_best_match_helper_tracks_morinus_planet_rows(self):
+        max_diff_non_moon = 0.0
+        max_diff_with_moon = 0.0
+        paths = sorted(RANGE_FIXTURE.glob("*.txt"))
+        self.assertEqual(len(paths), 41)
+        planets = {"Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn"}
+
+        for path in paths:
+            hhmm = f"{path.stem[:2]}:{path.stem[2:]}:25"
+            birth = BirthData.from_strings("1981.10.13", hhmm, "morinus_0345")
+            points = expand_antiscia(calculate_natal_points(birth))
+            hits = parse_morinus_pd_file(path)
+
+            rows = [
+                hit
+                for hit in hits
+                if hit.mode == "Z"
+                and hit.promissor in planets
+                and hit.significator in planets
+                and hit.aspect in {"Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"}
+            ]
+            self.assertGreater(len(rows), 0)
+
+            for hit in rows:
+                calc, diff, _side, _sign = best_zodiacal_planet_hit_match(
+                    birth=birth,
+                    hit=hit,
+                    points=points,
+                )
+                self.assertEqual(calc.direction, hit.direction)
+                if hit.promissor == "Moon" or hit.significator == "Moon":
+                    max_diff_with_moon = max(max_diff_with_moon, diff)
+                else:
+                    max_diff_non_moon = max(max_diff_non_moon, diff)
+
+        self.assertLess(max_diff_non_moon, 0.00005)
+        self.assertLess(max_diff_with_moon, 0.0003)
 
 
 if __name__ == "__main__":
