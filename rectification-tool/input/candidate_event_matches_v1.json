@@ -9,7 +9,8 @@
         { "event_id": "evt_001", "source_column": "G", "event_type": "employment_start", "matched": true, "abs_month_diff": 0.3, "weight": 1.0 },
         { "event_id": "evt_002", "source_column": "H", "event_type": "marriage", "is_marriage": true, "matched": false, "abs_month_diff": 1.1, "weight": 1.2 },
         { "event_id": "evt_003", "source_column": "K", "event_type": "surgery_medical", "is_major": true, "matched": true, "abs_month_diff": 0.7, "weight": 1.0 },
-        { "event_id": "evt_004", "source_column": "L", "event_type": "family_death", "is_family_death": true, "matched": true, "abs_month_diff": 0.2, "weight": 1.0 }
+        { "event_id": "evt_004", "source_column": "L", "event_type": "family_death", "is_family_death": true, "matched": true, "abs_month_diff": 0.2, "weight": 1.0 },
+        { "event_id": "evt_005", "source_column": "M", "event_type": "childbirth", "is_childbirth": true, "child_indicator": "mercury", "matched": true, "abs_month_diff": 0.6, "weight": 1.0 }
       ]
     },
     {
@@ -18,7 +19,8 @@
         { "event_id": "evt_001", "source_column": "G", "event_type": "employment_start", "matched": true, "abs_month_diff": 0.1, "weight": 1.0 },
         { "event_id": "evt_002", "source_column": "H", "event_type": "marriage", "is_marriage": true, "matched": true, "abs_month_diff": 0.4, "weight": 1.2 },
         { "event_id": "evt_003", "source_column": "K", "event_type": "surgery_medical", "is_major": true, "matched": true, "abs_month_diff": 1.7, "weight": 1.0 },
-        { "event_id": "evt_004", "source_column": "L", "event_type": "family_death", "is_family_death": true, "matched": true, "abs_month_diff": 0.3, "weight": 1.0 }
+        { "event_id": "evt_004", "source_column": "L", "event_type": "family_death", "is_family_death": true, "matched": true, "abs_month_diff": 0.3, "weight": 1.0 },
+        { "event_id": "evt_005", "source_column": "M", "event_type": "childbirth", "is_childbirth": true, "child_indicator": "daughter", "matched": true, "abs_month_diff": 0.4, "weight": 1.0 }
       ]
     },
     {
@@ -27,7 +29,8 @@
         { "event_id": "evt_001", "source_column": "G", "event_type": "employment_start", "matched": true, "abs_month_diff": 0.8, "weight": 1.0 },
         { "event_id": "evt_002", "source_column": "H", "event_type": "marriage", "is_marriage": true, "matched": true, "abs_month_diff": 1.0, "weight": 1.2 },
         { "event_id": "evt_003", "source_column": "K", "event_type": "surgery_medical", "is_major": true, "matched": false, "abs_month_diff": 2.5, "weight": 1.0 },
-        { "event_id": "evt_004", "source_column": "L", "event_type": "family_death", "is_family_death": true, "matched": true, "abs_month_diff": 0.5, "weight": 1.0 }
+        { "event_id": "evt_004", "source_column": "L", "event_type": "family_death", "is_family_death": true, "matched": true, "abs_month_diff": 0.5, "weight": 1.0 },
+        { "event_id": "evt_005", "source_column": "M", "event_type": "childbirth", "is_childbirth": true, "child_indicator": "son", "matched": false, "abs_month_diff": 2.0, "weight": 1.0 }
       ]
     }
   ]

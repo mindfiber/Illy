@@ -14,6 +14,8 @@ class EventMatch:
     is_major: bool = False
     is_family_death: bool = False
     is_marriage: bool = False
+    is_childbirth: bool = False
+    child_indicator: str = ""
 
 
 @dataclass(frozen=True)
@@ -24,6 +26,7 @@ class CandidateScore:
     mean_abs_month_diff: float
     eligible: bool = True
     disqualify_reasons: tuple[str, ...] = ()
+    mercury_child_match_count: int = 0
 
 
 def hard_requirements_ok(
@@ -50,6 +53,10 @@ def hard_requirements_ok(
     if k_major_rows and not all(m.matched for m in k_major_rows):
         reasons.append("K_major_event_unmatched")
 
+    childbirth_rows = [m for m in matches if m.is_childbirth or m.event_type == "childbirth"]
+    if childbirth_rows and not any(m.matched for m in childbirth_rows):
+        reasons.append("childbirth_required_unmatched")
+
     return len(reasons) == 0, reasons
 
 
@@ -57,9 +64,13 @@ def score_event(match: EventMatch, tolerance_months: float = 2.0) -> float:
     if not match.matched:
         return 0.0
     if tolerance_months <= 0:
-        return match.weight
-    decay = max(0.0, 1.0 - (match.abs_month_diff / tolerance_months))
-    return match.weight * decay
+        base = match.weight
+    else:
+        decay = max(0.0, 1.0 - (match.abs_month_diff / tolerance_months))
+        base = match.weight * decay
+    if match.is_childbirth and match.child_indicator == "mercury":
+        return base * 0.7
+    return base
 
 
 def score_candidate(
@@ -72,12 +83,15 @@ def score_candidate(
     total = 0.0
     matched_count = 0
     sum_abs_diff = 0.0
+    mercury_child_match_count = 0
     for m in matches:
         s = score_event(m, tolerance_months=tolerance_months)
         total += s
         if m.matched:
             matched_count += 1
             sum_abs_diff += m.abs_month_diff
+            if m.is_childbirth and m.child_indicator == "mercury":
+                mercury_child_match_count += 1
 
     mean_diff = (sum_abs_diff / matched_count) if matched_count > 0 else 999.0
     return CandidateScore(
@@ -87,6 +101,7 @@ def score_candidate(
         mean_abs_month_diff=round(mean_diff, 6),
         eligible=eligible,
         disqualify_reasons=tuple(reasons),
+        mercury_child_match_count=mercury_child_match_count,
     )
 
 
@@ -101,5 +116,13 @@ def rank_candidates(
         for candidate_id, matches in candidate_matches.items()
     ]
     scored = [s for s in scored if s.eligible]
-    scored.sort(key=lambda x: (-x.total_score, -x.matched_count, x.mean_abs_month_diff, x.candidate_id))
+    scored.sort(
+        key=lambda x: (
+            -x.total_score,
+            -x.matched_count,
+            x.mercury_child_match_count,
+            x.mean_abs_month_diff,
+            x.candidate_id,
+        )
+    )
     return scored[:top_k]

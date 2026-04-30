@@ -32,6 +32,8 @@ def main() -> None:
                     is_major=bool(m.get("is_major", False)),
                     is_family_death=bool(m.get("is_family_death", False)),
                     is_marriage=bool(m.get("is_marriage", False)),
+                    is_childbirth=bool(m.get("is_childbirth", False)),
+                    child_indicator=str(m.get("child_indicator", "")),
                 )
             )
         candidate_matches[cid] = matches
@@ -55,6 +57,7 @@ def main() -> None:
                 "mean_abs_month_diff": c.mean_abs_month_diff,
                 "eligible": c.eligible,
                 "disqualify_reasons": list(c.disqualify_reasons),
+                "mercury_child_match_count": c.mercury_child_match_count,
             }
             for i, c in enumerate(top)
         ],
