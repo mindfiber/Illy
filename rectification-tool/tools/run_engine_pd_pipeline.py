@@ -4,6 +4,7 @@ import csv
 import json
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
+import math
 from pathlib import Path
 
 from rectification_engine.models import BirthData
@@ -20,9 +21,9 @@ from rectification_engine.pd_morinus import (
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "tests" / "fixtures" / "morinus_0325_0405"
 EVENTS_PATH = ROOT / "input" / "illy_personal_events.json"
-OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only_v4.csv"
-OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only_v4.csv"
-OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v4.csv"
+OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only_v5.csv"
+OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only_v5.csv"
+OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v5.csv"
 
 ASPECTS = {"Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"}
 NAIBOD = 0.9855555556
@@ -71,6 +72,12 @@ def minute_keys(start_hhmm: str, end_hhmm: str) -> list[str]:
     s = sh * 60 + sm
     e = eh * 60 + em
     return [f"{m // 60:02d}{m % 60:02d}" for m in range(s, e + 1)]
+
+
+def range_minutes(start_hhmm: str, end_hhmm: str) -> int:
+    sh, sm = [int(x) for x in start_hhmm.split(":")]
+    eh, em = [int(x) for x in end_hhmm.split(":")]
+    return (eh * 60 + em) - (sh * 60 + sm)
 
 
 def sign_candidates(aspect: str) -> list[int]:
@@ -122,6 +129,11 @@ def main() -> None:
     min_event_date = min(e.date_ref for e in events)
     max_event_date = max(e.date_ref for e in events)
     start_hhmm, end_hhmm = payload["subject"]["candidate_range"].split("~")
+    span_minutes = range_minutes(start_hhmm, end_hhmm)
+    # User rule: 1 hour range => +10 years PD extension.
+    pad_years = max(1, math.ceil((span_minutes / 60.0) * 10.0))
+    min_bound = min_event_date - timedelta(days=round(365.2422 * pad_years))
+    max_bound = max_event_date + timedelta(days=round(365.2422 * pad_years))
     keys = minute_keys(start_hhmm, end_hhmm)
 
     compare_rows = []
@@ -140,7 +152,7 @@ def main() -> None:
                 continue
             calc = best["calc"]
             gen_date = arc_to_date(birth_dt, calc.arc)
-            if gen_date < min_event_date or gen_date > max_event_date:
+            if gen_date < min_bound or gen_date > max_bound:
                 continue
             row = {
                 "candidate_time": f"{key[:2]}:{key[2:]}",
@@ -240,6 +252,7 @@ def main() -> None:
     print(OUT_FULL)
     print(OUT_SHORT)
     print(f"event_period={min_event_date.isoformat()}..{max_event_date.isoformat()}")
+    print(f"pd_search_period={min_bound.isoformat()}..{max_bound.isoformat()} (pad_years={pad_years})")
 
 
 if __name__ == "__main__":
