@@ -155,15 +155,58 @@ def zodiacal_promissor_to_significator_aspect(
     _jd_ut, armc, obliquity = _context(birth)
 
     ra_prom, decl_prom = ra_decl_from_ecliptic(promissor.longitude, 0.0, obliquity)
+    significator_longitude = norm360(significator.longitude + ASPECT_DEGREES[aspect_name] * aspect_sign)
+    return _zodiacal_arc_to_significator_longitude(
+        birth=birth,
+        ra_prom=ra_prom,
+        decl_prom=decl_prom,
+        significator_longitude=significator_longitude,
+        armc=armc,
+        obliquity=obliquity,
+    )
+
+
+def zodiacal_promissor_aspect_to_significator(
+    birth: BirthData,
+    promissor_name: str,
+    aspect_name: str,
+    aspect_sign: int,
+    significator_name: str,
+    points: dict[str, NatalPoint] | None = None,
+) -> DirectionArc:
+    points = points or expand_antiscia(calculate_natal_points(birth))
+    promissor_name = _morinus_promissor_name(promissor_name)
+    promissor = points[promissor_name]
+    significator = points[significator_name]
+    _jd_ut, armc, obliquity = _context(birth)
+
+    promissor_longitude = norm360(promissor.longitude + ASPECT_DEGREES[aspect_name] * aspect_sign)
+    ra_prom, decl_prom = ra_decl_from_ecliptic(promissor_longitude, 0.0, obliquity)
+    return _zodiacal_arc_to_significator_longitude(
+        birth=birth,
+        ra_prom=ra_prom,
+        decl_prom=decl_prom,
+        significator_longitude=significator.longitude,
+        armc=armc,
+        obliquity=obliquity,
+    )
+
+
+def _zodiacal_arc_to_significator_longitude(
+    birth: BirthData,
+    ra_prom: float,
+    decl_prom: float,
+    significator_longitude: float,
+    armc: float,
+    obliquity: float,
+) -> DirectionArc:
     val = math.tan(math.radians(birth.place.latitude)) * math.tan(math.radians(decl_prom))
     if abs(val) > 1.0:
         raise ValueError("Promissor cannot be directed at this latitude.")
     adprom = math.degrees(math.asin(val))
 
-    aspect = ASPECT_DEGREES[aspect_name] * aspect_sign
-    significator_aspect_longitude = norm360(significator.longitude + aspect)
     md_sig, sa_sig, above_horizon, eastern = _zodiacal_md_sa(
-        significator_aspect_longitude,
+        significator_longitude,
         0.0,
         armc,
         birth.place.latitude,

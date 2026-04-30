@@ -61,6 +61,7 @@ class MorinusPDHit:
     direction: str
     significator: str
     aspect: str
+    aspect_side: str
     arc: Decimal
     hit_date_raw: str
     hit_date: date | None

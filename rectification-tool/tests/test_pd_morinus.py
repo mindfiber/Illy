@@ -9,6 +9,7 @@ from rectification_engine.natal import calculate_natal_points, expand_antiscia
 from rectification_engine.pd_morinus import (
     morinus_create_arc,
     zodiacal_promissor_aspect_to_mc,
+    zodiacal_promissor_aspect_to_significator,
     zodiacal_promissor_to_significator_aspect,
 )
 
@@ -209,6 +210,68 @@ class MorinusPDTests(unittest.TestCase):
                 max_diff = max(max_diff, abs(calculated.arc - float(expected.arc)))
 
         self.assertLess(max_diff, 0.00002)
+
+    @unittest.skipUnless(HAS_SWISSEPH, "swisseph is not installed for this Python interpreter")
+    def test_0325_0405_zodiacal_planet_aspects_between_sun_jupiter_track_morinus(self):
+        max_diff = 0.0
+        paths = sorted(RANGE_FIXTURE.glob("*.txt"))
+        self.assertEqual(len(paths), 41)
+        cases = [
+            ("Sun", "Jupiter", "Sextil"),
+            ("Jupiter", "Sun", "Sextil"),
+            ("Sun", "Jupiter", "Quadrat"),
+            ("Jupiter", "Sun", "Quadrat"),
+        ]
+
+        for path in paths:
+            hhmm = f"{path.stem[:2]}:{path.stem[2:]}:25"
+            birth = BirthData.from_strings("1981.10.13", hhmm, "morinus_0345")
+            points = expand_antiscia(calculate_natal_points(birth))
+            hits = parse_morinus_pd_file(path)
+
+            for promissor, significator, aspect in cases:
+                expected_rows = [
+                    hit
+                    for hit in hits
+                    if hit.mode == "Z"
+                    and hit.promissor == promissor
+                    and hit.aspect == aspect
+                    and hit.significator == significator
+                    and hit.aspect_side in {"promissor", "significator"}
+                ]
+                self.assertGreaterEqual(len(expected_rows), 2)
+
+                for expected in expected_rows:
+                    signs = [1, -1]
+                    best = None
+                    for sign in signs:
+                        if expected.aspect_side == "promissor":
+                            calculated = zodiacal_promissor_aspect_to_significator(
+                                birth,
+                                promissor_name=promissor,
+                                aspect_name=aspect,
+                                aspect_sign=sign,
+                                significator_name=significator,
+                                points=points,
+                            )
+                        else:
+                            calculated = zodiacal_promissor_to_significator_aspect(
+                                birth,
+                                promissor_name=promissor,
+                                significator_name=significator,
+                                aspect_name=aspect,
+                                aspect_sign=sign,
+                                points=points,
+                            )
+                        diff = abs(calculated.arc - float(expected.arc))
+                        candidate = (calculated.direction == expected.direction, diff)
+                        if best is None or (not candidate[0], candidate[1]) < (not best[0], best[1]):
+                            best = candidate
+
+                    self.assertTrue(best[0])
+                    max_diff = max(max_diff, best[1])
+
+        self.assertLess(max_diff, 0.00003)
 
 
 if __name__ == "__main__":

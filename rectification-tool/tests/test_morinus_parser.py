@@ -18,6 +18,7 @@ class MorinusParserTests(unittest.TestCase):
         self.assertIsNotNone(hit)
         self.assertEqual(hit.mode, "Z")
         self.assertEqual(hit.aspect, "Quadrat")
+        self.assertEqual(hit.aspect_side, "promissor")
         self.assertEqual(hit.promissor, "Contraantiscion Sun")
         self.assertEqual(hit.direction, "C")
         self.assertEqual(hit.significator, "MC")
@@ -31,6 +32,7 @@ class MorinusParserTests(unittest.TestCase):
         self.assertIsNotNone(hit)
         self.assertEqual(hit.mode, "M")
         self.assertEqual(hit.aspect, "Conjunctio")
+        self.assertEqual(hit.aspect_side, "none")
         self.assertEqual(hit.promissor, "Jupiter")
         self.assertEqual(hit.direction, "D")
         self.assertEqual(hit.significator, "Sun")
@@ -40,6 +42,7 @@ class MorinusParserTests(unittest.TestCase):
 
         self.assertIsNotNone(hit)
         self.assertEqual(hit.aspect, "Quadrat")
+        self.assertEqual(hit.aspect_side, "significator")
         self.assertEqual(hit.promissor, "Antiscion MC")
         self.assertEqual(hit.significator, "Sun")
 

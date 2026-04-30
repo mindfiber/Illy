@@ -50,7 +50,7 @@ def parse_morinus_pd_line(line: str) -> MorinusPDHit | None:
 
     left = match.group("left").strip()
     right = match.group("right").strip()
-    aspect, promissor, significator = _extract_aspect_and_points(left, right)
+    aspect, promissor, significator, aspect_side = _extract_aspect_and_points(left, right)
     raw_date = match.group("date")
     y, m, d = [int(part) for part in raw_date.split(".")]
     try:
@@ -64,6 +64,7 @@ def parse_morinus_pd_line(line: str) -> MorinusPDHit | None:
         direction=match.group("direction"),
         significator=significator,
         aspect=aspect,
+        aspect_side=aspect_side,
         arc=Decimal(match.group("arc")),
         hit_date_raw=raw_date,
         hit_date=hit_date,
@@ -71,14 +72,14 @@ def parse_morinus_pd_line(line: str) -> MorinusPDHit | None:
     )
 
 
-def _extract_aspect_and_points(left: str, right: str) -> tuple[str, str, str]:
+def _extract_aspect_and_points(left: str, right: str) -> tuple[str, str, str, str]:
     left_tokens = left.split()
     right_tokens = right.split()
 
     if left_tokens and left_tokens[0] in ASPECTS:
-        return ASPECTS[left_tokens[0]], " ".join(left_tokens[1:]), right
+        return ASPECTS[left_tokens[0]], " ".join(left_tokens[1:]), right, "promissor"
 
     if right_tokens and right_tokens[0] in ASPECTS:
-        return ASPECTS[right_tokens[0]], left, " ".join(right_tokens[1:])
+        return ASPECTS[right_tokens[0]], left, " ".join(right_tokens[1:]), "significator"
 
-    return "Conjunctio", left, right
+    return "Conjunctio", left, right, "none"
