@@ -24,10 +24,17 @@ class BirthData:
         from .places import resolve_place
 
         y, m, d = [int(part) for part in birth_date.replace(".", "-").split("-")]
-        hh, mm = [int(part) for part in birth_time.split(":")]
+        time_parts = [int(part) for part in birth_time.split(":")]
+        if len(time_parts) == 2:
+            hh, mm = time_parts
+            ss = 0
+        elif len(time_parts) == 3:
+            hh, mm, ss = time_parts
+        else:
+            raise ValueError(f"Invalid birth time: {birth_time}")
         return cls(
             birth_date=date(y, m, d),
-            birth_time=time(hh, mm),
+            birth_time=time(hh, mm, ss),
             place=resolve_place(place_name),
         )
 

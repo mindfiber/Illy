@@ -1,10 +1,10 @@
 {
   "name": "morinus_0345",
   "birth_date": "1981-10-13",
-  "birth_time": "03:45",
+  "birth_time": "03:45:53",
   "place": "Incheon",
-  "place_input": "인천",
-  "latitude": 37.4563,
-  "longitude": 126.7052,
+  "place_input": "Morinus saved chart: Mine",
+  "latitude": 37.4333333333,
+  "longitude": 126.6666666667,
   "timezone": "Asia/Seoul"
 }

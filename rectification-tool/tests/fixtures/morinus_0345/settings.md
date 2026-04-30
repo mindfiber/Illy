@@ -1,13 +1,18 @@
 # Morinus 0345 Settings
 
-Birth data:
+Birth data shown by user:
 
 - Date: 1981-10-13
 - Time: 03:45
 - Place: Incheon, Korea
-- Latitude: 37.4563
-- Longitude: 126.7052
 - Timezone: Asia/Seoul
+
+Exact Morinus saved chart used by this exported list:
+
+- Time: 03:45:53
+- Place label: Mine
+- Latitude: 37N26 = 37.4333333333
+- Longitude: 126E40 = 126.6666666667
 
 Primary directions settings from user screenshot:
 
@@ -29,4 +34,3 @@ Primary directions settings from user screenshot:
 Raw Morinus list:
 
 - `morinus_pd_raw.txt`
-
