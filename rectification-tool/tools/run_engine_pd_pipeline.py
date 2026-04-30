@@ -62,18 +62,34 @@ EVENT_RULES = {
 @dataclass(frozen=True)
 class Event:
     event_id: str
-    date_ref: date
+    start_date: date
+    end_date: date
     event_type: str
     text: str
 
 
-def parse_event_date(s: str) -> date:
+def parse_event_date_window(s: str) -> tuple[date, date]:
     s = s.strip()
-    if len(s) == 7:
-        return datetime.strptime(s + "-15", "%Y-%m-%d").date()
     if len(s) == 10:
-        return datetime.strptime(s, "%Y-%m-%d").date()
+        d = datetime.strptime(s, "%Y-%m-%d").date()
+        return d, d
+    if len(s) == 7:
+        y, m = [int(x) for x in s.split("-")]
+        start = date(y, m, 1)
+        if m == 12:
+            end = date(y + 1, 1, 1) - timedelta(days=1)
+        else:
+            end = date(y, m + 1, 1) - timedelta(days=1)
+        return start, end
     raise ValueError(f"Unsupported date format: {s}")
+
+
+def day_distance_to_window(target: date, start: date, end: date) -> int:
+    if target < start:
+        return (start - target).days
+    if target > end:
+        return (target - end).days
+    return 0
 
 
 def minute_keys(start_hhmm: str, end_hhmm: str) -> list[str]:
@@ -151,9 +167,12 @@ def row_signature_penalty(row: dict, event_type: str) -> int:
 def main() -> None:
     payload = json.loads(EVENTS_PATH.read_text(encoding="utf-8"))
     tol_days = int(payload.get("tolerance_days", 62))
-    events = [Event(e["id"], parse_event_date(e["date"]), e["type"], e["text"]) for e in payload["events"]]
-    min_event_date = min(e.date_ref for e in events)
-    max_event_date = max(e.date_ref for e in events)
+    events = []
+    for e in payload["events"]:
+        s, ed = parse_event_date_window(e["date"])
+        events.append(Event(e["id"], s, ed, e["type"], e["text"]))
+    min_event_date = min(e.start_date for e in events)
+    max_event_date = max(e.end_date for e in events)
     start_hhmm, end_hhmm = payload["subject"]["candidate_range"].split("~")
     span_minutes = range_minutes(start_hhmm, end_hhmm)
     # User rule: 1 hour range => +15 years PD extension.
@@ -213,7 +232,7 @@ def main() -> None:
             best_key = None
             best_days = None
             for r in use_pool:
-                d = abs((datetime.fromisoformat(r["engine_date"]).date() - e.date_ref).days)
+                d = day_distance_to_window(datetime.fromisoformat(r["engine_date"]).date(), e.start_date, e.end_date)
                 sig_penalty = row_signature_penalty(r, e.event_type)
                 rank_key = (d, sig_penalty, r["arc_diff"])
                 if best_key is None or rank_key < best_key:
@@ -231,7 +250,7 @@ def main() -> None:
                     "event_id": e.event_id,
                     "event_type": e.event_type,
                     "event_text": e.text,
-                    "event_date": e.date_ref.isoformat(),
+                    "event_date": e.start_date.isoformat() if e.start_date == e.end_date else f"{e.start_date.isoformat()}~{e.end_date.isoformat()}",
                     "matched": ok,
                     "abs_days": best_days if best_days is not None else "",
                     "best_pd": f"{best_row['promissor']} {best_row['aspect']} {best_row['significator']}" if best_row else "",
