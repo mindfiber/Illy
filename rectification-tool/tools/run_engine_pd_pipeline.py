@@ -20,9 +20,9 @@ from rectification_engine.pd_morinus import (
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_DIR = ROOT / "tests" / "fixtures" / "morinus_0325_0405"
 EVENTS_PATH = ROOT / "input" / "illy_personal_events.json"
-OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only.csv"
-OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only.csv"
-OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only.csv"
+OUT_COMPARE = ROOT / "output" / "engine_pd_vs_original_0330_0400_period_only_v2.csv"
+OUT_FULL = ROOT / "output" / "engine_pd_event_matches_full_period_only_v2.csv"
+OUT_SHORT = ROOT / "output" / "engine_pd_candidate_shortlist_period_only_v2.csv"
 
 ASPECTS = {"Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"}
 NAIBOD = 0.9855555556
@@ -106,7 +106,9 @@ def calc_hit(birth: BirthData, points: dict, hit):
 def arc_to_date(birth_date: date, arc: float) -> date:
     years = arc / NAIBOD
     days = years * 365.2422
-    return birth_date + timedelta(days=days)
+    # Morinus output dates are systematically about 2 days earlier than the
+    # naive arc->date projection from date-only base; align to Morinus scale.
+    return birth_date + timedelta(days=days - 2.0)
 
 
 def is_angle_row(row: dict) -> bool:
