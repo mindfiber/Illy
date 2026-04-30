@@ -22,6 +22,16 @@ TYPE_PLANETS = {
     "mental_health_crisis": {"Mars", "Saturn"},
     "surgery_medical_major": {"Mars", "Saturn"},
 }
+ANGLE_POINTS = {"Asc", "MC", "LoF", "Fortuna"}
+HIGH_PRIORITY_TYPES = {
+    "university_admission",
+    "employment_start",
+    "career_honor_event",
+    "surgery_medical_major",
+    "family_death",
+    "marriage",
+    "childbirth",
+}
 
 
 @dataclass(frozen=True)
@@ -55,6 +65,12 @@ def hit_has_planet_signature(hit, planets: set[str]) -> bool:
     return any(p in left or p in right for p in planets)
 
 
+def hit_is_angle_direction(hit) -> bool:
+    left = hit.promissor
+    right = hit.significator
+    return any(a in left or a in right for a in ANGLE_POINTS)
+
+
 def main() -> None:
     payload = json.loads(EVENTS_PATH.read_text(encoding="utf-8"))
     events = [
@@ -79,21 +95,35 @@ def main() -> None:
         required_major_ok = True
         for e in events:
             planets = TYPE_PLANETS.get(e.event_type, {"Sun", "Jupiter", "Venus", "Mars", "Saturn"})
-            best = None
+            angle_best = None
+            minor_best = None
             for h in hits:
                 if h.hit_date is None:
                     continue
                 if not hit_has_planet_signature(h, planets):
                     continue
                 d = abs((h.hit_date - e.date_ref).days)
-                if best is None or d < best["abs_days"]:
-                    best = {
-                        "abs_days": d,
-                        "hit_line": h.raw_line,
-                        "hit_date": h.hit_date.isoformat(),
-                        "direction": h.direction,
-                        "mode": h.mode,
-                    }
+                candidate = {
+                    "abs_days": d,
+                    "hit_line": h.raw_line,
+                    "hit_date": h.hit_date.isoformat(),
+                    "direction": h.direction,
+                    "mode": h.mode,
+                    "is_angle": hit_is_angle_direction(h),
+                }
+                if candidate["is_angle"]:
+                    if angle_best is None or d < angle_best["abs_days"]:
+                        angle_best = candidate
+                else:
+                    if minor_best is None or d < minor_best["abs_days"]:
+                        minor_best = candidate
+
+            # 우선순위 높은 이벤트는 앵글 디렉션만 유효 처리
+            if e.event_type in HIGH_PRIORITY_TYPES:
+                best = angle_best
+            else:
+                best = angle_best if angle_best is not None else minor_best
+
             is_match = best is not None and best["abs_days"] <= tol_days
             if is_match:
                 matched += 1
@@ -108,6 +138,7 @@ def main() -> None:
                     "matched": is_match,
                     "abs_days": best["abs_days"] if best else None,
                     "best_hit": best["hit_line"] if best else None,
+                    "used_angle_direction": bool(best and best.get("is_angle")),
                 }
             )
 
