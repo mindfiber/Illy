@@ -242,6 +242,8 @@ def _morinus_promissor_name(
         return "Antiscion MC"
     if name == "Contraantiscion MC" and canonical_point_name(significator_name) in {"MC", "ASC"}:
         return "Antiscion MC"
+    if name == "Contraantiscion ASC" and canonical_point_name(significator_name) in {"ASC", "MC"}:
+        return "Antiscion MC"
     return name
 
 
