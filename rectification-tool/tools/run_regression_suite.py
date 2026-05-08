@@ -55,7 +55,8 @@ def win(e: Ev) -> tuple[date, date]:
         return date(e.y, 1, 1), date(e.y, 12, 31)
     if e.et in {"university_admission", "graduate_school_admission"}:
         if e.m in (1, 2, 3):
-            sy, sm = e.y - 1, 12
+            # IMMUTABLE_RULES #15: 11월-3월 hit가 1순위, 4월 2순위, 5월 3순위
+            sy, sm = e.y - 1, 11
             ey, em = e.y, 5
         else:
             sy, sm = msh(e.y, e.m, -2)

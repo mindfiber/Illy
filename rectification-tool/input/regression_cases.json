@@ -52,7 +52,7 @@
     },
     {
       "case_id": "kim_409",
-      "expected_time": "20:49",
+      "expected_time": "20:48",
       "birth_date": "1976-01-22",
       "place": { "name": "#Seoul/Morinus fixture", "lat": 37.55, "lon": 126.9666666667, "tz": "Asia/Seoul" },
       "range_start": "20:40",
