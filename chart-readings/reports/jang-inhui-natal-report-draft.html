@@ -715,12 +715,17 @@
         const lon=i*30, [x1,y1]=pt(lon,rOut), [x2,y2]=pt(lon,rMid);
         svg.appendChild(e("line",{x1,y1,x2,y2,stroke,"stroke-width":sw}));
       }
-      // 사인 글리프 (12개)
+      // 사인 글리프 + 한글 이름 (12개)
       const signGlyphs=["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
+      const signNames=SIGNS.map(s=>s+"자리");
       for(let i=0;i<12;i++){
         const [tx,ty]=pt(i*30+15, (rOut+rMid)/2);
-        const g=e("text",{x:tx,y:ty+5,"font-size":"14","text-anchor":"middle",fill:"#1a1a1a","class":"astro","font-weight":"500"});
+        // 글리프 (위)
+        const g=e("text",{x:tx,y:ty-1,"font-size":"13","text-anchor":"middle",fill:"#1a1a1a","class":"astro","font-weight":"500"});
         g.textContent=signGlyphs[i]; svg.appendChild(g);
+        // 한글 이름 (아래)
+        const t=e("text",{x:tx,y:ty+10,"font-size":"7.5","text-anchor":"middle",fill:"#4a4a4a","font-weight":"400"});
+        t.textContent=signNames[i]; svg.appendChild(t);
       }
       // ASC / MC 축
       const dsc=norm360(pos.Asc+180), ic=norm360(pos.MC+180);
