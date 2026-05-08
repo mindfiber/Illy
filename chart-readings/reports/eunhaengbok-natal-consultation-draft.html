@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>호러리 + 네이탈 상담 리포트 초안 - 은행복</title>
+  <style>
+    @page { size: A4; margin: 16mm; }
+    :root {
+      --ink: #22201c;
+      --muted: #6a655d;
+      --line: #ded8ce;
+      --paper: #fbfaf6;
+      --accent: #7f5539;
+      --accent-soft: #efe5dc;
+      --ok: #3f6e57;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #ece8e1;
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    .report { width: 210mm; margin: 0 auto; background: var(--paper); }
+    .page {
+      min-height: 297mm;
+      padding: 20mm 18mm;
+      background: linear-gradient(90deg, rgba(127, 85, 57, 0.07), transparent 22%), var(--paper);
+      page-break-after: always;
+      position: relative;
+    }
+    .page:last-child { page-break-after: auto; }
+    .page-no { position: absolute; right: 18mm; bottom: 10mm; font-size: 10px; color: var(--muted); }
+    h1, h2, h3 { margin: 0; line-height: 1.3; }
+    h1 { margin-top: 18mm; font-size: 44px; font-weight: 600; }
+    h2 { font-size: 25px; border-bottom: 1px solid var(--line); padding-bottom: 4mm; margin-bottom: 7mm; }
+    h3 { font-size: 17px; color: var(--accent); margin: 7mm 0 3mm; }
+    p { margin: 0 0 4mm; }
+    .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; }
+    .subtitle { margin-top: 8mm; max-width: 126mm; color: var(--muted); font-size: 15px; }
+    .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 3mm; }
+    .card, .note, .question, .timing, .finding {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.75);
+      padding: 5mm;
+    }
+    .label { display: block; margin-bottom: 1mm; color: var(--muted); font-size: 11px; font-weight: 700; }
+    .toc { margin-top: 15mm; border-top: 1px solid var(--line); }
+    .toc-row {
+      display: flex; justify-content: space-between; gap: 8mm;
+      border-bottom: 1px solid var(--line); padding: 5mm 0; color: var(--muted);
+    }
+    .toc-row strong { color: var(--ink); }
+    .callout {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 5mm 6mm;
+      margin: 6mm 0;
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      background: #e4eee8;
+      color: var(--ok);
+      font-weight: 800;
+      font-size: 11px;
+      padding: 1mm 3mm;
+      margin-bottom: 2mm;
+    }
+    .list { margin: 0; padding-left: 5mm; }
+    .list li { margin-bottom: 2mm; }
+    .chart-wrap { display: grid; grid-template-columns: 88mm 1fr; gap: 8mm; align-items: start; }
+    .wheel-box {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 3mm;
+    }
+    #natalWheel { width: 100%; height: auto; display: block; }
+    .mono { font-family: Consolas, Monaco, monospace; font-size: 12px; color: var(--muted); }
+    .small { color: var(--muted); font-size: 12px; }
+    .row { display: flex; gap: 4mm; flex-wrap: wrap; }
+    .pill {
+      border: 1px solid var(--line); border-radius: 999px; padding: 1mm 3mm; background: #fff;
+      font-size: 11px; color: #4b463f;
+    }
+    @media print {
+      body { background: #fff; }
+      .report { width: auto; }
+      .page { min-height: auto; padding: 0; background: var(--paper); }
+    }
+  </style>
+</head>
+<body>
+  <main class="report">
+    <section class="page">
+      <div class="eyebrow">Horary + Natal Report · Draft</div>
+      <h1>점성 상담 리포트</h1>
+      <p class="subtitle">
+        본 문서는 카카오톡 로그를 정리해 작성한 초안입니다. 실제 전달본에서는 일리 님의 최종 문장 정리와
+        민감 정보 마스킹을 거친 뒤 배포하는 것을 권장합니다.
+      </p>
+
+      <div class="grid2" style="margin-top:12mm;">
+        <div class="card"><span class="label">의뢰인</span><strong>은행복 님</strong></div>
+        <div class="card"><span class="label">상담자</span><strong>일리 님</strong></div>
+        <div class="card"><span class="label">상담 기간</span><strong>2026-03-11 ~ 2026-03-12</strong></div>
+        <div class="card"><span class="label">상담 구성</span><strong>호러리 + 운로 + 네이탈</strong></div>
+      </div>
+
+      <div class="toc">
+        <div class="toc-row"><strong>1. 질문 정리</strong><span>p.2</span></div>
+        <div class="toc-row"><strong>2. 호러리 섹션 (남편 K)</strong><span>p.3</span></div>
+        <div class="toc-row"><strong>3. 네이탈 섹션 (은행복)</strong><span>p.4</span></div>
+        <div class="toc-row"><strong>4. 시기 판단 및 실행 제안</strong><span>p.5</span></div>
+      </div>
+      <div class="page-no">1</div>
+    </section>
+
+    <section class="page">
+      <h2>1. 질문 정리</h2>
+      <p>
+        이번 상담은 주제가 섞여 진행되었지만, 실제 질문은 두 축으로 명확했습니다. 첫 축은 남편 K 님의
+        재판 및 직업 유지 문제, 둘째 축은 은행복 님 본인의 부업 적합성 판단이었습니다.
+      </p>
+
+      <div class="question">
+        <strong>질문 1. 남편 K 님 사건의 재판 흐름과 직업 유지 가능성</strong>
+        <p>
+          음주운전 사건 이후 재판 결과가 직업에 미칠 영향, 징계 범위, 전근 가능성, 파면·해임 가능성에 대한
+          확인이 핵심이었습니다.
+        </p>
+      </div>
+
+      <div class="question">
+        <strong>질문 2. 은행복 님의 투잡 시도 가능성</strong>
+        <p>
+          본업과 육아를 병행하는 상황에서 부업을 시작해도 되는지, 시작한다면 어떤 형식이 소모를 줄이고
+          지속 가능성이 높은지 확인하려는 요청이었습니다.
+        </p>
+      </div>
+
+      <div class="question">
+        <strong>질문 3. 여러 부업 후보 중 우선순위</strong>
+        <p>
+          유튜브, 이모티콘 제작, 인스타그램 운영 등 여러 부업 후보 가운데, 은행복 님 성향과 일정에 맞는
+          현실적인 우선순위를 정하는 것이 세 번째 질문이었습니다.
+        </p>
+      </div>
+
+      <div class="callout">
+        <strong>정리 원칙</strong>
+        <p>
+          본 리포트는 로그의 실제 대화 순서를 그대로 따르지 않고, 남편 K 님 관련 판단은 호러리 섹션으로,
+          은행복 님 관련 판단은 네이탈 섹션으로 분리해 재구성했습니다.
+        </p>
+      </div>
+      <div class="page-no">2</div>
+    </section>
+
+    <section class="page">
+      <h2>2. 호러리 섹션 (남편 K)</h2>
+      <p>
+        남편 K 님 이슈는 호러리 판단에 운로 확인을 결합해 읽었습니다. 일리 님이 로그에서 반복해 강조한
+        결론은, 사건 자체의 제재는 피하기 어렵지만 직업 상실로 직결되는 흐름은 아니라는 점입니다.
+      </p>
+
+      <div class="finding">
+        <span class="badge">핵심 결론</span>
+        <p>
+          파면·해임보다는 벌금형 및 조직 내 징계 가능성이 높고, 징계성 전근 가능성이 함께 보인다는 판단입니다.
+          즉, 충격은 있으나 커리어 단절보다는 조정과 부담 증가의 형태로 전개될 가능성을 우선으로 보았습니다.
+        </p>
+      </div>
+
+      <h3>판단 근거 요약</h3>
+      <ul class="list">
+        <li>사건이 이미 절차에 올라간 상태라 당사자 통제 범위가 제한적이라는 점.</li>
+        <li>완전 무탈 통과보다는 제재 수용 쪽으로 무게가 실린다는 점.</li>
+        <li>직업 손실 지표보다는 벌금·징계·전근 지표가 더 강하게 읽힌다는 점.</li>
+        <li>재판 결과 시점이 지연되더라도 결론의 결은 크게 바뀌지 않는다는 점.</li>
+      </ul>
+
+      <h3>사건 시기 메모</h3>
+      <div class="timing">
+        <p>
+          로그 기준으로는 여름~가을, 또는 12월 전후가 주요 결과 구간으로 제시되었습니다.
+          또한 7월 전근 가능성이 언급되었고, 성격은 일반 이동보다는 징계성 이동에 가깝다는 해석이었습니다.
+        </p>
+      </div>
+
+      <div class="callout">
+        <strong>유의 사항</strong>
+        <p>
+          위 판단은 점성 해석 기록이며 법률 자문이 아닙니다. 실제 결과는 재판부 판단, 기관 규정,
+          사실관계 정리, 변호인 대응에 따라 달라질 수 있습니다.
+        </p>
+      </div>
+      <div class="page-no">3</div>
+    </section>
+
+    <section class="page">
+      <h2>3. 네이탈 섹션 (은행복)</h2>
+      <p>
+        은행복 님 네이탈은 출생 정보(1986-08-30 21:49, 서울)를 기준으로 계산해 도식화했습니다.
+        아래 차트는 로그 문장을 옮겨 적은 그림이 아니라, 출생시각 기반 계산값으로 그린 결과입니다.
+      </p>
+
+      <div class="chart-wrap">
+        <div class="wheel-box">
+          <svg id="natalWheel" viewBox="0 0 320 320" role="img" aria-label="은행복 님 네이탈 차트"></svg>
+        </div>
+        <div>
+          <h3>행성 위치 (계산값)</h3>
+          <div id="planetTable" class="grid2"></div>
+          <p class="small" style="margin-top:4mm;">
+            계산 실패 시에는 백업값(동일 출생 정보로 사전 산출한 값)을 사용합니다.
+          </p>
+          <div id="calcMeta" class="mono"></div>
+        </div>
+      </div>
+
+      <h3>해석 요약</h3>
+      <p>
+        일리 님의 해석 포인트는 분명했습니다. 은행복 님은 시작 동력과 기획 감각이 강한 반면,
+        긴 누적 구간에서 피로가 빨리 올라오는 구조입니다. 따라서 부업 판단은 “무엇이 좋아 보이는가”보다
+        “짧은 호흡으로 반복 가능한가”를 기준으로 잡아야 정확도가 높습니다.
+      </p>
+
+      <div class="grid2">
+        <div class="note">
+          <span class="label">유튜브</span>
+          장기 누적, 편집 반복, 성과 지연 구간이 길어 초반 소모가 큽니다. 이번 상담에서는 우선순위를 낮게
+          두는 쪽으로 정리했습니다.
+        </div>
+        <div class="note">
+          <span class="label">이모티콘 제작</span>
+          프로젝트 길이가 짧고 완결 단위가 명확해 상대적으로 유리합니다. 다만 반려 구간을 버티는 전략이 필요합니다.
+        </div>
+        <div class="note">
+          <span class="label">인스타그램</span>
+          일상 기록만으로는 부업 전환이 어렵고, 컨셉 기획을 붙일 때 실익이 생깁니다.
+        </div>
+        <div class="note">
+          <span class="label">대안</span>
+          블로그·짧은 콘텐츠 기획처럼 수성 강점을 살릴 수 있는 형식이 실무적으로 적합하다는 결론입니다.
+        </div>
+      </div>
+      <div class="page-no">4</div>
+    </section>
+
+    <section class="page">
+      <h2>4. 시기 판단 및 실행 제안</h2>
+      <div class="timing">
+        <span class="badge">은행복 님</span>
+        <p>
+          봄 구간은 “새 시도” 자체에 우호적인 흐름으로 읽혔고, 여름에는 피로와 흥미 저하로 중단 욕구가
+          올라올 수 있다는 점이 함께 제시되었습니다. 따라서 시작은 가볍게, 유지 여부는 분기 단위로 평가하는
+          방식이 안전합니다.
+        </p>
+      </div>
+
+      <h3>실행 기준</h3>
+      <ul class="list">
+        <li>처음 4주: 하루 20-30분 단위로 가능한 포맷만 선택.</li>
+        <li>다음 4주: 반응보다 “지속 가능성” 지표(피로, 반복 가능성) 우선 점검.</li>
+        <li>8주 종료 시점: 유튜브형 장기전은 유지 여부를 보수적으로 판단.</li>
+        <li>이모티콘·블로그형 단기전은 컨셉 실험을 병렬로 운영.</li>
+      </ul>
+
+      <h3>최종 정리</h3>
+      <p>
+        남편 K 님 건은 제재 가능성은 높되, 직업 상실보다는 벌금·징계·전근 축으로 수렴하는 해석이었습니다.
+        은행복 님 건은 “부업 가능/불가능” 이분법보다, 여러 부업 후보 가운데 짧은 호흡과 기획 중심 형식을
+        선별해야 성과가 난다는 결론이 명확했습니다.
+      </p>
+
+      <div class="callout">
+        <strong>전달본 제작 메모</strong>
+        <p>
+          공유 링크는 7일 만료 정책을 유지하고, 고객 전달 시 PDF 저장본을 함께 제공하면 문의 응대가 줄어듭니다.
+          표지에 사건 관련 민감 키워드는 완화 표기로 조정하는 것을 권장합니다.
+        </p>
+      </div>
+      <div class="page-no">5</div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.min.js"></script>
+  <script>
+    const SIGNS = ["양","황소","쌍둥이","게","사자","처녀","천칭","전갈","사수","염소","물병","물고기"];
+    const PLANETS = [
+      ["Sun", "태양"],
+      ["Moon", "달"],
+      ["Mercury", "수성"],
+      ["Venus", "금성"],
+      ["Mars", "화성"],
+      ["Jupiter", "목성"],
+      ["Saturn", "토성"]
+    ];
+    const fallback = {
+      Sun: 156.852868, Moon: 101.554449, Mercury: 150.769121, Venus: 202.844920,
+      Mars: 283.643748, Jupiter: 349.347731, Saturn: 243.503655, Asc: 42.482828
+    };
+    function norm360(x) {
+      let v = x % 360;
+      if (v < 0) v += 360;
+      return v;
+    }
+    function degToSign(d) {
+      const sign = Math.floor(d / 30);
+      const inside = d - sign * 30;
+      const deg = Math.floor(inside);
+      const min = Math.floor((inside - deg) * 60);
+      return `${SIGNS[sign]} ${deg}°${String(min).padStart(2,"0")}'`;
+    }
+    function computeAsc(longitudeEast, latitude, dateUtc, Astronomy) {
+      const t = Astronomy.MakeTime(dateUtc);
+      const gst = Astronomy.SiderealTime(t);
+      const lst = gst + longitudeEast / 15;
+      const theta = lst * 15 * Math.PI / 180;
+      const eps = Astronomy.e_tilt(t).tobl * Math.PI / 180;
+      const phi = latitude * Math.PI / 180;
+      const lambda = Math.atan2(-Math.cos(theta), Math.sin(theta) * Math.cos(eps) + Math.tan(phi) * Math.sin(eps)) * 180 / Math.PI;
+      return norm360(lambda + 180);
+    }
+    function computePositions() {
+      const dateUtc = new Date("1986-08-30T12:49:00Z");
+      const seoul = { lon: 126.9780, lat: 37.5665 };
+      if (!window.Astronomy) return { ...fallback, _mode: "fallback", _time: dateUtc.toISOString() };
+      try {
+        const res = {};
+        for (const [en] of PLANETS) {
+          const vec = Astronomy.GeoVector(en, dateUtc, true);
+          const ecl = Astronomy.Ecliptic(vec);
+          res[en] = norm360(ecl.elon);
+        }
+        res.Asc = computeAsc(seoul.lon, seoul.lat, dateUtc, Astronomy);
+        res._mode = "calc";
+        res._time = dateUtc.toISOString();
+        return res;
+      } catch {
+        return { ...fallback, _mode: "fallback", _time: dateUtc.toISOString() };
+      }
+    }
+    function drawWheel(pos) {
+      const svg = document.getElementById("natalWheel");
+      const NS = "http://www.w3.org/2000/svg";
+      const cx = 160, cy = 160, r1 = 146, r2 = 108, r3 = 66;
+      function c(tag, attrs) {
+        const el = document.createElementNS(NS, tag);
+        for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+        return el;
+      }
+      function pointFromLon(lon, radius) {
+        const a = ((lon - pos.Asc) - 90) * Math.PI / 180;
+        return [cx + radius * Math.cos(a), cy + radius * Math.sin(a)];
+      }
+
+      svg.innerHTML = "";
+      svg.appendChild(c("rect", { x: 0, y: 0, width: 320, height: 320, fill: "#fff" }));
+      svg.appendChild(c("circle", { cx, cy, r: r1, fill: "#faf7f2", stroke: "#d9d2c7", "stroke-width": "1.5" }));
+      svg.appendChild(c("circle", { cx, cy, r: r2, fill: "#fff", stroke: "#d9d2c7", "stroke-width": "1" }));
+      svg.appendChild(c("circle", { cx, cy, r: r3, fill: "#faf7f2", stroke: "#d9d2c7", "stroke-width": "1" }));
+
+      for (let i = 0; i < 12; i++) {
+        const lon = pos.Asc + i * 30;
+        const [x1, y1] = pointFromLon(lon, r1);
+        const [x2, y2] = pointFromLon(lon, r2);
+        svg.appendChild(c("line", { x1, y1, x2, y2, stroke: "#c9c1b5", "stroke-width": "1" }));
+        const [tx, ty] = pointFromLon(lon + 15, 126);
+        const t = c("text", { x: tx, y: ty, "font-size": "10", "text-anchor": "middle", fill: "#5d564e" });
+        t.textContent = SIGNS[(Math.floor(norm360(lon) / 30)) % 12];
+        svg.appendChild(t);
+      }
+
+      const ascP = pointFromLon(pos.Asc, r1);
+      svg.appendChild(c("line", { x1: cx, y1: cy, x2: ascP[0], y2: ascP[1], stroke: "#2e6d4f", "stroke-width": "2.2" }));
+      const ascText = c("text", { x: ascP[0] + 4, y: ascP[1] - 4, "font-size": "10", fill: "#2e6d4f" });
+      ascText.textContent = "ASC";
+      svg.appendChild(ascText);
+
+      for (const [en, ko] of PLANETS) {
+        const [px, py] = pointFromLon(pos[en], 87);
+        svg.appendChild(c("circle", { cx: px, cy: py, r: 3.5, fill: "#7f5539" }));
+        const t = c("text", { x: px + 6, y: py - 4, "font-size": "9.5", fill: "#2b2824" });
+        t.textContent = ko;
+        svg.appendChild(t);
+      }
+    }
+    function renderTable(pos) {
+      const box = document.getElementById("planetTable");
+      box.innerHTML = "";
+      function item(name, value) {
+        const d = document.createElement("div");
+        d.className = "card";
+        d.innerHTML = `<span class="label">${name}</span><strong>${value}</strong>`;
+        return d;
+      }
+      for (const [en, ko] of PLANETS) box.appendChild(item(ko, degToSign(pos[en])));
+      box.appendChild(item("ASC", degToSign(pos.Asc)));
+      document.getElementById("calcMeta").textContent =
+        `mode=${pos._mode} | utc=${pos._time} | location=Seoul(126.978E, 37.566N)`;
+    }
+    const pos = computePositions();
+    drawWheel(pos);
+    renderTable(pos);
+  </script>
+</body>
+</html>

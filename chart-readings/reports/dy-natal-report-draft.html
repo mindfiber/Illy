@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>네이탈 상담 리포트 초안 - DY</title>
+  <style>
+    @page { size: A4; margin: 16mm; }
+    :root {
+      --ink: #22201c;
+      --muted: #666056;
+      --line: #ddd6ca;
+      --paper: #fbfaf6;
+      --accent: #845438;
+      --accent-soft: #efe3d8;
+      --good: #366b55;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #ece7de;
+      color: var(--ink);
+      font-family: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.66;
+      word-break: keep-all;
+    }
+    .report { width: 210mm; margin: 0 auto; background: var(--paper); }
+    .page {
+      min-height: 297mm;
+      padding: 19mm 17mm;
+      background: linear-gradient(90deg, rgba(132, 84, 56, 0.08), transparent 20%), var(--paper);
+      page-break-after: always;
+      position: relative;
+    }
+    .page:last-child { page-break-after: auto; }
+    .pn { position: absolute; right: 17mm; bottom: 10mm; color: var(--muted); font-size: 10px; }
+    h1, h2, h3 { margin: 0; line-height: 1.3; }
+    h1 { margin-top: 16mm; font-size: 43px; font-weight: 600; }
+    h2 { font-size: 24px; border-bottom: 1px solid var(--line); padding-bottom: 4mm; margin-bottom: 7mm; }
+    h3 { font-size: 17px; color: var(--accent); margin: 7mm 0 3mm; }
+    p { margin: 0 0 4mm; }
+    .eyebrow { font-size: 12px; font-weight: 700; color: var(--accent); }
+    .sub { margin-top: 8mm; max-width: 128mm; color: var(--muted); font-size: 15px; }
+    .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
+    .card, .block, .qa, .timing {
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.76);
+      padding: 5mm;
+    }
+    .label { display: block; margin-bottom: 1mm; color: var(--muted); font-size: 11px; font-weight: 700; }
+    .toc { margin-top: 15mm; border-top: 1px solid var(--line); }
+    .toc-row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 5mm 0; color: var(--muted); }
+    .toc-row strong { color: var(--ink); }
+    .callout { margin: 6mm 0; border-left: 4px solid var(--accent); background: var(--accent-soft); padding: 5mm 6mm; }
+    .list { margin: 0; padding-left: 5mm; }
+    .list li { margin-bottom: 2mm; }
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 1mm 3mm;
+      margin-bottom: 2mm;
+      background: #e6efe9;
+      color: var(--good);
+    }
+    .wheel-wrap { display: block; }
+    .wheel-box {
+      width: 152mm;
+      max-width: 100%;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 3mm;
+    }
+    #wheel { width: 100%; height: auto; display: block; }
+    .planet-panel { margin-top: 6mm; }
+    .planet-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .small { font-size: 12px; color: var(--muted); }
+    .mono { font-family: Consolas, Monaco, monospace; font-size: 12px; color: var(--muted); }
+    .astro { font-family: "Noto Sans Symbols 2", "Segoe UI Symbol", "Symbola", "DejaVu Sans", sans-serif; }
+    @media print {
+      body { background: #fff; }
+      .report { width: auto; }
+      .page { min-height: auto; padding: 0; background: var(--paper); }
+    }
+  </style>
+</head>
+<body>
+  <main class="report">
+    <section class="page">
+      <div class="eyebrow">Natal Reading Report · Draft</div>
+      <h1>네이탈 상담 리포트</h1>
+      <p class="sub">
+        2025년 3월 5일 진행된 상담 내용을 바탕으로, DY 님의 네이탈 구조와 올해의 선택 포인트를
+        읽기 쉽게 정리한 리포트입니다. 대화 중 오간 내용을 그대로 옮기기보다, 실제로 판단에 필요한
+        흐름을 중심으로 다시 묶었습니다.
+      </p>
+      <div class="grid2" style="margin-top:12mm;">
+        <div class="card"><span class="label">의뢰인</span><strong>DY 님</strong></div>
+        <div class="card"><span class="label">상담자</span><strong>일리 님</strong></div>
+        <div class="card"><span class="label">상담 일시</span><strong>2025-03-05 15:51~17:21</strong></div>
+        <div class="card"><span class="label">출생 정보</span><strong>1999-07-31 07:32, 서울</strong></div>
+      </div>
+      <div class="toc">
+        <div class="toc-row"><strong>1. 질문 요약과 상담 범위</strong><span>p.2</span></div>
+        <div class="toc-row"><strong>2. 네이탈 기본 구조</strong><span>p.3</span></div>
+        <div class="toc-row"><strong>3. 사업·지원사업 흐름</strong><span>p.4</span></div>
+        <div class="toc-row"><strong>4. 채용·협업 인재상</strong><span>p.5</span></div>
+        <div class="toc-row"><strong>5. 연애·결혼 시기</strong><span>p.6</span></div>
+        <div class="toc-row"><strong>6. 실행 계획</strong><span>p.7</span></div>
+        <div class="toc-row"><strong>7. 부록: 시기별 타임라인</strong><span>p.8</span></div>
+      </div>
+      <div class="pn">1</div>
+    </section>
+
+    <section class="page">
+      <h2>1. 질문 요약과 상담 범위</h2>
+      <p class="small">처음에는 상담에서 다룬 질문이 무엇이었는지, 그리고 이 리포트가 어떤 순서로 정리되는지부터 살펴봅니다.</p>
+      <div class="callout">
+        <strong>이번 상담은 “올해 어떤 선택을 해야 실제 성과로 이어질까?”에 대한 이야기였습니다.</strong>
+        <p>
+          지원사업, 채용, 사업 성장, 연애와 결혼은 겉으로 보면 서로 다른 주제입니다. 하지만 이번 차트에서는
+          모두 한 방향으로 이어집니다. DY 님에게 맞는 속도와 방식이 있고, 그 리듬을 잘 잡아야 사업도 관계도
+          무리 없이 굴러갑니다.
+        </p>
+      </div>
+      <p>
+        DY 님이 가져온 질문은 크게 네 가지였습니다. 지금 넣어 둔 지원사업들 중 어느 쪽이 더 가능성이 있는지,
+        올해 직원을 뽑는다면 언제가 좋을지, 지금 하는 사업이 올해 어떤 흐름을 탈지, 그리고 현재 만나는 분과
+        결혼까지 이어질 수 있을지가 핵심이었습니다. 지원사업은 시기성이 강한 질문이라 네이탈만으로 단정하기보다,
+        당시의 흐름과 DY 님 차트의 기본 작동 방식을 같이 놓고 보았습니다.
+      </p>
+      <div class="qa">
+        <span class="label">DY 님이 제시한 핵심 질문</span>
+        <p>1. 청년창업사관학교, 초기창업패키지, 재도전성공패키지 중 어디에 더 기대를 걸 수 있을까.</p>
+        <p>2. 올해 채용을 한다면 언제가 좋고, 어떤 사람과 일해야 덜 부딪힐까.</p>
+        <p>3. 2025년 사업과 매출은 어떤 흐름으로 움직이고, 다음 성장 구간은 언제쯤 올까.</p>
+        <p>4. 지금 만나는 사람과 결혼까지 이어질 수 있을까. 결혼 시기는 어느 쪽으로 보일까.</p>
+      </div>
+      <div class="callout">
+        <strong>읽는 법</strong>
+        <p>
+          실제 상담은 대화체로 자연스럽게 오갔지만, 이 리포트에서는 같은 주제끼리 묶어 다시 정리했습니다.
+          그래서 대화 순서와 리포트 순서가 완전히 같지는 않습니다.
+        </p>
+      </div>
+      <div class="pn">2</div>
+    </section>
+
+    <section class="page">
+      <h2>2. 네이탈 기본 구조</h2>
+      <p class="small">여기서는 DY 님 차트가 기본적으로 어떤 방식으로 움직이는지 먼저 봅니다.</p>
+      <div class="callout">
+        <strong>DY 님은 흥미가 붙을 때 속도가 확 올라오는 타입입니다.</strong>
+        <p>
+          재미있고 돈이 될 만한 흐름을 발견하면 움직임이 빨라집니다. 그냥 감으로 달리는 타입은 아니고,
+          손익과 효율을 꽤 정확하게 따져보는 편입니다. 다만 흥미가 식거나 일이 지나치게 번거로워지면
+          에너지가 빠르게 빠질 수 있어, 처음부터 “오래 굴러가는 구조”를 만들어 두는 것이 중요합니다.
+        </p>
+      </div>
+      <p>
+        상담에서 확인된 기본 프레임은 사자 상승, 사자 태양, 물고기 달, 사자 수성,
+        처녀 금성, 전갈 화성, 황소 목성·토성이었습니다. 이 배치에서 가장 두드러지는 것은 강한 자기 중심축,
+        빠른 판단력, 그리고 실익을 보는 감각입니다. 오지랖이 넓어 보이는 면도 있지만, 그 역시 막연한 희생이나
+        간섭보다는 “내가 보기에 이게 더 낫다”는 판단에서 나오는 경우가 많습니다.
+      </p>
+
+      <div class="wheel-wrap">
+        <div class="wheel-box">
+          <svg id="wheel" viewBox="0 0 320 320" aria-label="DY 네이탈 차트"></svg>
+        </div>
+        <div class="planet-panel">
+          <h3>행성 위치 (자동 계산)</h3>
+          <div id="planetTable" class="grid2 planet-grid"></div>
+          <p class="small" style="margin-top:4mm;">
+            출생시각 기준 계산값을 표시합니다. CDN 차단 시 동일 출생정보 백업값으로 렌더링됩니다.
+          </p>
+          <div id="calcMeta" class="mono"></div>
+        </div>
+      </div>
+
+      <h3>성향 해석</h3>
+      <p>
+        DY 님은 오래 고민한 뒤 겨우 한 번 움직이는 타입이라기보다, 어느 정도 그림이 보이면 바로 해보고
+        결과를 보면서 조정하는 쪽에 가깝습니다. 이 점은 초기 시장 탐색, 사업 기획, 새로운 수익 경로를
+        찾는 일에서 큰 장점이 됩니다. 실제로 한 사업만 고정적으로 키우기보다, 여러 파이프라인을 만들어
+        안정적인 수입 구조를 만들고 싶다는 방향성이 차트와도 잘 맞습니다.
+      </p>
+      <p>
+        다만 모든 것을 대표 개인의 흥미와 체력으로 끌고 가면 오래 버티기 어렵습니다. DY 님에게 맞는 방식은
+        “내가 전부 직접 한다”가 아니라 “내가 판을 짜고, 반복 운영은 분리한다”에 가깝습니다. 이 구조가 잡히면
+        흥미가 다음 단계로 이동해도 기존 사업이 무너지지 않고, 새로운 시도를 할 여지도 남습니다.
+      </p>
+      <div class="pn">3</div>
+    </section>
+
+    <section class="page">
+      <h2>3. 사업·지원사업 흐름</h2>
+      <p class="small">여기서는 올해 지원사업과 사업 운영을 어떤 속도로 가져가면 좋을지 정리합니다.</p>
+      <div class="block">
+        <span class="badge">핵심 정리</span>
+        <p>
+          2025년은 나쁜 해가 아닙니다. 다만 작년처럼 새 시장을 발견하고 확 신나는 흐름이라기보다는,
+          할 일은 많고 챙길 것도 많지만 아주 크게 튀기보다는 꾸준히 굴러가는 해에 가깝습니다.
+        </p>
+      </div>
+      <div class="callout">
+        <strong>올해는 “크게 벌리기”보다 “잘 골라서 가져가기”가 더 중요합니다.</strong>
+        <p>
+          빠르게 결과가 나오는 선택지는 먼저 잡아도 좋습니다. 반대로 시간이 오래 걸리고 이동이나 운영 부담이
+          큰 선택지는, 붙는 것 자체보다 붙은 뒤 실제로 감당 가능한지를 같이 봐야 합니다.
+        </p>
+      </div>
+
+      <h3>지원사업 관련 시기 포인트</h3>
+      <ul class="list">
+        <li>3월 안에 결론이 나는 건은 비교적 기대를 걸어볼 만합니다.</li>
+        <li>4월 말~5월 초에 최종 결정되는 건은 중요도가 높을수록 체감 부담이 커질 수 있습니다.</li>
+        <li>지원 자체는 포기하기보다 넣을 수 있는 것은 넣고, 빠른 결과가 나는 쪽부터 실익을 챙기는 편이 좋습니다.</li>
+      </ul>
+
+      <h3>사업 운영 전망</h3>
+      <p>
+        DY 님 차트에서는 한 가지를 오래 붙들고 끝까지 파고드는 방식보다, 관심이 이동할 때 새 판을 여는 방식이
+        더 자연스럽습니다. 그래서 “지금 사업을 계속할까, 접을까”보다 더 중요한 질문은 “이 사업을 어떻게
+        남에게 맡기거나 분화해서, 다음 실험으로 넘어갈 여지를 만들까”입니다.
+      </p>
+      <p>
+        올해 목표는 고속 확장보다 운영 안정, 구조 보강, 파이프라인 분산 쪽에 두는 편이 좋습니다. 초반에
+        작은 성공을 만들면 다음 선택의 집중력이 살아나지만, 초반부터 불확실성이 큰 장기전만 붙들면 피로가
+        빨리 쌓일 수 있습니다. DY 님에게는 작은 승리를 빠르게 만들고, 그 다음 판을 보는 방식이 더 잘 맞습니다.
+      </p>
+      <p>
+        그래서 지원사업도 “붙느냐”만 볼 문제가 아닙니다. 붙은 뒤 실제로 굴릴 수 있는지, 이동과 시간 부담이
+        사업 전체에 어떤 영향을 주는지까지 같이 봐야 합니다. 운영이 너무 무거워지는 선택이라면, 합격 자체가
+        꼭 이익만은 아닐 수 있습니다.
+      </p>
+
+      <h3>중기 성장 구간</h3>
+      <p>
+        조금 길게 보면 2026년 봄부터 다시 좋은 흐름이 들어오고, 2027년 초에는 새로운 사업이나 브랜드를
+        벌일 가능성도 커집니다. 이때도 기존 사업을 버리고 새로 시작한다기보다, 기존 사업은 누군가에게 맡기고
+        DY 님은 다음 재미있는 판으로 옮겨가는 그림이 더 자연스럽습니다.
+      </p>
+      <div class="pn">4</div>
+    </section>
+
+    <section class="page">
+      <h2>4. 채용·협업 인재상</h2>
+      <p class="small">여기서는 언제 사람을 뽑으면 좋을지, 그리고 어떤 사람과 일해야 덜 소모되는지를 봅니다.</p>
+      <div class="callout">
+        <strong>채용은 사람 수를 늘리는 일이 아니라, DY 님의 시간을 되찾는 일입니다.</strong>
+        <p>
+          지금 필요한 사람은 “그냥 일 잘하는 사람”보다, DY 님의 속도와 소통 방식에 맞는 사람입니다.
+          같이 일할 때 설명을 너무 많이 해야 하거나, 매번 끝을 확인해야 하는 사람은 오히려 대표의 시간을
+          더 잡아먹을 수 있습니다.
+        </p>
+      </div>
+      <p>
+        DY 님은 추진이 빠른 만큼, 비효율적인 소통이나 불필요한 마찰에 피로를 크게 느낄 수 있습니다. 그래서
+        채용에서는 경력이나 스펙도 중요하지만, 실제로는 “말이 통하는가”, “맡긴 일을 끝까지 닫을 수 있는가”,
+        “대표의 판단 속도를 따라올 수 있는가”가 더 중요합니다.
+      </p>
+
+      <div class="grid2">
+        <div class="card">
+          <span class="label">권장 채용 시점</span>
+          <strong>1순위: 9월 전후 / 대안: 6월 초</strong>
+          <p class="small">급하지 않다면 가을 채용을 우선, 급하면 6월 초에 소규모로 시작.</p>
+        </div>
+        <div class="card">
+          <span class="label">권장 인재 성향</span>
+          <strong>말이 통하고, 책임 경계가 분명한 실무형</strong>
+          <p class="small">지시 대기형보다 스스로 정리하고 실행 가능한 타입이 적합.</p>
+        </div>
+      </div>
+
+      <h3>실무 기준 상세화</h3>
+      <p>
+        가장 중요한 것은 맡긴 일의 끝을 스스로 닫을 수 있는 오너십입니다. 매번 확인과 독촉이 필요한 사람은
+        처음에는 도움이 되는 것처럼 보여도, 시간이 지나면 대표의 체력을 계속 가져갑니다. 반대로 자기완결형
+        인재는 업무 속도뿐 아니라 의사결정의 질까지 높여줍니다.
+      </p>
+      <p>
+        소통 방식도 중요합니다. DY 님은 판단이 빠른 편이라, 모호한 보고나 결론 없는 회의가 반복되면 금방
+        지칠 수 있습니다. 그래서 쟁점을 정리하고, 가능한 선택지를 가져오고, 다음 행동까지 제안하는 타입이
+        잘 맞습니다. 능력이 비슷하다면 이 차이가 실제 성과에서 꽤 크게 벌어집니다.
+      </p>
+
+      <div class="callout">
+        <strong>리스크 관리</strong>
+        <p>
+          성장 압박이 있을 때는 당장 손이 부족하다는 이유로 서둘러 뽑기 쉽습니다. 하지만 올해는 단기 생산성보다
+          리듬 궁합을 먼저 보는 편이 좋습니다. 잘못 맞는 사람을 빨리 뽑는 것보다, 조금 늦더라도 오래 맞는 사람을
+          찾는 쪽이 비용이 덜 듭니다.
+        </p>
+      </div>
+      <div class="pn">5</div>
+    </section>
+
+    <section class="page">
+      <h2>5. 연애·결혼 시기</h2>
+      <p class="small">여기서는 현재 관계의 적합성과 결혼 시기를 나누어 봅니다.</p>
+      <div class="callout">
+        <strong>관계 자체는 괜찮습니다. 다만 결혼 시기는 조금 뒤쪽에 무게가 있습니다.</strong>
+        <p>
+          지금 만나는 분은 DY 님 차트의 배우자상과 크게 어긋나지 않습니다. 다만 관계가 괜찮다는 것과
+          결혼 시점이 빠르게 온다는 것은 다른 문제입니다. 결혼이라는 형태로 닫히는 시점은 기본적으로 조금
+          늦게 잡히고, 의지와 상황에 따라 앞당겨질 수 있는 구조입니다.
+        </p>
+      </div>
+      <p>
+        현재 교제 상대는 DY 님에게 꽤 잘 맞는 쪽으로 보입니다. 특히 DY 님이 관계에서 중요하게 보는 현실감,
+        편안함, 말을 들어주는 태도 같은 부분에서 크게 벗어나지 않습니다. 그래서 관계 자체를 부정적으로 볼
+        필요는 없습니다. 다만 결혼 시기만 따로 보면 가장 전형적인 창은 2032년 말 쪽이고, 조금 당겨 잡는다면
+        2028~2029년 가능성도 열려 있습니다.
+      </p>
+
+      <div class="timing">
+        <span class="badge">결혼 타이밍 정리</span>
+        <p>1순위: 2032년 말 전후 (전형적 구조)</p>
+        <p>2순위: 2028~2029년 (일정/의지로 당겨지는 경우)</p>
+      </div>
+
+      <h3>해석 포인트</h3>
+      <p>
+        여기서 중요한 것은 “관계가 불안정하다”가 아닙니다. 관계의 질과 결혼 시점은 별개의 문제입니다.
+        오히려 지금은 날짜를 확정하는 것보다, 서로의 일과 생활 리듬을 어떻게 맞춰 갈지가 더 중요합니다.
+      </p>
+      <p>
+        DY 님은 사업 흐름과 개인 생활이 강하게 연결되는 편이라, 일이 바빠지면 관계도 그 영향을 받기 쉽습니다.
+        그러니 결혼 논의도 감정만으로 밀어붙이기보다, 실제 생활과 사업 운영을 함께 놓고 보는 편이 안정적입니다.
+        “좋아하니까 결혼”보다 “같이 살 수 있는 구조가 만들어졌는가”가 더 중요한 차트입니다.
+      </p>
+
+      <h3>추가 생활 이슈</h3>
+      <p>
+        자녀와 육아 쪽은 역할 분담을 확실히 해두는 편이 좋습니다. DY 님이 육아를 못한다기보다, 정보와 기준은
+        빠르게 쌓이는데 직접 감당해야 하는 반복 노동에는 피로가 올 수 있습니다. 그래서 배우자와 역할을 나누는
+        구조가 중요합니다. 건강은 돈을 아껴서 버티는 영역이 아니라, 필요한 비용을 쓰면서 관리하는 쪽이 더 맞습니다.
+      </p>
+      <div class="pn">6</div>
+    </section>
+
+    <section class="page">
+      <h2>6. 실행 계획</h2>
+      <p class="small">여기서는 상담 내용을 실제 행동으로 옮길 때의 우선순위를 정리합니다.</p>
+      <div class="callout">
+        <strong>2025년은 크게 벌이기보다, 다음 확장을 위해 정리하는 해입니다.</strong>
+        <p>
+          올해는 무리해서 판을 키우기보다, 선택지를 정리하고 체력을 아끼는 쪽이 좋습니다. 할 수 있는 일이
+          많아질수록 집중이 흩어질 수 있으니, 지금 정말 가져갈 것과 내려놓을 것을 구분하는 게 중요합니다.
+        </p>
+      </div>
+      <p>
+        올해는 “더 많이”보다 “더 잘 굴러가게”가 핵심입니다. 지금 하는 사업의 반복 업무를 정리하고,
+        대표가 직접 붙어 있어야만 돌아가는 부분을 줄여야 합니다. 그래야 2026년 봄 이후 다시 확장감이
+        들어올 때, 새 기회를 더 가볍게 잡을 수 있습니다.
+      </p>
+
+      <h3>90일 실행안</h3>
+      <ul class="list">
+        <li>지원사업: 일정 빠른 트랙 우선, 포기 없이 병행 지원.</li>
+        <li>사업 운영: 핵심 서비스 1~2개에 집중하고 나머지는 위임 준비.</li>
+        <li>채용 준비: JD를 성향 중심으로 재작성, 6월/9월 채용 플랜 이중화.</li>
+        <li>건강 관리: 정기 검사·회복 루틴을 월간 예산에 고정 항목으로 반영.</li>
+      </ul>
+
+      <h3>1년 관점 점검축</h3>
+      <ul class="list">
+        <li>매출 지표만 보지 말고 ‘대표 체력 소모 대비 수익’ 지표를 함께 관리.</li>
+        <li>새 사업은 2027년 확장 가능성을 염두에 두고 파일럿 단위로 사전 테스트.</li>
+        <li>관계 이슈는 결혼 시기 확정보다 일/생활 합의 루틴 구축을 우선.</li>
+      </ul>
+      <p>
+        월간 매출만 보는 것보다, 분기마다 “이 일이 내 체력을 얼마나 쓰는가”를 같이 봐야 합니다.
+        매출이 나와도 대표가 계속 갈려 나가는 구조라면 오래가기 어렵습니다. 반대로 당장의 숫자가 조금
+        덜 화려해도, 위임과 반복 운영이 되는 구조라면 내년 이후 훨씬 크게 움직일 수 있습니다.
+      </p>
+
+      <div class="callout">
+        <strong>정리하면</strong>
+        <p>
+          올해는 버리는 해가 아니라 정리하는 해입니다. 지금 하는 일을 더 가볍게 만들고, 빠른 성과가 나는
+          선택지를 먼저 챙기고, 사람을 뽑을 때는 “나와 오래 맞는 사람인가”를 우선해 주세요.
+        </p>
+      </div>
+      <div class="pn">7</div>
+    </section>
+
+    <section class="page">
+      <h2>7. 부록: 시기별 타임라인</h2>
+      <p class="small">마지막으로 시기별로 무엇을 체크하면 좋을지 간단히 묶어둡니다.</p>
+      <div class="callout">
+        <strong>타임라인은 예언표라기보다, 놓치지 않기 위한 일정표에 가깝습니다.</strong>
+        <p>
+          시기마다 해야 할 일이 조금씩 다릅니다. 언제는 빠르게 지원하고, 언제는 부담을 점검하고, 언제는
+          채용과 위임을 준비해야 합니다. 이렇게 구간별 목표를 나눠두면 결과가 조금 흔들려도 전체 운영은
+          덜 흔들립니다.
+        </p>
+      </div>
+      <p>
+        아래 타임라인은 이번 상담의 내용을 실제 일정 감각으로 다시 정리한 것입니다. 한 번에 모든 것을
+        해결하려 하기보다, 구간마다 다른 목표를 두는 편이 좋습니다.
+      </p>
+
+      <h3>2025년 3월</h3>
+      <ul class="list">
+        <li>빠르게 결론 나는 지원건 우선 대응.</li>
+        <li>지원 포기보다 병행 제출이 유리.</li>
+        <li>대표 체력 소모를 줄이는 운영 프로토콜 설계 시작.</li>
+      </ul>
+
+      <h3>2025년 4월 말~5월 초</h3>
+      <ul class="list">
+        <li>중요 의사결정에서 체감 저항이 커질 수 있는 구간으로 관리.</li>
+        <li>합격 여부 자체보다 실행 가능성(시간/이동/운영부담) 동시 평가.</li>
+        <li>리스크가 큰 건은 확정 전 대체 시나리오 작성.</li>
+      </ul>
+
+      <h3>2025년 6월~9월</h3>
+      <ul class="list">
+        <li>채용은 9월 우선, 필요 시 6월 초 소규모 선채용.</li>
+        <li>분기 중간(7~8월)에는 기존 서비스 손익 안정화.</li>
+        <li>Q3 종료 시점에 위임 가능한 업무를 반드시 분리.</li>
+      </ul>
+
+      <h3>2026년~2027년</h3>
+      <ul class="list">
+        <li>2026년 봄: 성장 재가속 구간 진입 테스트.</li>
+        <li>2027년 초: 신규 사업/신규 브랜드 분기 가능성 점검.</li>
+        <li>핵심 기준: 기존 사업 버리기보다 역할 분리와 운영 분화.</li>
+      </ul>
+
+      <div class="callout">
+        <strong>읽는 법</strong>
+        <p>
+          이 타임라인은 반드시 이렇게 된다는 단정이 아니라, DY 님 차트와 현재 사업 상황을 함께 놓고 본
+          실행 가이드입니다. 실제 선택은 재무 상태, 인력 상황, 고객 파이프라인과 함께 보시면 가장 좋습니다.
+        </p>
+      </div>
+      <div class="pn">8</div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.min.js"></script>
+  <script>
+    const SIGNS = ["양","황소","쌍둥이","게","사자","처녀","천칭","전갈","사수","염소","물병","물고기"];
+    const PLANETS = [
+      ["Sun","태양","☉","#c74732"],
+      ["Moon","달","☽","#d8aa22"],
+      ["Mercury","수성","☿","#2f68b7"],
+      ["Venus","금성","♀","#c23aa5"],
+      ["Mars","화성","♂","#a33c2e"],
+      ["Jupiter","목성","♃","#2f8f55"],
+      ["Saturn","토성","♄","#111111"]
+    ];
+    const PLANET_DISPLAY_OFFSET = 30;
+    const fallback = {
+      Sun: 128.2452, Moon: 351.5815, Mercury: 125.9937, Venus: 158.8112,
+      Mars: 220.7727, Jupiter: 39.2287, Saturn: 44.1701, Asc: 149.9868, MC: 55.4312
+    };
+    function norm360(x){ let v=x%360; if(v<0)v+=360; return v; }
+    function degToSign(d){
+      const sign = Math.floor(d/30);
+      const i = d - sign*30;
+      const deg = Math.floor(i);
+      const min = Math.floor((i-deg)*60);
+      return `${SIGNS[sign]} ${deg}°${String(min).padStart(2,"0")}'`;
+    }
+    function computeAsc(lonEast, lat, dateUtc, A){
+      const t = A.MakeTime(dateUtc);
+      const gst = A.SiderealTime(t);
+      const lst = gst + lonEast/15;
+      const th = lst*15*Math.PI/180;
+      const eps = A.e_tilt(t).tobl*Math.PI/180;
+      const phi = lat*Math.PI/180;
+      const lam = Math.atan2(-Math.cos(th), Math.sin(th)*Math.cos(eps) + Math.tan(phi)*Math.sin(eps))*180/Math.PI;
+      return norm360(lam+180);
+    }
+    function computeMc(lonEast, dateUtc, A){
+      const t = A.MakeTime(dateUtc);
+      const gst = A.SiderealTime(t);
+      const lst = (gst + lonEast/15) * 15 * Math.PI / 180;
+      const eps = A.e_tilt(t).tobl * Math.PI / 180;
+      const lam = Math.atan2(Math.sin(lst), Math.cos(lst) * Math.cos(eps)) * 180 / Math.PI;
+      return norm360(lam);
+    }
+    function computePos(){
+      const dateUtc = new Date("1999-07-30T22:32:00Z");
+      const seoul = { lon: 126.9780, lat: 37.5665 };
+      if(!window.Astronomy) return { ...fallback, _mode:"fallback", _time:dateUtc.toISOString() };
+      try{
+        const out = {};
+        for(const [en] of PLANETS){
+          const v = Astronomy.GeoVector(en, dateUtc, true);
+          out[en] = norm360(Astronomy.Ecliptic(v).elon);
+        }
+        out.Asc = computeAsc(seoul.lon, seoul.lat, dateUtc, Astronomy);
+        out.MC = computeMc(seoul.lon, dateUtc, Astronomy);
+        out._mode = "calc";
+        out._time = dateUtc.toISOString();
+        return out;
+      }catch{
+        return { ...fallback, _mode:"fallback", _time:dateUtc.toISOString() };
+      }
+    }
+    function draw(pos){
+      const svg = document.getElementById("wheel");
+      const NS = "http://www.w3.org/2000/svg";
+      const cx=160, cy=160, r1=146, r2=108, r3=66;
+      function e(tag, attrs){
+        const n = document.createElementNS(NS, tag);
+        for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v);
+        return n;
+      }
+      function pt(lon, r){
+        // Keep ASC at left; move signs in zodiacal order around the wheel.
+        const delta = norm360(lon - pos.Asc);
+        const a = (180 + delta) * Math.PI / 180;
+        return [cx + r * Math.cos(a), cy - r * Math.sin(a)];
+      }
+      const markerLayer = e("g", {});
+      const glyphLayer = e("g", {});
+      svg.innerHTML = "";
+      svg.appendChild(e("rect",{x:0,y:0,width:320,height:320,fill:"#fff"}));
+      svg.appendChild(e("circle",{cx,cy,r:r1,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1.5"}));
+      svg.appendChild(e("circle",{cx,cy,r:r2,fill:"#fff",stroke:"#d8d1c6","stroke-width":"1"}));
+      svg.appendChild(e("circle",{cx,cy,r:r3,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1"}));
+      for(let i=0;i<12;i++){
+        const lon = pos.Asc + i*30;
+        const [x1,y1] = pt(lon,r1), [x2,y2]=pt(lon,r2);
+        svg.appendChild(e("line",{x1,y1,x2,y2,stroke:"#c8c0b4","stroke-width":"1"}));
+        const [tx,ty] = pt(lon+15,126);
+        const signIndex = (Math.floor(norm360(lon) / 30) + 1) % 12;
+        const signGlyphs = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
+        const g = e("text",{x:tx,y:ty+1,"font-size":"12","text-anchor":"middle",fill:"#5f584f",class:"astro"});
+        g.textContent = signGlyphs[signIndex];
+        svg.appendChild(g);
+      }
+      const dsc = norm360(pos.Asc + 180);
+      const ic = norm360(pos.MC + 180);
+      const [ax,ay] = pt(pos.Asc,r1);
+      const [dx,dy] = pt(dsc,r1);
+      const [mx,my] = pt(pos.MC,r1);
+      const [ix,iy] = pt(ic,r1);
+      svg.appendChild(e("line",{x1:ax,y1:ay,x2:dx,y2:dy,stroke:"#2f6d4f","stroke-width":"2.2"}));
+      svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:"#345d8c","stroke-width":"2.2"}));
+      const ascTxt = e("text",{x:ax-18,y:ay-4,"font-size":"10",fill:"#2f6d4f"}); ascTxt.textContent="ASC";
+      const dscTxt = e("text",{x:dx+4,y:dy-4,"font-size":"10",fill:"#2f6d4f"}); dscTxt.textContent="DSC";
+      const mcTxt = e("text",{x:mx-7,y:my-6,"font-size":"10",fill:"#345d8c"}); mcTxt.textContent="MC";
+      const icTxt = e("text",{x:ix-5,y:iy+12,"font-size":"10",fill:"#345d8c"}); icTxt.textContent="IC";
+      svg.appendChild(ascTxt); svg.appendChild(dscTxt); svg.appendChild(mcTxt); svg.appendChild(icTxt);
+
+      // Render glyphs only: same longitude, radial tiering for conjunction clusters.
+      const items = PLANETS.map(([en, ko, sym, color]) => {
+        const lon = norm360(pos[en] + PLANET_DISPLAY_OFFSET);
+        const delta = norm360(lon - pos.Asc);
+        const a = (180 + delta) * Math.PI / 180;
+        return { en, ko, sym, color, lon, a };
+      }).sort((a, b) => a.lon - b.lon);
+
+      // Place every glyph on the exact longitude ray. If glyph boxes collide,
+      // try a different radius on the same ray; no angular shifting.
+      const placed = [];
+      const glyphSize = 22;
+      const candidateRadii = [96, 72, 50, 28, 106, 84, 60, 38];
+      function boxAt(it, r) {
+        const gx = cx + r * Math.cos(it.a);
+        const gy = cy - r * Math.sin(it.a);
+        return { x: gx - glyphSize / 2, y: gy - glyphSize / 2, w: glyphSize, h: glyphSize, gx, gy };
+      }
+      function overlaps(a, b) {
+        return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+      }
+      function nearestGap(it) {
+        let gap = 999;
+        for (const other of items) {
+          if (other === it) continue;
+          let d = Math.abs(it.lon - other.lon);
+          if (d > 180) d = 360 - d;
+          gap = Math.min(gap, d);
+        }
+        return gap;
+      }
+      items.sort((a,b) => nearestGap(a) - nearestGap(b));
+
+      for (const it of items) {
+        let chosen = null;
+        for (const r of candidateRadii) {
+          const box = boxAt(it, r);
+          if (placed.every(p => !overlaps(box, p.box))) {
+            chosen = box;
+            break;
+          }
+        }
+        if (!chosen) chosen = boxAt(it, 28);
+        placed.push({ box: chosen });
+
+        const [markX, markY] = pt(it.lon, r2);
+        markerLayer.appendChild(e("circle",{
+          cx:markX,
+          cy:markY,
+          r:"3.4",
+          fill:it.color,
+          stroke:"#fff",
+          "stroke-width":"0.8"
+        }));
+
+        const g = e("text",{
+          x:chosen.gx, y:chosen.gy+6,
+          "font-size":"22",
+          "text-anchor":"middle",
+          fill:it.color,
+          class:"astro"
+        });
+        g.textContent = it.sym;
+        glyphLayer.appendChild(g);
+      }
+      svg.appendChild(markerLayer);
+      svg.appendChild(glyphLayer);
+    }
+    function table(pos){
+      const box = document.getElementById("planetTable");
+      box.innerHTML = "";
+      const add = (k,v)=>{
+        const d = document.createElement("div");
+        d.className = "card";
+        d.innerHTML = `<span class="label">${k}</span><strong>${v}</strong>`;
+        box.appendChild(d);
+      };
+      for(const [en,ko,sym] of PLANETS) add(`${sym} ${ko}`, degToSign(norm360(pos[en] + PLANET_DISPLAY_OFFSET)));
+      add("ASC", degToSign(pos.Asc));
+      add("MC", degToSign(pos.MC));
+      document.getElementById("calcMeta").textContent = `mode=${pos._mode} | utc=${pos._time} | location=Seoul(126.978E, 37.566N)`;
+    }
+    const pos = computePos();
+    draw(pos);
+    table(pos);
+  </script>
+</body>
+</html>
