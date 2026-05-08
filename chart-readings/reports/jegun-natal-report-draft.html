@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>네이탈 상담 리포트 - 제군들</title>
+  <style>
+    @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap');
+
+    /* ── AtoZ (에이투지체) ── */
+    @font-face { font-family:'AtoZ'; font-weight:100; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-1Thin.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:200; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-2ExtraLight.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:300; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-3Light.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:400; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-4Regular.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:500; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-5Medium.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:600; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-6SemiBold.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:700; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-7Bold.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:800; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-8ExtraBold.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:900; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-9Black.woff2') format('woff2'); }
+
+    @page { size: A4; margin: 0; }
+
+    /* ── 디자인 토큰 ── */
+    :root {
+      --black:   #000000;
+      --ink:     #1a1a1a;
+      --body:    #4a4a4a;
+      --muted:   #9a9a9a;
+      --soft:    #c8c8c8;
+      --line:    #e3e3e3;
+      --line-strong: #1a1a1a;
+      --gold:    #c9a861;
+      --accent:  #688ecd;  /* 포인트 컬러 — 부드러운 블루 */
+      --white:   #ffffff;
+      --mg-h: 22mm;
+      --mg-v: 25mm;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #d0d0d0;
+      font-family: "AtoZ", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: var(--body);
+      line-height: 1.72;
+      word-break: keep-all;
+      -webkit-font-smoothing: antialiased;
+      padding: 8mm 0;
+    }
+    .report { width: 210mm; margin: 0 auto; }
+
+    /* ── COVER ── */
+    .cover {
+      width: 210mm; height: 297mm;
+      position: relative; overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
+    .cover-bg {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; display: block;
+    }
+    .cover-headline {
+      position: absolute;
+      left: 0; right: 0; top: 239mm;
+      z-index: 2;
+      text-align: center;
+      font-family: "Paperlogy", "Pretendard", "Noto Sans KR", sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: 0.32em;
+      color: #ffffff;
+    }
+    .cover-text-overlay {
+      position: absolute;
+      left: 0; right: 0;
+      text-align: center; z-index: 2;
+      top: 249mm;
+    }
+    .cover-client-name {
+      font-family: "Paperlogy", "Pretendard", "Noto Sans KR", sans-serif;
+      font-size: 48px; font-weight: 700;
+      color: #dac087; letter-spacing: 0.02em; line-height: 1.2;
+    }
+    .cover-client-sub {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      font-size: 12px; font-weight: 400;
+      letter-spacing: 0.22em; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; margin-top: 2mm;
+    }
+
+    /* ══════════════════════════════════
+       BODY PAGES — A4 정확 분할 (인쇄·PDF용)
+       ══════════════════════════════════ */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--white);
+      padding: var(--mg-v) var(--mg-h);
+      page-break-after: always;
+      break-after: page;
+      position: relative;
+    }
+    .body-bottom { /* 자연 흐름 — 위에서 아래로 */ }
+
+    /* ── 페이지 분할 컨트롤: 핵심 블록은 중간에 자르지 않음 ── */
+    .ch-opener, .lead, .lead-body,
+    .bullets li, .list li,
+    .timeline-row, .meta-row, .toc-row,
+    .wheel-wrap {
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    h3, .num-h, .ch-opener {
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    /* 화면에서만 페이지를 시트처럼 보이게 (인쇄에서는 제거) */
+    .cover, .page {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      margin: 0 auto 8mm;
+    }
+
+    /* ── 챕터 오프너 (Chapter XX. + 큰 제목) ── */
+    .ch-opener {
+      padding-top: 0;
+      padding-bottom: 8mm;
+      margin-bottom: 8mm;
+      border-bottom: 1px solid var(--line);
+    }
+    .page.chart .ch-opener { border-bottom: none; }
+    .page.chart .planet-panel { border-top: none; padding-top: 0; }
+
+    .ch-num {
+      display: block;
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 16px; font-weight: 500;
+      color: #9ea4ac;
+      letter-spacing: 0.02em;
+      margin-bottom: 3mm;
+    }
+    .ch-title {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 38px; font-weight: 400;
+      color: var(--accent); line-height: 1.22;
+      letter-spacing: -0.025em;
+    }
+    .ch-desc {
+      font-family: "AtoZ", sans-serif;
+      font-size: 15px; font-weight: 400; color: var(--body);
+      margin-top: 3mm; line-height: 1.7;
+      max-width: 140mm;
+    }
+
+    /* ── 러닝 헤더 (Chapter XX.  섹션명) ── */
+    .pg-top {
+      display: flex;
+      align-items: baseline;
+      gap: 7mm;
+      padding-bottom: 3.5mm;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 12mm;
+    }
+    .pg-top-num {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 11.5px; font-weight: 500;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+    .pg-top-title {
+      font-size: 11.5px; font-weight: 300;
+      color: var(--muted); letter-spacing: -0.01em;
+    }
+
+    /* ── 번호 매김 섹션 헤딩 (1. ~~~~) ── */
+    h3, .num-h {
+      font-size: 20px; font-weight: 500;
+      color: var(--accent); line-height: 1.4;
+      margin: 8mm 0 3mm;
+      letter-spacing: -0.015em;
+    }
+    .num-h:first-child, .ch-opener + h3,
+    .ch-opener + .num-h, .pg-top + h3, .pg-top + .num-h { margin-top: 0; }
+
+    /* ── 본문 텍스트 ── */
+    p {
+      margin: 0;
+      font-size: 14.5px; font-weight: 300; color: var(--body);
+      line-height: 1.78;
+    }
+    strong { color: var(--ink); font-weight: 500; }
+
+    /* ── 리드 / 리드 본문 (강조 시작 + 부연 설명) ── */
+    .lead {
+      font-size: 16px; font-weight: 500;
+      color: var(--ink); line-height: 1.55;
+      margin: 4mm 0 3mm;
+      letter-spacing: -0.01em;
+    }
+    .lead-body {
+      font-size: 14.5px; font-weight: 300; color: var(--body);
+      margin: 0 0 6mm; line-height: 1.78;
+    }
+
+    /* ── 챕터 오프너 마지막 자식 마진 정리 ── */
+    .ch-opener > :last-child { margin-bottom: 0; }
+
+    /* ── 수평선 ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 9mm 0;
+    }
+
+    /* ── 메타 행 (TOC 페이지 의뢰인 정보) ── */
+    .meta-rows { margin: 0 0 12mm; }
+    .meta-row {
+      display: flex; align-items: baseline;
+      border-bottom: 1px solid var(--line);
+      padding: 4mm 0;
+      font-size: 14.5px;
+    }
+    .meta-row:first-child { border-top: 1px solid var(--line); }
+    .meta-key {
+      min-width: 40mm; color: var(--muted);
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .meta-val { color: var(--ink); font-weight: 400; }
+
+    /* ── TOC ── */
+    .toc-section { margin-top: 4mm; }
+    .toc-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 5.5mm 0; border-bottom: 1px solid var(--line);
+    }
+    .toc-row:first-child { border-top: 1.5px solid var(--ink); }
+    .toc-left { display: flex; gap: 8mm; align-items: baseline; }
+    .toc-num {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 13px; font-weight: 500;
+      color: var(--accent); min-width: 10mm;
+      letter-spacing: -0.01em;
+    }
+    .toc-row strong { font-weight: 500; color: var(--ink); font-size: 16px; letter-spacing: -0.01em; }
+    .toc-row > span { font-size: 12px; font-weight: 300; color: var(--muted); font-feature-settings: "tnum"; }
+
+    /* ── 불릿 리스트 (CSS 도트 + 강조 inline) ── */
+    .bullets, .list { margin: 4mm 0 9mm; padding: 0; list-style: none; }
+    .bullets li, .list li {
+      position: relative;
+      padding-left: 5mm;
+      margin-bottom: 3mm;
+      font-size: 14.5px; font-weight: 300; color: var(--body);
+      line-height: 1.78;
+    }
+    .bullets li::before, .list li::before {
+      content: "";
+      position: absolute;
+      left: 0.8mm;
+      top: 0.72em;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .bullets li:last-child, .list li:last-child { margin-bottom: 0; }
+    .bullets li strong, .list li strong { color: var(--ink); font-weight: 500; }
+    .list li { padding-bottom: 0; border-bottom: none; }
+
+    /* ── 타임라인 행 표 ── */
+    .timeline-table { margin: 6mm 0 0; }
+    .timeline-row {
+      display: flex; gap: 8mm;
+      padding: 5mm 0;
+      border-top: 1px solid var(--line);
+      align-items: baseline;
+      font-size: 14.5px;
+    }
+    .timeline-row:last-child { border-bottom: 1px solid var(--line); }
+    .tl-period {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-weight: 500; color: var(--accent);
+      min-width: 36mm; font-size: 14px;
+      letter-spacing: -0.005em; flex-shrink: 0;
+    }
+    .tl-body { color: var(--body); font-weight: 300; flex: 1; line-height: 1.72; }
+
+    /* ── 차트 휠 ── */
+    .wheel-wrap { margin: 0; }
+    .wheel-box {
+      width: 100%;
+      max-width: 110mm;
+      margin: 0 auto;
+      background: #fff;
+    }
+    .wheel-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+    .wheel-bg, .wheel-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .wheel-bg {
+      transform-origin: center;
+      transition: none;
+    }
+    .planet-panel { margin-top: 4mm; padding-top: 5mm; border-top: 1px solid var(--line); }
+    .planet-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 30mm minmax(0,1fr) 30mm;
+      column-gap: 8mm; row-gap: 0;
+    }
+    .planet-card {
+      display: contents;
+    }
+    .planet-card .name {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-weight: 500; color: var(--ink);
+      font-size: 14.5px; padding: 2.2mm 0;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: -0.01em;
+    }
+    .planet-card .val {
+      color: var(--body); font-weight: 300;
+      font-size: 14px; padding: 2.2mm 0;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+    }
+    .label {
+      font-size: 11px; color: var(--muted);
+      letter-spacing: 0.16em; text-transform: uppercase;
+      display: block; margin-bottom: 1mm; font-weight: 500;
+    }
+
+    /* ── 기타 ── */
+    .small { font-size: 13px; color: var(--muted); }
+    .mono  { font-family: Consolas, Monaco, monospace; font-size: 10.5px; color: var(--muted); }
+    .astro { font-family: "Noto Sans Symbols 2","Segoe UI Symbol","Symbola","DejaVu Sans",sans-serif; font-feature-settings: normal; }
+
+    /* ── 페이지 번호 ── */
+    .pn {
+      position: absolute; bottom: 22mm;
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 12px; color: #9ea4ac;
+      font-weight: 400; letter-spacing: 0.04em;
+    }
+    .pn.right { left: auto; right: var(--mg-h); }
+
+    @media print {
+      html, body { background: #fff; margin: 0; padding: 0; }
+      .report { width: 210mm; margin: 0; }
+      .cover {
+        width: 210mm; height: 297mm;
+        margin: 0; box-shadow: none;
+        page-break-after: always; break-after: page;
+        page-break-inside: avoid; break-inside: avoid;
+      }
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0; box-shadow: none;
+        page-break-after: always; break-after: page;
+      }
+      .page:last-child { page-break-after: auto; break-after: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="report">
+
+    <!-- ══════════════ COVER PAGE ══════════════ -->
+    <div class="cover">
+      <!-- cover.svg: full A4 background (orbital diagram, no text) -->
+      <img class="cover-bg" src="https://cdn.jsdelivr.net/gh/mindfiber/Illy@astrology/report/chart-readings/reports/cover.svg" alt="cover">
+
+      <!-- headline: CUSTOM ASTROLOGY NOTE (Paperlogy) -->
+      <div class="cover-headline">CUSTOM ASTROLOGY NOTE</div>
+
+      <!-- client name + subtitle overlay, positioned below the headline -->
+      <div class="cover-text-overlay">
+        <div class="cover-client-name">제군들</div>
+        <div class="cover-client-sub">Jegun &nbsp;·&nbsp; 1991.05.21 &nbsp;·&nbsp; 부산</div>
+      </div>
+    </div>
+
+    <!-- ══ p.01 인트로 + 의뢰인 + 목차 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Custom Astrology Note</span>
+        <div class="ch-title">네이탈 상담 리포트</div>
+        <p class="ch-desc">2026년 진행된 상담 내용을 바탕으로 결혼·사업의 큰 흐름·해외 진출과 R&D 성과·시기별 리스크 대응을 주제별로 정리한 헬레니스틱 네이탈 리포트입니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>목차</h3>
+        <div class="toc-section">
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">01</span><strong>네이탈 기본 구조</strong></div><span>p.02</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">02</span><strong>질문 요약과 상담 범위</strong></div><span>p.03</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">03</span><strong>결혼 가능성과 흐름</strong></div><span>p.04</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">04</span><strong>사업의 큰 흐름</strong></div><span>p.05</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">05</span><strong>해외·B2G·R&amp;D — 2026 성과 가능성</strong></div><span>p.06</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">06</span><strong>시기별 리스크와 대응</strong></div><span>p.07</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">07</span><strong>2026~2030년 타임라인</strong></div><span>p.08</span></div>
+        </div>
+      </div>
+      <div class="pn right">01</div>
+    </section>
+
+    <!-- ══ p.02 네이탈 차트 ══ -->
+    <section class="page chart">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 01.</span>
+        <div class="ch-title">네이탈 기본 구조</div>
+        <p class="ch-desc">제군들 · 1991. 05. 21  13:41 · 부산 · Day Chart</p>
+      </div>
+
+      <div class="body-bottom">
+        <div class="wheel-wrap">
+          <div class="wheel-box">
+            <div class="wheel-stage">
+              <img class="wheel-bg" src="wheel.svg" alt="제군들 님 네이탈 차트 휠">
+              <svg class="wheel-overlay" viewBox="0 0 761.42 761.42"></svg>
+            </div>
+          </div>
+          <div class="planet-panel">
+            <div id="planetTable" class="planet-grid"></div>
+            <div id="calcMeta" class="mono" style="margin-top:3mm;"></div>
+          </div>
+        </div>
+
+        <h3>1. 차트 한 줄 요약</h3>
+        <p>제군들 차트는 "지식·전문성·거리"가 인생을 끌고 가는 차트입니다. 처녀 상승, 그 룰러 수성이 9하우스 황소에 들어가 있어 — 멀리 보고, 체계화하고, 실물 결과로 만드는 일이 본인 정체성과 직업의 동일 축으로 묶입니다. 사업·해외·연구가 한 묶음으로 돌아가는 구조.</p>
+
+        <h3>2. 핵심 행성 배치</h3>
+        <ul class="bullets">
+          <li><strong>처녀 상승 / 황소 태양 / 처녀 달</strong> — 흙(Earth) 비중이 강함. 실용·디테일·축적 지향. 겉으로 차분, 안쪽은 매우 분석적.</li>
+          <li><strong>9하우스 태양·수성 (황소)</strong> — 본인 정체성의 가장 강한 축이 해외·전문성·교육·연구. 황소 톤이라 컨셉이 아니라 실물 결과로 이어집니다.</li>
+          <li><strong>12하우스 목성 (사자)</strong> — 보이지 않는 곳에서 작동하는 행운. 후원·외부 자문·직관이 본인을 살림 (단 표면 노출은 더딤).</li>
+          <li><strong>8하우스 금성 (양·디트리먼트)</strong> — 관계·돈·외부 자원은 깊이 들어가서야 풀리는 구조. 표면 결정으론 풀리지 않음.</li>
+          <li><strong>11하우스 화성 (게·낙하)</strong> — 동맹·집단 확장에서 공격적으로 밀면 비용이 큰 자리. 합작·파트너십에 사전 룰 필수.</li>
+          <li><strong>6하우스 토성 (물병)</strong> — 시스템·문서화·체계화가 본인 차트의 강점. 일하는 구조가 단단할수록 차트가 잘 돌아감.</li>
+        </ul>
+      </div>
+      <div class="pn">02</div>
+    </section>
+
+    <!-- ══ p.03 질문 요약 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 02.</span>
+        <div class="ch-title">질문 요약과 상담 범위</div>
+        <p class="lead">이번 상담의 중심은 "확장의 속도와 결혼이라는 두 축을 어떻게 균형 잡을 것인가"였습니다.</p>
+        <p class="lead-body">결혼·사업·해외 진출·리스크 관리 네 가지 질문이지만 본질은 두 가지입니다. 차트가 다루는 영역(사업·해외·전문성)에서 어디까지 밀어붙일 것인가, 그리고 차트가 늦게 단단해지는 영역(결혼·재무 안정)을 어느 시점에 함께 끌어올릴 것인가.</p>
+      </div>
+
+      <div class="body-bottom">
+        <p>첫 번째 질문은 결혼 가능 여부와 시기였습니다. 두 번째는 사업의 큰 흐름, 세 번째는 북미·유럽·B2G·R&D 다각화에 따른 2026년 안 성과 가능성, 네 번째는 공격적 확장에 따른 시기별 리스크와 대응책이었습니다.</p>
+
+        <h3>1. 핵심 질문 목록</h3>
+        <ul class="bullets">
+          <li><strong>결혼은 가능한가</strong> — 가능, 다만 차트상 결혼은 30대 후반~40대 초반 구간에 무게가 실립니다.</li>
+          <li><strong>사업의 큰 흐름</strong> — 본인 차트의 본업. 길게 보면 매우 강한 차트입니다.</li>
+          <li><strong>해외·B2G·R&amp;D 다각화 2026 성과</strong> — 방향은 정확. 단 단년 압축 성과는 빠듯, 본격 결실은 2027년에.</li>
+          <li><strong>시기별 리스크와 대응</strong> — 현금경색은 표면 결과. 본질 리스크는 의사결정 부하와 사람 매니지먼트.</li>
+        </ul>
+
+        <h3>2. 이번 상담의 큰 그림</h3>
+        <p>사업·해외·R&D 한 축이 본인 차트의 "본업"입니다. 9하우스(해외·학문·확장) 안에 태양과 수성이 동시에 자리 잡고 있어, 이 방향에 의문을 가질 필요는 없습니다. 차트가 가리키는 길과 현재 사업 방향이 거의 그대로 겹쳐 있습니다.</p>
+        <p>다만 이 차트는 <strong>"장기간 단단해지는"</strong> 차트라 단년 안에 압축 성과를 노릴 때 비용이 크게 듭니다. 이번 상담의 핵심은 "어디서 가속하고 어디서 절제할 것인가" — 그리고 본업 가속 시기에 결혼·재무 안정을 어떤 박자로 함께 끌어올릴지였습니다.</p>
+
+        <h3>3. 리포트 읽는 법</h3>
+        <ul class="bullets">
+          <li>각 챕터 첫머리의 <strong>굵은 한 문장 + 부연</strong>이 그 챕터의 핵심 결론입니다. 시간이 없으면 그 부분만 읽어도 됩니다.</li>
+          <li>운로 해석은 헬레니스틱 기준 — <strong>프로펙션 + 메이저 PD</strong>를 중심으로 보았고, 2026년이 기준이지만 결혼·사업 같은 큰 주제는 2026~2030년 장기 흐름으로 봐야 정확합니다.</li>
+          <li>같은 이야기가 두세 챕터에 걸쳐 짧게 반복될 수 있는데, 의도된 연결입니다.</li>
+        </ul>
+      </div>
+      <div class="pn">03</div>
+    </section>
+
+    <!-- ══ p.04 결혼 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 03.</span>
+        <div class="ch-title">결혼 가능성과 흐름</div>
+        <p class="lead">결혼은 가능합니다. 다만 본인 차트의 결혼은 일찍 결정되는 형태가 아닙니다.</p>
+        <p class="lead-body">7하우스(물고기) 룰러 목성이 12하우스(사자)에 들어가 있어, 관계가 외부에서 잘 보이지 않거나 천천히 드러나는 형태로 작동합니다. 금성도 양자리 8하우스에 위치해 — 깊이 들어가야 풀리는 구조입니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>1. 결혼 차트의 핵심</h3>
+        <ul class="bullets">
+          <li><strong>7하우스 룰러 목성이 12하우스</strong> — 결혼 인연이 일·해외·사적 모임 등 12하우스 영역에서 시작될 가능성이 높습니다. 공개적·즉흥적 만남보다 의외 경로.</li>
+          <li><strong>금성 양자리 8하우스 (디트리먼트)</strong> — 관계는 시간 들이고 신뢰가 쌓여야 풀리는 구조. 첫인상으로 결정되는 차트가 아닙니다.</li>
+          <li><strong>토성 6하우스 물병</strong> — 결혼은 늦게 단단해지는 차트. 일찍 흥분해서 가는 관계는 깊어지지 않습니다.</li>
+          <li><strong>처녀 상승 / 황소 태양</strong> — 본인 자체가 "검증·실용·축적" 중심이라 관계도 같은 톤으로 가야 본인이 안정됨.</li>
+        </ul>
+
+        <h3>2. 결혼 가능 시기 (헬레니스틱 프로펙션 + PD 기준)</h3>
+        <div class="timeline-table">
+          <div class="timeline-row"><span class="tl-period">2026년 (35세)</span><span class="tl-body">12하우스 사자 프로펙션, 룰러 태양 9하우스 활성. 인연의 첫 신호 — 단 12하우스 영역이라 본인이 곧바로 인지하지 못할 수 있음. 해외·일 관련 자리에서 시작될 가능성.</span></div>
+          <div class="timeline-row"><span class="tl-period">2028년 (37세)</span><span class="tl-body">2하우스 천칭 금성 프로펙션. 관계가 표면에 떠오르는 첫 시기. 단 금성이 8하우스 양에 있어 재무·자원 결정과 동시 발생 — 관계와 돈을 동시에 결정하지 말 것.</span></div>
+          <div class="timeline-row"><span class="tl-period">2030년 (39세)</span><span class="tl-body">4하우스 사수 프로펙션, 룰러 목성 활성. 거주·기반·결혼이 한 묶음으로 무게가 들어옴. 결혼 가능성이 본격적으로 표면화되는 첫 구간.</span></div>
+          <div class="timeline-row"><span class="tl-period">2033년 (42세)</span><span class="tl-body">7하우스 물고기 직접 프로펙션. 결혼 자체가 가장 강하게 활성화되는 해. 30대 후반에 시작된 인연이 결정으로 이어질 시점.</span></div>
+        </div>
+
+        <h3>3. 잘 맞는 관계 형태</h3>
+        <ul class="bullets">
+          <li><strong>일·전문성 기반</strong> 인연 — 해외·학문·연구 영역에서 만나는 사람.</li>
+          <li><strong>시간 들여 깊이 가는</strong> 관계 — 짧고 강한 관계보다 천천히 단단해지는 관계.</li>
+          <li>본인의 일과 사업을 이해하거나 함께 호흡할 수 있는 사람 — 8하우스 금성은 <strong>"공동 자원·공동 운영"</strong> 친화 구조.</li>
+        </ul>
+      </div>
+      <div class="pn">04</div>
+    </section>
+
+    <!-- ══ p.05 사업의 큰 흐름 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 04.</span>
+        <div class="ch-title">사업의 큰 흐름</div>
+        <p class="lead">사업은 본인 차트의 본업입니다. 의문 가지실 필요가 없습니다.</p>
+        <p class="lead-body">ASC 룰러 수성과 10하우스 룰러 수성이 동일 행성 — 본인 정체성과 직업이 같은 축에서 움직입니다. 그 수성이 9하우스 황소에 위치해 — 해외·전문성·체계화가 본인의 가장 강한 카드입니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>1. 사업이 잘 맞는 이유</h3>
+        <ul class="bullets">
+          <li><strong>수성 9하우스 황소</strong> — 학문·연구·해외 분야를 황소(축적·실물·꾸준함) 톤으로 다루는 자리. 컨셉만의 사업이 아니라 <strong>실물 결과를 만드는 R&amp;D 사업</strong>이 본인 차트의 정수.</li>
+          <li><strong>토성 6하우스 물병</strong> — 일하는 구조와 시스템에 강함. 무리한 인력 굴림보다 <strong>시스템화된 운영</strong>이 본인 강점.</li>
+          <li><strong>태양 9하우스</strong> — 본인의 "주된 자기 표현"이 사업과 해외 자체. 이 영역을 줄이면 차트 전체가 답답해짐.</li>
+          <li><strong>12하우스 목성</strong> — 사업의 보이지 않는 후원 자리. 본인이 모든 라인을 직접 처리하지 말고 외부 자문·멘토 활용해야 차트가 살아남.</li>
+        </ul>
+
+        <h3>2. 사업의 장기 트라젝토리</h3>
+        <ul class="bullets">
+          <li><strong>2026~2027 (35~36세)</strong> — 해외·B2G 기반 다지는 구간. 12하우스 프로펙션이라 표면 결실은 부분적, 본격 결실은 1년 늦게.</li>
+          <li><strong>2027~2029 (36~38세)</strong> — 1하우스 프로펙션(2027) + 메이저 PD 활성. 수성 직접 활성화 — 본업 차원의 큰 도약 가능 구간.</li>
+          <li><strong>2029~2032 (38~41세)</strong> — 토성 활성 시기. 사업 안정·확장의 후반 단계. R&D 누적치가 매출 라인 다변화로 전환되는 구간.</li>
+        </ul>
+
+        <h3>3. 본인이 주의할 패턴</h3>
+        <ul class="bullets">
+          <li><strong>화성 11하우스 게(낙하)</strong> — 동맹·집단 확장에서 공격적으로 밀면 비용이 큼. 합작·파트너십 시 사전 룰 명문화 필수.</li>
+          <li><strong>금성 양 8하우스</strong> — 자금·재무 의사결정에서 외부 변수에 흔들리기 쉬움. 자금 라인은 단순화하고 다중 채널 의존 줄이기.</li>
+          <li><strong>처녀·황소 강세</strong> — 디테일 완벽주의에 빠지기 쉬움. "충분히 좋음"과 "완벽" 사이에서 시간 소모 주의.</li>
+        </ul>
+      </div>
+      <div class="pn">05</div>
+    </section>
+
+    <!-- ══ p.06 해외·B2G·R&D 2026 성과 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 05.</span>
+        <div class="ch-title">해외 · B2G · R&amp;D — 2026 성과 가능성</div>
+        <p class="lead">방향은 정확합니다. 단 2026년 한 해 안에 모두 거두기에는 빠듯합니다.</p>
+        <p class="lead-body">9하우스(해외)·10하우스(B2G·정부)·6하우스(R&D 시스템) — 모두 본인 차트의 강한 영역에 정확히 위치한 사업 방향들입니다. 다만 2026년은 12하우스 프로펙션이라 활성도는 강해도 표면 가시성이 낮은 해 — 핵심 결실은 2027년으로 옮겨갈 가능성이 큽니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>1. 왜 이 방향이 맞는가</h3>
+        <ul class="bullets">
+          <li><strong>북미·유럽 진출</strong> — 9하우스 태양·수성. 황소(실용·축적) 톤이라 한 시장에서 깊게 박는 전략 적합. 동시 다발 진입은 비용이 큼.</li>
+          <li><strong>B2G (조달청)</strong> — 10하우스 룰러 수성, 토성 6하우스 — 정부·시스템 친화 차트. 컨설팅·R&D 위탁·기술 인증 영역에서 특히 강함.</li>
+          <li><strong>R&amp;D 사업</strong> — 6하우스 토성(물병) + 9하우스 수성. 현실적 R&D 성과를 만들어내는 자리. 단 토성형이라 단년 결실보다 누적 결실 패턴.</li>
+        </ul>
+
+        <h3>2. 우선순위 — 2026년 한 해 기준</h3>
+        <ul class="bullets">
+          <li><strong>1순위 · B2G 조달 인증·계약 진입</strong> — 토성·수성이 같이 작동하는 영역. 2026 하반기~2027 상반기 기반 깔리고, 2027년 본격 수주.</li>
+          <li><strong>2순위 · R&D 결과물의 외부 노출</strong> — 12하우스 프로펙션이라 2026년은 "준비·검증 → 2027년 발표" 패턴이 자연스러움.</li>
+          <li><strong>3순위 · 북미·유럽 진출</strong> — 가장 큰 그림이지만 가장 시간이 걸림. 2026년 한 시장 집중(예: 북미만), 2027~2028년 다른 시장 순차적으로.</li>
+        </ul>
+
+        <h3>3. R&amp;D 성과 시점</h3>
+        <p>차트상 R&D는 토성형 영역 — 단년 결실보다 누적 결실이 자연스럽습니다. 본인이 가진 R&D는 IP·인증·체계화로 변환할 때 진가가 나옵니다.</p>
+        <div class="timeline-table">
+          <div class="timeline-row"><span class="tl-period">2026</span><span class="tl-body">핵심 IP·인증·R&D 마일스톤 도달. 가시적 매출은 한정적이지만 본격 결실의 토대가 깔리는 해.</span></div>
+          <div class="timeline-row"><span class="tl-period">2027</span><span class="tl-body">그 마일스톤 기반의 B2G 대형 계약 + 해외 첫 수주. 본격 매출 가시화의 첫 해.</span></div>
+          <div class="timeline-row"><span class="tl-period">2028 ~ 2029</span><span class="tl-body">누적 R&D가 매출 라인 다변화로 전환되는 구간. 단일 시장 → 복수 시장으로.</span></div>
+        </div>
+      </div>
+      <div class="pn">06</div>
+    </section>
+
+    <!-- ══ p.07 시기별 리스크와 대응 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 06.</span>
+        <div class="ch-title">시기별 리스크와 대응</div>
+        <p class="lead">가장 큰 리스크는 현금경색 자체가 아니라, 의사결정 부하와 사람 매니지먼트입니다.</p>
+        <p class="lead-body">화성 11하우스 게(낙하)와 금성 8하우스 양 — 합작·동맹·자금 라인에서 외부 변수가 가장 비싸게 옵니다. 현금경색은 표면적 결과일 뿐, 진짜 비용은 본인 의사결정 과부하 + 사람 관리 비용입니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>1. 시기별 리스크 (2026 ~ 2028)</h3>
+        <div class="timeline-table">
+          <div class="timeline-row"><span class="tl-period">2026 상반기</span><span class="tl-body">12하우스 활성. 외부에서 잘 보이지 않는 자금 흐름 변동 + 미공개 합작 협상 지연. 핵심: 표면 매출보다 cash conversion cycle 관리.</span></div>
+          <div class="timeline-row"><span class="tl-period">2026 하반기</span><span class="tl-body">9하우스 태양 활성(생일 이후). 해외 진출 의사결정 집중 — 한꺼번에 시장 3개 동시 공격은 위험. 1개 시장 집중으로 좁히기.</span></div>
+          <div class="timeline-row"><span class="tl-period">2027 상반기</span><span class="tl-body">1하우스 수성 활성. 본인 부하가 가장 높은 구간. 위임 + 시스템화가 안 된 채로 들어가면 본인 번아웃이 가장 비싼 리스크.</span></div>
+          <div class="timeline-row"><span class="tl-period">2027 하반기 ~ 2028</span><span class="tl-body">금성 활성 시기. 자금·파트너 관계 의사결정 표면화. 8하우스 금성이라 단순화·다중 라인 정리가 핵심.</span></div>
+        </div>
+
+        <h3>2. 우선순위 대응</h3>
+        <ul class="bullets">
+          <li><strong>Cash flow buffer</strong> — 6개월 운영비 별도 라인 확보. 8하우스 금성이라 외부 자금 라인 의존도가 높을수록 변동 폭 큼.</li>
+          <li><strong>의사결정 위임 구조</strong> — 2027년 본인 활성 시기 들어가기 전에 의사결정 권한 분산 셋업. 본인이 모든 라인을 직접 결정하면 11하우스 화성이 폭주.</li>
+          <li><strong>해외·국내·B2G 라인 분리</strong> — 각 라인별 책임자·KPI 분리. 합작 시 화성이 튀지 않도록 사전 룰 명문화.</li>
+        </ul>
+
+        <h3>3. 대응 가이드 — 차트 관점</h3>
+        <ul class="bullets">
+          <li><strong>토성 6하우스 활용</strong> — 시스템·문서화·체계화가 본인 차트의 강점. 위기일수록 체크리스트·정기 리뷰·KPI로 풀어야 함.</li>
+          <li><strong>12하우스 목성 활용</strong> — 보이지 않는 외부 지원(자문·투자자·멘토). 본인 혼자 짊어지지 말고 활용해야 차트가 살아남.</li>
+          <li><strong>9하우스 시야 유지</strong> — 시야를 멀리·길게 둘 때 차트가 가장 잘 작동. 단기 매출 압박이 의사결정을 좁히지 않도록.</li>
+        </ul>
+      </div>
+      <div class="pn">07</div>
+    </section>
+
+    <!-- ══ p.08 2026~2030 타임라인 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 07.</span>
+        <div class="ch-title">2026 ~ 2030년 타임라인</div>
+        <p class="lead">2026년이 분기점, 2027~2028년이 본격 수확, 2029~2030년이 안정·확장의 후반.</p>
+        <p class="lead-body">12하우스 프로펙션(2026)부터 4하우스 프로펙션(2030)까지의 5년 구간이 사업·관계·재무를 한 차례 크게 정리하는 사이클입니다. 2026년의 인내가 2027~2028년의 결실로 직결됩니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>1. 연도별 흐름 (헬레니스틱 프로펙션 + 메이저 PD)</h3>
+        <div class="timeline-table">
+          <div class="timeline-row">
+            <span class="tl-period">2026 (35세)</span>
+            <span class="tl-body">12하우스 사자 프로펙션, 룰러 태양 9하우스. 가시적 결실보다 "기반 다지기·인증·계약 협상". 결혼 인연의 첫 신호도 12하우스 영역에서.</span>
+          </div>
+          <div class="timeline-row">
+            <span class="tl-period">2027 (36세)</span>
+            <span class="tl-body">1하우스 처녀 프로펙션, 룰러 수성 9하우스 활성. 본업·해외 진출 본격 도약. 본인 부하 최대치 — 위임 구조 필수. 메이저 PD가 ASC·MC 영역에서 활성화되는 첫 해.</span>
+          </div>
+          <div class="timeline-row">
+            <span class="tl-period">2028 (37세)</span>
+            <span class="tl-body">2하우스 천칭 금성 프로펙션. 재무·관계 의사결정 표면화. 8하우스 금성이라 자금 라인 단순화 우선. 연애 표면 가능성 첫 시기.</span>
+          </div>
+          <div class="timeline-row">
+            <span class="tl-period">2029 (38세)</span>
+            <span class="tl-body">3하우스 전갈 화성 프로펙션. 단기 이동·근거리 사업 라인 확장. 화성 낙하라 무리한 추진은 자제 — 정리·축소·재배치의 해.</span>
+          </div>
+          <div class="timeline-row">
+            <span class="tl-period">2030 (39세)</span>
+            <span class="tl-body">4하우스 사수 목성 프로펙션. 거주·기반·결혼이 한 묶음으로 무게가 들어옴. 장기 결혼 흐름의 첫 본격 시기.</span>
+          </div>
+        </div>
+
+        <h3>2. 우선순위 액션 가이드</h3>
+        <ul class="bullets">
+          <li><strong>단기 (~2026 말)</strong> — B2G 인증·R&D 마일스톤·해외 1개 시장 집중. 결혼 큰 결정은 보류. 자금 buffer 확보.</li>
+          <li><strong>중기 (2027 ~ 2028)</strong> — 본업 대도약 + 자금 라인 단순화. 결혼 가능성 표면화. 의사결정 위임 구조 가동.</li>
+          <li><strong>장기 (2029 ~ 2030)</strong> — 사업 안정 + 거주·결혼 기반 정립. 본격 결혼 흐름의 첫 큰 분기.</li>
+        </ul>
+
+        <h3>3. 건강·생활 관리 포인트</h3>
+        <p>토성이 6하우스 — 6하우스가 건강·일상 시스템을 다루는 자리고 토성 영향이라 <strong>누적 피로·만성 패턴 주의</strong>가 차트의 큰 룰. 2027년 본인 부하 최대 시기 진입 전에 운동·수면 루틴을 미리 세팅해두는 것이 가장 큰 보험입니다.</p>
+        <p>화성 낙하라 무리한 추진은 신체에도 영향이 옵니다. 의사결정 압박이 강할 때 의식적으로 페이스를 늦추는 것 — 토성 6하우스 차트에서는 작게라도 꾸준한 일상 규칙성이 단년 압축 노력보다 훨씬 효과적입니다.</p>
+      </div>
+      <div class="pn">08</div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.min.js"></script>
+  <script>
+    const SIGNS = ["양","황소","쌍둥이","게","사자","처녀","천칭","전갈","사수","염소","물병","물고기"];
+    const PLANETS = [
+      ["Sun","태양","☉","#c74732"],
+      ["Moon","달","☽","#d8aa22"],
+      ["Mercury","수성","☿","#2f68b7"],
+      ["Venus","금성","♀","#c23aa5"],
+      ["Mars","화성","♂","#a33c2e"],
+      ["Jupiter","목성","♃","#2f8f55"],
+      ["Saturn","토성","♄","#111111"]
+    ];
+    const fallback = {
+      Sun:282.8825,Moon:345.0882,Mercury:260.2127,Venus:302.7461,
+      Mars:312.7164,Jupiter:322.7673,Saturn:13.8313,Asc:140.8572,MC:44.5865
+    };
+    function norm360(x){ let v=x%360; if(v<0)v+=360; return v; }
+    function degToSign(d){
+      const sign=Math.floor(d/30), i=d-sign*30, deg=Math.floor(i), min=Math.floor((i-deg)*60);
+      return `${SIGNS[sign]} ${deg}°${String(min).padStart(2,"0")}'`;
+    }
+    function computeAsc(lonEast,lat,dateUtc,A){
+      const t=A.MakeTime(dateUtc), gst=A.SiderealTime(t), lst=gst+lonEast/15;
+      const th=lst*15*Math.PI/180, eps=A.e_tilt(t).tobl*Math.PI/180, phi=lat*Math.PI/180;
+      const lam=Math.atan2(-Math.cos(th),Math.sin(th)*Math.cos(eps)+Math.tan(phi)*Math.sin(eps))*180/Math.PI;
+      return norm360(lam+180);
+    }
+    function computeMc(lonEast,dateUtc,A){
+      const t=A.MakeTime(dateUtc), gst=A.SiderealTime(t);
+      const lst=(gst+lonEast/15)*15*Math.PI/180, eps=A.e_tilt(t).tobl*Math.PI/180;
+      return norm360(Math.atan2(Math.sin(lst),Math.cos(lst)*Math.cos(eps))*180/Math.PI);
+    }
+    function computePos(){
+      const dateUtc=new Date("1991-05-21T04:41:00Z"), busan={lon:129.0756,lat:35.1796};
+      if(!window.Astronomy) return {...fallback,_mode:"fallback",_time:dateUtc.toISOString()};
+      try{
+        const out={};
+        for(const [en] of PLANETS){
+          const v=Astronomy.GeoVector(en,dateUtc,true);
+          out[en]=norm360(Astronomy.Ecliptic(v).elon);
+        }
+        out.Asc=computeAsc(busan.lon,busan.lat,dateUtc,Astronomy);
+        out.MC=computeMc(busan.lon,dateUtc,Astronomy);
+        out._mode="calc"; out._time=dateUtc.toISOString();
+        return out;
+      }catch{ return {...fallback,_mode:"fallback",_time:dateUtc.toISOString()}; }
+    }
+    function draw(pos){
+      // wheel.svg를 ASC만큼 CW 회전 → ASC가 9시 방향으로
+      const bg=document.querySelector(".wheel-bg");
+      bg.style.transform=`rotate(${pos.Asc}deg)`;
+
+      // 오버레이 SVG: 행성 마커 + ASC/MC 축
+      const svg=document.querySelector(".wheel-overlay");
+      const NS="http://www.w3.org/2000/svg";
+      const cx=380.71, cy=380.71;            // wheel.svg 중심
+      const rInner=205;                       // wheel.svg 내부 원 반지름
+      const rPlanetMark=200;                  // 행성 마커 (내부 원 바로 안쪽)
+      const rPlanetGlyph=170;                 // 행성 글리프 (마커 안쪽)
+      const accent="#688ecd";
+
+      function e(tag,attrs){ const n=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v); return n; }
+      // ASC를 9시(math 180°)로 만든 좌표계 그대로
+      function pt(lon,r){ const delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180; return [cx+r*Math.cos(a),cy-r*Math.sin(a)]; }
+
+      svg.innerHTML="";
+
+      // ASC / MC 축 (점선) — 내부 원 안쪽에서만 그어 wheel.svg와 겹치지 않게
+      const dsc=norm360(pos.Asc+180), ic=norm360(pos.MC+180);
+      const [ax,ay]=pt(pos.Asc,rInner), [dxc,dyc]=pt(dsc,rInner);
+      const [mx,my]=pt(pos.MC,rInner), [ix,iy]=pt(ic,rInner);
+      svg.appendChild(e("line",{x1:ax,y1:ay,x2:dxc,y2:dyc,stroke:accent,"stroke-width":"2","stroke-dasharray":"6 5"}));
+      svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:accent,"stroke-width":"2","stroke-dasharray":"6 5"}));
+      const labelStyle={"font-size":"20","fill":accent,"font-weight":"500"};
+      const ascTxt=e("text",{x:ax+12,y:ay+7,...labelStyle}); ascTxt.textContent="ASC";
+      const dscTxt=e("text",{x:dxc-46,y:dyc+7,...labelStyle}); dscTxt.textContent="DSC";
+      const mcTxt=e("text",{x:mx-14,y:my+24,...labelStyle}); mcTxt.textContent="MC";
+      const icTxt=e("text",{x:ix-8,y:iy-12,...labelStyle}); icTxt.textContent="IC";
+      svg.appendChild(ascTxt); svg.appendChild(dscTxt); svg.appendChild(mcTxt); svg.appendChild(icTxt);
+
+      // 행성 마커 + 글리프 (충돌 회피)
+      const markerLayer=e("g",{}), glyphLayer=e("g",{});
+      const items=PLANETS.map(([en,ko,sym,color])=>{
+        const lon=norm360(pos[en]), delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180;
+        return {en,ko,sym,color,lon,a};
+      }).sort((a,b)=>a.lon-b.lon);
+      const placed=[], glyphSize=56, candidateRadii=[rPlanetGlyph, rPlanetGlyph-40, rPlanetGlyph-80, rPlanetGlyph+25];
+      function boxAt(it,r){ const gx=cx+r*Math.cos(it.a), gy=cy-r*Math.sin(it.a); return {x:gx-glyphSize/2,y:gy-glyphSize/2,w:glyphSize,h:glyphSize,gx,gy}; }
+      function overlaps(a,b){ return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y; }
+      function nearestGap(it){ let gap=999; for(const other of items){ if(other===it) continue; let d=Math.abs(it.lon-other.lon); if(d>180)d=360-d; gap=Math.min(gap,d); } return gap; }
+      items.sort((a,b)=>nearestGap(a)-nearestGap(b));
+      for(const it of items){
+        let chosen=null;
+        for(const r of candidateRadii){ const box=boxAt(it,r); if(placed.every(p=>!overlaps(box,p.box))){ chosen=box; break; } }
+        if(!chosen) chosen=boxAt(it,rPlanetGlyph);
+        placed.push({box:chosen});
+        // 마커 도트: 내부 원 안쪽
+        const [markX,markY]=pt(it.lon,rPlanetMark);
+        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"7",fill:it.color,stroke:"#fff","stroke-width":"2"}));
+        // 글리프 텍스트
+        const g=e("text",{x:chosen.gx,y:chosen.gy+15,"font-size":"42","text-anchor":"middle",fill:it.color,"class":"astro","font-weight":"500"});
+        g.textContent=it.sym; glyphLayer.appendChild(g);
+      }
+      svg.appendChild(markerLayer); svg.appendChild(glyphLayer);
+    }
+    function table(pos){
+      const box=document.getElementById("planetTable");
+      box.innerHTML="";
+      const add=(k,v)=>{
+        const d=document.createElement("div"); d.className="planet-card";
+        d.innerHTML=`<div class="name">${k}</div><div class="val">${v}</div>`;
+        box.appendChild(d);
+      };
+      for(const [en,ko,sym] of PLANETS) add(`${sym} ${ko}`,degToSign(pos[en]));
+      add("ASC",degToSign(pos.Asc)); add("MC",degToSign(pos.MC));
+      document.getElementById("calcMeta").textContent=`mode=${pos._mode} · utc=${pos._time} · busan 129.076E / 35.180N`;
+    }
+    const pos=computePos(); draw(pos); table(pos);
+  </script>
+</body>
+</html>
