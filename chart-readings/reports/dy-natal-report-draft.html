@@ -167,6 +167,24 @@
         빠른 판단력, 그리고 실익을 보는 감각입니다. 오지랖이 넓어 보이는 면도 있지만, 그 역시 막연한 희생이나
         간섭보다는 “내가 보기에 이게 더 낫다”는 판단에서 나오는 경우가 많습니다.
       </p>
+      <p>
+        사자 상승에 태양과 수성이 함께 힘을 보태면, DY 님은 자기 이름으로 판을 만들고 방향을 잡는 쪽이
+        잘 맞습니다. 남이 정해둔 절차를 오래 따라가기보다, 직접 기획하고 판단하고 앞에서 끌고 가는 장면에서
+        존재감이 살아납니다. 이 구조는 사업가적 감각과 잘 맞지만, 동시에 모든 판단과 실행이 대표 개인에게
+        몰리기 쉬운 구조이기도 합니다.
+      </p>
+      <p>
+        달이 물고기에 있다는 점은 겉으로 보이는 추진력과 다른 결을 만듭니다. 사람의 반응, 분위기, 고객의
+        미묘한 니즈를 빨리 읽는 장점이 있지만, 경계가 흐려지면 필요 이상으로 챙기거나 감정 소모가 커질 수
+        있습니다. 그래서 DY 님에게는 “좋아서 시작한 일”을 오래 가져가기 위한 운영 규칙, 가격 기준, 업무
+        범위의 선 긋기가 특히 중요합니다.
+      </p>
+      <p>
+        목성과 토성이 황소에 함께 놓인 구조는 돈과 자원, 실물 기반의 안정성을 중요하게 만듭니다. 크게
+        한 번 터뜨리는 방식보다, 작게 검증하고 반복 가능한 수익 구조로 굳혀가는 방식이 더 오래 갑니다.
+        전갈 화성은 집중력과 위기 대응력을 주지만, 한 번 꽂히면 체력과 감정이 깊게 들어가므로 채용과
+        협업에서는 업무 경계가 분명한 사람을 곁에 두는 편이 좋습니다.
+      </p>
 
       <div class="wheel-wrap">
         <div class="wheel-box">
@@ -458,7 +476,6 @@
       ["Jupiter","목성","♃","#2f8f55"],
       ["Saturn","토성","♄","#111111"]
     ];
-    const PLANET_DISPLAY_OFFSET = 30;
     const fallback = {
       Sun: 128.2452, Moon: 351.5815, Mercury: 125.9937, Venus: 158.8112,
       Mars: 220.7727, Jupiter: 39.2287, Saturn: 44.1701, Asc: 149.9868, MC: 55.4312
@@ -531,14 +548,13 @@
       svg.appendChild(e("circle",{cx,cy,r:r2,fill:"#fff",stroke:"#d8d1c6","stroke-width":"1"}));
       svg.appendChild(e("circle",{cx,cy,r:r3,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1"}));
       for(let i=0;i<12;i++){
-        const lon = pos.Asc + i*30;
+        const lon = i*30;
         const [x1,y1] = pt(lon,r1), [x2,y2]=pt(lon,r2);
         svg.appendChild(e("line",{x1,y1,x2,y2,stroke:"#c8c0b4","stroke-width":"1"}));
         const [tx,ty] = pt(lon+15,126);
-        const signIndex = (Math.floor(norm360(lon) / 30) + 1) % 12;
         const signGlyphs = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
         const g = e("text",{x:tx,y:ty+1,"font-size":"12","text-anchor":"middle",fill:"#5f584f",class:"astro"});
-        g.textContent = signGlyphs[signIndex];
+        g.textContent = signGlyphs[i];
         svg.appendChild(g);
       }
       const dsc = norm360(pos.Asc + 180);
@@ -557,7 +573,7 @@
 
       // Render glyphs only: same longitude, radial tiering for conjunction clusters.
       const items = PLANETS.map(([en, ko, sym, color]) => {
-        const lon = norm360(pos[en] + PLANET_DISPLAY_OFFSET);
+        const lon = norm360(pos[en]);
         const delta = norm360(lon - pos.Asc);
         const a = (180 + delta) * Math.PI / 180;
         return { en, ko, sym, color, lon, a };
@@ -632,7 +648,7 @@
         d.innerHTML = `<span class="label">${k}</span><strong>${v}</strong>`;
         box.appendChild(d);
       };
-      for(const [en,ko,sym] of PLANETS) add(`${sym} ${ko}`, degToSign(norm360(pos[en] + PLANET_DISPLAY_OFFSET)));
+      for(const [en,ko,sym] of PLANETS) add(`${sym} ${ko}`, degToSign(pos[en]));
       add("ASC", degToSign(pos.Asc));
       add("MC", degToSign(pos.MC));
       document.getElementById("calcMeta").textContent = `mode=${pos._mode} | utc=${pos._time} | location=Seoul(126.978E, 37.566N)`;

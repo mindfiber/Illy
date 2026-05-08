@@ -209,6 +209,24 @@
         은행복 님 네이탈은 출생 정보(1986-08-30 21:49, 서울)를 기준으로 계산해 도식화했습니다.
         아래 차트는 로그 문장을 옮겨 적은 그림이 아니라, 출생시각 기반 계산값으로 그린 결과입니다.
       </p>
+      <p>
+        은행복 님 차트는 양 상승에 처녀 태양, 게 달, 처녀 수성, 천칭 금성, 염소 화성, 물고기 목성,
+        사수 토성의 구조입니다. 빠르게 시작하려는 힘과 꼼꼼하게 다듬고 싶은 힘이 함께 있어서, 생각보다
+        “그냥 해보자”와 “제대로 해야 한다”가 동시에 올라옵니다. 그래서 부업도 아이디어 자체보다 지속 가능한
+        반복 구조를 만들 수 있는지가 핵심입니다.
+      </p>
+      <p>
+        처녀 태양과 수성은 기록, 정리, 편집, 실용 정보 전달에 강합니다. 유튜브나 블로그처럼 긴 호흡의
+        콘텐츠를 만들 때도 거창한 콘셉트보다 생활 속에서 실제로 써먹을 수 있는 팁, 정리된 경험, 작게
+        검증한 노하우가 더 잘 맞습니다. 반대로 너무 감각적이고 즉흥적인 운영만 요구하는 채널은 초반에는
+        재미가 있어도 오래 유지하기 어렵습니다.
+      </p>
+      <p>
+        게 달은 가족과 돌봄의 부담을 크게 느끼게 만들고, 염소 화성은 책임을 지면 끝까지 해내려는 힘을
+        줍니다. 다만 이 조합은 피곤해도 멈추지 못하는 쪽으로 흐르기 쉬우므로, 부업은 매일 큰 에너지를 쓰는
+        방식보다 짧게 반복하고 쌓아둘 수 있는 방식이 좋습니다. 천칭 금성은 이미지, 디자인, 균형감각을
+        살릴 수 있어 이모티콘이나 시각 콘텐츠 후보도 완전히 배제할 필요는 없습니다.
+      </p>
 
       <div class="chart-wrap">
         <div class="wheel-box">
@@ -294,17 +312,17 @@
   <script>
     const SIGNS = ["양","황소","쌍둥이","게","사자","처녀","천칭","전갈","사수","염소","물병","물고기"];
     const PLANETS = [
-      ["Sun", "태양"],
-      ["Moon", "달"],
-      ["Mercury", "수성"],
-      ["Venus", "금성"],
-      ["Mars", "화성"],
-      ["Jupiter", "목성"],
-      ["Saturn", "토성"]
+      ["Sun", "태양", "☉", "#c74732"],
+      ["Moon", "달", "☽", "#d8aa22"],
+      ["Mercury", "수성", "☿", "#2f68b7"],
+      ["Venus", "금성", "♀", "#c23aa5"],
+      ["Mars", "화성", "♂", "#a33c2e"],
+      ["Jupiter", "목성", "♃", "#2f8f55"],
+      ["Saturn", "토성", "♄", "#111111"]
     ];
     const fallback = {
       Sun: 156.852868, Moon: 101.554449, Mercury: 150.769121, Venus: 202.844920,
-      Mars: 283.643748, Jupiter: 349.347731, Saturn: 243.503655, Asc: 42.482828
+      Mars: 283.643748, Jupiter: 349.347731, Saturn: 243.503655, Asc: 42.482828, MC: 295.670096
     };
     function norm360(x) {
       let v = x % 360;
@@ -328,6 +346,14 @@
       const lambda = Math.atan2(-Math.cos(theta), Math.sin(theta) * Math.cos(eps) + Math.tan(phi) * Math.sin(eps)) * 180 / Math.PI;
       return norm360(lambda + 180);
     }
+    function computeMc(longitudeEast, dateUtc, Astronomy) {
+      const t = Astronomy.MakeTime(dateUtc);
+      const gst = Astronomy.SiderealTime(t);
+      const lst = (gst + longitudeEast / 15) * 15 * Math.PI / 180;
+      const eps = Astronomy.e_tilt(t).tobl * Math.PI / 180;
+      const lambda = Math.atan2(Math.sin(lst), Math.cos(lst) * Math.cos(eps)) * 180 / Math.PI;
+      return norm360(lambda);
+    }
     function computePositions() {
       const dateUtc = new Date("1986-08-30T12:49:00Z");
       const seoul = { lon: 126.9780, lat: 37.5665 };
@@ -340,6 +366,7 @@
           res[en] = norm360(ecl.elon);
         }
         res.Asc = computeAsc(seoul.lon, seoul.lat, dateUtc, Astronomy);
+        res.MC = computeMc(seoul.lon, dateUtc, Astronomy);
         res._mode = "calc";
         res._time = dateUtc.toISOString();
         return res;
@@ -357,9 +384,12 @@
         return el;
       }
       function pointFromLon(lon, radius) {
-        const a = ((lon - pos.Asc) - 90) * Math.PI / 180;
-        return [cx + radius * Math.cos(a), cy + radius * Math.sin(a)];
+        const delta = norm360(lon - pos.Asc);
+        const a = (180 + delta) * Math.PI / 180;
+        return [cx + radius * Math.cos(a), cy - radius * Math.sin(a)];
       }
+      const markerLayer = c("g", {});
+      const glyphLayer = c("g", {});
 
       svg.innerHTML = "";
       svg.appendChild(c("rect", { x: 0, y: 0, width: 320, height: 320, fill: "#fff" }));
@@ -368,29 +398,80 @@
       svg.appendChild(c("circle", { cx, cy, r: r3, fill: "#faf7f2", stroke: "#d9d2c7", "stroke-width": "1" }));
 
       for (let i = 0; i < 12; i++) {
-        const lon = pos.Asc + i * 30;
+        const lon = i * 30;
         const [x1, y1] = pointFromLon(lon, r1);
         const [x2, y2] = pointFromLon(lon, r2);
         svg.appendChild(c("line", { x1, y1, x2, y2, stroke: "#c9c1b5", "stroke-width": "1" }));
         const [tx, ty] = pointFromLon(lon + 15, 126);
-        const t = c("text", { x: tx, y: ty, "font-size": "10", "text-anchor": "middle", fill: "#5d564e" });
-        t.textContent = SIGNS[(Math.floor(norm360(lon) / 30)) % 12];
+        const signGlyphs = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
+        const t = c("text", { x: tx, y: ty + 1, "font-size": "12", "text-anchor": "middle", fill: "#5d564e", class: "astro" });
+        t.textContent = signGlyphs[i];
         svg.appendChild(t);
       }
 
-      const ascP = pointFromLon(pos.Asc, r1);
-      svg.appendChild(c("line", { x1: cx, y1: cy, x2: ascP[0], y2: ascP[1], stroke: "#2e6d4f", "stroke-width": "2.2" }));
-      const ascText = c("text", { x: ascP[0] + 4, y: ascP[1] - 4, "font-size": "10", fill: "#2e6d4f" });
-      ascText.textContent = "ASC";
-      svg.appendChild(ascText);
+      const dsc = norm360(pos.Asc + 180);
+      const ic = norm360(pos.MC + 180);
+      const [ax, ay] = pointFromLon(pos.Asc, r1);
+      const [dx, dy] = pointFromLon(dsc, r1);
+      const [mx, my] = pointFromLon(pos.MC, r1);
+      const [ix, iy] = pointFromLon(ic, r1);
+      svg.appendChild(c("line", { x1: ax, y1: ay, x2: dx, y2: dy, stroke: "#2e6d4f", "stroke-width": "2.2" }));
+      svg.appendChild(c("line", { x1: mx, y1: my, x2: ix, y2: iy, stroke: "#345d8c", "stroke-width": "2.2" }));
+      const ascText = c("text", { x: ax - 18, y: ay - 4, "font-size": "10", fill: "#2e6d4f" }); ascText.textContent = "ASC";
+      const dscText = c("text", { x: dx + 4, y: dy - 4, "font-size": "10", fill: "#2e6d4f" }); dscText.textContent = "DSC";
+      const mcText = c("text", { x: mx - 7, y: my - 6, "font-size": "10", fill: "#345d8c" }); mcText.textContent = "MC";
+      const icText = c("text", { x: ix - 5, y: iy + 12, "font-size": "10", fill: "#345d8c" }); icText.textContent = "IC";
+      svg.appendChild(ascText); svg.appendChild(dscText); svg.appendChild(mcText); svg.appendChild(icText);
 
-      for (const [en, ko] of PLANETS) {
-        const [px, py] = pointFromLon(pos[en], 87);
-        svg.appendChild(c("circle", { cx: px, cy: py, r: 3.5, fill: "#7f5539" }));
-        const t = c("text", { x: px + 6, y: py - 4, "font-size": "9.5", fill: "#2b2824" });
-        t.textContent = ko;
-        svg.appendChild(t);
+      const items = PLANETS.map(([en, ko, sym, color]) => {
+        const lon = norm360(pos[en]);
+        const delta = norm360(lon - pos.Asc);
+        const a = (180 + delta) * Math.PI / 180;
+        return { en, ko, sym, color, lon, a };
+      });
+      const placed = [];
+      const glyphSize = 22;
+      const candidateRadii = [96, 72, 50, 28, 106, 84, 60, 38];
+      function boxAt(it, radius) {
+        const gx = cx + radius * Math.cos(it.a);
+        const gy = cy - radius * Math.sin(it.a);
+        return { x: gx - glyphSize / 2, y: gy - glyphSize / 2, w: glyphSize, h: glyphSize, gx, gy };
       }
+      function overlaps(a, b) {
+        return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+      }
+      function nearestGap(it) {
+        let gap = 999;
+        for (const other of items) {
+          if (other === it) continue;
+          let d = Math.abs(it.lon - other.lon);
+          if (d > 180) d = 360 - d;
+          gap = Math.min(gap, d);
+        }
+        return gap;
+      }
+      items.sort((a, b) => nearestGap(a) - nearestGap(b));
+
+      for (const it of items) {
+        let chosen = null;
+        for (const radius of candidateRadii) {
+          const box = boxAt(it, radius);
+          if (placed.every(p => !overlaps(box, p.box))) {
+            chosen = box;
+            break;
+          }
+        }
+        if (!chosen) chosen = boxAt(it, 28);
+        placed.push({ box: chosen });
+
+        const [px, py] = pointFromLon(it.lon, r2);
+        markerLayer.appendChild(c("circle", { cx: px, cy: py, r: 3.4, fill: it.color, stroke: "#fff", "stroke-width": "0.8" }));
+        const t = c("text", { x: chosen.gx, y: chosen.gy + 6, "font-size": "22", "text-anchor": "middle", fill: it.color, class: "astro" });
+        t.textContent = it.sym;
+        glyphLayer.appendChild(t);
+      }
+      svg.appendChild(markerLayer);
+      svg.appendChild(glyphLayer);
     }
     function renderTable(pos) {
       const box = document.getElementById("planetTable");
@@ -401,8 +482,9 @@
         d.innerHTML = `<span class="label">${name}</span><strong>${value}</strong>`;
         return d;
       }
-      for (const [en, ko] of PLANETS) box.appendChild(item(ko, degToSign(pos[en])));
+      for (const [en, ko, sym] of PLANETS) box.appendChild(item(`${sym} ${ko}`, degToSign(pos[en])));
       box.appendChild(item("ASC", degToSign(pos.Asc)));
+      box.appendChild(item("MC", degToSign(pos.MC)));
       document.getElementById("calcMeta").textContent =
         `mode=${pos._mode} | utc=${pos._time} | location=Seoul(126.978E, 37.566N)`;
     }

@@ -166,6 +166,24 @@
         물병 목성, 양 토성입니다. 한쪽으로 사람 관련 하우스가 강하게 몰려 있으므로, 관계가 그냥 부수적인
         문제가 아니라 인생의 큰 사건과 고민을 자주 만들어내는 구조입니다.
       </p>
+      <p>
+        사자 상승은 겉으로는 씩씩하고 분명해 보이지만, 차트의 실제 무게는 맞은편 물병 7하우스에 많이
+        실려 있습니다. 그래서 장인희 님은 혼자만의 의지로 밀어붙이는 삶보다, 타인과 부딪히고 협상하고
+        기준을 세우는 과정 속에서 자기 역할을 찾아가는 편입니다. 사람을 피하면 편해지는 차트라기보다,
+        좋은 거리감과 규칙을 만들 때 힘이 살아나는 차트에 가깝습니다.
+      </p>
+      <p>
+        염소 태양은 일과 책임, 장기적인 안정감을 중요하게 봅니다. 물고기 달은 감정적으로 쉽게 스며드는
+        면을 만들기 때문에, 겉으로는 단단해 보여도 가까운 사람이나 가족 문제에는 생각보다 크게 흔들릴 수
+        있습니다. 사수 수성은 설명하고 가르치고 큰 방향을 잡는 힘을 주지만, 말이 직선적으로 나가면 상대가
+        지적받는 느낌을 받을 수 있으므로 전달 방식의 조절이 중요합니다.
+      </p>
+      <p>
+        토성이 양 9하우스에 있다는 점도 중요합니다. 공부, 자격, 법과 제도, 멀리 보는 계획에서 처음부터
+        편하게 풀리기보다 스스로 기준을 세우며 늦게 단단해지는 구조입니다. 그래서 장인희 님에게는 당장
+        빠르게 방향을 바꾸는 선택보다, 자격과 경력, 제도권 안의 안정성을 쌓으면서 자기 권한을 넓혀가는
+        방식이 더 잘 맞습니다.
+      </p>
 
       <div class="wheel-wrap">
         <div class="wheel-box">
@@ -377,7 +395,6 @@
       ["Jupiter","목성","♃","#2f8f55"],
       ["Saturn","토성","♄","#111111"]
     ];
-    const PLANET_DISPLAY_OFFSET = -30;
     const fallback = {
       Sun: 282.8825, Moon: 345.0882, Mercury: 260.2127, Venus: 302.7461,
       Mars: 312.7164, Jupiter: 322.7673, Saturn: 13.8313, Asc: 140.8572, MC: 44.5865
@@ -450,14 +467,13 @@
       svg.appendChild(e("circle",{cx,cy,r:r2,fill:"#fff",stroke:"#d8d1c6","stroke-width":"1"}));
       svg.appendChild(e("circle",{cx,cy,r:r3,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1"}));
       for(let i=0;i<12;i++){
-        const lon = pos.Asc + i*30;
+        const lon = i*30;
         const [x1,y1] = pt(lon,r1), [x2,y2]=pt(lon,r2);
         svg.appendChild(e("line",{x1,y1,x2,y2,stroke:"#c8c0b4","stroke-width":"1"}));
         const [tx,ty] = pt(lon+15,126);
-        const signIndex = (Math.floor(norm360(lon) / 30) + 1) % 12;
         const signGlyphs = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
         const g = e("text",{x:tx,y:ty+1,"font-size":"12","text-anchor":"middle",fill:"#5f584f",class:"astro"});
-        g.textContent = signGlyphs[signIndex];
+        g.textContent = signGlyphs[i];
         svg.appendChild(g);
       }
       const dsc = norm360(pos.Asc + 180);
@@ -476,7 +492,7 @@
 
       // Render glyphs only: same longitude, radial tiering for conjunction clusters.
       const items = PLANETS.map(([en, ko, sym, color]) => {
-        const lon = norm360(pos[en] + PLANET_DISPLAY_OFFSET);
+        const lon = norm360(pos[en]);
         const delta = norm360(lon - pos.Asc);
         const a = (180 + delta) * Math.PI / 180;
         return { en, ko, sym, color, lon, a };
