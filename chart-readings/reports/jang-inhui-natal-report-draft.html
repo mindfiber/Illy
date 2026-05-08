@@ -6,6 +6,7 @@
   <title>네이탈 상담 리포트 - 장인희</title>
   <style>
     @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap');
 
     /* ── AtoZ (에이투지체) ── */
     @font-face { font-family:'AtoZ'; font-weight:100; font-style:normal; font-display:swap;
@@ -334,7 +335,7 @@
     /* ── 기타 ── */
     .small { font-size: 13px; color: var(--muted); }
     .mono  { font-family: Consolas, Monaco, monospace; font-size: 10.5px; color: var(--muted); }
-    .astro { font-family: "Noto Sans Symbols 2","Segoe UI Symbol","Symbola","DejaVu Sans",sans-serif; }
+    .astro { font-family: "Noto Sans Symbols 2","Segoe UI Symbol","Symbola","DejaVu Sans",sans-serif; font-feature-settings: normal; }
 
     /* ── 페이지 번호 ── */
     .pn {
@@ -416,7 +417,7 @@
       <div class="body-bottom">
         <div class="wheel-wrap">
           <div class="wheel-box">
-            <img id="wheel" src="chart.svg" alt="장인희 님 네이탈 차트">
+            <svg id="wheel" viewBox="0 0 320 320" aria-label="장인희 님 네이탈 차트"></svg>
           </div>
           <div class="planet-panel">
             <div id="planetTable" class="planet-grid"></div>
@@ -693,6 +694,72 @@
         return out;
       }catch{ return {...fallback,_mode:"fallback",_time:dateUtc.toISOString()}; }
     }
+    function draw(pos){
+      const svg=document.getElementById("wheel");
+      const NS="http://www.w3.org/2000/svg";
+      const cx=160, cy=160;
+      const rOut=152, rMid=128, rInn=82;     // chart.svg 비율과 유사한 3중 원
+      const stroke="#A7A9AC";                 // chart.svg 회색 톤
+      const sw=1.2;
+      function e(tag,attrs){ const n=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v); return n; }
+      function pt(lon,r){ const delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180; return [cx+r*Math.cos(a),cy-r*Math.sin(a)]; }
+
+      svg.innerHTML="";
+      svg.appendChild(e("rect",{x:0,y:0,width:320,height:320,fill:"#ffffff"}));
+      // 3중 원
+      svg.appendChild(e("circle",{cx,cy,r:rOut,fill:"#ffffff",stroke,"stroke-width":sw}));
+      svg.appendChild(e("circle",{cx,cy,r:rMid,fill:"none",stroke,"stroke-width":sw}));
+      svg.appendChild(e("circle",{cx,cy,r:rInn,fill:"none",stroke,"stroke-width":sw}));
+      // 12 섹터 디바이더 (외곽~중간 사이)
+      for(let i=0;i<12;i++){
+        const lon=i*30, [x1,y1]=pt(lon,rOut), [x2,y2]=pt(lon,rMid);
+        svg.appendChild(e("line",{x1,y1,x2,y2,stroke,"stroke-width":sw}));
+      }
+      // 사인 글리프 (12개)
+      const signGlyphs=["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
+      for(let i=0;i<12;i++){
+        const [tx,ty]=pt(i*30+15, (rOut+rMid)/2);
+        const g=e("text",{x:tx,y:ty+5,"font-size":"14","text-anchor":"middle",fill:"#1a1a1a","class":"astro","font-weight":"500"});
+        g.textContent=signGlyphs[i]; svg.appendChild(g);
+      }
+      // ASC / MC 축
+      const dsc=norm360(pos.Asc+180), ic=norm360(pos.MC+180);
+      const [ax,ay]=pt(pos.Asc,rOut), [dx,dy]=pt(dsc,rOut);
+      const [mx,my]=pt(pos.MC,rOut), [ix,iy]=pt(ic,rOut);
+      svg.appendChild(e("line",{x1:ax,y1:ay,x2:dx,y2:dy,stroke:"#688ecd","stroke-width":"1.5","stroke-dasharray":"4 3"}));
+      svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:"#688ecd","stroke-width":"1.5","stroke-dasharray":"4 3"}));
+      const labelStyle={"font-size":"9","fill":"#688ecd","font-weight":"500"};
+      const ascTxt=e("text",{x:ax-16,y:ay+3,...labelStyle}); ascTxt.textContent="ASC";
+      const dscTxt=e("text",{x:dx+5,y:dy+3,...labelStyle}); dscTxt.textContent="DSC";
+      const mcTxt=e("text",{x:mx-7,y:my-5,...labelStyle}); mcTxt.textContent="MC";
+      const icTxt=e("text",{x:ix-3,y:iy+12,...labelStyle}); icTxt.textContent="IC";
+      svg.appendChild(ascTxt); svg.appendChild(dscTxt); svg.appendChild(mcTxt); svg.appendChild(icTxt);
+
+      // 행성 마커 + 글리프 (충돌 회피 배치)
+      const markerLayer=e("g",{}), glyphLayer=e("g",{});
+      const items=PLANETS.map(([en,ko,sym,color])=>{
+        const lon=norm360(pos[en]), delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180;
+        return {en,ko,sym,color,lon,a};
+      }).sort((a,b)=>a.lon-b.lon);
+      const placed=[], glyphSize=20, candidateRadii=[112, 100, 88, 122];
+      function boxAt(it,r){ const gx=cx+r*Math.cos(it.a), gy=cy-r*Math.sin(it.a); return {x:gx-glyphSize/2,y:gy-glyphSize/2,w:glyphSize,h:glyphSize,gx,gy}; }
+      function overlaps(a,b){ return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y; }
+      function nearestGap(it){ let gap=999; for(const other of items){ if(other===it) continue; let d=Math.abs(it.lon-other.lon); if(d>180)d=360-d; gap=Math.min(gap,d); } return gap; }
+      items.sort((a,b)=>nearestGap(a)-nearestGap(b));
+      for(const it of items){
+        let chosen=null;
+        for(const r of candidateRadii){ const box=boxAt(it,r); if(placed.every(p=>!overlaps(box,p.box))){ chosen=box; break; } }
+        if(!chosen) chosen=boxAt(it,100);
+        placed.push({box:chosen});
+        // 마커: 중간 원 위 작은 도트
+        const [markX,markY]=pt(it.lon,rMid);
+        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"2.6",fill:it.color,stroke:"#fff","stroke-width":"0.8"}));
+        // 글리프
+        const g=e("text",{x:chosen.gx,y:chosen.gy+6,"font-size":"18","text-anchor":"middle",fill:it.color,"class":"astro","font-weight":"500"});
+        g.textContent=it.sym; glyphLayer.appendChild(g);
+      }
+      svg.appendChild(markerLayer); svg.appendChild(glyphLayer);
+    }
     function table(pos){
       const box=document.getElementById("planetTable");
       box.innerHTML="";
@@ -705,7 +772,7 @@
       add("ASC",degToSign(pos.Asc)); add("MC",degToSign(pos.MC));
       document.getElementById("calcMeta").textContent=`mode=${pos._mode} · utc=${pos._time} · cheongju 127.489E / 36.642N`;
     }
-    const pos=computePos(); table(pos);
+    const pos=computePos(); draw(pos); table(pos);
   </script>
 </body>
 </html>
