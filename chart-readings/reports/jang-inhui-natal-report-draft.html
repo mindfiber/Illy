@@ -3,384 +3,647 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>네이탈 상담 리포트 초안 - 장인희</title>
+  <title>네이탈 상담 리포트 - 장인희</title>
   <style>
-    @page { size: A4; margin: 16mm; }
+    @import url('https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css');
+
+    /* ── AtoZ (에이투지체) ── */
+    @font-face { font-family:'AtoZ'; font-weight:100; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-1Thin.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:200; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-2ExtraLight.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:300; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-3Light.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:400; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-4Regular.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:500; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-5Medium.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:600; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-6SemiBold.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:700; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-7Bold.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:800; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-8ExtraBold.woff2') format('woff2'); }
+    @font-face { font-family:'AtoZ'; font-weight:900; font-style:normal; font-display:swap;
+      src: url('font/%EC%97%90%EC%9D%B4%ED%88%AC%EC%A7%80%EC%B2%B4-9Black.woff2') format('woff2'); }
+
+    @page { size: A4; margin: 0; }
+
+    /* ── 디자인 토큰 ── */
     :root {
-      --ink: #22201c;
-      --muted: #666056;
-      --line: #ddd6ca;
-      --paper: #fbfaf6;
-      --accent: #845438;
-      --accent-soft: #efe3d8;
-      --good: #366b55;
+      --black:   #000000;
+      --ink:     #1a1a1a;
+      --body:    #4a4a4a;
+      --muted:   #9a9a9a;
+      --soft:    #c8c8c8;
+      --line:    #e3e3e3;
+      --line-strong: #1a1a1a;
+      --gold:    #c9a861;
+      --accent:  #688ecd;  /* 포인트 컬러 — 부드러운 블루 */
+      --white:   #ffffff;
+      --mg-h: 22mm;
+      --mg-v: 25mm;
     }
-    * { box-sizing: border-box; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      background: #ece7de;
-      color: var(--ink);
-      font-family: "Noto Sans KR", "Pretendard", "Apple SD Gothic Neo", sans-serif;
-      line-height: 1.66;
+      background: #d0d0d0;
+      font-family: "AtoZ", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: var(--body);
+      line-height: 1.72;
       word-break: keep-all;
+      -webkit-font-smoothing: antialiased;
+      padding: 8mm 0;
     }
-    .report { width: 210mm; margin: 0 auto; background: var(--paper); }
-    .page {
-      min-height: 297mm;
-      padding: 19mm 17mm;
-      background: linear-gradient(90deg, rgba(132, 84, 56, 0.08), transparent 20%), var(--paper);
+    .report { width: 210mm; margin: 0 auto; }
+
+    /* ── COVER ── */
+    .cover {
+      width: 210mm; height: 297mm;
+      position: relative; overflow: hidden;
       page-break-after: always;
+      break-after: page;
+    }
+    .cover-bg {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; display: block;
+    }
+    .cover-headline {
+      position: absolute;
+      left: 0; right: 0; top: 239mm;
+      z-index: 2;
+      text-align: center;
+      font-family: "Paperlogy", "Pretendard", "Noto Sans KR", sans-serif;
+      font-weight: 500;
+      font-size: 22px;
+      letter-spacing: 0.32em;
+      color: #ffffff;
+    }
+    .cover-text-overlay {
+      position: absolute;
+      left: 0; right: 0;
+      text-align: center; z-index: 2;
+      top: 249mm;
+    }
+    .cover-client-name {
+      font-family: "Paperlogy", "Pretendard", "Noto Sans KR", sans-serif;
+      font-size: 48px; font-weight: 700;
+      color: #dac087; letter-spacing: 0.02em; line-height: 1.2;
+    }
+    .cover-client-sub {
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      font-size: 12px; font-weight: 400;
+      letter-spacing: 0.22em; color: rgba(255,255,255,0.5);
+      text-transform: uppercase; margin-top: 2mm;
+    }
+
+    /* ══════════════════════════════════
+       BODY PAGES — A4 정확 분할 (인쇄·PDF용)
+       ══════════════════════════════════ */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--white);
+      padding: var(--mg-v) var(--mg-h);
+      page-break-after: always;
+      break-after: page;
       position: relative;
     }
-    .page:last-child { page-break-after: auto; }
-    .pn { position: absolute; right: 17mm; bottom: 10mm; color: var(--muted); font-size: 10px; }
-    h1, h2, h3 { margin: 0; line-height: 1.3; }
-    h1 { margin-top: 16mm; font-size: 43px; font-weight: 600; }
-    h2 { font-size: 24px; border-bottom: 1px solid var(--line); padding-bottom: 4mm; margin-bottom: 7mm; }
-    h3 { font-size: 17px; color: var(--accent); margin: 7mm 0 3mm; }
-    p { margin: 0 0 4mm; }
-    .eyebrow { font-size: 12px; font-weight: 700; color: var(--accent); }
-    .sub { margin-top: 8mm; max-width: 128mm; color: var(--muted); font-size: 15px; }
-    .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3mm; }
-    .card, .block, .qa, .timing {
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      background: rgba(255,255,255,0.76);
-      padding: 5mm;
+    .body-bottom { /* 자연 흐름 — 위에서 아래로 */ }
+
+    /* ── 페이지 분할 컨트롤: 핵심 블록은 중간에 자르지 않음 ── */
+    .ch-opener, .lead, .lead-body,
+    .bullets li, .list li,
+    .timeline-row, .meta-row, .toc-row,
+    .wheel-wrap {
+      page-break-inside: avoid;
+      break-inside: avoid;
     }
-    .label { display: block; margin-bottom: 1mm; color: var(--muted); font-size: 11px; font-weight: 700; }
-    .toc { margin-top: 15mm; border-top: 1px solid var(--line); }
-    .toc-row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 5mm 0; color: var(--muted); }
-    .toc-row strong { color: var(--ink); }
-    .callout { margin: 6mm 0; border-left: 4px solid var(--accent); background: var(--accent-soft); padding: 5mm 6mm; }
-    .list { margin: 0; padding-left: 5mm; }
-    .list li { margin-bottom: 2mm; }
-    .badge {
-      display: inline-block;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 1mm 3mm;
-      margin-bottom: 2mm;
-      background: #e6efe9;
-      color: var(--good);
+    h3, .num-h, .ch-opener {
+      page-break-after: avoid;
+      break-after: avoid;
     }
-    .wheel-wrap { display: block; }
+    .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    /* 화면에서만 페이지를 시트처럼 보이게 (인쇄에서는 제거) */
+    .cover, .page {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+      margin: 0 auto 8mm;
+    }
+
+    /* ── 챕터 오프너 (Chapter XX. + 큰 제목) ── */
+    .ch-opener {
+      padding-top: 0;
+      padding-bottom: 8mm;
+      margin-bottom: 8mm;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .ch-num {
+      display: block;
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 16px; font-weight: 500;
+      color: #9ea4ac;
+      letter-spacing: 0.02em;
+      margin-bottom: 3mm;
+    }
+    .ch-title {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 38px; font-weight: 400;
+      color: var(--accent); line-height: 1.22;
+      letter-spacing: -0.025em;
+    }
+    .ch-desc {
+      font-family: "AtoZ", sans-serif;
+      font-size: 15px; font-weight: 400; color: var(--body);
+      margin-top: 3mm; line-height: 1.7;
+      max-width: 140mm;
+    }
+
+    /* ── 러닝 헤더 (Chapter XX.  섹션명) ── */
+    .pg-top {
+      display: flex;
+      align-items: baseline;
+      gap: 7mm;
+      padding-bottom: 3.5mm;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 12mm;
+    }
+    .pg-top-num {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 11.5px; font-weight: 500;
+      color: var(--ink); letter-spacing: -0.01em;
+    }
+    .pg-top-title {
+      font-size: 11.5px; font-weight: 300;
+      color: var(--muted); letter-spacing: -0.01em;
+    }
+
+    /* ── 번호 매김 섹션 헤딩 (1. ~~~~) ── */
+    h3, .num-h {
+      font-size: 20px; font-weight: 500;
+      color: var(--accent); line-height: 1.4;
+      margin: 8mm 0 3mm;
+      letter-spacing: -0.015em;
+    }
+    .num-h:first-child, .ch-opener + h3,
+    .ch-opener + .num-h, .pg-top + h3, .pg-top + .num-h { margin-top: 0; }
+
+    /* ── 본문 텍스트 ── */
+    p {
+      margin: 0;
+      font-size: 14.5px; font-weight: 300; color: var(--body);
+      line-height: 1.78;
+    }
+    strong { color: var(--ink); font-weight: 500; }
+
+    /* ── 리드 / 리드 본문 (강조 시작 + 부연 설명) ── */
+    .lead {
+      font-size: 16px; font-weight: 500;
+      color: var(--ink); line-height: 1.55;
+      margin: 8mm 0 3mm;
+      letter-spacing: -0.01em;
+    }
+    .lead-body {
+      font-size: 14.5px; font-weight: 300; color: var(--body);
+      margin: 0 0 6mm; line-height: 1.78;
+    }
+
+    /* ── 챕터 오프너 마지막 자식 마진 정리 ── */
+    .ch-opener > :last-child { margin-bottom: 0; }
+
+    /* ── 수평선 ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 9mm 0;
+    }
+
+    /* ── 메타 행 (TOC 페이지 의뢰인 정보) ── */
+    .meta-rows { margin: 0 0 12mm; }
+    .meta-row {
+      display: flex; align-items: baseline;
+      border-bottom: 1px solid var(--line);
+      padding: 4mm 0;
+      font-size: 14.5px;
+    }
+    .meta-row:first-child { border-top: 1px solid var(--line); }
+    .meta-key {
+      min-width: 40mm; color: var(--muted);
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+    }
+    .meta-val { color: var(--ink); font-weight: 400; }
+
+    /* ── TOC ── */
+    .toc-section { margin-top: 4mm; }
+    .toc-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 5.5mm 0; border-bottom: 1px solid var(--line);
+    }
+    .toc-row:first-child { border-top: 1.5px solid var(--ink); }
+    .toc-left { display: flex; gap: 8mm; align-items: baseline; }
+    .toc-num {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 13px; font-weight: 500;
+      color: var(--accent); min-width: 10mm;
+      letter-spacing: -0.01em;
+    }
+    .toc-row strong { font-weight: 500; color: var(--ink); font-size: 16px; letter-spacing: -0.01em; }
+    .toc-row > span { font-size: 12px; font-weight: 300; color: var(--muted); font-feature-settings: "tnum"; }
+
+    /* ── 불릿 리스트 (CSS 도트 + 강조 inline) ── */
+    .bullets, .list { margin: 4mm 0 9mm; padding: 0; list-style: none; }
+    .bullets li, .list li {
+      position: relative;
+      padding-left: 5mm;
+      margin-bottom: 3mm;
+      font-size: 14.5px; font-weight: 300; color: var(--body);
+      line-height: 1.78;
+    }
+    .bullets li::before, .list li::before {
+      content: "";
+      position: absolute;
+      left: 0.8mm;
+      top: 0.72em;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .bullets li:last-child, .list li:last-child { margin-bottom: 0; }
+    .bullets li strong, .list li strong { color: var(--ink); font-weight: 500; }
+    .list li { padding-bottom: 0; border-bottom: none; }
+
+    /* ── 타임라인 행 표 ── */
+    .timeline-table { margin: 6mm 0 0; }
+    .timeline-row {
+      display: flex; gap: 8mm;
+      padding: 5mm 0;
+      border-top: 1px solid var(--line);
+      align-items: baseline;
+      font-size: 14.5px;
+    }
+    .timeline-row:last-child { border-bottom: 1px solid var(--line); }
+    .tl-period {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-weight: 500; color: var(--accent);
+      min-width: 36mm; font-size: 14px;
+      letter-spacing: -0.005em; flex-shrink: 0;
+    }
+    .tl-body { color: var(--body); font-weight: 300; flex: 1; line-height: 1.72; }
+
+    /* ── 차트 휠 ── */
+    .wheel-wrap { margin: 0; }
     .wheel-box {
-      width: 152mm;
-      max-width: 100%;
+      width: 100%;
+      max-width: 100mm;
       margin: 0 auto;
-      border: 1px solid var(--line);
-      border-radius: 8px;
       background: #fff;
-      padding: 3mm;
     }
     #wheel { width: 100%; height: auto; display: block; }
-    .planet-panel { margin-top: 6mm; }
-    .planet-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .small { font-size: 12px; color: var(--muted); }
-    .mono { font-family: Consolas, Monaco, monospace; font-size: 12px; color: var(--muted); }
-    .astro { font-family: "Noto Sans Symbols 2", "Segoe UI Symbol", "Symbola", "DejaVu Sans", sans-serif; }
+    .planet-panel { margin-top: 4mm; padding-top: 5mm; border-top: 1px solid var(--line); }
+    .planet-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 30mm minmax(0,1fr) 30mm;
+      column-gap: 8mm; row-gap: 0;
+    }
+    .planet-card {
+      display: contents;
+    }
+    .planet-card .name {
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-weight: 500; color: var(--ink);
+      font-size: 14.5px; padding: 2.2mm 0;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: -0.01em;
+    }
+    .planet-card .val {
+      color: var(--body); font-weight: 300;
+      font-size: 14px; padding: 2.2mm 0;
+      border-bottom: 1px solid var(--line);
+      text-align: right;
+    }
+    .label {
+      font-size: 11px; color: var(--muted);
+      letter-spacing: 0.16em; text-transform: uppercase;
+      display: block; margin-bottom: 1mm; font-weight: 500;
+    }
+
+    /* ── 기타 ── */
+    .small { font-size: 13px; color: var(--muted); }
+    .mono  { font-family: Consolas, Monaco, monospace; font-size: 10.5px; color: var(--muted); }
+    .astro { font-family: "Noto Sans Symbols 2","Segoe UI Symbol","Symbola","DejaVu Sans",sans-serif; }
+
+    /* ── 페이지 번호 ── */
+    .pn {
+      position: absolute; bottom: 22mm;
+      font-family: "Paperlogy", "AtoZ", sans-serif;
+      font-size: 12px; color: #9ea4ac;
+      font-weight: 400; letter-spacing: 0.04em;
+    }
+    .pn.right { left: auto; right: var(--mg-h); }
+
     @media print {
-      body { background: #fff; }
-      .report { width: auto; }
-      .page { min-height: auto; padding: 0; background: var(--paper); }
+      html, body { background: #fff; margin: 0; padding: 0; }
+      .report { width: 210mm; margin: 0; }
+      .cover {
+        width: 210mm; height: 297mm;
+        margin: 0; box-shadow: none;
+        page-break-after: always; break-after: page;
+        page-break-inside: avoid; break-inside: avoid;
+      }
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0; box-shadow: none;
+        page-break-after: always; break-after: page;
+      }
+      .page:last-child { page-break-after: auto; break-after: auto; }
     }
   </style>
 </head>
 <body>
   <main class="report">
-    <section class="page">
-      <div class="eyebrow">Natal Reading Report · Draft</div>
-      <h1>네이탈 상담 리포트</h1>
-      <p class="sub">
-        2025년 6월 4일 진행된 상담 내용을 바탕으로, 장인희 님의 직업 방향, 거주 문제, 연애와 결혼,
-        인간관계 스트레스, 그리고 2027~2029년의 중요한 흐름을 다시 정리한 리포트입니다.
-        대화의 순서보다 실제 판단에 필요한 주제별 흐름을 중심으로 묶었습니다.
-      </p>
-      <div class="grid2" style="margin-top:12mm;">
-        <div class="card"><span class="label">의뢰인</span><strong>장인희 님</strong></div>
-        <div class="card"><span class="label">상담자</span><strong>일리 님</strong></div>
-        <div class="card"><span class="label">상담 일시</span><strong>2025-06-04 23:01 ~ 2025-06-05 01:20</strong></div>
-        <div class="card"><span class="label">출생 정보</span><strong>1998-01-03 20:27, 청주</strong></div>
-      </div>
-      <div class="toc">
-        <div class="toc-row"><strong>1. 질문 요약과 상담 범위</strong><span>p.2</span></div>
-        <div class="toc-row"><strong>2. 네이탈 기본 구조</strong><span>p.3</span></div>
-        <div class="toc-row"><strong>3. 직업·창업 방향</strong><span>p.4</span></div>
-        <div class="toc-row"><strong>4. 이사와 독립 문제</strong><span>p.5</span></div>
-        <div class="toc-row"><strong>5. 연애·결혼 흐름</strong><span>p.6</span></div>
-        <div class="toc-row"><strong>6. 인간관계와 가족 스트레스</strong><span>p.7</span></div>
-        <div class="toc-row"><strong>7. 2027~2029년 타임라인</strong><span>p.8</span></div>
-      </div>
-      <div class="pn">1</div>
-    </section>
 
-    <section class="page">
-      <h2>1. 질문 요약과 상담 범위</h2>
-      <p class="small">처음에는 이번 상담에서 다룬 질문과, 리포트가 어떤 순서로 정리되는지부터 살펴봅니다.</p>
-      <div class="callout">
-        <strong>이번 상담의 중심은 “어디에 머물고, 어디로 나아갈 것인가”였습니다.</strong>
-        <p>
-          장인희 님의 질문은 직업, 거주, 연애, 인간관계로 나뉘어 있었지만, 실제 핵심은 하나로 이어집니다.
-          지금 있는 자리에서 계속 버티는 것이 맞는지, 독립과 이직을 통해 환경을 바꿔야 하는지, 그리고 사람들과의
-          관계에서 언제쯤 숨통이 트일지가 가장 중요한 주제였습니다.
-        </p>
-      </div>
-      <p>
-        첫 번째 질문은 7월 말 계약 종료를 앞두고 현재 회사와 재계약을 하는 것이 맞는지, 아니면 다른 직업이나
-        창업을 준비해야 하는지였습니다. 두 번째 질문은 8월 이사 시점에 본가로 들어가야 하는지, 따로 방을 구해
-        독립을 유지하는 편이 나은지였습니다. 세 번째는 연애와 결혼의 전반적인 흐름, 네 번째는 직장동료와 가족을
-        포함한 인간관계 스트레스에서 언제 벗어날 수 있는지에 관한 질문이었습니다.
-      </p>
-      <div class="qa">
-        <span class="label">장인희 님이 가져온 핵심 질문</span>
-        <p>1. 현재 직업을 계속 가져가도 괜찮을까, 아니면 이직이나 창업이 더 맞을까.</p>
-        <p>2. 이사 시점에 본가로 들어가는 것이 나을까, 따로 거주지를 구하는 것이 나을까.</p>
-        <p>3. 연애는 언제 가능하고, 결혼은 하게 되는지, 어떤 관계가 맞을까.</p>
-        <p>4. 인간관계 스트레스에서 언제 벗어나고, 어떤 사람들이 도움이 될까.</p>
-      </div>
-      <div class="callout">
-        <strong>읽는 법</strong>
-        <p>
-          실제 상담은 대화체로 편하게 오갔지만, 이 리포트에서는 고객이 다시 읽어도 방향이 잡히도록
-          같은 주제끼리 묶어 정리했습니다. 그래서 대화 순서와 리포트 순서가 완전히 같지는 않습니다.
-        </p>
-      </div>
-      <div class="pn">2</div>
-    </section>
+    <!-- ══════════════ COVER PAGE ══════════════ -->
+    <div class="cover">
+      <!-- cover.svg: full A4 background (orbital diagram, no text) -->
+      <img class="cover-bg" src="https://cdn.jsdelivr.net/gh/mindfiber/Illy@astrology/report/chart-readings/reports/cover.svg" alt="cover">
 
-    <section class="page">
-      <h2>2. 네이탈 기본 구조</h2>
-      <p class="small">여기서는 장인희 님 차트가 어떤 주제를 강하게 드러내는지 먼저 봅니다.</p>
-      <div class="callout">
-        <strong>장인희 님 차트는 “사람과 관계”가 인생에서 큰 비중을 차지합니다.</strong>
-        <p>
-          7하우스 물병에 금성, 화성, 목성이 모여 있어 타인, 연애, 결혼, 경쟁자, 직장 내 관계가
-          삶에서 자주 부각됩니다. 사람 때문에 힘들기도 하지만, 결국 사람을 다루고 조율하는 능력도
-          중요한 재능으로 쓰입니다.
-        </p>
-      </div>
-      <p>
-        상담에서 확인한 기본 배치는 사자 상승, 염소 태양, 물고기 달, 사수 수성, 물병 금성, 물병 화성,
-        물병 목성, 양 토성입니다. 한쪽으로 사람 관련 하우스가 강하게 몰려 있으므로, 관계가 그냥 부수적인
-        문제가 아니라 인생의 큰 사건과 고민을 자주 만들어내는 구조입니다.
-      </p>
-      <p>
-        사자 상승은 겉으로는 씩씩하고 분명해 보이지만, 차트의 실제 무게는 맞은편 물병 7하우스에 많이
-        실려 있습니다. 그래서 장인희 님은 혼자만의 의지로 밀어붙이는 삶보다, 타인과 부딪히고 협상하고
-        기준을 세우는 과정 속에서 자기 역할을 찾아가는 편입니다. 사람을 피하면 편해지는 차트라기보다,
-        좋은 거리감과 규칙을 만들 때 힘이 살아나는 차트에 가깝습니다.
-      </p>
-      <p>
-        염소 태양은 일과 책임, 장기적인 안정감을 중요하게 봅니다. 물고기 달은 감정적으로 쉽게 스며드는
-        면을 만들기 때문에, 겉으로는 단단해 보여도 가까운 사람이나 가족 문제에는 생각보다 크게 흔들릴 수
-        있습니다. 사수 수성은 설명하고 가르치고 큰 방향을 잡는 힘을 주지만, 말이 직선적으로 나가면 상대가
-        지적받는 느낌을 받을 수 있으므로 전달 방식의 조절이 중요합니다.
-      </p>
-      <p>
-        토성이 양 9하우스에 있다는 점도 중요합니다. 공부, 자격, 법과 제도, 멀리 보는 계획에서 처음부터
-        편하게 풀리기보다 스스로 기준을 세우며 늦게 단단해지는 구조입니다. 그래서 장인희 님에게는 당장
-        빠르게 방향을 바꾸는 선택보다, 자격과 경력, 제도권 안의 안정성을 쌓으면서 자기 권한을 넓혀가는
-        방식이 더 잘 맞습니다.
-      </p>
+      <!-- headline: CUSTOM ASTROLOGY NOTE (Paperlogy) -->
+      <div class="cover-headline">CUSTOM ASTROLOGY NOTE</div>
 
-      <div class="wheel-wrap">
-        <div class="wheel-box">
-          <svg id="wheel" viewBox="0 0 320 320" aria-label="장인희 님 네이탈 차트"></svg>
-        </div>
-        <div class="planet-panel">
-          <h3>행성 위치 (자동 계산)</h3>
-          <div id="planetTable" class="grid2 planet-grid"></div>
-          <p class="small" style="margin-top:4mm;">
-            출생시각 기준 계산값을 표시합니다. CDN 차단 시 동일 출생정보 백업값으로 렌더링됩니다.
-          </p>
-          <div id="calcMeta" class="mono"></div>
+      <!-- client name + subtitle overlay, positioned below the headline -->
+      <div class="cover-text-overlay">
+        <div class="cover-client-name">장인희</div>
+        <div class="cover-client-sub">Jang In-hee &nbsp;·&nbsp; 1998.01.03 &nbsp;·&nbsp; 청주</div>
+      </div>
+    </div>
+
+    <!-- ══ p.01 인트로 + 의뢰인 + 목차 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Custom Astrology Note</span>
+        <div class="ch-title">네이탈 상담 리포트</div>
+        <p class="ch-desc">2025년 6월 4일 진행된 상담 내용을 바탕으로 직업 방향·거주·연애·인간관계·타이밍을 주제별로 정리한 리포트입니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>목차</h3>
+        <div class="toc-section">
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">01</span><strong>네이탈 기본 구조</strong></div><span>p.02</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">02</span><strong>질문 요약과 상담 범위</strong></div><span>p.03</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">03</span><strong>직업·창업 방향</strong></div><span>p.04</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">04</span><strong>이사와 독립 문제</strong></div><span>p.05</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">05</span><strong>연애·결혼 흐름</strong></div><span>p.06</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">06</span><strong>인간관계와 가족 스트레스</strong></div><span>p.07</span></div>
+          <div class="toc-row"><div class="toc-left"><span class="toc-num">07</span><strong>2027~2029년 타임라인</strong></div><span>p.08</span></div>
         </div>
       </div>
-
-      <h3>재능과 기본 작동 방식</h3>
-      <p>
-        이 차트에서 재능의 중심은 수성, 금성, 화성 중 수성과 금성 쪽에 더 가깝습니다. 말하고 설명하고
-        관리하는 일, 사람을 상대하면서도 규칙과 기준을 세우는 일, 교육과 안내가 섞인 일이 잘 맞습니다.
-        화성도 쓰이지만, 화성을 너무 강하게 쓰는 일은 피로와 스트레스로 이어지기 쉽습니다.
-      </p>
-      <p>
-        그래서 장인희 님에게는 “몸으로 부딪히는 기술직”보다, 사람을 관리하고 교육하고 기준을 세우는 역할이
-        더 자연스럽습니다. 다정하게 어르고 달래는 방식보다, 분명한 기준을 가지고 알려주고 관리하는 쪽이
-        오히려 체질에 맞습니다.
-      </p>
-      <div class="pn">3</div>
+      <div class="pn right">01</div>
     </section>
 
+    <!-- ══ p.02 네이탈 차트 ══ -->
     <section class="page">
-      <h2>3. 직업·창업 방향</h2>
-      <p class="small">여기서는 현재 직업을 계속 가져가도 되는지, 창업은 어떤 조건에서 가능한지 정리합니다.</p>
-      <div class="block">
-        <span class="badge">핵심 정리</span>
-        <p>
-          지금 하고 있는 산업안전보건/보건관리 계열은 생각보다 잘 맞는 직업입니다. 완전히 다른 길을 찾기보다,
-          이 분야 안에서 포지션과 조건이 더 나은 곳으로 이동하는 쪽이 현실적이고 안정적입니다.
-        </p>
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 01.</span>
+        <div class="ch-title">네이탈 기본 구조</div>
+        <p class="ch-desc">장인희 · 1998. 01. 03  20:27 · 청주</p>
       </div>
-      <div class="callout">
-        <strong>현재 직업은 “안 맞아서 힘든 일”이라기보다, 아직 자리가 덜 잡혀서 힘든 일에 가깝습니다.</strong>
-        <p>
-          건설현장 보건관리 업무는 현장성과 관리성이 함께 있는 일입니다. 장인희 님 차트에서는 교육, 안내,
-          규칙 전달, 사람 관리가 강하게 살아나므로 이 직종은 오히려 꽤 잘 맞습니다.
-        </p>
+
+      <div class="body-bottom">
+        <div class="wheel-wrap">
+          <div class="wheel-box">
+            <svg id="wheel" viewBox="0 0 320 320" aria-label="장인희 님 네이탈 차트"></svg>
+          </div>
+          <div class="planet-panel">
+            <div id="planetTable" class="planet-grid"></div>
+            <div id="calcMeta" class="mono" style="margin-top:3mm;"></div>
+          </div>
+        </div>
+
+        <h3>1. 차트 한 줄 요약</h3>
+        <p>사자 상승 · 염소 태양 · 물고기 달이 기본 골격이고, 진짜 무게는 7하우스 물병에 모인 금성·화성·목성에 실립니다. 즉, 사람·관계가 인생의 큰 사건을 자주 만들어내는 차트입니다.</p>
+
+        <h3>2. 핵심 행성 배치</h3>
+        <ul class="bullets">
+          <li><strong>상승 사자 / 태양 염소</strong> — 겉은 활달, 안쪽은 책임·장기 안정 지향. 일과 평판이 자기 정체성의 큰 축.</li>
+          <li><strong>달 물고기</strong> — 감정이 빠르게 스며드는 타입. 자기 보호용 거리감이 필요.</li>
+          <li><strong>물병 7하우스 스텔리움 (금성·화성·목성)</strong> — 연애·결혼·동료·경쟁 관계가 인생 사건을 자주 일으킴.</li>
+          <li><strong>토성 양 9하우스</strong> — 자격·공부·장기 계획에서 늦게 단단해지는 구조. 일찍 결과를 기대하지 말 것.</li>
+        </ul>
       </div>
-      <p>
-        유치원 선생님처럼 아이들을 돌보는 일도 관심이 있을 수 있지만, 차트상으로는 아동을 어르고 달래는
-        역할보다 성인들을 교육하고 관리하는 쪽이 더 편합니다. “왜 그렇게 선생님처럼 말하냐”는 말을 들을 수 있는
-        구조이기도 한데, 바로 그 점이 지금 하는 일에서는 장점으로 쓰일 수 있습니다.
-      </p>
-      <p>
-        캐드나 도면처럼 기술 쪽으로 더 들어가는 선택은 화성을 많이 쓰는 방향입니다. 가능은 하지만, 장인희 님이
-        장기적으로 편하게 쓰기에는 스트레스가 커질 수 있습니다. 제과제빵 역시 취미가 직업이 될 가능성은 있으나,
-        본격적인 사업으로 끌고 가기에는 퍼주거나 손익을 흐리게 보는 문제가 생기기 쉽습니다.
-      </p>
-      <h3>창업에 대하여</h3>
-      <p>
-        창업이 완전히 금지되는 차트는 아닙니다. 다만 지금 당장 독립 창업으로 뛰어드는 것보다, 안정적인 직업을
-        먼저 잡고 나중에 금성 분야, 즉 즐거움과 서비스, 취미와 취향이 섞인 일을 부업이나 작은 형태로 시작하는
-        쪽이 더 좋습니다. 특히 제과제빵은 지금은 취미로 두고, 결혼 이후나 생활 기반이 안정된 뒤에 다시 생각해도
-        늦지 않습니다.
-      </p>
-      <div class="pn">4</div>
+      <div class="pn">02</div>
     </section>
 
+    <!-- ══ p.2 질문 요약 ══ -->
     <section class="page">
-      <h2>4. 이사와 독립 문제</h2>
-      <p class="small">여기서는 8월 이사와 본가 복귀 여부, 그리고 생활 환경 선택을 정리합니다.</p>
-      <div class="callout">
-        <strong>본가로 들어가는 것보다는 독립을 유지하는 편이 좋습니다.</strong>
-        <p>
-          집안 분위기와 가족 거리감이 이미 스트레스라면, 재취업 전 잠시 편하자고 들어갔다가 심리적 부담이
-          더 커질 수 있습니다. 이번 흐름은 원거리 이동보다 근거리 이사에 가깝고, 본가 복귀보다는 독립 유지가
-          더 잘 맞습니다.
-        </p>
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 02.</span>
+        <div class="ch-title">질문 요약과 상담 범위</div>
+        <p class="lead">이번 상담의 중심은 "어디에 머물고, 어디로 나아갈 것인가"였습니다.</p>
+        <p class="lead-body">직업, 거주, 연애, 인간관계 네 가지 질문이 있었지만, 실제로는 하나로 이어집니다. 지금 자리를 유지할지, 환경을 바꿀지, 그리고 관계 스트레스에서 언제 숨통이 트일지가 핵심이었습니다.</p>
       </div>
-      <p>
-        재계약이 가능하다면 현재 회사에 남아 있으면서 생활 기반을 크게 흔들지 않는 편이 좋습니다. 재계약이
-        안 되더라도 재취업 자체가 오래 막히는 흐름은 아니므로, 본가로 들어가야만 버틸 상황으로 보지는 않습니다.
-        오히려 독립 공간을 유지하는 것이 관계 스트레스를 줄이는 데 도움이 됩니다.
-      </p>
-      <h3>거주 선택 기준</h3>
-      <p>
-        지역을 고를 때는 “완전히 멀리 도망가는 곳”보다, 일자리 접근성과 독립성을 동시에 확보할 수 있는 곳이
-        좋습니다. 본가와 너무 가까워서 가족이 거리를 좁히기 쉬운 곳은 피하고, 출퇴근과 생활이 감당 가능한
-        선에서 심리적 경계가 생기는 지역이 더 낫습니다.
-      </p>
-      <p>
-        이번 이사는 단순히 방을 옮기는 문제가 아니라, 가족과의 거리 조절을 다시 세팅하는 문제에 가깝습니다.
-        그러니 비용만 보고 결정하기보다, “내가 여기서 숨을 쉴 수 있는가”를 함께 보셔야 합니다.
-      </p>
-      <div class="pn">5</div>
+
+      <div class="body-bottom">
+        <p>첫 번째 질문은 7월 말 계약 종료를 앞두고 재계약이 맞는지, 이직·창업을 준비해야 하는지였습니다. 두 번째는 8월 이사 시 본가 복귀 vs 독립 유지 문제였고, 세 번째는 연애·결혼 흐름, 네 번째는 직장동료·가족 인간관계 스트레스에서 언제 벗어날 수 있는지였습니다.</p>
+
+        <h3>1. 핵심 질문 목록</h3>
+        <ul class="bullets">
+          <li><strong>현재 직업을 계속</strong> 가져가도 괜찮을까, 아니면 이직이나 창업이 더 맞을까.</li>
+          <li><strong>이사 시점에 본가</strong>로 들어가는 것이 나을까, 따로 거주지를 구하는 것이 나을까.</li>
+          <li><strong>연애는 언제</strong> 가능하고, 결혼은 하게 되는지, 어떤 관계가 맞을까.</li>
+          <li><strong>인간관계 스트레스</strong>에서 언제 벗어나고, 어떤 사람들이 도움이 될까.</li>
+        </ul>
+
+        <h3>2. 이번 상담의 큰 그림</h3>
+        <p>네 가지 질문이 결국 하나의 축으로 모입니다. 자리를 지킬 것인가 옮길 것인가, 그리고 누구와 어떤 거리에서 살 것인가. 직업·거주는 외부 환경 조정이고, 연애·인간관계는 내부 거리감 조정입니다. 둘은 분리된 문제가 아니라 같은 시기에 함께 정렬되는 흐름입니다.</p>
+        <p>차트가 7하우스 중심이라 "사람 문제가 자주 생긴다"는 부분과 "관계를 다루는 능력으로 풀어내야 한다"는 부분이 동시에 나옵니다. 회피보다 명확한 기준 세우기가 이번 흐름의 핵심 전략입니다.</p>
+
+        <h3>3. 리포트 읽는 법</h3>
+        <ul class="bullets">
+          <li>실제 상담은 대화체로 진행됐지만, <strong>같은 주제끼리 묶어 정리</strong>했습니다. 대화 순서와 리포트 순서는 일치하지 않습니다.</li>
+          <li>각 챕터 첫머리의 <strong>굵은 한 문장 + 부연</strong>이 그 챕터의 핵심 결론입니다. 시간이 없으면 그 부분만 읽어도 됩니다.</li>
+          <li>같은 이야기가 두세 챕터에 걸쳐 짧게 반복될 수 있는데, 의도된 연결입니다.</li>
+        </ul>
+      </div>
+      <div class="pn">03</div>
     </section>
 
+    <!-- ══ p.4 직업·창업 ══ -->
     <section class="page">
-      <h2>5. 연애·결혼 흐름</h2>
-      <p class="small">여기서는 연애가 시작되는 방식, 맞는 상대, 결혼 가능 시기를 나눠 봅니다.</p>
-      <div class="callout">
-        <strong>연애 시작은 늦은 편이지만, 결혼운 자체가 나쁜 차트는 아닙니다.</strong>
-        <p>
-          가볍게 스치는 썸을 연애로 인정하는 타입은 아닙니다. 신뢰가 생기기까지 시간이 필요하고,
-          그 기준을 통과해야 비로소 관계를 시작했다고 느끼는 편입니다.
-        </p>
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 03.</span>
+        <div class="ch-title">직업 · 창업 방향</div>
+        <p class="lead">지금 하고 있는 산업안전보건·보건관리 계열은 생각보다 잘 맞는 직업입니다.</p>
+        <p class="lead-body">완전히 다른 길을 찾기보다, 이 분야 안에서 포지션과 조건이 더 나은 곳으로 이동하는 쪽이 현실적입니다.</p>
       </div>
-      <p>
-        연애는 2025년과 2026년에는 체감하기 어렵고, 빠르면 2027년 초, 늦어도 2028년 초부터는 실제로
-        움직일 만한 시기가 들어옵니다. 이 차트는 소개팅이나 주변의 연결처럼 어느 정도 검증된 경로가 더 맞습니다.
-        아무나 만나기보다 조건과 신뢰를 확인하고 들어가는 편이기 때문입니다.
-      </p>
-      <div class="timing">
-        <span class="badge">연애·결혼 시기</span>
-        <p>연애 시작: 빠르면 2027년 초, 체감 가능성은 2028년 초.</p>
-        <p>2029년: 결혼 또는 직업·환경 변화로 크게 쓰일 수 있는 해.</p>
-        <p>더 안정적인 결혼 가능성: 2036년 말 만남, 2038~2039년 결혼 흐름.</p>
+
+      <div class="body-bottom">
+        <h3>1. 왜 잘 맞는 일인가</h3>
+        <ul class="bullets">
+          <li>현재 직업은 <strong>"안 맞아서 힘든 일"이 아니라 "자리가 덜 잡혀서 힘든 일"</strong>에 가깝습니다.</li>
+          <li>건설현장 보건관리는 <strong>현장성과 관리성이 함께</strong> 있는 일 — 교육·안내·규칙 전달·사람 관리에 강한 이 차트에 잘 맞습니다.</li>
+          <li>아동 돌봄보다 <strong>성인 교육·관리</strong> 쪽이 더 편한 구조입니다.</li>
+          <li>캐드·도면 등 기술 방향은 화성을 많이 쓰는 길이라 <strong>장기적으로 스트레스</strong>가 커질 수 있습니다.</li>
+        </ul>
+
+        <h3>2. 같은 분야 안에서 옮길 때 보는 기준</h3>
+        <ul class="bullets">
+          <li><strong>현장성 비중</strong>이 너무 큰 자리는 화성을 과하게 쓰게 됩니다. 관리·교육 비중이 더 큰 포지션이 길게 잘 맞아요.</li>
+          <li><strong>독립 결정권</strong>이 어느 정도 있는 자리가 좋습니다. 모든 판단을 위에서 받아오는 구조는 답답함이 누적됩니다.</li>
+          <li><strong>경력으로 쌓이는 자격·경험</strong>인지 — 토성 9하우스 영향으로 자격·전문성이 늦게 빛나는 차트라 장기 누적이 중요합니다.</li>
+        </ul>
+
+        <h3>3. 창업에 대하여</h3>
+        <p>창업이 금지되는 차트는 아닙니다. 다만 지금 당장 독립 창업보다, 안정적인 직업을 먼저 잡고 <strong>금성 분야(즐거움·서비스·취미)를 부업이나 작은 형태</strong>로 시작하는 쪽이 더 좋습니다. 제과제빵은 지금은 취미로 두고, 생활 기반이 안정된 뒤에 다시 생각해도 늦지 않습니다.</p>
+        <p>창업을 본격적으로 검토할 시점은 <strong>2027~2028년 직업 환경 변화 흐름</strong> 즈음. 그때까지는 본업 안에서 포지션·경험을 정리하는 시간으로 쓰면 충분합니다.</p>
       </div>
-      <h3>관계의 성격</h3>
-      <p>
-        배우자상은 아주 나쁘지 않습니다. 조건을 많이 볼 가능성이 있고, 상대도 어느 정도 직업이나 재산,
-        생활 기반이 괜찮은 사람일 수 있습니다. 결혼하면 배우자에게 집중하는 편이고, 친구처럼 지내는 알콩달콩한
-        관계 그림도 있습니다. 다만 육아는 역할 분담이 중요합니다. 상대가 참여는 하더라도, 처음부터 능숙한 사람으로
-        보기는 어렵습니다.
-      </p>
-      <p>
-        결혼을 서두를 필요는 없습니다. 오히려 연애를 너무 적게 해보고 바로 결혼하는 것이 아까울 수 있습니다.
-        장인희 님은 직업을 안정시키고, 자기 생활을 갖춘 뒤에 결혼해도 충분히 괜찮은 차트입니다.
-      </p>
-      <div class="pn">6</div>
+      <div class="pn">04</div>
     </section>
 
+    <!-- ══ p.5 이사와 독립 ══ -->
     <section class="page">
-      <h2>6. 인간관계와 가족 스트레스</h2>
-      <p class="small">여기서는 인간관계 스트레스가 어디서 오는지, 어떤 사람들과 거리를 두거나 가까이하면 좋을지 봅니다.</p>
-      <div class="callout">
-        <strong>장인희 님은 사람 때문에 힘들지만, 사람을 다루는 능력도 강한 차트입니다.</strong>
-        <p>
-          7하우스가 강하다는 것은 타인 문제가 자주 생긴다는 뜻이기도 하지만, 반대로 타인을 읽고 다루는 능력이
-          인생의 중요한 무기가 된다는 뜻이기도 합니다.
-        </p>
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 04.</span>
+        <div class="ch-title">이사와 독립 문제</div>
+        <p class="lead">본가 복귀보다는 독립을 유지하는 편이 좋습니다.</p>
+        <p class="lead-body">가족 거리감이 이미 스트레스라면, 잠시 편하자고 들어갔다가 심리적 부담이 더 커질 수 있습니다. 이번 흐름은 원거리 이동보다 근거리 이사에 가깝습니다.</p>
       </div>
-      <p>
-        인간관계 스트레스는 차트의 쏠림과 달의 상태가 함께 작동하면서 크게 느껴질 수 있습니다. 특히 직장동료나
-        가족처럼 완전히 끊기 어려운 관계에서 피로가 누적되기 쉽습니다. 그래서 “좋은 사람을 많이 만나는 것”보다
-        “나를 갉아먹는 사람과 경계를 세우는 것”이 더 중요합니다.
-      </p>
-      <h3>도움이 되는 사람들</h3>
-      <p>
-        귀인은 거창한 사람이 아니라, 장인희 님의 기준과 거리감을 존중해 주는 사람입니다. 지나치게 감정적으로
-        휘말리게 하거나, 계속 의존하게 만들거나, 가족처럼 거리를 좁혀오는 사람은 피로를 키웁니다. 반대로
-        책임감 있고 말이 통하며, 각자의 경계를 지켜주는 사람은 도움이 됩니다.
-      </p>
-      <p>
-        한편 장인희 님은 누군가의 귀인이 되려고 하는 쪽도 강합니다. 그래서 힘든 사람을 보면 도와주고 싶어질 수
-        있지만, 모든 사람을 책임지려 하면 금방 지칩니다. 도움을 주더라도 내 생활이 무너지지 않는 선을 정해두는
-        것이 필요합니다.
-      </p>
-      <div class="pn">7</div>
+
+      <div class="body-bottom">
+        <h3>1. 직장과 거주의 우선순위</h3>
+        <ul class="bullets">
+          <li>재계약이 가능하면 <strong>현재 회사에 남아 생활 기반</strong>을 흔들지 않는 편이 좋습니다.</li>
+          <li>재계약이 안 되더라도 <strong>재취업이 오래 막히는 흐름은 아니므로</strong> 본가로 들어가야만 하는 상황은 아닙니다.</li>
+          <li>독립 공간을 유지하는 것이 <strong>관계 스트레스를 줄이는 데</strong> 도움이 됩니다.</li>
+        </ul>
+
+        <h3>2. 거주 선택 기준</h3>
+        <p>일자리 접근성과 독립성을 동시에 확보할 수 있는 곳이 좋습니다. 본가와 너무 가까워 가족이 거리를 좁히기 쉬운 곳은 피하고, 출퇴근이 감당 가능한 선에서 <strong>심리적 경계</strong>가 생기는 지역이 더 낫습니다.</p>
+        <p>이번 이사는 단순히 방을 옮기는 문제가 아니라 <strong>가족과의 거리 조절을 다시 세팅</strong>하는 문제입니다. 비용만 보고 결정하기보다 "내가 여기서 숨을 쉴 수 있는가"를 함께 보셔야 합니다.</p>
+
+        <h3>3. 본가 거리 이슈 관리법</h3>
+        <ul class="bullets">
+          <li><strong>방문·통화 빈도를 미리 정해두기</strong> — 즉흥적 요청에 끌려가지 않도록 주 1회·격주 등 주기 설정.</li>
+          <li><strong>도움 요청과 간섭의 경계 분명히 하기</strong> — 부탁받았을 때 "한 번만"인지 "정기적으로"인지 확인.</li>
+          <li><strong>본가 방문 후 회복 시간 확보</strong> — 길게 머물수록 정리에 더 오래 걸리는 타입이라 다음 일정을 비워두는 게 안전.</li>
+        </ul>
+      </div>
+      <div class="pn">05</div>
     </section>
 
+    <!-- ══ p.6 연애·결혼 ══ -->
     <section class="page">
-      <h2>7. 2027~2029년 타임라인</h2>
-      <p class="small">마지막으로 앞으로 특히 신경 써야 할 시기를 정리합니다.</p>
-      <div class="callout">
-        <strong>2027~2029년은 직업, 관계, 건강이 함께 움직일 수 있는 중요한 구간입니다.</strong>
-        <p>
-          이 시기는 단순히 좋은 일만 오거나 나쁜 일만 오는 시기라기보다, 삶의 구조가 한 번 크게 조정되는
-          구간에 가깝습니다. 준비 없이 맞으면 힘들 수 있지만, 미리 알고 정리해두면 방향 전환의 계기로 쓸 수 있습니다.
-        </p>
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 05.</span>
+        <div class="ch-title">연애 · 결혼 흐름</div>
+        <p class="lead">연애 시작은 늦은 편이지만, 결혼운 자체가 나쁜 차트는 아닙니다.</p>
+        <p class="lead-body">가볍게 스치는 썸을 연애로 인정하는 타입이 아닙니다. 신뢰가 생기기까지 시간이 필요하고, 그 기준을 통과해야 비로소 관계가 시작됩니다.</p>
       </div>
-      <h3>2025년 하반기</h3>
-      <ul class="list">
-        <li>재계약이 가능하면 현재 직장에 남아 안정적으로 가져가는 편이 좋습니다.</li>
-        <li>재계약이 안 되더라도 재취업은 너무 오래 막히지 않을 가능성이 큽니다.</li>
-        <li>본가 복귀보다는 독립을 유지하는 방향을 우선으로 보세요.</li>
-      </ul>
-      <h3>2027~2028년</h3>
-      <ul class="list">
-        <li>연애가 실제로 시작될 수 있는 첫 체감 구간입니다.</li>
-        <li>직업적으로도 지금보다 나은 자리나 다른 환경을 찾고 싶어질 수 있습니다.</li>
-        <li>건강과 체력 관리는 미루지 않는 편이 좋습니다.</li>
-      </ul>
-      <h3>2029년</h3>
-      <ul class="list">
-        <li>직업, 결혼, 거주, 가족 문제 중 하나가 크게 움직일 수 있는 해입니다.</li>
-        <li>연애가 2027~2028년에 시작되었다면, 2029년에 결혼 또는 관계 변화로 나타날 수 있습니다.</li>
-        <li>결혼으로 쓰이지 않으면 직장이나 생활 환경의 변화로 나타날 가능성이 큽니다.</li>
-      </ul>
-      <div class="callout">
-        <strong>건강은 꼭 챙겨야 합니다.</strong>
-        <p>
-          2027~2029년은 건강 문제로 쓰이지 않게 관리하는 것이 중요합니다. 내 몸의 이상 신호를 흐린 눈으로
-          넘기지 말고, 검진과 회복 루틴을 미리 잡아두는 편이 좋습니다. 최선은 잠깐 힘들고 지나가는 일로 쓰는 것이고,
-          그러려면 몸과 가족 문제를 미리 챙겨두는 것이 필요합니다.
-        </p>
+
+      <div class="body-bottom">
+        <h3>1. 시기 흐름</h3>
+        <p>연애는 2025~2026년에는 체감하기 어렵고, 빠르면 2027년 초, 늦어도 2028년 초부터 실제로 움직일 시기가 들어옵니다. <strong>소개팅이나 검증된 경로</strong>가 더 잘 맞는 차트입니다.</p>
+
+        <div class="timeline-table">
+          <div class="timeline-row"><span class="tl-period">연애 시작</span><span class="tl-body">빠르면 2027년 초, 체감 가능성은 2028년 초.</span></div>
+          <div class="timeline-row"><span class="tl-period">2029년</span><span class="tl-body">결혼 또는 직업·환경 변화로 크게 쓰일 수 있는 해.</span></div>
+          <div class="timeline-row"><span class="tl-period">장기 결혼 흐름</span><span class="tl-body">2036년 말 만남, 2038~2039년 결혼.</span></div>
+        </div>
+
+        <h3>2. 관계의 성격</h3>
+        <p>조건을 꼼꼼히 볼 가능성이 있고, 상대도 <strong>직업·생활 기반이 괜찮은 사람</strong>일 수 있습니다. 결혼 후 배우자에게 집중하는 편이며, 친구처럼 지내는 관계 그림도 있습니다. 육아는 역할 분담이 중요합니다.</p>
+        <p>결혼을 서두를 필요는 없습니다. 직업을 안정시키고 <strong>자기 생활을 갖춘 뒤</strong> 결혼해도 충분합니다. 본인 기준이 명확해야 좋은 관계가 자리 잡는 차트입니다.</p>
+
+        <h3>3. 잘 맞는 경로 / 피해야 할 패턴</h3>
+        <ul class="bullets">
+          <li><strong>잘 맞는 경로</strong> — 소개팅, 직장·취미 모임을 통한 검증된 인연, 시간을 두고 신뢰가 쌓이는 만남.</li>
+          <li><strong>피해야 할 패턴</strong> — 즉흥적 만남, 정리되지 않은 사람과의 관계, 감정에 먼저 휩쓸리는 시작.</li>
+          <li><strong>관계 점검 신호</strong> — 만난 뒤 더 지치는지 충전되는지. 차트상 잘 맞는 사람은 같이 있을 때 자기 생활이 무너지지 않는 사람입니다.</li>
+        </ul>
       </div>
-      <div class="pn">8</div>
+      <div class="pn">06</div>
     </section>
+
+    <!-- ══ p.7 인간관계 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 06.</span>
+        <div class="ch-title">인간관계와 가족 스트레스</div>
+        <p class="lead">장인희 님은 사람 때문에 힘들지만, 사람을 다루는 능력도 강한 차트입니다.</p>
+        <p class="lead-body">7하우스가 강하다는 것은 타인 문제가 자주 생긴다는 뜻이기도 하지만, 타인을 읽고 다루는 능력이 인생의 중요한 무기가 된다는 뜻이기도 합니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <p>직장동료나 가족처럼 완전히 끊기 어려운 관계에서 피로가 누적되기 쉽습니다. "좋은 사람을 많이 만나는 것"보다 <strong>"나를 갉아먹는 사람과 경계를 세우는 것"</strong>이 더 중요합니다.</p>
+
+        <h3>1. 도움이 되는 사람들</h3>
+        <ul class="bullets">
+          <li>귀인은 장인희 님의 <strong>기준과 거리감을 존중</strong>해 주는 사람입니다.</li>
+          <li>감정적으로 휘말리게 하거나 <strong>의존하게 만드는 사람</strong>은 피로를 키웁니다.</li>
+          <li>책임감 있고 말이 통하며 <strong>각자의 경계를 지켜주는 사람</strong>이 도움이 됩니다.</li>
+          <li><strong>일·역할 기반의 만남</strong>에서 좋은 인연이 나오기 쉬운 차트 — 의외성보다 검증된 신뢰가 잘 맞아요.</li>
+        </ul>
+
+        <h3>2. 본인이 주의할 점</h3>
+        <p>누군가의 귀인이 되려는 성향도 강합니다. 힘든 사람을 보면 돕고 싶어지지만, <strong>모든 사람을 책임지려 하면 금방 지칩니다.</strong> 내 생활이 무너지지 않는 선을 미리 정해두는 것이 필요합니다.</p>
+
+        <h3>3. 가족 스트레스 관리법</h3>
+        <ul class="bullets">
+          <li><strong>거리 두기 = 단절이 아님</strong> — 정기적 안부와 거리감 유지를 같이 가져갈 수 있어요.</li>
+          <li><strong>의사소통 채널 정하기</strong> — 즉흥 통화보다 정해진 시간·요일 만남이 부담을 줄여줍니다.</li>
+          <li><strong>자기만의 시간·공간 확보</strong> — 가족 일정 사이에 회복 시간을 확보하지 않으면 누적 피로가 빠르게 옵니다.</li>
+        </ul>
+      </div>
+      <div class="pn">07</div>
+    </section>
+
+    <!-- ══ p.8 타임라인 ══ -->
+    <section class="page">
+      <div class="ch-opener">
+        <span class="ch-num">Chapter 07.</span>
+        <div class="ch-title">2027 ~ 2029년 타임라인</div>
+        <p class="lead">2027~2029년은 직업·관계·건강이 함께 움직일 수 있는 중요한 구간입니다.</p>
+        <p class="lead-body">삶의 구조가 한 번 크게 조정되는 구간입니다. 미리 알고 정리해두면 방향 전환의 계기로 쓸 수 있습니다. 건강 관리가 특히 중요합니다. 내 몸의 이상 신호를 넘기지 말고, 검진과 회복 루틴을 미리 잡아두는 편이 좋습니다.</p>
+      </div>
+
+      <div class="body-bottom">
+        <h3>1. 연도별 흐름</h3>
+        <div class="timeline-table">
+          <div class="timeline-row">
+            <span class="tl-period">2025 하반기</span>
+            <span class="tl-body">재계약 가능 시 현 직장 유지. 재취업은 오래 막히지 않을 가능성이 큼. 본가 복귀보다 독립 유지 우선.</span>
+          </div>
+          <div class="timeline-row">
+            <span class="tl-period">2026</span>
+            <span class="tl-body">연애 체감 어려운 시기. 직업 기반을 다지는 준비 기간으로 활용. 자격증·경력 쌓기 좋은 구간.</span>
+          </div>
+          <div class="timeline-row">
+            <span class="tl-period">2027 ~ 2028</span>
+            <span class="tl-body">연애가 실제로 시작될 수 있는 첫 체감 구간. 직업 환경 변화 욕구 상승. 건강·체력 관리 선제 대응 필요.</span>
+          </div>
+          <div class="timeline-row">
+            <span class="tl-period">2029</span>
+            <span class="tl-body">직업·결혼·거주·가족 문제 중 하나가 크게 움직일 수 있는 해. 2027~2028년 연애 시작 시 결혼 또는 관계 변화로 나타날 수 있음. 결혼으로 쓰이지 않으면 직장·환경 변화로 나타날 가능성 큼.</span>
+          </div>
+        </div>
+
+        <h3>2. 우선순위 액션 가이드</h3>
+        <ul class="bullets">
+          <li><strong>단기 (~2026)</strong> — 직업 기반 안정 + 자격·경력 누적. 본가 거리 세팅 마무리. 큰 결정은 가급적 보류.</li>
+          <li><strong>중기 (2027 ~ 2028)</strong> — 연애·이직 흐름이 함께 들어오는 시기. 한 번에 다 결정하려 하지 말고 우선순위를 정해서 들어가기.</li>
+          <li><strong>장기 (2029 ~)</strong> — 결혼·환경 전환의 큰 분기점. 그때 후회 없으려면 그 직전 1년 동안 자기 기준을 정리해두는 게 핵심.</li>
+        </ul>
+
+        <h3>3. 건강·생활 관리 포인트</h3>
+        <p>2027~2029년 구간에서 건강이 함께 움직일 수 있어, <strong>그 전부터 검진·회복 루틴을 미리 잡아두는 것</strong>이 가장 큰 보험입니다. 무리해서 한 번에 다 바꾸려 하면 몸이 먼저 신호를 보낼 수 있어요. 작게라도 꾸준한 운동·수면 패턴이 이 차트에는 가장 효과적입니다.</p>
+      </div>
+      <div class="pn">08</div>
+    </section>
+
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.min.js"></script>
@@ -396,185 +659,103 @@
       ["Saturn","토성","♄","#111111"]
     ];
     const fallback = {
-      Sun: 282.8825, Moon: 345.0882, Mercury: 260.2127, Venus: 302.7461,
-      Mars: 312.7164, Jupiter: 322.7673, Saturn: 13.8313, Asc: 140.8572, MC: 44.5865
+      Sun:282.8825,Moon:345.0882,Mercury:260.2127,Venus:302.7461,
+      Mars:312.7164,Jupiter:322.7673,Saturn:13.8313,Asc:140.8572,MC:44.5865
     };
     function norm360(x){ let v=x%360; if(v<0)v+=360; return v; }
     function degToSign(d){
-      const sign = Math.floor(d/30);
-      const i = d - sign*30;
-      const deg = Math.floor(i);
-      const min = Math.floor((i-deg)*60);
+      const sign=Math.floor(d/30), i=d-sign*30, deg=Math.floor(i), min=Math.floor((i-deg)*60);
       return `${SIGNS[sign]} ${deg}°${String(min).padStart(2,"0")}'`;
     }
-    function computeAsc(lonEast, lat, dateUtc, A){
-      const t = A.MakeTime(dateUtc);
-      const gst = A.SiderealTime(t);
-      const lst = gst + lonEast/15;
-      const th = lst*15*Math.PI/180;
-      const eps = A.e_tilt(t).tobl*Math.PI/180;
-      const phi = lat*Math.PI/180;
-      const lam = Math.atan2(-Math.cos(th), Math.sin(th)*Math.cos(eps) + Math.tan(phi)*Math.sin(eps))*180/Math.PI;
+    function computeAsc(lonEast,lat,dateUtc,A){
+      const t=A.MakeTime(dateUtc), gst=A.SiderealTime(t), lst=gst+lonEast/15;
+      const th=lst*15*Math.PI/180, eps=A.e_tilt(t).tobl*Math.PI/180, phi=lat*Math.PI/180;
+      const lam=Math.atan2(-Math.cos(th),Math.sin(th)*Math.cos(eps)+Math.tan(phi)*Math.sin(eps))*180/Math.PI;
       return norm360(lam+180);
     }
-    function computeMc(lonEast, dateUtc, A){
-      const t = A.MakeTime(dateUtc);
-      const gst = A.SiderealTime(t);
-      const lst = (gst + lonEast/15) * 15 * Math.PI / 180;
-      const eps = A.e_tilt(t).tobl * Math.PI / 180;
-      const lam = Math.atan2(Math.sin(lst), Math.cos(lst) * Math.cos(eps)) * 180 / Math.PI;
-      return norm360(lam);
+    function computeMc(lonEast,dateUtc,A){
+      const t=A.MakeTime(dateUtc), gst=A.SiderealTime(t);
+      const lst=(gst+lonEast/15)*15*Math.PI/180, eps=A.e_tilt(t).tobl*Math.PI/180;
+      return norm360(Math.atan2(Math.sin(lst),Math.cos(lst)*Math.cos(eps))*180/Math.PI);
     }
     function computePos(){
-      const dateUtc = new Date("1998-01-03T11:27:00Z");
-      const cheongju = { lon: 127.4890, lat: 36.6424 };
-      if(!window.Astronomy) return { ...fallback, _mode:"fallback", _time:dateUtc.toISOString() };
+      const dateUtc=new Date("1998-01-03T11:27:00Z"), cheongju={lon:127.489,lat:36.6424};
+      if(!window.Astronomy) return {...fallback,_mode:"fallback",_time:dateUtc.toISOString()};
       try{
-        const out = {};
+        const out={};
         for(const [en] of PLANETS){
-          const v = Astronomy.GeoVector(en, dateUtc, true);
-          out[en] = norm360(Astronomy.Ecliptic(v).elon);
+          const v=Astronomy.GeoVector(en,dateUtc,true);
+          out[en]=norm360(Astronomy.Ecliptic(v).elon);
         }
-        out.Asc = computeAsc(cheongju.lon, cheongju.lat, dateUtc, Astronomy);
-        out.MC = computeMc(cheongju.lon, dateUtc, Astronomy);
-        out._mode = "calc";
-        out._time = dateUtc.toISOString();
+        out.Asc=computeAsc(cheongju.lon,cheongju.lat,dateUtc,Astronomy);
+        out.MC=computeMc(cheongju.lon,dateUtc,Astronomy);
+        out._mode="calc"; out._time=dateUtc.toISOString();
         return out;
-      }catch{
-        return { ...fallback, _mode:"fallback", _time:dateUtc.toISOString() };
-      }
+      }catch{ return {...fallback,_mode:"fallback",_time:dateUtc.toISOString()}; }
     }
     function draw(pos){
-      const svg = document.getElementById("wheel");
-      const NS = "http://www.w3.org/2000/svg";
-      const cx=160, cy=160, r1=146, r2=108, r3=66;
-      function e(tag, attrs){
-        const n = document.createElementNS(NS, tag);
-        for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v);
-        return n;
-      }
-      function pt(lon, r){
-        // Keep ASC at left; move signs in zodiacal order around the wheel.
-        const delta = norm360(lon - pos.Asc);
-        const a = (180 + delta) * Math.PI / 180;
-        return [cx + r * Math.cos(a), cy - r * Math.sin(a)];
-      }
-      const markerLayer = e("g", {});
-      const glyphLayer = e("g", {});
-      svg.innerHTML = "";
+      const svg=document.getElementById("wheel");
+      const NS="http://www.w3.org/2000/svg";
+      const cx=160,cy=160,r1=146,r2=108,r3=66;
+      function e(tag,attrs){ const n=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v); return n; }
+      function pt(lon,r){ const delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180; return [cx+r*Math.cos(a),cy-r*Math.sin(a)]; }
+      const markerLayer=e("g",{}), glyphLayer=e("g",{});
+      svg.innerHTML="";
       svg.appendChild(e("rect",{x:0,y:0,width:320,height:320,fill:"#fff"}));
       svg.appendChild(e("circle",{cx,cy,r:r1,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1.5"}));
       svg.appendChild(e("circle",{cx,cy,r:r2,fill:"#fff",stroke:"#d8d1c6","stroke-width":"1"}));
       svg.appendChild(e("circle",{cx,cy,r:r3,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1"}));
       for(let i=0;i<12;i++){
-        const lon = i*30;
-        const [x1,y1] = pt(lon,r1), [x2,y2]=pt(lon,r2);
+        const lon=i*30, [x1,y1]=pt(lon,r1), [x2,y2]=pt(lon,r2);
         svg.appendChild(e("line",{x1,y1,x2,y2,stroke:"#c8c0b4","stroke-width":"1"}));
-        const [tx,ty] = pt(lon+15,126);
-        const signGlyphs = ["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
-        const g = e("text",{x:tx,y:ty+1,"font-size":"12","text-anchor":"middle",fill:"#5f584f",class:"astro"});
-        g.textContent = signGlyphs[i];
-        svg.appendChild(g);
+        const [tx,ty]=pt(lon+15,126);
+        const signGlyphs=["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
+        const g=e("text",{x:tx,y:ty+1,"font-size":"12","text-anchor":"middle",fill:"#5f584f",class:"astro"});
+        g.textContent=signGlyphs[i]; svg.appendChild(g);
       }
-      const dsc = norm360(pos.Asc + 180);
-      const ic = norm360(pos.MC + 180);
-      const [ax,ay] = pt(pos.Asc,r1);
-      const [dx,dy] = pt(dsc,r1);
-      const [mx,my] = pt(pos.MC,r1);
-      const [ix,iy] = pt(ic,r1);
+      const dsc=norm360(pos.Asc+180), ic=norm360(pos.MC+180);
+      const [ax,ay]=pt(pos.Asc,r1), [dx,dy]=pt(dsc,r1), [mx,my]=pt(pos.MC,r1), [ix,iy]=pt(ic,r1);
       svg.appendChild(e("line",{x1:ax,y1:ay,x2:dx,y2:dy,stroke:"#2f6d4f","stroke-width":"2.2"}));
       svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:"#345d8c","stroke-width":"2.2"}));
-      const ascTxt = e("text",{x:ax-18,y:ay-4,"font-size":"10",fill:"#2f6d4f"}); ascTxt.textContent="ASC";
-      const dscTxt = e("text",{x:dx+4,y:dy-4,"font-size":"10",fill:"#2f6d4f"}); dscTxt.textContent="DSC";
-      const mcTxt = e("text",{x:mx-7,y:my-6,"font-size":"10",fill:"#345d8c"}); mcTxt.textContent="MC";
-      const icTxt = e("text",{x:ix-5,y:iy+12,"font-size":"10",fill:"#345d8c"}); icTxt.textContent="IC";
+      const ascTxt=e("text",{x:ax-18,y:ay-4,"font-size":"10",fill:"#2f6d4f"}); ascTxt.textContent="ASC";
+      const dscTxt=e("text",{x:dx+4,y:dy-4,"font-size":"10",fill:"#2f6d4f"}); dscTxt.textContent="DSC";
+      const mcTxt=e("text",{x:mx-7,y:my-6,"font-size":"10",fill:"#345d8c"}); mcTxt.textContent="MC";
+      const icTxt=e("text",{x:ix-5,y:iy+12,"font-size":"10",fill:"#345d8c"}); icTxt.textContent="IC";
       svg.appendChild(ascTxt); svg.appendChild(dscTxt); svg.appendChild(mcTxt); svg.appendChild(icTxt);
-
-      // Render glyphs only: same longitude, radial tiering for conjunction clusters.
-      const items = PLANETS.map(([en, ko, sym, color]) => {
-        const lon = norm360(pos[en]);
-        const delta = norm360(lon - pos.Asc);
-        const a = (180 + delta) * Math.PI / 180;
-        return { en, ko, sym, color, lon, a };
-      }).sort((a, b) => a.lon - b.lon);
-
-      // Place every glyph on the exact longitude ray. If glyph boxes collide,
-      // try a different radius on the same ray; no angular shifting.
-      const placed = [];
-      const glyphSize = 22;
-      const candidateRadii = [96, 72, 50, 28, 106, 84, 60, 38];
-      function boxAt(it, r) {
-        const gx = cx + r * Math.cos(it.a);
-        const gy = cy - r * Math.sin(it.a);
-        return { x: gx - glyphSize / 2, y: gy - glyphSize / 2, w: glyphSize, h: glyphSize, gx, gy };
+      const items=PLANETS.map(([en,ko,sym,color])=>{
+        const lon=norm360(pos[en]), delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180;
+        return {en,ko,sym,color,lon,a};
+      }).sort((a,b)=>a.lon-b.lon);
+      const placed=[], glyphSize=22, candidateRadii=[96,72,50,28,106,84,60,38];
+      function boxAt(it,r){ const gx=cx+r*Math.cos(it.a), gy=cy-r*Math.sin(it.a); return {x:gx-glyphSize/2,y:gy-glyphSize/2,w:glyphSize,h:glyphSize,gx,gy}; }
+      function overlaps(a,b){ return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y; }
+      function nearestGap(it){ let gap=999; for(const other of items){ if(other===it) continue; let d=Math.abs(it.lon-other.lon); if(d>180)d=360-d; gap=Math.min(gap,d); } return gap; }
+      items.sort((a,b)=>nearestGap(a)-nearestGap(b));
+      for(const it of items){
+        let chosen=null;
+        for(const r of candidateRadii){ const box=boxAt(it,r); if(placed.every(p=>!overlaps(box,p.box))){ chosen=box; break; } }
+        if(!chosen) chosen=boxAt(it,28);
+        placed.push({box:chosen});
+        const [markX,markY]=pt(it.lon,r2);
+        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"3.4",fill:it.color,stroke:"#fff","stroke-width":"0.8"}));
+        const g=e("text",{x:chosen.gx,y:chosen.gy+6,"font-size":"22","text-anchor":"middle",fill:it.color,class:"astro"});
+        g.textContent=it.sym; glyphLayer.appendChild(g);
       }
-      function overlaps(a, b) {
-        return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
-      }
-      function nearestGap(it) {
-        let gap = 999;
-        for (const other of items) {
-          if (other === it) continue;
-          let d = Math.abs(it.lon - other.lon);
-          if (d > 180) d = 360 - d;
-          gap = Math.min(gap, d);
-        }
-        return gap;
-      }
-      items.sort((a,b) => nearestGap(a) - nearestGap(b));
-
-      for (const it of items) {
-        let chosen = null;
-        for (const r of candidateRadii) {
-          const box = boxAt(it, r);
-          if (placed.every(p => !overlaps(box, p.box))) {
-            chosen = box;
-            break;
-          }
-        }
-        if (!chosen) chosen = boxAt(it, 28);
-        placed.push({ box: chosen });
-
-        const [markX, markY] = pt(it.lon, r2);
-        markerLayer.appendChild(e("circle",{
-          cx:markX,
-          cy:markY,
-          r:"3.4",
-          fill:it.color,
-          stroke:"#fff",
-          "stroke-width":"0.8"
-        }));
-
-        const g = e("text",{
-          x:chosen.gx, y:chosen.gy+6,
-          "font-size":"22",
-          "text-anchor":"middle",
-          fill:it.color,
-          class:"astro"
-        });
-        g.textContent = it.sym;
-        glyphLayer.appendChild(g);
-      }
-      svg.appendChild(markerLayer);
-      svg.appendChild(glyphLayer);
+      svg.appendChild(markerLayer); svg.appendChild(glyphLayer);
     }
     function table(pos){
-      const box = document.getElementById("planetTable");
-      box.innerHTML = "";
-      const add = (k,v)=>{
-        const d = document.createElement("div");
-        d.className = "card";
-        d.innerHTML = `<span class="label">${k}</span><strong>${v}</strong>`;
+      const box=document.getElementById("planetTable");
+      box.innerHTML="";
+      const add=(k,v)=>{
+        const d=document.createElement("div"); d.className="planet-card";
+        d.innerHTML=`<div class="name">${k}</div><div class="val">${v}</div>`;
         box.appendChild(d);
       };
-      for(const [en,ko,sym] of PLANETS) add(`${sym} ${ko}`, degToSign(pos[en]));
-      add("ASC", degToSign(pos.Asc));
-      add("MC", degToSign(pos.MC));
-      document.getElementById("calcMeta").textContent = `mode=${pos._mode} | utc=${pos._time} | location=Cheongju(127.489E, 36.642N)`;
+      for(const [en,ko,sym] of PLANETS) add(`${sym} ${ko}`,degToSign(pos[en]));
+      add("ASC",degToSign(pos.Asc)); add("MC",degToSign(pos.MC));
+      document.getElementById("calcMeta").textContent=`mode=${pos._mode} · utc=${pos._time} · cheongju 127.489E / 36.642N`;
     }
-    const pos = computePos();
-    draw(pos);
-    table(pos);
+    const pos=computePos(); draw(pos); table(pos);
   </script>
 </body>
 </html>
