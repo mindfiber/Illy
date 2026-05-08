@@ -20,7 +20,7 @@ from rectification_engine.pd_morinus import (
 ROOT = Path(__file__).resolve().parents[1]
 IN_DEFAULT = ROOT / "input" / "regression_cases.json"
 OUT_DIR = ROOT / "output"
-_MORINUS_COEFF = 365.2422 / 360.0  # Naibod static key: ti(years) = arc * COEFF
+NAI = 0.9855555556
 ASPECTS = ["Conjunctio", "Sextil", "Quadrat", "Trigon", "Oppositio"]
 SIGNS = [1, -1]
 PLANETS = {"Sun", "Moon", "Mercury", "Venus", "Mars", "Jupiter", "Saturn"}
@@ -81,18 +81,8 @@ def admission_month_tier(ev: Ev, pd_date: date) -> int:
     return 3
 
 
-def arc_date(birth_date: date, arc: float) -> date:
-    """Morinus Naibod static-key date formula: convDate(birth)+ti, revConvDate uses 365."""
-    ti_years = arc * _MORINUS_COEFF
-    birth_dec = birth_date.year + ((birth_date - date(birth_date.year, 1, 1)).days) / 365.2422
-    event_dec = birth_dec + ti_years
-    ev_year = int(event_dec)
-    frac = event_dec - ev_year
-    d_idx = int(frac * 365.0)
-    try:
-        return date(ev_year, 1, 1) + timedelta(days=d_idx)
-    except (ValueError, OverflowError):
-        return date(ev_year, 12, 31)
+def arc_date(bdt: datetime, arc: float) -> date:
+    return (bdt + timedelta(days=(arc / NAI) * 365.2422 - 2.15)).date()
 
 
 def allowed(et: str) -> set[str]:
@@ -184,6 +174,7 @@ def full_key(p: str, a: str, s: str, d: str, dt: date) -> tuple[str, str, str, s
 
 
 def generate_pd_hits(b: BirthData) -> list[tuple[str, str, str, str, float, date]]:
+    bdt = datetime.combine(b.birth_date, b.birth_time)
     pts = expand_antiscia(calculate_natal_points(b)).copy()
     pts["DSC"] = NatalPoint("DSC", norm360(pts["ASC"].longitude + 180), point_type="angle")
     ps: list[str] = []
@@ -204,13 +195,13 @@ def generate_pd_hits(b: BirthData) -> list[tuple[str, str, str, str, float, date
                     if promissor_can_cast_aspect(p):
                         try:
                             c = zodiacal_promissor_aspect_to_significator(b, p, a, sg, s, pts)
-                            gen.append((p, a, s, c.direction, c.arc, arc_date(b.birth_date, c.arc)))
+                            gen.append((p, a, s, c.direction, c.arc, arc_date(bdt, c.arc)))
                         except Exception:
                             pass
                     if significator_can_receive_aspected(s):
                         try:
                             c = zodiacal_promissor_to_significator_aspect(b, p, s, a, sg, pts)
-                            gen.append((p, a, s, c.direction, c.arc, arc_date(b.birth_date, c.arc)))
+                            gen.append((p, a, s, c.direction, c.arc, arc_date(bdt, c.arc)))
                         except Exception:
                             pass
         for a in ASPECTS:
@@ -219,7 +210,7 @@ def generate_pd_hits(b: BirthData) -> list[tuple[str, str, str, str, float, date
                 for angle in ("ASC", "MC"):
                     try:
                         c = zodiacal_promissor_aspect_to_angle(b, p, a, sg, angle, pts)
-                        gen.append((p, a, angle, c.direction, c.arc, arc_date(b.birth_date, c.arc)))
+                        gen.append((p, a, angle, c.direction, c.arc, arc_date(bdt, c.arc)))
                     except Exception:
                         pass
     dmap: dict[tuple[str, str, str, str, str], tuple[str, str, str, str, float, date]] = {}
