@@ -203,7 +203,7 @@
     .lead {
       font-size: 16px; font-weight: 500;
       color: var(--ink); line-height: 1.55;
-      margin: 8mm 0 3mm;
+      margin: 4mm 0 3mm;
       letter-spacing: -0.01em;
     }
     .lead-body {
@@ -416,7 +416,7 @@
       <div class="body-bottom">
         <div class="wheel-wrap">
           <div class="wheel-box">
-            <svg id="wheel" viewBox="0 0 320 320" aria-label="장인희 님 네이탈 차트"></svg>
+            <img id="wheel" src="chart.svg" alt="장인희 님 네이탈 차트">
           </div>
           <div class="planet-panel">
             <div id="planetTable" class="planet-grid"></div>
@@ -693,56 +693,6 @@
         return out;
       }catch{ return {...fallback,_mode:"fallback",_time:dateUtc.toISOString()}; }
     }
-    function draw(pos){
-      const svg=document.getElementById("wheel");
-      const NS="http://www.w3.org/2000/svg";
-      const cx=160,cy=160,r1=146,r2=108,r3=66;
-      function e(tag,attrs){ const n=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v); return n; }
-      function pt(lon,r){ const delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180; return [cx+r*Math.cos(a),cy-r*Math.sin(a)]; }
-      const markerLayer=e("g",{}), glyphLayer=e("g",{});
-      svg.innerHTML="";
-      svg.appendChild(e("rect",{x:0,y:0,width:320,height:320,fill:"#fff"}));
-      svg.appendChild(e("circle",{cx,cy,r:r1,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1.5"}));
-      svg.appendChild(e("circle",{cx,cy,r:r2,fill:"#fff",stroke:"#d8d1c6","stroke-width":"1"}));
-      svg.appendChild(e("circle",{cx,cy,r:r3,fill:"#faf7f2",stroke:"#d8d1c6","stroke-width":"1"}));
-      for(let i=0;i<12;i++){
-        const lon=i*30, [x1,y1]=pt(lon,r1), [x2,y2]=pt(lon,r2);
-        svg.appendChild(e("line",{x1,y1,x2,y2,stroke:"#c8c0b4","stroke-width":"1"}));
-        const [tx,ty]=pt(lon+15,126);
-        const signGlyphs=["♈","♉","♊","♋","♌","♍","♎","♏","♐","♑","♒","♓"];
-        const g=e("text",{x:tx,y:ty+1,"font-size":"12","text-anchor":"middle",fill:"#5f584f",class:"astro"});
-        g.textContent=signGlyphs[i]; svg.appendChild(g);
-      }
-      const dsc=norm360(pos.Asc+180), ic=norm360(pos.MC+180);
-      const [ax,ay]=pt(pos.Asc,r1), [dx,dy]=pt(dsc,r1), [mx,my]=pt(pos.MC,r1), [ix,iy]=pt(ic,r1);
-      svg.appendChild(e("line",{x1:ax,y1:ay,x2:dx,y2:dy,stroke:"#2f6d4f","stroke-width":"2.2"}));
-      svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:"#345d8c","stroke-width":"2.2"}));
-      const ascTxt=e("text",{x:ax-18,y:ay-4,"font-size":"10",fill:"#2f6d4f"}); ascTxt.textContent="ASC";
-      const dscTxt=e("text",{x:dx+4,y:dy-4,"font-size":"10",fill:"#2f6d4f"}); dscTxt.textContent="DSC";
-      const mcTxt=e("text",{x:mx-7,y:my-6,"font-size":"10",fill:"#345d8c"}); mcTxt.textContent="MC";
-      const icTxt=e("text",{x:ix-5,y:iy+12,"font-size":"10",fill:"#345d8c"}); icTxt.textContent="IC";
-      svg.appendChild(ascTxt); svg.appendChild(dscTxt); svg.appendChild(mcTxt); svg.appendChild(icTxt);
-      const items=PLANETS.map(([en,ko,sym,color])=>{
-        const lon=norm360(pos[en]), delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180;
-        return {en,ko,sym,color,lon,a};
-      }).sort((a,b)=>a.lon-b.lon);
-      const placed=[], glyphSize=22, candidateRadii=[96,72,50,28,106,84,60,38];
-      function boxAt(it,r){ const gx=cx+r*Math.cos(it.a), gy=cy-r*Math.sin(it.a); return {x:gx-glyphSize/2,y:gy-glyphSize/2,w:glyphSize,h:glyphSize,gx,gy}; }
-      function overlaps(a,b){ return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y; }
-      function nearestGap(it){ let gap=999; for(const other of items){ if(other===it) continue; let d=Math.abs(it.lon-other.lon); if(d>180)d=360-d; gap=Math.min(gap,d); } return gap; }
-      items.sort((a,b)=>nearestGap(a)-nearestGap(b));
-      for(const it of items){
-        let chosen=null;
-        for(const r of candidateRadii){ const box=boxAt(it,r); if(placed.every(p=>!overlaps(box,p.box))){ chosen=box; break; } }
-        if(!chosen) chosen=boxAt(it,28);
-        placed.push({box:chosen});
-        const [markX,markY]=pt(it.lon,r2);
-        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"3.4",fill:it.color,stroke:"#fff","stroke-width":"0.8"}));
-        const g=e("text",{x:chosen.gx,y:chosen.gy+6,"font-size":"22","text-anchor":"middle",fill:it.color,class:"astro"});
-        g.textContent=it.sym; glyphLayer.appendChild(g);
-      }
-      svg.appendChild(markerLayer); svg.appendChild(glyphLayer);
-    }
     function table(pos){
       const box=document.getElementById("planetTable");
       box.innerHTML="";
@@ -755,7 +705,7 @@
       add("ASC",degToSign(pos.Asc)); add("MC",degToSign(pos.MC));
       document.getElementById("calcMeta").textContent=`mode=${pos._mode} · utc=${pos._time} · cheongju 127.489E / 36.642N`;
     }
-    const pos=computePos(); draw(pos); table(pos);
+    const pos=computePos(); table(pos);
   </script>
 </body>
 </html>
