@@ -435,7 +435,7 @@
           <div class="wheel-box">
             <div class="wheel-stage">
               <img class="wheel-bg" src="wheel.svg" alt="제군들 님 네이탈 차트 휠">
-              <svg class="wheel-overlay" viewBox="0 0 761.42 761.42"></svg>
+              <svg class="wheel-overlay" viewBox="0 0 761.24 761.24"></svg>
             </div>
           </div>
           <div class="planet-panel">
@@ -734,16 +734,15 @@
       return {...MORINUS, _mode:"morinus", _time:"1991-05-21T04:41:00Z"};
     }
     function draw(pos){
-      // wheel.svg 분석 결과: 양자리 0°가 math 45°(1-2시) 위치, 황도 진행 CW.
-      // ASC 사인을 9시(math 180°)로 보내려면: rotate(225 - L_asc) CW.
-      // (방향은 wheel.svg 자체가 CW라 수정 불가 — scaleX 미러 시 라벨 뒤집힘)
+      // wheel.svg: 양자리 0° at math 180° (LEFT, 9시), 황도 CCW (표준 서양).
+      // ASC 사인을 9시로 보내려면 CW로 ASC만큼 회전.
       const bg=document.querySelector(".wheel-bg");
-      bg.style.transform=`rotate(${(225 - pos.Asc + 360) % 360}deg)`;
+      bg.style.transform=`rotate(${pos.Asc}deg)`;
 
       // 오버레이 SVG: 행성 마커 + ASC/MC 축
       const svg=document.querySelector(".wheel-overlay");
       const NS="http://www.w3.org/2000/svg";
-      const cx=380.71, cy=380.71;            // wheel.svg 중심
+      const cx=380.62, cy=380.62;            // wheel.svg 중심
       const rInner=205;                       // wheel.svg 내부 원 반지름
       const rPlanetMark=200;                  // 행성 마커 (내부 원 바로 안쪽)
       const rPlanetGlyph=170;                 // 행성 글리프 (마커 안쪽)
