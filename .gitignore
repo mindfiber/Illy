@@ -28,3 +28,10 @@ dist/
 build/
 __pycache__/
 *.pyc
+
+# Local Morinus installation and generated rectification artifacts
+MorinusWinEng2.7/
+rectification-tool/output/
+rectification-tool/input/tmp_*.json
+rectification-tool/tools/tmp_*.py
+rectification-tool/tools/pyinstxtractor*.py
