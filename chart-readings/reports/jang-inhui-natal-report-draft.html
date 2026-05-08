@@ -299,11 +299,25 @@
     .wheel-wrap { margin: 0; }
     .wheel-box {
       width: 100%;
-      max-width: 100mm;
+      max-width: 110mm;
       margin: 0 auto;
       background: #fff;
     }
-    #wheel { width: 100%; height: auto; display: block; }
+    .wheel-stage {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+    .wheel-bg, .wheel-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .wheel-bg {
+      transform-origin: center;
+      transition: none;
+    }
     .planet-panel { margin-top: 4mm; padding-top: 5mm; border-top: 1px solid var(--line); }
     .planet-grid {
       display: grid;
@@ -417,7 +431,10 @@
       <div class="body-bottom">
         <div class="wheel-wrap">
           <div class="wheel-box">
-            <svg id="wheel" viewBox="0 0 823 881" aria-label="장인희 님 네이탈 차트"></svg>
+            <div class="wheel-stage">
+              <img class="wheel-bg" src="wheel.svg" alt="장인희 님 네이탈 차트 휠">
+              <svg class="wheel-overlay" viewBox="0 0 761.42 761.42"></svg>
+            </div>
           </div>
           <div class="planet-panel">
             <div id="planetTable" class="planet-grid"></div>
@@ -694,109 +711,37 @@
         return out;
       }catch{ return {...fallback,_mode:"fallback",_time:dateUtc.toISOString()}; }
     }
-    // 12사인 심볼 path 데이터 (chart.svg에서 추출, 좌표계 viewBox 0 0 823 881)
-    // 각 심볼은 chart.svg의 원래 위치(cx, cy)에서 그려져 있고, 동적으로 회전된 섹터 위치로 translate.
-    const SIGN_SYMBOLS=[
-      // 0: 양자리 (Aries)
-      {s:"M367.153 146.259C376.335 146.259 383.608 161.375 383.608 181.435C383.608 161.375 391.312 146.259 400.492 146.259M383.788 199.514L383.614 181.316",cx:383.5,cy:172.5},
-      // 1: 황소자리 (Taurus)
-      {s:"M479.89 177.7C483.703 176.442 489.086 177.332 493.766 180.034C502.785 185.241 502.435 195.65 511.454 200.859C520.504 206.083 529.62 200.738 538.67 205.96C543.351 208.663 546.813 212.878 547.63 216.81M511.544 200.663C519.495 205.253 522.235 215.481 517.645 223.435C513.053 231.386 502.825 234.126 494.874 229.536C486.923 224.946 484.183 214.715 488.773 206.764C493.363 198.813 503.593 196.071 511.544 200.663Z",cx:513.0,cy:206.0},
-      // 2: 쌍둥이자리 (Gemini)
-      {s:"M593.548 313.392L630.563 292.021M599.53 323.757L636.547 302.386M647.19 311.907C642.029 309.088 636.871 303.798 633.29 297.6C629.711 291.398 627.709 284.286 627.847 278.407M601.871 338.071C602.01 332.19 600.01 325.078 596.431 318.878C592.85 312.678 587.691 307.39 582.531 304.571",cx:614.9,cy:308.2},
-      // 3: 게자리 (Cancer)
-      {s:"M632.455 471.119C627.35 464.831 624.667 452.537 624.667 439.822C624.667 427.107 627.94 415.092 633.043 408.804M667.796 412.528C672.902 418.816 675.584 431.111 675.584 443.826C675.584 456.541 672.311 468.558 667.206 474.844M661.182 463.822C661.182 472.242 654.315 479.11 645.895 479.11C640.106 479.11 635.052 475.861 632.457 471.099C631.277 468.934 630.607 466.454 630.607 463.822C630.607 455.402 637.475 448.535 645.895 448.535C654.315 448.535 661.182 455.402 661.182 463.822ZM639.069 419.825C639.069 411.407 645.937 404.538 654.357 404.538C660.145 404.538 665.2 407.784 667.794 412.548C668.972 414.715 669.644 417.195 669.644 419.825C669.644 428.245 662.777 435.113 654.357 435.113C645.937 435.113 639.069 428.245 639.069 419.825Z",cx:650.1,cy:441.8},
-      // 4: 사자자리 (Leo)
-      {s:"M574.551 576.344C583.844 572.102 593.173 575.694 602.402 586.037C634.748 622.295 647.302 576.496 614.98 575.373C611.815 575.262 607.789 573.322 604.17 571.474M623.592 566.23C619.669 573.025 610.928 575.366 604.133 571.443C597.338 567.521 594.995 558.779 598.92 551.984C602.842 545.19 611.584 542.848 618.379 546.769C625.174 550.691 627.515 559.433 623.592 566.228V566.23Z",cx:610.9,cy:574.5},
-      // 5: 처녀자리 (Virgo)
-      {s:"M478.868 658.354C482.394 657.394 486.561 659.47 488.262 662.437L508.675 697.831C510.754 701.446 515.802 702.8 519.724 700.532C523.649 698.268 525.002 693.219 522.735 689.295M522.865 689.222C525.132 693.145 530.18 694.497 534.102 692.233C538.025 689.968 539.377 684.92 537.298 681.306L514.018 640.972M499.772 649.196L523.237 689.841M490.028 651.863C486.103 654.129 479.879 680.438 484.731 688.96C486.795 692.647 491.841 693.999 495.766 691.735C499.688 689.471 501.043 684.423 498.776 680.498",cx:511.5,cy:670.4},
-      // 6: 천칭자리 (Libra)
-      {s:"M421.907 693.911L397.598 693.964C398.065 695.499 398.4 697.021 398.4 698.69C398.4 708.106 390.72 715.784 381.302 715.784C371.884 715.784 364.206 708.106 364.206 698.69C364.206 697.021 364.472 695.499 364.942 693.964L340.538 693.911M421.907 683.731H341.113",cx:381.5,cy:699.7},
-      // 7: 전갈자리 (Scorpio)
-      {s:"M241.099 687.832C238.835 691.755 233.787 693.107 229.862 690.843C225.94 688.576 224.587 683.528 226.675 679.921L247.249 644.302M241.229 687.905C238.965 691.83 240.318 696.878 244.24 699.142C248.165 701.406 253.213 700.054 255.301 696.444L278.593 656.116M264.347 647.892L240.881 688.537",cx:252.7,cy:670.0},
-      // 8: 사수자리 (Sagittarius) — stroke + filled triangles
-      {s:"M246.996 644.791C248.843 641.59 248.273 637.439 245.676 634.866 M171.91 554.708C167.716 558.281 164.428 563.767 162.767 569.961C161.107 576.156 161.213 582.55 163.058 587.742 M185.678 576.461L118.348 558.42",
-       f:"M237.23 626.486L241.544 639.256L250.033 630.695L237.23 626.486Z M106.839 555.336L116.938 564.292L120.063 552.629L106.839 555.336Z",
-       cx:182.0,cy:597.5},
-      // 9: 염소자리 (Capricorn)
-      {s:"M128.173 456.019C104.604 457.516 97.5559 462.139 91.3251 467.804M128.155 435.359C117.907 441.487 94.6332 429.564 94.6332 446.59C94.6332 460.349 119.193 455.508 128.175 456.019M124.026 435.176C135.459 441.901 145.156 436.432 149.696 454.902M118.158 422.891C118.158 416.142 122.462 410.641 127.739 410.641C131.367 410.641 134.534 413.242 136.159 417.061C136.899 418.796 137.32 420.783 137.32 422.893C137.32 429.639 133.016 435.143 127.739 435.143C122.462 435.143 118.158 429.639 118.158 422.893V422.891Z",cx:121.0,cy:438.6},
-      // 10: 물병자리 (Aquarius)
-      {s:"M145.993 352.328C144.736 348.515 145.625 343.132 148.328 338.452C153.535 329.433 163.944 329.785 169.153 320.763C174.377 311.716 169.029 302.597 174.254 293.549C176.956 288.869 181.172 285.405 185.103 284.587M136.203 346.676C134.946 342.863 135.835 337.48 138.538 332.8C143.745 323.779 154.154 324.131 159.362 315.112C164.587 306.064 159.239 296.946 164.463 287.898C167.166 283.217 171.382 279.753 175.313 278.938",cx:160.7,cy:317.8},
-      // 11: 물고기자리 (Pisces)
-      {s:"M274.194 221.578C267.065 219.391 259.03 211.984 253.511 202.425C247.991 192.866 245.595 182.204 247.266 174.938M249.894 235.606C251.564 228.34 249.167 217.677 243.65 208.119C238.131 198.56 230.094 191.153 222.966 188.966M233.49 214.885L263.895 197.331",cx:248.5,cy:207.3}
-    ];
-    const SIGN_NAMES_KO=SIGNS.map(s=>s+"자리");
-
     function draw(pos){
-      const svg=document.getElementById("wheel");
+      // wheel.svg를 ASC만큼 CW 회전 → ASC가 9시 방향으로
+      const bg=document.querySelector(".wheel-bg");
+      bg.style.transform=`rotate(${pos.Asc}deg)`;
+
+      // 오버레이 SVG: 행성 마커 + ASC/MC 축
+      const svg=document.querySelector(".wheel-overlay");
       const NS="http://www.w3.org/2000/svg";
-      const cx=382.522, cy=440.524;          // chart.svg 좌표계 중심
-      const rOut=379, rMid=327, rInn=206;    // chart.svg 3중 원 반지름
-      const rName=353;                        // 사인이름 위치 (외곽 링 중앙)
-      const rSym=266;                         // 사인심볼 위치 (내부 링 중앙)
-      const rPlanetMark=185;                  // 행성 마커 위치 (내부 원 바로 안쪽)
-      const stroke="#A7A9AC", sw=2.5, accent="#688ecd";
+      const cx=380.71, cy=380.71;            // wheel.svg 중심
+      const rInner=205;                       // wheel.svg 내부 원 반지름
+      const rPlanetMark=200;                  // 행성 마커 (내부 원 바로 안쪽)
+      const rPlanetGlyph=170;                 // 행성 글리프 (마커 안쪽)
+      const accent="#688ecd";
 
       function e(tag,attrs){ const n=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v); return n; }
-      // 사용자 ASC를 9시(math 180°)로 회전한 자연스 좌표
+      // ASC를 9시(math 180°)로 만든 좌표계 그대로
       function pt(lon,r){ const delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180; return [cx+r*Math.cos(a),cy-r*Math.sin(a)]; }
 
       svg.innerHTML="";
-      svg.appendChild(e("rect",{x:0,y:0,width:823,height:881,fill:"#ffffff"}));
 
-      // 3중 원
-      svg.appendChild(e("circle",{cx,cy,r:rOut,fill:"#ffffff",stroke,"stroke-width":sw}));
-      svg.appendChild(e("circle",{cx,cy,r:rMid,fill:"none",stroke,"stroke-width":sw}));
-      svg.appendChild(e("circle",{cx,cy,r:rInn,fill:"none",stroke,"stroke-width":sw}));
-
-      // 12 섹터 디바이더 (외곽 → 내부)
-      for(let i=0;i<12;i++){
-        const lon=i*30, [x1,y1]=pt(lon,rOut), [x2,y2]=pt(lon,rInn);
-        svg.appendChild(e("line",{x1,y1,x2,y2,stroke,"stroke-width":sw}));
-      }
-
-      // 사인 심볼 (chart.svg path 추출 → 회전된 섹터 위치로 translate)
-      for(let i=0;i<12;i++){
-        const sectorLon=i*30+15;
-        const [tx,ty]=pt(sectorLon,rSym);
-        const sign=SIGN_SYMBOLS[i];
-        const dx=tx-sign.cx, dy=ty-sign.cy;
-        // 스트로크 path
-        svg.appendChild(e("path",{
-          d:sign.s,
-          transform:`translate(${dx} ${dy})`,
-          fill:"none", stroke:"#1a1a1a", "stroke-width":"3",
-          "stroke-linecap":"round","stroke-linejoin":"round"
-        }));
-        // 사수자리 화살촉 등 fill path (있을 때만)
-        if(sign.f){
-          svg.appendChild(e("path",{
-            d:sign.f,
-            transform:`translate(${dx} ${dy})`,
-            fill:"#1a1a1a",stroke:"none",
-            "fill-rule":"evenodd","clip-rule":"evenodd"
-          }));
-        }
-      }
-
-      // 한글 사인 이름 (외곽 링)
-      for(let i=0;i<12;i++){
-        const sectorLon=i*30+15;
-        const [tx,ty]=pt(sectorLon,rName);
-        const t=e("text",{x:tx,y:ty+8,"font-size":"22","text-anchor":"middle",fill:"#1a1a1a","font-weight":"400"});
-        t.textContent=SIGN_NAMES_KO[i]; svg.appendChild(t);
-      }
-
-      // ASC / MC 축
+      // ASC / MC 축 (점선) — 내부 원 안쪽에서만 그어 wheel.svg와 겹치지 않게
       const dsc=norm360(pos.Asc+180), ic=norm360(pos.MC+180);
-      const [ax,ay]=pt(pos.Asc,rOut), [dxc,dyc]=pt(dsc,rOut);
-      const [mx,my]=pt(pos.MC,rOut), [ix,iy]=pt(ic,rOut);
-      svg.appendChild(e("line",{x1:ax,y1:ay,x2:dxc,y2:dyc,stroke:accent,"stroke-width":"3","stroke-dasharray":"10 7"}));
-      svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:accent,"stroke-width":"3","stroke-dasharray":"10 7"}));
-      const labelStyle={"font-size":"18","fill":accent,"font-weight":"500"};
-      const ascTxt=e("text",{x:ax-32,y:ay+6,...labelStyle}); ascTxt.textContent="ASC";
-      const dscTxt=e("text",{x:dxc+8,y:dyc+6,...labelStyle}); dscTxt.textContent="DSC";
-      const mcTxt=e("text",{x:mx-15,y:my-10,...labelStyle}); mcTxt.textContent="MC";
-      const icTxt=e("text",{x:ix-8,y:iy+22,...labelStyle}); icTxt.textContent="IC";
+      const [ax,ay]=pt(pos.Asc,rInner), [dxc,dyc]=pt(dsc,rInner);
+      const [mx,my]=pt(pos.MC,rInner), [ix,iy]=pt(ic,rInner);
+      svg.appendChild(e("line",{x1:ax,y1:ay,x2:dxc,y2:dyc,stroke:accent,"stroke-width":"2","stroke-dasharray":"6 5"}));
+      svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:accent,"stroke-width":"2","stroke-dasharray":"6 5"}));
+      const labelStyle={"font-size":"14","fill":accent,"font-weight":"500"};
+      const ascTxt=e("text",{x:ax+10,y:ay+5,...labelStyle}); ascTxt.textContent="ASC";
+      const dscTxt=e("text",{x:dxc-32,y:dyc+5,...labelStyle}); dscTxt.textContent="DSC";
+      const mcTxt=e("text",{x:mx-10,y:my+18,...labelStyle}); mcTxt.textContent="MC";
+      const icTxt=e("text",{x:ix-6,y:iy-8,...labelStyle}); icTxt.textContent="IC";
       svg.appendChild(ascTxt); svg.appendChild(dscTxt); svg.appendChild(mcTxt); svg.appendChild(icTxt);
 
       // 행성 마커 + 글리프 (충돌 회피)
@@ -805,7 +750,7 @@
         const lon=norm360(pos[en]), delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180;
         return {en,ko,sym,color,lon,a};
       }).sort((a,b)=>a.lon-b.lon);
-      const placed=[], glyphSize=44, candidateRadii=[155, 130, 105, 80];
+      const placed=[], glyphSize=32, candidateRadii=[rPlanetGlyph, rPlanetGlyph-30, rPlanetGlyph-60, rPlanetGlyph+15];
       function boxAt(it,r){ const gx=cx+r*Math.cos(it.a), gy=cy-r*Math.sin(it.a); return {x:gx-glyphSize/2,y:gy-glyphSize/2,w:glyphSize,h:glyphSize,gx,gy}; }
       function overlaps(a,b){ return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y; }
       function nearestGap(it){ let gap=999; for(const other of items){ if(other===it) continue; let d=Math.abs(it.lon-other.lon); if(d>180)d=360-d; gap=Math.min(gap,d); } return gap; }
@@ -813,13 +758,13 @@
       for(const it of items){
         let chosen=null;
         for(const r of candidateRadii){ const box=boxAt(it,r); if(placed.every(p=>!overlaps(box,p.box))){ chosen=box; break; } }
-        if(!chosen) chosen=boxAt(it,130);
+        if(!chosen) chosen=boxAt(it,rPlanetGlyph);
         placed.push({box:chosen});
-        // 마커: 내부 원 안쪽에 컬러 도트
+        // 마커 도트: 내부 원 안쪽
         const [markX,markY]=pt(it.lon,rPlanetMark);
-        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"6",fill:it.color,stroke:"#fff","stroke-width":"2"}));
-        // 행성 글리프
-        const g=e("text",{x:chosen.gx,y:chosen.gy+12,"font-size":"32","text-anchor":"middle",fill:it.color,"class":"astro","font-weight":"500"});
+        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"4.5",fill:it.color,stroke:"#fff","stroke-width":"1.6"}));
+        // 글리프 텍스트
+        const g=e("text",{x:chosen.gx,y:chosen.gy+8,"font-size":"24","text-anchor":"middle",fill:it.color,"class":"astro","font-weight":"500"});
         g.textContent=it.sym; glyphLayer.appendChild(g);
       }
       svg.appendChild(markerLayer); svg.appendChild(glyphLayer);
