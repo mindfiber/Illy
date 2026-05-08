@@ -734,9 +734,11 @@
       return {...MORINUS, _mode:"morinus", _time:"1991-05-21T04:41:00Z"};
     }
     function draw(pos){
-      // wheel.svg를 ASC만큼 CW 회전 → ASC가 9시 방향으로
+      // wheel.svg는 처녀자리(L=150~180)가 lower-left에 있는 상태로 설계됨.
+      // 표준 서양 차트(ASC=9시, 황도 CCW)에 맞추려면 CCW 방향 회전 + 30° 보정
+      // (sector 중앙이 아닌 sector 시작 위치에 라벨이 있는 것을 보정).
       const bg=document.querySelector(".wheel-bg");
-      bg.style.transform=`rotate(${pos.Asc}deg)`;
+      bg.style.transform=`rotate(${-pos.Asc + 30}deg)`;
 
       // 오버레이 SVG: 행성 마커 + ASC/MC 축
       const svg=document.querySelector(".wheel-overlay");
