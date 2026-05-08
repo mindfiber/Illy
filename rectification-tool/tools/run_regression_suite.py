@@ -104,12 +104,65 @@ def allowed(et: str) -> set[str]:
     return BENEFICS | MALEFICS
 
 
+# G_GENERAL: 길성 일반 이벤트 (admission, employment_start, etc.)
+G_GENERAL = {
+    "university_admission", "graduate_school_admission",
+    "employment_start", "first_employment",
+    "promotion_award", "career_honor_event", "graduation",
+}
+
+
 def pa_ap(p: str, s: str) -> bool:
+    """Major direction: planet-angle, angle-planet, planet-LoF, LoF-planet."""
     pA = any(a in p for a in ANGLE)
     sA = any(a in s for a in ANGLE)
     pP = any(x in p for x in PLANETS)
     sP = any(x in s for x in PLANETS)
     return (pP and sA and not pA and not sP) or (sP and pA and not sA and not pP)
+
+
+def involves_moon(p: str, s: str) -> bool:
+    return "Moon" in p or "Moon" in s
+
+
+def aspect_quality(p: str, s: str) -> str:
+    """Quality of a planet-planet PD relationship for minor classification.
+    Returns one of: benefic_benefic, malefic_malefic, benefic_malefic, mixed.
+    """
+    p_b = any(x in p for x in BENEFICS)
+    p_m = any(x in p for x in MALEFICS)
+    s_b = any(x in s for x in BENEFICS)
+    s_m = any(x in s for x in MALEFICS)
+    if p_b and s_b:
+        return "benefic_benefic"
+    if p_m and s_m:
+        return "malefic_malefic"
+    if (p_b and s_m) or (p_m and s_b):
+        return "benefic_malefic"
+    return "mixed"
+
+
+def classify_match(ev_type: str, hits_major: list, hits_minor: list) -> tuple[str, list, float]:
+    """Apply event-category matching rules. Returns (kind, picked_hits, weight_factor).
+    kind: "" (no match), "Major", "Minor·Single", "Minor·Cluster", "Minor·Equal"
+    """
+    # Phase 1: G_GENERAL only
+    if ev_type in G_GENERAL:
+        if hits_major:
+            return "Major", hits_major, 1.0
+        # Minor Single: planet-planet benefic_benefic 1+
+        bb = [h for h in hits_minor if aspect_quality(h[0], h[2]) == "benefic_benefic"]
+        if bb:
+            return "Minor·Single", bb, 0.7
+        # Minor Cluster: any 3+ relevant minor PD
+        if len(hits_minor) >= 3:
+            return "Minor·Cluster", hits_minor, 0.7
+        return "", [], 0.0
+
+    # Other categories: keep current major-only behavior for Phase 1
+    if hits_major:
+        return "Major", hits_major, 1.0
+    return "", [], 0.0
 
 
 def promissor_can_cast_aspect(p: str) -> bool:
@@ -264,23 +317,34 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
         for ev in events:
             ws, we = win(ev)
             aset = allowed(ev.et)
-            hits = [g for g in gen if pa_ap(g[0], g[2]) and ws <= g[5] <= we and any(p in g[0] or p in g[2] for p in aset)]
-            hits.sort(key=lambda x: (admission_month_tier(ev, x[5]), x[5], abs(x[4])))
-            ok = bool(hits)
+            in_window = [g for g in gen if ws <= g[5] <= we]
+            relevant = [g for g in in_window if any(p in g[0] or p in g[2] for p in aset)]
+            # Major: pa_ap pass and not Moon-only-major (Moon→angle reserved for transition events)
+            hits_major = [g for g in relevant if pa_ap(g[0], g[2]) and not involves_moon(g[0], g[2])]
+            # Minor: planet-planet (NOT pa_ap), exclude moon-moon cases
+            hits_minor = [g for g in relevant if not pa_ap(g[0], g[2])]
+            # Sort by tier/date/arc
+            sort_key = lambda x: (admission_month_tier(ev, x[5]), x[5], abs(x[4]))
+            hits_major.sort(key=sort_key)
+            hits_minor.sort(key=sort_key)
+
+            kind, picked_pool, weight_factor = classify_match(ev.et, hits_major, hits_minor)
+            ok = bool(picked_pool)
             if ev.et in MAND and not ok:
                 mand_ok = False
             if ok:
-                picked = hits[:3]
-                matched.append((ev, picked))
+                picked = picked_pool[:3]
+                matched.append((ev, picked, kind, weight_factor))
                 if ev.et == "university_admission":
                     uni_tiers.append(admission_month_tier(ev, picked[0][5]))
-            for h in hits[:3]:
+            for h in picked_pool[:3]:
                 audit_rows.append(
                     {
                         "case_id": case["case_id"],
                         "time": hhmm,
                         "event_id": ev.id,
                         "event_type": ev.et,
+                        "match_kind": kind,
                         "promissor": normalize_point_name(h[0]),
                         "aspect": h[1],
                         "significator": normalize_point_name(h[2]),
@@ -290,12 +354,15 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
                     }
                 )
         score = 0.0
-        for ev, hs in matched:
+        major_count = 0
+        for ev, hs, kind, weight_factor in matched:
             base = event_base_weight(ev)
             base -= 0.5 * admission_month_tier(ev, hs[0][5])
             base *= career_weight(ev)
-            score += base
-        score += sum(0.25 * len(hs) for _, hs in matched)
+            score += base * weight_factor
+            if kind in ("Major", "Minor·Equal"):
+                major_count += 1
+        score += sum(0.25 * len(hs) for _, hs, _, _ in matched)
         max_uni_tier = max(uni_tiers) if uni_tiers else 9
         min_uni_tier = min(uni_tiers) if uni_tiers else 9
         score_rows.append(
@@ -303,13 +370,21 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
                 "case_id": case["case_id"],
                 "time": hhmm,
                 "score": round(score, 4),
+                "major_count": major_count,
                 "matched_count": len(matched),
                 "mandatory_ok": mand_ok,
                 "min_uni_tier": min_uni_tier,
                 "max_uni_tier": max_uni_tier,
             }
         )
-    score_rows.sort(key=lambda x: (not x["mandatory_ok"], x["max_uni_tier"], x["min_uni_tier"], -x["score"], x["time"]))
+    score_rows.sort(key=lambda x: (
+        not x["mandatory_ok"],
+        -x["major_count"],          # Major/Minor·Equal 매칭 많은 후보 우선
+        x["max_uni_tier"],
+        x["min_uni_tier"],
+        -x["score"],
+        x["time"],
+    ))
     return score_rows, audit_rows
 
 
@@ -445,6 +520,7 @@ def main() -> None:
     for case in cfg["cases"]:
         # 절대 규칙: 최종 후보 순위는 항상 자체 PD 엔진 결과로 산출한다.
         # Morinus 파일은 엔진 오류 검증/고도화용 감사 자료로만 사용한다.
+        events_for_case = parse_events(case["events"])
         ranked, audits = eval_case(case)
         main_ranked = [r for r in ranked if bool(r.get("mandatory_ok", False))]
         top3 = main_ranked[:3]
@@ -514,15 +590,26 @@ def main() -> None:
             picked_for_time = picked_by_time.get(r["time"], [])
             if picked_for_time:
                 for p in picked_for_time:
+                    kind_tag = f"[{p.get('match_kind', 'Major')}] " if p.get("match_kind") else ""
                     report_lines.append(
                         "  - "
                         f"{p['event_id']}:{p['event_type']} | "
-                        f"{p.get('mode', '')} {p['promissor']} {p['aspect']} {p['significator']} {p['direction']} | "
+                        f"{kind_tag}{p['promissor']} {p['aspect']} {p['significator']} {p['direction']} | "
                         f"{p['pd_date']}"
                     )
             else:
                 report_lines.append("  - 없음")
-            report_lines.append("미싱/필수미싱 상세는 후보별 이벤트 매칭 산출 단계에서 보강 필요")
+            # 미싱 이벤트 상세 (IMMUTABLE_RULES #4)
+            matched_event_ids = {p["event_id"] for p in picked_for_time}
+            missing = [e for e in events_for_case if e.id not in matched_event_ids]
+            if missing:
+                report_lines.append("미싱 이벤트:")
+                for e in missing:
+                    is_mand = e.et in MAND
+                    flag = "  [필수미싱]" if is_mand else ""
+                    report_lines.append(f"  - {e.id}:{e.et} ({e.y}-{e.m:02d}){flag}")
+            mand_missing = [e for e in missing if e.et in MAND]
+            report_lines.append(f"필수 미싱 여부: {'있음 (' + ', '.join(e.id for e in mand_missing) + ')' if mand_missing else '없음'}")
             report_lines.append("")
 
     with top_path.open("w", encoding="utf-8-sig", newline="") as f:
@@ -532,10 +619,11 @@ def main() -> None:
         for row in top_rows:
             w.writerow({k: row.get(k, "") for k in top_fields})
     with audit_path.open("w", encoding="utf-8-sig", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["case_id", "time", "event_id", "event_type", "mode", "promissor", "aspect", "significator", "direction", "engine_arc", "pd_date", "raw_line"])
+        w = csv.DictWriter(f, fieldnames=["case_id", "time", "event_id", "event_type", "match_kind", "mode", "promissor", "aspect", "significator", "direction", "engine_arc", "pd_date", "raw_line"])
         w.writeheader()
         for row in audit_rows_all:
             row2 = dict(row)
+            row2.setdefault("match_kind", "Major")
             row2.setdefault("mode", "")
             row2.setdefault("raw_line", "")
             row2.setdefault("engine_arc", "")
