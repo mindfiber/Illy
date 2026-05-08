@@ -111,34 +111,6 @@ G_GENERAL = {
     "promotion_award", "career_honor_event", "graduation",
 }
 
-# K_HARSH: 흉성 이벤트 (수술, 사망, 상실 등)
-K_HARSH = {
-    "surgery_medical_major", "mental_health_crisis",
-    "family_death", "loss_general",
-    "employment_end", "dropout",
-}
-
-
-def k_precision_bonus(ev: Ev, picked: list) -> float:
-    """K_HARSH 이벤트의 day-precision Major 매칭이 이벤트 일자에 근접하면 가산점.
-    임상상 수술/사망은 day 단위로 정확하게 발생하므로 강한 신호.
-    """
-    if ev.et not in K_HARSH:
-        return 0.0
-    if ev.precision != "day" or ev.d is None:
-        return 0.0
-    if not picked:
-        return 0.0
-    target = date(ev.y, ev.m, ev.d)
-    best_off = min(abs((h[5] - target).days) for h in picked)
-    if best_off <= 7:
-        return 1.5
-    if best_off <= 15:
-        return 1.0
-    if best_off <= 30:
-        return 0.5
-    return 0.0
-
 
 def pa_ap(p: str, s: str) -> bool:
     """Major direction: planet-angle, angle-planet, planet-LoF, LoF-planet."""
@@ -334,121 +306,80 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
     score_rows: list[dict[str, Any]] = []
     audit_rows: list[dict[str, Any]] = []
 
-    # Per-candidate state: store both Major-only and Major+Minor matching results
-    candidates: list[dict[str, Any]] = []
-
     for mm in range(sM, eM + 1):
         hh, mi = mm // 60, mm % 60
         hhmm = f"{hh:02d}:{mi:02d}"
         b = BirthData(date(y, m, d), time(hh, mi, birth_second), place)
         gen = generate_pd_hits(b)
-        per_event: list[dict[str, Any]] = []
+        matched = []
+        mand_ok = True
+        uni_tiers = []
         for ev in events:
             ws, we = win(ev)
             aset = allowed(ev.et)
             in_window = [g for g in gen if ws <= g[5] <= we]
             relevant = [g for g in in_window if any(p in g[0] or p in g[2] for p in aset)]
+            # Major: pa_ap pass and not Moon-only-major (Moon→angle reserved for transition events)
             hits_major = [g for g in relevant if pa_ap(g[0], g[2]) and not involves_moon(g[0], g[2])]
+            # Minor: planet-planet (NOT pa_ap), exclude moon-moon cases
             hits_minor = [g for g in relevant if not pa_ap(g[0], g[2])]
+            # Sort by tier/date/arc
             sort_key = lambda x: (admission_month_tier(ev, x[5]), x[5], abs(x[4]))
             hits_major.sort(key=sort_key)
             hits_minor.sort(key=sort_key)
+
             kind, picked_pool, weight_factor = classify_match(ev.et, hits_major, hits_minor)
-            per_event.append({
-                "ev": ev,
-                "kind": kind,
-                "picked": picked_pool[:3],
-                "weight_factor": weight_factor,
-                "hits_major": hits_major,
-                "hits_minor": hits_minor,
-            })
-        candidates.append({
-            "time": hhmm,
-            "per_event": per_event,
-        })
-
-    # Case-level mandatory determination
-    # Major-strict: mandatory ok requires every mandatory event to have a Major match.
-    # Fallback: if NO candidate satisfies major-strict, allow Minor matches to count
-    # for mandatory_ok (e.g. illy chart with minor-heavy early period).
-    def has_major_for_event(per_event_entry) -> bool:
-        ev = per_event_entry["ev"]
-        if ev.et not in MAND:
-            return True  # not mandatory, doesn't gate
-        return bool(per_event_entry["hits_major"])
-
-    def mandatory_ok_strict(cand) -> bool:
-        return all(has_major_for_event(pe) for pe in cand["per_event"])
-
-    def mandatory_ok_any(cand) -> bool:
-        # Any kind of match (Major / Minor·Single / Minor·Cluster) for each mandatory event
-        for pe in cand["per_event"]:
-            if pe["ev"].et in MAND and not pe["picked"]:
-                return False
-        return True
-
-    any_strict_ok = any(mandatory_ok_strict(c) for c in candidates)
-
-    # Now build score_rows with case-level fallback applied
-    for cand in candidates:
-        hhmm = cand["time"]
-        matched = [(pe["ev"], pe["picked"], pe["kind"], pe["weight_factor"])
-                   for pe in cand["per_event"] if pe["picked"]]
+            ok = bool(picked_pool)
+            if ev.et in MAND and not ok:
+                mand_ok = False
+            if ok:
+                picked = picked_pool[:3]
+                matched.append((ev, picked, kind, weight_factor))
+                if ev.et == "university_admission":
+                    uni_tiers.append(admission_month_tier(ev, picked[0][5]))
+            for h in picked_pool[:3]:
+                audit_rows.append(
+                    {
+                        "case_id": case["case_id"],
+                        "time": hhmm,
+                        "event_id": ev.id,
+                        "event_type": ev.et,
+                        "match_kind": kind,
+                        "promissor": normalize_point_name(h[0]),
+                        "aspect": h[1],
+                        "significator": normalize_point_name(h[2]),
+                        "direction": h[3],
+                        "engine_arc": round(float(h[4]), 6),
+                        "pd_date": h[5].isoformat(),
+                    }
+                )
         score = 0.0
         major_count = 0
-        uni_tiers: list[int] = []
         for ev, hs, kind, weight_factor in matched:
             base = event_base_weight(ev)
             base -= 0.5 * admission_month_tier(ev, hs[0][5])
             base *= career_weight(ev)
             score += base * weight_factor
-            # K_HARSH 정확 매칭 가산점 (day-precision Major만 인정)
-            if kind == "Major":
-                score += k_precision_bonus(ev, hs)
             if kind in ("Major", "Minor·Equal"):
                 major_count += 1
-            if ev.et == "university_admission":
-                uni_tiers.append(admission_month_tier(ev, hs[0][5]))
         score += sum(0.25 * len(hs) for _, hs, _, _ in matched)
         max_uni_tier = max(uni_tiers) if uni_tiers else 9
         min_uni_tier = min(uni_tiers) if uni_tiers else 9
-
-        if any_strict_ok:
-            mand_ok_final = mandatory_ok_strict(cand)
-        else:
-            mand_ok_final = mandatory_ok_any(cand)
-
-        # Audit rows
-        for pe in cand["per_event"]:
-            for h in pe["picked"]:
-                audit_rows.append({
-                    "case_id": case["case_id"],
-                    "time": hhmm,
-                    "event_id": pe["ev"].id,
-                    "event_type": pe["ev"].et,
-                    "match_kind": pe["kind"],
-                    "promissor": normalize_point_name(h[0]),
-                    "aspect": h[1],
-                    "significator": normalize_point_name(h[2]),
-                    "direction": h[3],
-                    "engine_arc": round(float(h[4]), 6),
-                    "pd_date": h[5].isoformat(),
-                })
-        score_rows.append({
-            "case_id": case["case_id"],
-            "time": hhmm,
-            "score": round(score, 4),
-            "major_count": major_count,
-            "matched_count": len(matched),
-            "mandatory_ok": mand_ok_final,
-            "min_uni_tier": min_uni_tier,
-            "max_uni_tier": max_uni_tier,
-            "fallback_minor": not any_strict_ok,
-        })
-
+        score_rows.append(
+            {
+                "case_id": case["case_id"],
+                "time": hhmm,
+                "score": round(score, 4),
+                "major_count": major_count,
+                "matched_count": len(matched),
+                "mandatory_ok": mand_ok,
+                "min_uni_tier": min_uni_tier,
+                "max_uni_tier": max_uni_tier,
+            }
+        )
     score_rows.sort(key=lambda x: (
         not x["mandatory_ok"],
-        -x["major_count"],
+        -x["major_count"],          # Major/Minor·Equal 매칭 많은 후보 우선
         x["max_uni_tier"],
         x["min_uni_tier"],
         -x["score"],
