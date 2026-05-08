@@ -5,7 +5,6 @@ import json
 import re
 from collections import defaultdict
 from dataclasses import dataclass
-from datetime import date
 from pathlib import Path
 
 
@@ -44,44 +43,6 @@ def load_standardized_events(path: str | Path) -> list[StandardizedEvent]:
                 )
             )
     return rows
-
-
-def parse_year_month(date_text: str) -> tuple[int | None, int | None]:
-    years = re.findall(r"(?:19|20)\d{2}", date_text or "")
-    # month-like token, first one wins
-    months = re.findall(r"(?<!\d)(1[0-2]|0?[1-9])(?!\d)", date_text or "")
-    year = int(years[0]) if years else None
-    month = int(months[0]) if months else None
-    return year, month
-
-
-def _parse_range_days(text: str) -> int | None:
-    nums = re.findall(r"(19\d{2}|20\d{2})\D*(\d{1,2})\D*(\d{1,2})", text or "")
-    if len(nums) < 2:
-        return None
-    try:
-        y1, m1, d1 = [int(x) for x in nums[0]]
-        y2, m2, d2 = [int(x) for x in nums[1]]
-        s = date(y1, m1, d1)
-        e = date(y2, m2, d2)
-    except ValueError:
-        return None
-    if e < s:
-        return None
-    return (e - s).days
-
-
-def _career_weight(raw_fragment: str, event_type: str) -> float:
-    if event_type not in {"career_honor_event", "employment_start", "first_employment"}:
-        return 1.0
-    days = _parse_range_days(raw_fragment)
-    if days is None:
-        return 1.0
-    if days >= 365:
-        return 1.0
-    if days >= 180:
-        return 0.6
-    return 0.3
 
 
 def to_matching_payload(events: list[StandardizedEvent], tolerance_months: int = 2) -> dict:
@@ -137,6 +98,14 @@ def to_matching_payload(events: list[StandardizedEvent], tolerance_months: int =
     return {"version": 1, "records": records}
 
 
+def parse_year_month(date_text: str) -> tuple[int | None, int | None]:
+    years = re.findall(r"(?:19|20)\d{2}", date_text or "")
+    months = re.findall(r"(\d{1,2})월", date_text or "")
+    year = int(years[0]) if years else None
+    month = int(months[0]) if months else None
+    return year, month
+
+
 def write_payload_json(events_csv_path: str | Path, output_json_path: str | Path, tolerance_months: int = 2) -> None:
     events = load_standardized_events(events_csv_path)
     payload = to_matching_payload(events, tolerance_months=tolerance_months)
@@ -158,7 +127,7 @@ def infer_is_major_k_event(raw_fragment: str, source_column: str) -> bool:
     if source_column != "K":
         return False
     text = raw_fragment or ""
-    major_keywords = ["큰", "대수술", "전신마취", "중환자실", "골절", "압박", "교통사고", "외상", "수술", "절개"]
+    major_keywords = ["사망", "대수술", "전신마취", "중환자실", "골절", "전복", "교통사고", "화상", "수술", "절개"]
     return any(k in text for k in major_keywords)
 
 
@@ -190,7 +159,6 @@ def build_candidate_match_template(
                 "is_marriage": event_type in {"marriage", "marriage_merged"},
                 "is_childbirth": event_type == "childbirth",
                 "child_indicator": infer_child_indicator(raw_fragment) if event_type == "childbirth" else "",
-                "weight": _career_weight(raw_fragment, event_type),
             }
         )
 
@@ -204,7 +172,7 @@ def build_candidate_match_template(
                         **e,
                         "matched": False,
                         "abs_month_diff": 999.0,
-                        "weight": float(e.get("weight", 1.0)),
+                        "weight": 1.0,
                     }
                     for e in event_rows
                 ],

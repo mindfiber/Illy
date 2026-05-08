@@ -15,7 +15,6 @@ ASPECT_DEGREES = {
     "Trigon": 120.0,
     "Oppositio": 180.0,
 }
-ANGLE_POINTS = {"ASC", "MC", "LoF", "DSC"}
 
 
 @dataclass(frozen=True)
@@ -27,10 +26,6 @@ class DirectionArc:
 
 def morinus_create_arc(raw_arc: float) -> DirectionArc:
     arc = raw_arc
-    if arc <= -360.0:
-        arc += 360.0
-    if arc >= 360.0:
-        arc -= 360.0
     direct = True
     if arc < 0.0:
         arc *= -1.0
@@ -127,18 +122,13 @@ def _context(birth: BirthData):
     return jd_ut, armc, obliquity
 
 
-def zodiacal_promissor_aspect_to_angle(
+def zodiacal_promissor_aspect_to_mc(
     birth: BirthData,
     promissor_name: str,
     aspect_name: str,
     aspect_sign: int,
-    angle_name: str,
     points: dict[str, NatalPoint] | None = None,
-    use_point_latitudes: bool = False,
 ) -> DirectionArc:
-    angle = canonical_point_name(angle_name)
-    if angle not in {"ASC", "MC"}:
-        raise ValueError(f"Unsupported angle significator: {angle_name!r}")
     points = points or expand_antiscia(calculate_natal_points(birth))
     promissor = points[promissor_name]
 
@@ -146,36 +136,8 @@ def zodiacal_promissor_aspect_to_angle(
 
     aspect = ASPECT_DEGREES[aspect_name] * aspect_sign
     aspect_longitude = norm360(promissor.longitude + aspect)
-    prom_lat = promissor.latitude if use_point_latitudes else 0.0
-    ra, decl = ra_decl_from_ecliptic(aspect_longitude, prom_lat, obliquity)
-    if angle == "MC":
-        return morinus_create_arc(ra - armc)
-
-    val = math.tan(math.radians(birth.place.latitude)) * math.tan(math.radians(decl))
-    if abs(val) > 1.0:
-        raise ValueError("Promissor cannot be directed to ASC at this latitude.")
-    adlat = math.degrees(math.asin(val))
-    aoasc = norm360(armc + 90.0)
-    return morinus_create_arc((ra - adlat) - aoasc)
-
-
-def zodiacal_promissor_aspect_to_mc(
-    birth: BirthData,
-    promissor_name: str,
-    aspect_name: str,
-    aspect_sign: int,
-    points: dict[str, NatalPoint] | None = None,
-    use_point_latitudes: bool = False,
-) -> DirectionArc:
-    return zodiacal_promissor_aspect_to_angle(
-        birth,
-        promissor_name,
-        aspect_name,
-        aspect_sign,
-        "MC",
-        points,
-        use_point_latitudes,
-    )
+    ra, _decl = ra_decl_from_ecliptic(aspect_longitude, 0.0, obliquity)
+    return morinus_create_arc(ra - armc)
 
 
 def zodiacal_promissor_to_significator_aspect(
@@ -185,16 +147,8 @@ def zodiacal_promissor_to_significator_aspect(
     aspect_name: str,
     aspect_sign: int,
     points: dict[str, NatalPoint] | None = None,
-    use_point_latitudes: bool = False,
 ) -> DirectionArc:
     points = points or expand_antiscia(calculate_natal_points(birth))
-    # Morinus rule-lock:
-    # "Promissors to Aspects of Significators" does not apply when the
-    # significator itself is an angle point (ASC/MC/LoF/DSC).
-    sig_canonical = canonical_point_name(significator_name)
-    if sig_canonical in ANGLE_POINTS:
-        raise ValueError(f"Angle significator is not allowed for promissor->significator-aspect mode: {significator_name}")
-
     promissor_name = _morinus_promissor_name(
         promissor_name,
         aspect_name=aspect_name,
@@ -204,20 +158,16 @@ def zodiacal_promissor_to_significator_aspect(
     significator = points[significator_name]
     _jd_ut, armc, obliquity = _context(birth)
 
-    prom_lat = promissor.latitude if use_point_latitudes else 0.0
-    sig_lat = significator.latitude if use_point_latitudes else 0.0
-    ra_prom, decl_prom = ra_decl_from_ecliptic(promissor.longitude, prom_lat, obliquity)
+    ra_prom, decl_prom = ra_decl_from_ecliptic(promissor.longitude, 0.0, obliquity)
     significator_longitude = norm360(significator.longitude + ASPECT_DEGREES[aspect_name] * aspect_sign)
-    arc = _zodiacal_arc_to_significator_longitude(
+    return _zodiacal_arc_to_significator_longitude(
         birth=birth,
         ra_prom=ra_prom,
         decl_prom=decl_prom,
         significator_longitude=significator_longitude,
-        significator_latitude=sig_lat,
         armc=armc,
         obliquity=obliquity,
     )
-    return arc
 
 
 def zodiacal_promissor_aspect_to_significator(
@@ -227,7 +177,6 @@ def zodiacal_promissor_aspect_to_significator(
     aspect_sign: int,
     significator_name: str,
     points: dict[str, NatalPoint] | None = None,
-    use_point_latitudes: bool = False,
 ) -> DirectionArc:
     points = points or expand_antiscia(calculate_natal_points(birth))
     promissor_name = _morinus_promissor_name(
@@ -240,19 +189,15 @@ def zodiacal_promissor_aspect_to_significator(
     _jd_ut, armc, obliquity = _context(birth)
 
     promissor_longitude = norm360(promissor.longitude + ASPECT_DEGREES[aspect_name] * aspect_sign)
-    prom_lat = promissor.latitude if use_point_latitudes else 0.0
-    sig_lat = significator.latitude if use_point_latitudes else 0.0
-    ra_prom, decl_prom = ra_decl_from_ecliptic(promissor_longitude, prom_lat, obliquity)
-    arc = _zodiacal_arc_to_significator_longitude(
+    ra_prom, decl_prom = ra_decl_from_ecliptic(promissor_longitude, 0.0, obliquity)
+    return _zodiacal_arc_to_significator_longitude(
         birth=birth,
         ra_prom=ra_prom,
         decl_prom=decl_prom,
         significator_longitude=significator.longitude,
-        significator_latitude=sig_lat,
         armc=armc,
         obliquity=obliquity,
     )
-    return arc
 
 
 def _zodiacal_arc_to_significator_longitude(
@@ -260,7 +205,6 @@ def _zodiacal_arc_to_significator_longitude(
     ra_prom: float,
     decl_prom: float,
     significator_longitude: float,
-    significator_latitude: float,
     armc: float,
     obliquity: float,
 ) -> DirectionArc:
@@ -271,7 +215,7 @@ def _zodiacal_arc_to_significator_longitude(
 
     md_sig, sa_sig, above_horizon, eastern = _zodiacal_md_sa(
         significator_longitude,
-        significator_latitude,
+        0.0,
         armc,
         birth.place.latitude,
         obliquity,
@@ -307,9 +251,8 @@ def canonical_point_name(name: str) -> str:
     aliases = {
         "Asc": "ASC",
         "ASC": "ASC",
-        "Dsc": "LoF",
-        "Desc": "LoF",
-        "DSC": "LoF",
+        "Dsc": "DSC",
+        "Desc": "DSC",
         "MC": "MC",
         "LoF": "LoF",
         "Fortuna": "LoF",
@@ -344,8 +287,6 @@ def best_zodiacal_planet_hit_match(
                     points=points,
                 )
             else:
-                if canonical_point_name(hit.significator) in ANGLE_POINTS:
-                    continue
                 calc = zodiacal_promissor_to_significator_aspect(
                     birth=birth,
                     promissor_name=hit.promissor,

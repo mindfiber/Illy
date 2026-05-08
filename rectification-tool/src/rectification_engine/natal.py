@@ -94,13 +94,11 @@ def expand_antiscia(points: dict[str, NatalPoint]) -> dict[str, NatalPoint]:
         expanded[f"Antiscion {point.name}"] = NatalPoint(
             name=f"Antiscion {point.name}",
             longitude=antiscia(point.longitude),
-            latitude=point.latitude,
             point_type=f"{point.point_type}_antiscia",
         )
         expanded[f"Contraantiscion {point.name}"] = NatalPoint(
             name=f"Contraantiscion {point.name}",
             longitude=contra_antiscia(point.longitude),
-            latitude=point.latitude,
             point_type=f"{point.point_type}_contra_antiscia",
         )
     return expanded

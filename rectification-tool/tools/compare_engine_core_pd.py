@@ -8,7 +8,7 @@ from rectification_engine.morinus_parser import parse_morinus_pd_file
 from rectification_engine.natal import calculate_natal_points, expand_antiscia
 from rectification_engine.pd_morinus import (
     canonical_point_name,
-    zodiacal_promissor_aspect_to_angle,
+    zodiacal_promissor_aspect_to_mc,
     zodiacal_promissor_aspect_to_significator,
     zodiacal_promissor_to_significator_aspect,
 )
@@ -41,13 +41,12 @@ def try_calc(birth: BirthData, points: dict, hit, sign: int):
     significator = canonical_point_name(hit.significator)
     if promissor not in points or significator not in points:
         return None
-    if significator in {"ASC", "MC"} and hit.aspect_side == "promissor":
-        return zodiacal_promissor_aspect_to_angle(
+    if significator == "MC" and hit.aspect_side == "promissor":
+        return zodiacal_promissor_aspect_to_mc(
             birth=birth,
             promissor_name=promissor,
             aspect_name=hit.aspect,
             aspect_sign=sign,
-            angle_name=significator,
             points=points,
         )
     if hit.aspect_side == "promissor":
@@ -108,8 +107,7 @@ def main() -> None:
     diffs.sort()
     report = {
         "core_rows": total,
-        "matched_rows": len(diffs),
-        "direction_match_ratio": round(dir_ok / len(diffs), 6) if diffs else 0.0,
+        "direction_match_ratio": round(dir_ok / total, 6) if total else 0.0,
         "arc_diff_p50": diffs[int(len(diffs) * 0.5)] if diffs else None,
         "arc_diff_p95": diffs[int(len(diffs) * 0.95)] if diffs else None,
         "arc_diff_max": max(diffs) if diffs else None,
