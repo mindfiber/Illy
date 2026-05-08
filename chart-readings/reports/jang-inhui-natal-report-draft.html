@@ -737,11 +737,11 @@
       const [mx,my]=pt(pos.MC,rInner), [ix,iy]=pt(ic,rInner);
       svg.appendChild(e("line",{x1:ax,y1:ay,x2:dxc,y2:dyc,stroke:accent,"stroke-width":"2","stroke-dasharray":"6 5"}));
       svg.appendChild(e("line",{x1:mx,y1:my,x2:ix,y2:iy,stroke:accent,"stroke-width":"2","stroke-dasharray":"6 5"}));
-      const labelStyle={"font-size":"14","fill":accent,"font-weight":"500"};
-      const ascTxt=e("text",{x:ax+10,y:ay+5,...labelStyle}); ascTxt.textContent="ASC";
-      const dscTxt=e("text",{x:dxc-32,y:dyc+5,...labelStyle}); dscTxt.textContent="DSC";
-      const mcTxt=e("text",{x:mx-10,y:my+18,...labelStyle}); mcTxt.textContent="MC";
-      const icTxt=e("text",{x:ix-6,y:iy-8,...labelStyle}); icTxt.textContent="IC";
+      const labelStyle={"font-size":"20","fill":accent,"font-weight":"500"};
+      const ascTxt=e("text",{x:ax+12,y:ay+7,...labelStyle}); ascTxt.textContent="ASC";
+      const dscTxt=e("text",{x:dxc-46,y:dyc+7,...labelStyle}); dscTxt.textContent="DSC";
+      const mcTxt=e("text",{x:mx-14,y:my+24,...labelStyle}); mcTxt.textContent="MC";
+      const icTxt=e("text",{x:ix-8,y:iy-12,...labelStyle}); icTxt.textContent="IC";
       svg.appendChild(ascTxt); svg.appendChild(dscTxt); svg.appendChild(mcTxt); svg.appendChild(icTxt);
 
       // 행성 마커 + 글리프 (충돌 회피)
@@ -750,7 +750,7 @@
         const lon=norm360(pos[en]), delta=norm360(lon-pos.Asc), a=(180+delta)*Math.PI/180;
         return {en,ko,sym,color,lon,a};
       }).sort((a,b)=>a.lon-b.lon);
-      const placed=[], glyphSize=32, candidateRadii=[rPlanetGlyph, rPlanetGlyph-30, rPlanetGlyph-60, rPlanetGlyph+15];
+      const placed=[], glyphSize=56, candidateRadii=[rPlanetGlyph, rPlanetGlyph-40, rPlanetGlyph-80, rPlanetGlyph+25];
       function boxAt(it,r){ const gx=cx+r*Math.cos(it.a), gy=cy-r*Math.sin(it.a); return {x:gx-glyphSize/2,y:gy-glyphSize/2,w:glyphSize,h:glyphSize,gx,gy}; }
       function overlaps(a,b){ return a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y; }
       function nearestGap(it){ let gap=999; for(const other of items){ if(other===it) continue; let d=Math.abs(it.lon-other.lon); if(d>180)d=360-d; gap=Math.min(gap,d); } return gap; }
@@ -762,9 +762,9 @@
         placed.push({box:chosen});
         // 마커 도트: 내부 원 안쪽
         const [markX,markY]=pt(it.lon,rPlanetMark);
-        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"4.5",fill:it.color,stroke:"#fff","stroke-width":"1.6"}));
+        markerLayer.appendChild(e("circle",{cx:markX,cy:markY,r:"7",fill:it.color,stroke:"#fff","stroke-width":"2"}));
         // 글리프 텍스트
-        const g=e("text",{x:chosen.gx,y:chosen.gy+8,"font-size":"24","text-anchor":"middle",fill:it.color,"class":"astro","font-weight":"500"});
+        const g=e("text",{x:chosen.gx,y:chosen.gy+15,"font-size":"42","text-anchor":"middle",fill:it.color,"class":"astro","font-weight":"500"});
         g.textContent=it.sym; glyphLayer.appendChild(g);
       }
       svg.appendChild(markerLayer); svg.appendChild(glyphLayer);
