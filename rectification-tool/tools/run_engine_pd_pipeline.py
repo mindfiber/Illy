@@ -136,12 +136,21 @@ def calc_hit(birth: BirthData, points: dict, hit):
     return best
 
 
-def arc_to_date(birth_dt: datetime, arc: float) -> date:
-    years = arc / NAIBOD
-    days = years * 365.2422
-    # Calibrated on 03:30~04:00 Morinus rows: floor with -2.15d offset yields
-    # the highest exact-date match ratio.
-    return (birth_dt + timedelta(days=days - 2.15)).date()
+_MORINUS_COEFF = 365.2422 / 360.0  # Naibod COEFF from Morinus primdirs staticData
+
+
+def arc_to_date(birth_date: date, arc: float) -> date:
+    """Morinus Naibod static-key: convDate(birth)+ti, revConvDate uses 365."""
+    ti_years = arc * _MORINUS_COEFF
+    birth_dec = birth_date.year + (birth_date - date(birth_date.year, 1, 1)).days / 365.2422
+    event_dec = birth_dec + ti_years
+    ev_year = int(event_dec)
+    frac = event_dec - ev_year
+    d_idx = int(frac * 365.0)
+    try:
+        return date(ev_year, 1, 1) + timedelta(days=d_idx)
+    except (ValueError, OverflowError):
+        return date(ev_year, 12, 31)
 
 
 def is_angle_row(row: dict) -> bool:
@@ -187,7 +196,6 @@ def main() -> None:
     for key in keys:
         hhmm = f"{key[:2]}:{key[2:]}:25"
         birth = BirthData.from_strings("1981.10.13", hhmm, "morinus_0345")
-        birth_dt = datetime.combine(birth.birth_date, birth.birth_time)
         points = expand_antiscia(calculate_natal_points(birth))
         hits = parse_morinus_pd_file(FIXTURE_DIR / f"{key}.txt")
         generated = []
@@ -196,7 +204,7 @@ def main() -> None:
             if best is None:
                 continue
             calc = best["calc"]
-            gen_date = arc_to_date(birth_dt, calc.arc)
+            gen_date = arc_to_date(birth.birth_date, calc.arc)
             if gen_date < min_bound or gen_date > max_bound:
                 continue
             row = {
