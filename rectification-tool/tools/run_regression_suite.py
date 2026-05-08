@@ -119,25 +119,8 @@ K_HARSH = {
 }
 
 
-def k_precision_bonus(ev: Ev, picked: list) -> float:
-    """K_HARSH 이벤트의 day-precision Major 매칭이 이벤트 일자에 근접하면 가산점.
-    임상상 수술/사망은 day 단위로 정확하게 발생하므로 강한 신호.
-    """
-    if ev.et not in K_HARSH:
-        return 0.0
-    if ev.precision != "day" or ev.d is None:
-        return 0.0
-    if not picked:
-        return 0.0
-    target = date(ev.y, ev.m, ev.d)
-    best_off = min(abs((h[5] - target).days) for h in picked)
-    if best_off <= 7:
-        return 1.5
-    if best_off <= 15:
-        return 1.0
-    if best_off <= 30:
-        return 0.5
-    return 0.0
+# NOTE: day-precision bonus 룰은 사용자가 명시적으로 거부함.
+# 임상상 정확한 날짜까지 기록되는 경우가 드물어, ±N일 차등 가산점은 부적절.
 
 
 def pa_ap(p: str, s: str) -> bool:
@@ -170,24 +153,61 @@ def aspect_quality(p: str, s: str) -> str:
     return "mixed"
 
 
+# H_MARRIAGE_BIRTH: 결혼/출산 (룰 13, 14: Sun/Jupiter/Venus 중심)
+H_MARRIAGE_BIRTH = {"marriage", "childbirth"}
+# H_RELATIONSHIP: 연애 (Venus 메이저만, 다른 길성은 Minor·Equal)
+H_RELATIONSHIP = {"relationship"}
+# CRITICAL_HARSH: 중요 흉성 (Major만 인정, 마이너 안 됨)
+CRITICAL_HARSH = {"family_death"}
+
+
+def has_venus(p: str, s: str) -> bool:
+    return "Venus" in p or "Venus" in s
+
+
 def classify_match(ev_type: str, hits_major: list, hits_minor: list) -> tuple[str, list, float]:
     """Apply event-category matching rules. Returns (kind, picked_hits, weight_factor).
     kind: "" (no match), "Major", "Minor·Single", "Minor·Cluster", "Minor·Equal"
     """
-    # Phase 1: G_GENERAL only
-    if ev_type in G_GENERAL:
+    # G_GENERAL + 결혼/출산: Sun/Jupiter/Venus Major 인정. 마이너 길성↔길성 1개 또는 군집 3+.
+    if ev_type in G_GENERAL or ev_type in H_MARRIAGE_BIRTH:
         if hits_major:
             return "Major", hits_major, 1.0
-        # Minor Single: planet-planet benefic_benefic 1+
         bb = [h for h in hits_minor if aspect_quality(h[0], h[2]) == "benefic_benefic"]
         if bb:
             return "Minor·Single", bb, 0.7
-        # Minor Cluster: any 3+ relevant minor PD
         if len(hits_minor) >= 3:
             return "Minor·Cluster", hits_minor, 0.7
         return "", [], 0.0
 
-    # Other categories: keep current major-only behavior for Phase 1
+    # H_RELATIONSHIP (연애): Venus 메이저만 진짜 메이저. 다른 길성 메이저나 마이너는 Minor·Equal (1.0).
+    if ev_type in H_RELATIONSHIP:
+        venus_major = [h for h in hits_major if has_venus(h[0], h[2])]
+        if venus_major:
+            return "Major", venus_major, 1.0
+        if hits_major:
+            return "Minor·Equal", hits_major, 1.0
+        equal = [h for h in hits_minor if aspect_quality(h[0], h[2]) in ("benefic_benefic", "benefic_malefic")]
+        if equal:
+            return "Minor·Equal", equal, 1.0
+        if len(hits_minor) >= 3:
+            return "Minor·Cluster", hits_minor, 0.7
+        return "", [], 0.0
+
+    # K_HARSH: Mars/Saturn 메이저. 중요 흉성(CRITICAL_HARSH)은 메이저만. 일반은 마이너 Equal/Cluster 인정.
+    if ev_type in K_HARSH:
+        if hits_major:
+            return "Major", hits_major, 1.0
+        if ev_type in CRITICAL_HARSH:
+            return "", [], 0.0
+        equal = [h for h in hits_minor if aspect_quality(h[0], h[2]) in ("malefic_malefic", "benefic_malefic")]
+        if equal:
+            return "Minor·Equal", equal, 1.0
+        if len(hits_minor) >= 3:
+            return "Minor·Cluster", hits_minor, 0.7
+        return "", [], 0.0
+
+    # 기타: Major만
     if hits_major:
         return "Major", hits_major, 1.0
     return "", [], 0.0
@@ -334,6 +354,24 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
     score_rows: list[dict[str, Any]] = []
     audit_rows: list[dict[str, Any]] = []
 
+    # 1순위 범위 (priority window) 계산 — IMMUTABLE_RULES #18
+    # 단일 시간 입력 → ±15분, range 입력 → range 양 끝 ±10분.
+    # input data에 input_form 명시 안 되어 있으면 expected_time 기준 ±15분 단일.
+    expected_time = case.get("expected_time", "")
+    pri_start_min = None
+    pri_end_min = None
+    input_form = case.get("input_form")  # "single" or "range" or None
+    if input_form == "range" and case.get("input_range_start") and case.get("input_range_end"):
+        rs_h, rs_m = [int(x) for x in case["input_range_start"].split(":")]
+        re_h, re_m = [int(x) for x in case["input_range_end"].split(":")]
+        pri_start_min = rs_h * 60 + rs_m - 10
+        pri_end_min = re_h * 60 + re_m + 10
+    elif expected_time:
+        eh, em = [int(x) for x in expected_time.split(":")]
+        em_total = eh * 60 + em
+        pri_start_min = em_total - 15
+        pri_end_min = em_total + 15
+
     # Per-candidate state: store both Major-only and Major+Minor matching results
     candidates: list[dict[str, Any]] = []
 
@@ -402,9 +440,6 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
             base -= 0.5 * admission_month_tier(ev, hs[0][5])
             base *= career_weight(ev)
             score += base * weight_factor
-            # K_HARSH 정확 매칭 가산점 (day-precision Major만 인정)
-            if kind == "Major":
-                score += k_precision_bonus(ev, hs)
             if kind in ("Major", "Minor·Equal"):
                 major_count += 1
             if ev.et == "university_admission":
@@ -434,6 +469,13 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
                     "engine_arc": round(float(h[4]), 6),
                     "pd_date": h[5].isoformat(),
                 })
+        # 1순위 범위 안인지 (IMMUTABLE_RULES #18)
+        cand_min = int(hhmm.split(":")[0]) * 60 + int(hhmm.split(":")[1])
+        if pri_start_min is not None and pri_end_min is not None:
+            in_priority = pri_start_min <= cand_min <= pri_end_min
+        else:
+            in_priority = True  # 1순위 범위 정보 없으면 모든 후보 동등
+
         score_rows.append({
             "case_id": case["case_id"],
             "time": hhmm,
@@ -441,16 +483,26 @@ def eval_case(case: dict[str, Any]) -> tuple[list[dict[str, Any]], list[dict[str
             "major_count": major_count,
             "matched_count": len(matched),
             "mandatory_ok": mand_ok_final,
+            "in_priority": in_priority,
             "min_uni_tier": min_uni_tier,
             "max_uni_tier": max_uni_tier,
             "fallback_minor": not any_strict_ok,
         })
 
+    # 정렬 키 (IMMUTABLE_RULES + 사용자 추가 룰):
+    # 1) mandatory_ok (메이저 우선 + case-level fallback)
+    # 2) 1순위 범위 안 (#18: 사용자 입력 기반 priority window)
+    # 3) 대학입학 month tier
+    # 4) matched_count (매칭 다양성 우선)
+    # 5) major_count (메이저 매칭 비중)
+    # 6) score
     score_rows.sort(key=lambda x: (
         not x["mandatory_ok"],
-        -x["major_count"],
+        not x["in_priority"],
         x["max_uni_tier"],
         x["min_uni_tier"],
+        -x["matched_count"],
+        -x["major_count"],
         -x["score"],
         x["time"],
     ))
